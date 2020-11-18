@@ -3,168 +3,168 @@
 
 
     <!-- settings screen -->
-    <sys:String x:Key="LOCGenericSettings">一般設定</sys:String>
-    <sys:String x:Key="LOCOutPutFolder">htmlエクスポート用の出力フォルダ</sys:String>
-    <sys:String x:Key="LOCSelect">選択</sys:String>
-    <sys:String x:Key="LOCCopyImages">画像を出力フォルダにコピー</sys:String>
-    <sys:String x:Key="LOCExcludeHiddenGames">非表示のゲームを除外する</sys:String>
-    <sys:String x:Key="LOCExcludedPlatforms">除外プラットフォーム:</sys:String>
-    <sys:String x:Key="LOCExcludedSources">除外ソース:</sys:String>
-    <sys:String x:Key="LOCPageSettings">ページ設定</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Generic Settings</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Output folder for html export</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Select">Select</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copy Images to outputfolder</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Exclude hidden games</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Excluded Platforms:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Excluded Sources:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">Page Settings</sys:String>
 
-    <sys:String x:Key="LOCColPageTitle">ページタイトル</sys:String>
-    <sys:String x:Key="LOCColTemplate">テンプレート</sys:String>
-    <sys:String x:Key="LOCColGroupField">グループフィールド</sys:String>
-    <sys:String x:Key="LOCColAsc">Asc</sys:String>
-    <sys:String x:Key="LOCColSortField">ソートフィールド</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColPageTitle">Page Title</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColTemplate">Template</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColGroupField">Group Field</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColAsc">Asc.</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColSortField">Sort Field</sys:String>
 
-    <sys:String x:Key="LOCAscending">昇順</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Ascending">Ascending</sys:String>
     
-    <sys:String x:Key="LOCButAddPage">ページを追加</sys:String>
-    <sys:String x:Key="LOCButDelPage">Del Page</sys:String>
-    <sys:String x:Key="LOCButPageUp">Page Up</sys:String>
-    <sys:String x:Key="LOCButPageDown">Page Down</sys:String>
-    <sys:String x:Key="LOCButRevertTo">元に戻す</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButAddPage">Add Page</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButDelPage">Del Page</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageUp">Page Up</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageDown">Page Down</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButRevertTo">Revert to</sys:String>
 
-    <sys:String x:Key="LOCMnuDefaultGrid">デフォルトグリッド（画像が必要）</sys:String>
-    <sys:String x:Key="LOCMnuDefaultList">デフォルトのリスト（画像が必要）</sys:String>
-    <sys:String x:Key="LOCMnuDefaultListText">既定のリスト（テキストのみ）</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Default grid (Requires images)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Default list (Requires images)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Default list (Text only)</sys:String>
 
     <!-- misc -->
-    <sys:String x:Key="LOCNotGroupedField">format@@0</sys:String>
-    <sys:String x:Key="LOCNotGroupedSanitezedName">グループ化されていない</sys:String>
-    <sys:String x:Key="LOCUndefinedString">未定義</sys:String>
-    <sys:String x:Key="LOCNotPlayedText">再生されていません</sys:String>
-    <sys:String x:Key="LOCNeverText">一切なし</sys:String>
-    <sys:String x:Key="LOCNoneText">なし</sys:String>
-    <sys:String x:Key="LOCDescendingText">降順</sys:String>
-    <sys:String x:Key="LOCAscendingText">昇順</sys:String>
-    <sys:String x:Key="LOCHTMLExporterMenu">HTMLエクスポート</sys:String>
-    <sys:String x:Key="LOCHTMLExporterSubMenu">エクスポート</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Not Grouped]</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedSanitezedName">Not Grouped</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UndefinedString">Undefined</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotPlayedText">Not Played</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NeverText">Never</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NoneText">None</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DescendingText">descending</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">ascending</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Html Exporter</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Export</sys:String>
     
     
     
     <!-- FIELDS -->
-    <sys:String x:Key="LOCReleaseYearFieldText">リリース年</sys:String>
-    <sys:String x:Key="LOCAgeRatingFieldText">年齢の評価</sys:String>
-    <sys:String x:Key="LOCLastActivitySegmentFieldText">最後のアクティビティセグメント</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryFieldText">プレイ時間のカテゴリ</sys:String>
-    <sys:String x:Key="LOCCompletionStatusFieldText">完了状況</sys:String>
-    <sys:String x:Key="LOCUserScoreFieldText">ユーザースコア</sys:String>
-    <sys:String x:Key="LOCUserScoreGroupFieldText">ユーザースコアグループ</sys:String>
-    <sys:String x:Key="LOCUserScoreRatingFieldText">ユーザーのスコア評価</sys:String>
-    <sys:String x:Key="LOCCommunityScoreFieldText">コミュニティスコア</sys:String>
-    <sys:String x:Key="LOCCommunityScoreGroupFieldText">コミュニティスコアグループ</sys:String>
-    <sys:String x:Key="LOCCommunityScoreRatingFieldText">コミュニティのスコア評価</sys:String>
-    <sys:String x:Key="LOCCriticScoreFieldText">クリティックスコア</sys:String>
-    <sys:String x:Key="LOCCriticScoreGroupFieldText">クリティックスコアグループ</sys:String>
-    <sys:String x:Key="LOCCriticScoreRatingFieldText">クリティックスコア評価</sys:String>
-    <sys:String x:Key="LOCAddedSegmentFieldText">追加したセグメント</sys:String>
-    <sys:String x:Key="LOCInstallationStatusFieldText">インストール状況</sys:String>
-    <sys:String x:Key="LOCIsCustomGameFieldText">カスタム ゲーム</sys:String>
-    <sys:String x:Key="LOCModifiedSegmentFieldText">修正されたセグメント</sys:String>
-    <sys:String x:Key="LOCPlayCountFieldText">再生回数</sys:String>
-    <sys:String x:Key="LOCReleaseDateFieldText">公開日</sys:String>
-    <sys:String x:Key="LOCLastActivityFieldText">前回のアクティビティ</sys:String>
-    <sys:String x:Key="LOCRegionFieldText">地域</sys:String>
-    <sys:String x:Key="LOCAddedFieldText">追加しました</sys:String>
-    <sys:String x:Key="LOCCategoryFieldText">カテゴリ</sys:String>
-    <sys:String x:Key="LOCDeveloperFieldText">開発者</sys:String>
-    <sys:String x:Key="LOCFavoriteFieldText">お気に入り</sys:String>
-    <sys:String x:Key="LOCFeatureFieldText">機能</sys:String>
-    <sys:String x:Key="LOCGenreFieldText">ジャンル</sys:String>
-    <sys:String x:Key="LOCHiddenFieldText">Hidden</sys:String>
-    <sys:String x:Key="LOCModifiedFieldText">修正されました</sys:String>
-    <sys:String x:Key="LOCNameFieldText">名前</sys:String>
-    <sys:String x:Key="LOCPlatformFieldText">プラットフォーム</sys:String>
-    <sys:String x:Key="LOCPlaytimeFieldText">プレイタイム</sys:String>
-    <sys:String x:Key="LOCPublisherFieldText">発行者</sys:String>
-    <sys:String x:Key="LOCSerieFieldText">セリエ</sys:String>
-    <sys:String x:Key="LOCSourceFieldText">ソース</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Release Year</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AgeRatingFieldText">Age Rating</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_LastActivitySegmentFieldText">Last Activity Segment</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryFieldText">Playtime Category</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusFieldText">Completion Status</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreFieldText">User Score</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreGroupFieldText">User Score Group</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreRatingFieldText">User Score Rating</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreFieldText">Community Score</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreGroupFieldText">Community Score Group</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreRatingFieldText">Community Score Rating</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreFieldText">Critic Score</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreGroupFieldText">Critic Score Group</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreRatingFieldText">Critic Score Rating</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AddedSegmentFieldText">Added Segment</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusFieldText">Installation Status</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_IsCustomGameFieldText">Custom Game</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ModifiedSegmentFieldText">Modified Segment</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlayCountFieldText">Play Count</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseDateFieldText">Release Date</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_LastActivityFieldText">Last Activity</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_RegionFieldText">Region</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AddedFieldText">Added</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CategoryFieldText">Category</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DeveloperFieldText">Developer</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FavoriteFieldText">Favorite</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FeatureFieldText">Feature</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GenreFieldText">Genre</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HiddenFieldText">Hidden</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ModifiedFieldText">Modified</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NameFieldText">Name</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlatformFieldText">Platform</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeFieldText">Playtime</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PublisherFieldText">Publisher</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SerieFieldText">Serie</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SourceFieldText">Source</sys:String>
     
     <!-- CompletionStatus -->
-    <sys:String x:Key="LOCCompletionStatusAbandoned">放棄されました</sys:String>
-    <sys:String x:Key="LOCCompletionStatusBeaten">殴られた</sys:String>
-    <sys:String x:Key="LOCCompletionStatusCompleted">完了</sys:String>
-    <sys:String x:Key="LOCCompletionStatusNotPlayed">再生されていません</sys:String>
-    <sys:String x:Key="LOCCompletionStatusOnHold">保留中</sys:String>
-    <sys:String x:Key="LOCCompletionStatusPlayed">プレイ済み</sys:String>
-    <sys:String x:Key="LOCCompletionStatusPlaying">再生中</sys:String>
-    <sys:String x:Key="LOCCompletionStatusPlanToPlay">プレイする計画</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusAbandoned">Abandoned</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusBeaten">Beaten</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusCompleted">Completed</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusNotPlayed">Not Played</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusOnHold">On Hold</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlayed">Played</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlaying">Playing</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlanToPlay">Plan To Play</sys:String>
 
     <!-- PlaytimeCategory -->
-    <sys:String x:Key="LOCPlaytimeCategoryO1000plus">1000+ hours</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryO500_1000">500時間から1000時間</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryO100_500">100時間から500時間</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryO10_100">10時間から100時間</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryO1_10">1 ~ 10 時間</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryNotPlayed">再生されていません</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryLessThenHour">1時間以内</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1000plus">1000+ hours</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO500_1000">500 to 1000 hoursy</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO100_500">100 to 500 hours</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO10_100">10 to 100 hours</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1_10">1 to 10 hours</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryNotPlayed">Not Played</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour">Less Then a Hour</sys:String>
 
     <!-- DateSegmentField -->
-    <sys:String x:Key="LOCSegmentFieldMoreThenYear">さらにその後1年前</sys:String>
-    <sys:String x:Key="LOCSegmentFieldPastMonth">過去 1 ヶ月</sys:String>
-    <sys:String x:Key="LOCSegmentFieldPastWeek">過去週</sys:String>
-    <sys:String x:Key="LOCSegmentFieldPastYear">過去 1 年間</sys:String>
-    <sys:String x:Key="LOCSegmentFieldNever">一切なし</sys:String>
-    <sys:String x:Key="LOCSegmentFieldToday">今日</sys:String>
-    <sys:String x:Key="LOCSegmentFieldYesterday">昨日</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldMoreThenYear">More Then a Year ago</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastMonth">Past Month</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastWeek">Past Week</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastYear">Past Year</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldNever">Never</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldToday">Today</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldYesterday">Yesterday</sys:String>
 
     <!-- InstallationStatus -->
-    <sys:String x:Key="LOCInstallationStatusInstalled">インストール済み</sys:String>
-    <sys:String x:Key="LOCInstallationStatusUninstalled">アンインストール済み</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusInstalled">Installed</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusUninstalled">Uninstalled</sys:String>
     
     <!-- ScoreGroup -->
-    <sys:String x:Key="LOCScoreGroupO0x">0 〜 10</sys:String>
-    <sys:String x:Key="LOCScoreGroupO1x">10～20</sys:String>
-    <sys:String x:Key="LOCScoreGroupO2x">20～30</sys:String>
-    <sys:String x:Key="LOCScoreGroupO3x">30から40</sys:String>
-    <sys:String x:Key="LOCScoreGroupO4x">40から50</sys:String>
-    <sys:String x:Key="LOCScoreGroupO5x">50～60</sys:String>
-    <sys:String x:Key="LOCScoreGroupO6x">60から70</sys:String>
-    <sys:String x:Key="LOCScoreGroupO7x">70歳から80歳まで</sys:String>
-    <sys:String x:Key="LOCScoreGroupO8x">80～90</sys:String>
-    <sys:String x:Key="LOCScoreGroupO9x">90 から 100</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO0x">0 to 10</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO1x">10 to 20</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO2x">20 to 30</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO3x">30 to 40</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO4x">40 to 50</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO5x">50 to 60</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO6x">60 to 70</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO7x">70 to 80</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO8x">80 to 90</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO9x">90 to 100</sys:String>
     
     <!-- ScoreRating -->
-    <sys:String x:Key="LOCScoreRatingPositive">正の値</sys:String>
-    <sys:String x:Key="LOCScoreRatingNone">スコアなし</sys:String>
-    <sys:String x:Key="LOCScoreRatingNegative">負の値</sys:String>
-    <sys:String x:Key="LOCScoreRatingMixed">混在しました</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingPositive">Positive</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingNone">No score</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingNegative">Negative</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingMixed">Mixed</sys:String>
 
 
     <!--- ProgresStatus -->
-    <sys:String x:Key="LOCErasingPreviousHTML">生成された html ファイルを消去しています...</sys:String>
-    <sys:String x:Key="LOCPreparingGenerateHTML">htmlファイルを生成する準備をしています...</sys:String>
-    <sys:String x:Key="LOCGeneratatingHTML">htmlページの生成</sys:String>
-    <sys:String x:Key="LOCGeneratatingHTMLOf">/</sys:String>
-    <sys:String x:Key="LOCGeneratatingHTMEntry">項目</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingPreviousHTML">Erasing previously generated html files...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">Preparing to generate html files...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">Generating html page</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTMLOf">of</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTMEntry">Entry</sys:String>
 
     <!-- Finisch text -->
-    <sys:String x:Key="LOCFinishedExportingHTML">HTMLへのエクスポート完了...</sys:String>
-    <sys:String x:Key="LOCFinishedExportingHTMLElapsedtime">経過時間: </sys:String>
-    <sys:String x:Key="LOCFinishedExportingHTMLSuccess">エクスポートされたページ数： </sys:String>
-    <sys:String x:Key="LOCFinishedExportingHTMLErrors">エクスポートされていないページ - エラー: </sys:String>
-    <sys:String x:Key="LOCFinishedExportingHTMLErrorsTemplate">エクスポートされていないページ - テンプレートの不良または欠落: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTML">Finished Exporting to HTML...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLElapsedtime">Elapsed time: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLSuccess">Succesfull exported pages: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLErrors">Not exported pages - errors: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLErrorsTemplate">Not exported pages - faulty or missing template: </sys:String>
 
     <!-- errors -->
-    <sys:String x:Key="LOCHTMLExportError">HTML エクスポートエラー</sys:String>
-    <sys:String x:Key="LOCErrorHTMLExpoterNoOutputFolder">設定で指定された出力フォルダがありません！</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExportError">HTML Export Error</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErrorHTMLExpoterNoOutputFolder">No existing output folder specified in settings!</sys:String>
 
     <!-- settingsviex -->
-    <sys:String x:Key="LOCRevertPagesQuestion1">すべてのページをデフォルトに戻してもよろしいですか？</sys:String>
-    <sys:String x:Key="LOCRevertPagesQuestion2">ページ?</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_RevertPagesQuestion1">Are you sure you want to revert all pages to the default</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_RevertPagesQuestion2">pages?</sys:String>
 
     <!-- true / false value -->
-    <sys:String x:Key="LOCHTMLExporterTrue">True</sys:String>
-    <sys:String x:Key="LOCHTMLExporterFalse">False</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterTrue">True</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterFalse">False</sys:String>
     
     <!-- HTML Constants -->
-    <sys:String x:Key="LOCHTMLMainMenu">メインメニュー</sys:String>
-    <sys:String x:Key="LOCHTMLQuickLinks">クイックリンク</sys:String>
-    <sys:String x:Key="LOCHTMLLinks">リンク</sys:String>
-    <sys:String x:Key="LOCHTMLDescription">説明</sys:String>
-    <sys:String x:Key="LOCHTMLDetails">詳細</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLMainMenu">MAIN MENU</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLQuickLinks">Quick Links</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Links</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Description</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Details</sys:String>
 
 
 

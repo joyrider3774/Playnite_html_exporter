@@ -11,25 +11,25 @@ namespace HtmlExporterPlugin
 
 
         
-        public static string NotGroupedFieldSanitizedName = resources.GetString("LOCNotGroupedSanitezedName");
-        public static string UndefinedString = resources.GetString("LOCUndefinedString"); 
-        public static string NotPlayedText = resources.GetString("LOCNotPlayedText");
-        public static string NeverText = resources.GetString("LOCNeverText"); 
-        public static string NoneText = resources.GetString("LOCNoneText"); 
-        public static string AscendingText = resources.GetString("LOCAscendingText");
-        public static string DescendingText = resources.GetString("LOCDescendingText");
+        public static string NotGroupedFieldSanitizedName = resources.GetString("LOC_HTMLEXPORTER_NotGroupedSanitezedName");
+        public static string UndefinedString = resources.GetString("LOC_HTMLEXPORTER_UndefinedString"); 
+        public static string NotPlayedText = resources.GetString("LOC_HTMLEXPORTER_NotPlayedText");
+        public static string NeverText = resources.GetString("LOC_HTMLEXPORTER_NeverText"); 
+        public static string NoneText = resources.GetString("LOC_HTMLEXPORTER_NoneText"); 
+        public static string AscendingText = resources.GetString("LOC_HTMLEXPORTER_AscendingText");
+        public static string DescendingText = resources.GetString("LOC_HTMLEXPORTER_DescendingText");
        
 
         public const string AppName = "HTML Exporter";
         public const string NumberSign = "#";
-        public static string HTMLExportError = resources.GetString("LOCHTMLExportError");
+        public static string HTMLExportError = resources.GetString("LOC_HTMLEXPORTER_HTMLExportError");
 
         public const string MediaBackgroundText = "Background";
         public const string MediaIconText = "Icon";
         public const string MediaCoverText = "Cover";
 
         //fields, declare once, so we don't have to keep repeating the string, just in case they ever change
-        public static string NotGroupedField = resources.GetString("LOCNotGroupedField");
+        public static string NotGroupedField = resources.GetString("LOC_HTMLEXPORTER_NotGroupedField");
         public const string AddedField = "Added";
         public const string AddedSegmentField = "AddedSegment";
         public const string AgeRatingField = "AgeRating";
@@ -68,129 +68,129 @@ namespace HtmlExporterPlugin
         public const string UserScoreRatingField = "UserScoreRating";
 
         //Texts for fields
-        public static string RegionFieldText = resources.GetString("LOCRegionFieldText");
-        public static string AddedFieldText = resources.GetString("LOCAddedFieldText");
-        public static string CategoryFieldText = resources.GetString("LOCCategoryFieldText");
-        public static string DeveloperFieldText = resources.GetString("LOCDeveloperFieldText");
-        public static string FavoriteFieldText = resources.GetString("LOCFavoriteFieldText");
-        public static string FeatureFieldText = resources.GetString("LOCFeatureFieldText");
-        public static string GenreFieldText = resources.GetString("LOCGenreFieldText");
-        public static string HiddenFieldText = resources.GetString("LOCHiddenFieldText");
-        public static string ModifiedFieldText = resources.GetString("LOCModifiedFieldText");
-        public static string NameFieldText = resources.GetString("LOCNameFieldText");
-        public static string PlatformFieldText = resources.GetString("LOCPlatformFieldText");
-        public static string PlaytimeFieldText = resources.GetString("LOCPlaytimeFieldText");
-        public static string PublisherFieldText = resources.GetString("LOCPublisherFieldText");
-        public static string SerieFieldText = resources.GetString("LOCSerieFieldText");
-        public static string SourceFieldText = resources.GetString("LOCSourceFieldText");
-        public static string ReleaseYearFieldText = resources.GetString("LOCReleaseYearFieldText");
-        public static string AgeRatingFieldText = resources.GetString("LOCAgeRatingFieldText");
-        public static string LastActivitySegmentFieldText = resources.GetString("LOCLastActivitySegmentFieldText");
-        public static string PlaytimeCategoryFieldText = resources.GetString("LOCPlaytimeCategoryFieldText");
-        public static string CompletionStatusFieldText = resources.GetString("LOCCompletionStatusFieldText");
-        public static string UserScoreFieldText = resources.GetString("LOCUserScoreFieldText");
-        public static string UserScoreGroupFieldText = resources.GetString("LOCUserScoreGroupFieldText");
-        public static string UserScoreRatingFieldText = resources.GetString("LOCUserScoreRatingFieldText");
-        public static string CommunityScoreFieldText = resources.GetString("LOCCommunityScoreFieldText");
-        public static string CommunityScoreGroupFieldText = resources.GetString("LOCCommunityScoreGroupFieldText");
-        public static string CommunityScoreRatingFieldText = resources.GetString("LOCCommunityScoreRatingFieldText");
-        public static string CriticScoreFieldText = resources.GetString("LOCCriticScoreFieldText");
-        public static string CriticScoreGroupFieldText = resources.GetString("LOCCriticScoreGroupFieldText");
-        public static string CriticScoreRatingFieldText = resources.GetString("LOCCriticScoreRatingFieldText");
-        public static string AddedSegmentFieldText = resources.GetString("LOCAddedSegmentFieldText");
-        public static string InstallationStatusFieldText = resources.GetString("LOCInstallationStatusFieldText");
-        public static string IsCustomGameFieldText = resources.GetString("LOCIsCustomGameFieldText");
-        public static string ModifiedSegmentFieldText = resources.GetString("LOCModifiedSegmentFieldText");
-        public static string PlayCountFieldText = resources.GetString("LOCPlayCountFieldText");
-        public static string ReleaseDateFieldText = resources.GetString("LOCReleaseDateFieldText");
-        public static string LastActivityFieldText = resources.GetString("LOCLastActivityFieldText");
+        public static string RegionFieldText = resources.GetString("LOC_HTMLEXPORTER_RegionFieldText");
+        public static string AddedFieldText = resources.GetString("LOC_HTMLEXPORTER_AddedFieldText");
+        public static string CategoryFieldText = resources.GetString("LOC_HTMLEXPORTER_CategoryFieldText");
+        public static string DeveloperFieldText = resources.GetString("LOC_HTMLEXPORTER_DeveloperFieldText");
+        public static string FavoriteFieldText = resources.GetString("LOC_HTMLEXPORTER_FavoriteFieldText");
+        public static string FeatureFieldText = resources.GetString("LOC_HTMLEXPORTER_FeatureFieldText");
+        public static string GenreFieldText = resources.GetString("LOC_HTMLEXPORTER_GenreFieldText");
+        public static string HiddenFieldText = resources.GetString("LOC_HTMLEXPORTER_HiddenFieldText");
+        public static string ModifiedFieldText = resources.GetString("LOC_HTMLEXPORTER_ModifiedFieldText");
+        public static string NameFieldText = resources.GetString("LOC_HTMLEXPORTER_NameFieldText");
+        public static string PlatformFieldText = resources.GetString("LOC_HTMLEXPORTER_PlatformFieldText");
+        public static string PlaytimeFieldText = resources.GetString("LOC_HTMLEXPORTER_PlaytimeFieldText");
+        public static string PublisherFieldText = resources.GetString("LOC_HTMLEXPORTER_PublisherFieldText");
+        public static string SerieFieldText = resources.GetString("LOC_HTMLEXPORTER_SerieFieldText");
+        public static string SourceFieldText = resources.GetString("LOC_HTMLEXPORTER_SourceFieldText");
+        public static string ReleaseYearFieldText = resources.GetString("LOC_HTMLEXPORTER_ReleaseYearFieldText");
+        public static string AgeRatingFieldText = resources.GetString("LOC_HTMLEXPORTER_AgeRatingFieldText");
+        public static string LastActivitySegmentFieldText = resources.GetString("LOC_HTMLEXPORTER_LastActivitySegmentFieldText");
+        public static string PlaytimeCategoryFieldText = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryFieldText");
+        public static string CompletionStatusFieldText = resources.GetString("LOC_HTMLEXPORTER_CompletionStatusFieldText");
+        public static string UserScoreFieldText = resources.GetString("LOC_HTMLEXPORTER_UserScoreFieldText");
+        public static string UserScoreGroupFieldText = resources.GetString("LOC_HTMLEXPORTER_UserScoreGroupFieldText");
+        public static string UserScoreRatingFieldText = resources.GetString("LOC_HTMLEXPORTER_UserScoreRatingFieldText");
+        public static string CommunityScoreFieldText = resources.GetString("LOC_HTMLEXPORTER_CommunityScoreFieldText");
+        public static string CommunityScoreGroupFieldText = resources.GetString("LOC_HTMLEXPORTER_CommunityScoreGroupFieldText");
+        public static string CommunityScoreRatingFieldText = resources.GetString("LOC_HTMLEXPORTER_CommunityScoreRatingFieldText");
+        public static string CriticScoreFieldText = resources.GetString("LOC_HTMLEXPORTER_CriticScoreFieldText");
+        public static string CriticScoreGroupFieldText = resources.GetString("LOC_HTMLEXPORTER_CriticScoreGroupFieldText");
+        public static string CriticScoreRatingFieldText = resources.GetString("LOC_HTMLEXPORTER_CriticScoreRatingFieldText");
+        public static string AddedSegmentFieldText = resources.GetString("LOC_HTMLEXPORTER_AddedSegmentFieldText");
+        public static string InstallationStatusFieldText = resources.GetString("LOC_HTMLEXPORTER_InstallationStatusFieldText");
+        public static string IsCustomGameFieldText = resources.GetString("LOC_HTMLEXPORTER_IsCustomGameFieldText");
+        public static string ModifiedSegmentFieldText = resources.GetString("LOC_HTMLEXPORTER_ModifiedSegmentFieldText");
+        public static string PlayCountFieldText = resources.GetString("LOC_HTMLEXPORTER_PlayCountFieldText");
+        public static string ReleaseDateFieldText = resources.GetString("LOC_HTMLEXPORTER_ReleaseDateFieldText");
+        public static string LastActivityFieldText = resources.GetString("LOC_HTMLEXPORTER_LastActivityFieldText");
 
         //Completionstatustext
-        public static string CompletionStatusAbandoned = resources.GetString("LOCCompletionStatusAbandoned");
-        public static string CompletionStatusBeaten = resources.GetString("LOCCompletionStatusBeaten");
-        public static string CompletionStatusCompleted = resources.GetString("LOCCompletionStatusCompleted");
-        public static string CompletionStatusNotPlayed = resources.GetString("LOCCompletionStatusNotPlayed");
-        public static string CompletionStatusOnHold = resources.GetString("LOCCompletionStatusOnHold");
-        public static string CompletionStatusPlayed = resources.GetString("LOCCompletionStatusPlayed");
-        public static string CompletionStatusPlaying = resources.GetString("LOCCompletionStatusPlaying");
-        public static string CompletionStatusPlanToPlay = resources.GetString("LOCCompletionStatusPlanToPlay");
+        public static string CompletionStatusAbandoned = resources.GetString("LOC_HTMLEXPORTER_CompletionStatusAbandoned");
+        public static string CompletionStatusBeaten = resources.GetString("LOC_HTMLEXPORTER_CompletionStatusBeaten");
+        public static string CompletionStatusCompleted = resources.GetString("LOC_HTMLEXPORTER_CompletionStatusCompleted");
+        public static string CompletionStatusNotPlayed = resources.GetString("LOC_HTMLEXPORTER_CompletionStatusNotPlayed");
+        public static string CompletionStatusOnHold = resources.GetString("LOC_HTMLEXPORTER_CompletionStatusOnHold");
+        public static string CompletionStatusPlayed = resources.GetString("LOC_HTMLEXPORTER_CompletionStatusPlayed");
+        public static string CompletionStatusPlaying = resources.GetString("LOC_HTMLEXPORTER_CompletionStatusPlaying");
+        public static string CompletionStatusPlanToPlay = resources.GetString("LOC_HTMLEXPORTER_CompletionStatusPlanToPlay");
 
         //LOCPlaytimeCategory
-        public static string PlaytimeCategoryO1000plus = resources.GetString("LOCPlaytimeCategoryO1000plus");
-        public static string PlaytimeCategoryO500_1000 = resources.GetString("LOCPlaytimeCategoryO500_1000");
-        public static string PlaytimeCategoryO100_500 = resources.GetString("LOCPlaytimeCategoryO100_500");
-        public static string PlaytimeCategoryO10_100 = resources.GetString("LOCPlaytimeCategoryO10_100");
-        public static string PlaytimeCategoryO1_10 = resources.GetString("LOCPlaytimeCategoryO1_10");
-        public static string PlaytimeCategoryNotPlayed = resources.GetString("LOCPlaytimeCategoryO1_10");
-        public static string PlaytimeCategoryLessThenHour = resources.GetString("LOCPlaytimeCategoryLessThenHour");
+        public static string PlaytimeCategoryO1000plus = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryO1000plus");
+        public static string PlaytimeCategoryO500_1000 = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryO500_1000");
+        public static string PlaytimeCategoryO100_500 = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryO100_500");
+        public static string PlaytimeCategoryO10_100 = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryO10_100");
+        public static string PlaytimeCategoryO1_10 = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryO1_10");
+        public static string PlaytimeCategoryNotPlayed = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryO1_10");
+        public static string PlaytimeCategoryLessThenHour = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour");
 
         //DateSegMentField
-        public static string SegmentFieldMoreThenYear = resources.GetString("LOCSegmentFieldMoreThenYear");
-        public static string SegmentFieldPastMonth = resources.GetString("LOCSegmentFieldPastMonth");
-        public static string SegmentFieldPastWeek = resources.GetString("LOCSegmentFieldPastWeek");
-        public static string SegmentFieldPastYear = resources.GetString("LOCSegmentFieldPastYear");
-        public static string SegmentFieldNever = resources.GetString("LOCSegmentFieldNever");
-        public static string SegmentFieldToday = resources.GetString("LOCSegmentFieldToday");
-        public static string SegmentFieldYesterday = resources.GetString("LOCSegmentFieldYesterday");
+        public static string SegmentFieldMoreThenYear = resources.GetString("LOC_HTMLEXPORTER_SegmentFieldMoreThenYear");
+        public static string SegmentFieldPastMonth = resources.GetString("LOC_HTMLEXPORTER_SegmentFieldPastMonth");
+        public static string SegmentFieldPastWeek = resources.GetString("LOC_HTMLEXPORTER_SegmentFieldPastWeek");
+        public static string SegmentFieldPastYear = resources.GetString("LOC_HTMLEXPORTER_SegmentFieldPastYear");
+        public static string SegmentFieldNever = resources.GetString("LOC_HTMLEXPORTER_SegmentFieldNever");
+        public static string SegmentFieldToday = resources.GetString("LOC_HTMLEXPORTER_SegmentFieldToday");
+        public static string SegmentFieldYesterday = resources.GetString("LOC_HTMLEXPORTER_SegmentFieldYesterday");
        
         //InstallationStatus
-        public static string InstallationStatusInstalled = resources.GetString("LOCInstallationStatusInstalled");
-        public static string InstallationStatusUninstalled = resources.GetString("LOCInstallationStatusUninstalled");
+        public static string InstallationStatusInstalled = resources.GetString("LOC_HTMLEXPORTER_InstallationStatusInstalled");
+        public static string InstallationStatusUninstalled = resources.GetString("LOC_HTMLEXPORTER_InstallationStatusUninstalled");
         
         //scoregroup
-        public static string ScoreGroupO0x = resources.GetString("LOCScoreGroupO0x");
-        public static string ScoreGroupO1x = resources.GetString("LOCScoreGroupO1x");
-        public static string ScoreGroupO2x = resources.GetString("LOCScoreGroupO2x");
-        public static string ScoreGroupO3x = resources.GetString("LOCScoreGroupO3x");
-        public static string ScoreGroupO4x = resources.GetString("LOCScoreGroupO4x");
-        public static string ScoreGroupO5x = resources.GetString("LOCScoreGroupO5x");
-        public static string ScoreGroupO6x = resources.GetString("LOCScoreGroupO6x");
-        public static string ScoreGroupO7x = resources.GetString("LOCScoreGroupO7x");
-        public static string ScoreGroupO8x = resources.GetString("LOCScoreGroupO8x");
-        public static string ScoreGroupO9x = resources.GetString("LOCScoreGroupO9x");
+        public static string ScoreGroupO0x = resources.GetString("LOC_HTMLEXPORTER_ScoreGroupO0x");
+        public static string ScoreGroupO1x = resources.GetString("LOC_HTMLEXPORTER_ScoreGroupO1x");
+        public static string ScoreGroupO2x = resources.GetString("LOC_HTMLEXPORTER_ScoreGroupO2x");
+        public static string ScoreGroupO3x = resources.GetString("LOC_HTMLEXPORTER_ScoreGroupO3x");
+        public static string ScoreGroupO4x = resources.GetString("LOC_HTMLEXPORTER_ScoreGroupO4x");
+        public static string ScoreGroupO5x = resources.GetString("LOC_HTMLEXPORTER_ScoreGroupO5x");
+        public static string ScoreGroupO6x = resources.GetString("LOC_HTMLEXPORTER_ScoreGroupO6x");
+        public static string ScoreGroupO7x = resources.GetString("LOC_HTMLEXPORTER_ScoreGroupO7x");
+        public static string ScoreGroupO8x = resources.GetString("LOC_HTMLEXPORTER_ScoreGroupO8x");
+        public static string ScoreGroupO9x = resources.GetString("LOC_HTMLEXPORTER_ScoreGroupO9x");
 
         //ScoreRating 
-        public static string ScoreRatingPositive = resources.GetString("LOCScoreRatingPositive");
-        public static string ScoreRatingNone = resources.GetString("LOCScoreRatingNone");
-        public static string ScoreRatingNegative = resources.GetString("LOCScoreRatingNegative");
-        public static string ScoreRatingMixed = resources.GetString("LOCScoreRatingMixed");
+        public static string ScoreRatingPositive = resources.GetString("LOC_HTMLEXPORTER_ScoreRatingPositive");
+        public static string ScoreRatingNone = resources.GetString("LOC_HTMLEXPORTER_ScoreRatingNone");
+        public static string ScoreRatingNegative = resources.GetString("LOC_HTMLEXPORTER_ScoreRatingNegative");
+        public static string ScoreRatingMixed = resources.GetString("LOC_HTMLEXPORTER_ScoreRatingMixed");
 
         //progressstatus
-        public static string ErasingPreviousHTML = resources.GetString("LOCErasingPreviousHTML");
-        public static string PreparingGenerateHTML = resources.GetString("LOCPreparingGenerateHTML");
-        public static string GeneratatingHTML = resources.GetString("LOCGeneratatingHTML");
-        public static string GeneratatingHTMLOf = resources.GetString("LOCGeneratatingHTMLOf");
-        public static string GeneratatingHTMLEntry = resources.GetString("LOCGeneratatingHTMEntry");
+        public static string ErasingPreviousHTML = resources.GetString("LOC_HTMLEXPORTER_ErasingPreviousHTML");
+        public static string PreparingGenerateHTML = resources.GetString("LOC_HTMLEXPORTER_PreparingGenerateHTML");
+        public static string GeneratatingHTML = resources.GetString("LOC_HTMLEXPORTER_GeneratatingHTML");
+        public static string GeneratatingHTMLOf = resources.GetString("LOC_HTMLEXPORTER_GeneratatingHTMLOf");
+        public static string GeneratatingHTMLEntry = resources.GetString("LOC_HTMLEXPORTER_GeneratatingHTMEntry");
 
         //finish text
-        public static string FinishedExportingHTML = resources.GetString("LOCFinishedExportingHTML");
-        public static string FinishedExportingHTMLElapsedtime = resources.GetString("LOCFinishedExportingHTMLElapsedtime");
-        public static string FinishedExportingHTMLSuccess = resources.GetString("LOCFinishedExportingHTMLSuccess");
-        public static string FinishedExportingHTMLErrors = resources.GetString("LOCFinishedExportingHTMLErrors");
-        public static string FinishedExportingHTMLErrorsTemplate = resources.GetString("LOCFinishedExportingHTMLErrorsTemplate");
+        public static string FinishedExportingHTML = resources.GetString("LOC_HTMLEXPORTER_FinishedExportingHTML");
+        public static string FinishedExportingHTMLElapsedtime = resources.GetString("LOC_HTMLEXPORTER_FinishedExportingHTMLElapsedtime");
+        public static string FinishedExportingHTMLSuccess = resources.GetString("LOC_HTMLEXPORTER_FinishedExportingHTMLSuccess");
+        public static string FinishedExportingHTMLErrors = resources.GetString("LOC_HTMLEXPORTER_FinishedExportingHTMLErrors");
+        public static string FinishedExportingHTMLErrorsTemplate = resources.GetString("LOC_HTMLEXPORTER_FinishedExportingHTMLErrorsTemplate");
 
         
         //errors
-        public static string ErrorHTMLExpoterNoOutputFolder = resources.GetString("LOCErrorHTMLExpoterNoOutputFolder");
+        public static string ErrorHTMLExpoterNoOutputFolder = resources.GetString("LOC_HTMLEXPORTER_ErrorHTMLExpoterNoOutputFolder");
 
         //settingsview
-        public static string RevertPagesQuestion1 = resources.GetString("LOCRevertPagesQuestion1");
-        public static string RevertPagesQuestion2 = resources.GetString("LOCRevertPagesQuestion2");
+        public static string RevertPagesQuestion1 = resources.GetString("LOC_HTMLEXPORTER_RevertPagesQuestion1");
+        public static string RevertPagesQuestion2 = resources.GetString("LOC_HTMLEXPORTER_RevertPagesQuestion2");
 
         //True / False Values
-        public static string HTMLExporterTrue = resources.GetString("LOCHTMLExporterTrue");
-        public static string HTMLExporterFalse = resources.GetString("LOCHTMLExporterFalse");
+        public static string HTMLExporterTrue = resources.GetString("LOC_HTMLEXPORTER_HTMLExporterTrue");
+        public static string HTMLExporterFalse = resources.GetString("LOC_HTMLEXPORTER_HTMLExporterFalse");
 
         //HTML Constants
-        public static string HTMLMainMenu = resources.GetString("LOCHTMLMainMenu");
-        public static string HTMLQuickLinks = resources.GetString("LOCHTMLQuickLinks");
-        public static string HTMLLinks = resources.GetString("LOCHTMLLinks");
-        public static string HTMLDescription = resources.GetString("LOCHTMLDescription");
-        public static string HTMLDetails = resources.GetString("LOCHTMLDetails");
+        public static string HTMLMainMenu = resources.GetString("LOC_HTMLEXPORTER_HTMLMainMenu");
+        public static string HTMLQuickLinks = resources.GetString("LOC_HTMLEXPORTER_HTMLQuickLinks");
+        public static string HTMLLinks = resources.GetString("LOC_HTMLEXPORTER_HTMLLinks");
+        public static string HTMLDescription = resources.GetString("LOC_HTMLEXPORTER_HTMLDescription");
+        public static string HTMLDetails = resources.GetString("LOC_HTMLEXPORTER_HTMLDetails");
 
         //playnite menus
-        public static string HTMLExporterMenu = resources.GetString("LOCHTMLExporterMenu");
-        public static string HTMLExporterSubMenu = resources.GetString("LOCHTMLExporterSubMenu");
+        public static string HTMLExporterMenu = resources.GetString("LOC_HTMLEXPORTER_HTMLExporterMenu");
+        public static string HTMLExporterSubMenu = resources.GetString("LOC_HTMLEXPORTER_HTMLExporterSubMenu");
 
         //lists
         public static readonly ReadOnlyCollection<string> AvailableGroupFields = new ReadOnlyCollection<string>(new List<String> {NameField, SourceField, PlatformField, ReleaseYearField, AgeRatingField, FavoriteField,

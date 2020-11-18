@@ -3,168 +3,168 @@
 
 
     <!-- settings screen -->
-    <sys:String x:Key="LOCGenericSettings">Obecná nastavení</sys:String>
-    <sys:String x:Key="LOCOutPutFolder">Výstupní složka pro export html</sys:String>
-    <sys:String x:Key="LOCSelect">Vybrat</sys:String>
-    <sys:String x:Key="LOCCopyImages">Kopírovat obrázky do výstupní složky</sys:String>
-    <sys:String x:Key="LOCExcludeHiddenGames">Vyloučit skryté hry</sys:String>
-    <sys:String x:Key="LOCExcludedPlatforms">Vyloučené plošiny:</sys:String>
-    <sys:String x:Key="LOCExcludedSources">Vyloučené zdroje:</sys:String>
-    <sys:String x:Key="LOCPageSettings">Nastavení stránky</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Generic Settings</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Output folder for html export</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Select">Select</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copy Images to outputfolder</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Exclude hidden games</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Excluded Platforms:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Excluded Sources:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">Page Settings</sys:String>
 
-    <sys:String x:Key="LOCColPageTitle">Název stránky</sys:String>
-    <sys:String x:Key="LOCColTemplate">Šablona</sys:String>
-    <sys:String x:Key="LOCColGroupField">Skupinové pole</sys:String>
-    <sys:String x:Key="LOCColAsc">Asc.</sys:String>
-    <sys:String x:Key="LOCColSortField">Pole řazení</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColPageTitle">Page Title</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColTemplate">Template</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColGroupField">Group Field</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColAsc">Asc.</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColSortField">Sort Field</sys:String>
 
-    <sys:String x:Key="LOCAscending">Vzestupně</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Ascending">Ascending</sys:String>
     
-    <sys:String x:Key="LOCButAddPage">Přidat stránku</sys:String>
-    <sys:String x:Key="LOCButDelPage">Del Page</sys:String>
-    <sys:String x:Key="LOCButPageUp">Stránka nahoru</sys:String>
-    <sys:String x:Key="LOCButPageDown">Stránka dolů</sys:String>
-    <sys:String x:Key="LOCButRevertTo">Vrátit se na</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButAddPage">Add Page</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButDelPage">Del Page</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageUp">Page Up</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageDown">Page Down</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButRevertTo">Revert to</sys:String>
 
-    <sys:String x:Key="LOCMnuDefaultGrid">Výchozí mřížka (vyžaduje obrázky)</sys:String>
-    <sys:String x:Key="LOCMnuDefaultList">Výchozí seznam (vyžaduje obrázky)</sys:String>
-    <sys:String x:Key="LOCMnuDefaultListText">Výchozí seznam (pouze TEX)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Default grid (Requires images)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Default list (Requires images)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Default list (Text only)</sys:String>
 
     <!-- misc -->
-    <sys:String x:Key="LOCNotGroupedField">[Neseskupeno]</sys:String>
-    <sys:String x:Key="LOCNotGroupedSanitezedName">Není seskupeno</sys:String>
-    <sys:String x:Key="LOCUndefinedString">Nedefinováno</sys:String>
-    <sys:String x:Key="LOCNotPlayedText">Nehráno</sys:String>
-    <sys:String x:Key="LOCNeverText">Nikdy</sys:String>
-    <sys:String x:Key="LOCNoneText">Nic</sys:String>
-    <sys:String x:Key="LOCDescendingText">sestupně</sys:String>
-    <sys:String x:Key="LOCAscendingText">vzestupně</sys:String>
-    <sys:String x:Key="LOCHTMLExporterMenu">Exportátor Html</sys:String>
-    <sys:String x:Key="LOCHTMLExporterSubMenu">Exportovat</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Not Grouped]</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedSanitezedName">Not Grouped</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UndefinedString">Undefined</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotPlayedText">Not Played</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NeverText">Never</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NoneText">None</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DescendingText">descending</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">ascending</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Html Exporter</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Export</sys:String>
     
     
     
     <!-- FIELDS -->
-    <sys:String x:Key="LOCReleaseYearFieldText">Rok vydání</sys:String>
-    <sys:String x:Key="LOCAgeRatingFieldText">Věkové hodnocení</sys:String>
-    <sys:String x:Key="LOCLastActivitySegmentFieldText">Poslední segment aktivity</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryFieldText">Kategorie přehrávání</sys:String>
-    <sys:String x:Key="LOCCompletionStatusFieldText">Stav dokončení</sys:String>
-    <sys:String x:Key="LOCUserScoreFieldText">Skóre uživatele</sys:String>
-    <sys:String x:Key="LOCUserScoreGroupFieldText">Skupina skóre uživatele</sys:String>
-    <sys:String x:Key="LOCUserScoreRatingFieldText">Hodnocení skóre uživatele</sys:String>
-    <sys:String x:Key="LOCCommunityScoreFieldText">Komunitní skóre</sys:String>
-    <sys:String x:Key="LOCCommunityScoreGroupFieldText">Skupina komunitních skóre</sys:String>
-    <sys:String x:Key="LOCCommunityScoreRatingFieldText">Hodnocení komunitních skóre</sys:String>
-    <sys:String x:Key="LOCCriticScoreFieldText">Kritické skóre</sys:String>
-    <sys:String x:Key="LOCCriticScoreGroupFieldText">Skupina kritických skóre</sys:String>
-    <sys:String x:Key="LOCCriticScoreRatingFieldText">Kritické hodnocení</sys:String>
-    <sys:String x:Key="LOCAddedSegmentFieldText">Přidaná část</sys:String>
-    <sys:String x:Key="LOCInstallationStatusFieldText">Stav instalace</sys:String>
-    <sys:String x:Key="LOCIsCustomGameFieldText">Vlastní hra</sys:String>
-    <sys:String x:Key="LOCModifiedSegmentFieldText">Upravený segment</sys:String>
-    <sys:String x:Key="LOCPlayCountFieldText">Počet přehrávání</sys:String>
-    <sys:String x:Key="LOCReleaseDateFieldText">Datum vydání</sys:String>
-    <sys:String x:Key="LOCLastActivityFieldText">Poslední aktivita</sys:String>
-    <sys:String x:Key="LOCRegionFieldText">Oblasti</sys:String>
-    <sys:String x:Key="LOCAddedFieldText">Přidáno</sys:String>
-    <sys:String x:Key="LOCCategoryFieldText">Kategorie</sys:String>
-    <sys:String x:Key="LOCDeveloperFieldText">Vývojář</sys:String>
-    <sys:String x:Key="LOCFavoriteFieldText">Oblíbená</sys:String>
-    <sys:String x:Key="LOCFeatureFieldText">Funkce</sys:String>
-    <sys:String x:Key="LOCGenreFieldText">Žánr</sys:String>
-    <sys:String x:Key="LOCHiddenFieldText">Hidden</sys:String>
-    <sys:String x:Key="LOCModifiedFieldText">Upraveno</sys:String>
-    <sys:String x:Key="LOCNameFieldText">Název</sys:String>
-    <sys:String x:Key="LOCPlatformFieldText">Platforma</sys:String>
-    <sys:String x:Key="LOCPlaytimeFieldText">Herní čas</sys:String>
-    <sys:String x:Key="LOCPublisherFieldText">Vydavatel</sys:String>
-    <sys:String x:Key="LOCSerieFieldText">Séra</sys:String>
-    <sys:String x:Key="LOCSourceFieldText">Zdroj</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Release Year</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AgeRatingFieldText">Age Rating</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_LastActivitySegmentFieldText">Last Activity Segment</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryFieldText">Playtime Category</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusFieldText">Completion Status</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreFieldText">User Score</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreGroupFieldText">User Score Group</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreRatingFieldText">User Score Rating</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreFieldText">Community Score</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreGroupFieldText">Community Score Group</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreRatingFieldText">Community Score Rating</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreFieldText">Critic Score</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreGroupFieldText">Critic Score Group</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreRatingFieldText">Critic Score Rating</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AddedSegmentFieldText">Added Segment</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusFieldText">Installation Status</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_IsCustomGameFieldText">Custom Game</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ModifiedSegmentFieldText">Modified Segment</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlayCountFieldText">Play Count</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseDateFieldText">Release Date</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_LastActivityFieldText">Last Activity</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_RegionFieldText">Region</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AddedFieldText">Added</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CategoryFieldText">Category</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DeveloperFieldText">Developer</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FavoriteFieldText">Favorite</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FeatureFieldText">Feature</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GenreFieldText">Genre</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HiddenFieldText">Hidden</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ModifiedFieldText">Modified</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NameFieldText">Name</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlatformFieldText">Platform</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeFieldText">Playtime</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PublisherFieldText">Publisher</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SerieFieldText">Serie</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SourceFieldText">Source</sys:String>
     
     <!-- CompletionStatus -->
-    <sys:String x:Key="LOCCompletionStatusAbandoned">Opuštěno</sys:String>
-    <sys:String x:Key="LOCCompletionStatusBeaten">Zbitý</sys:String>
-    <sys:String x:Key="LOCCompletionStatusCompleted">Dokončeno</sys:String>
-    <sys:String x:Key="LOCCompletionStatusNotPlayed">Nehráno</sys:String>
-    <sys:String x:Key="LOCCompletionStatusOnHold">Pozastavit</sys:String>
-    <sys:String x:Key="LOCCompletionStatusPlayed">Přehráno</sys:String>
-    <sys:String x:Key="LOCCompletionStatusPlaying">Přehrává se</sys:String>
-    <sys:String x:Key="LOCCompletionStatusPlanToPlay">Plánovat k přehrávání</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusAbandoned">Abandoned</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusBeaten">Beaten</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusCompleted">Completed</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusNotPlayed">Not Played</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusOnHold">On Hold</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlayed">Played</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlaying">Playing</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlanToPlay">Plan To Play</sys:String>
 
     <!-- PlaytimeCategory -->
-    <sys:String x:Key="LOCPlaytimeCategoryO1000plus">1000+ hours</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryO500_1000">500 až 1000 hodin</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryO100_500">100 až 500 hodin</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryO10_100">10 až 100 hodin</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryO1_10">1 až 10 hodin</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryNotPlayed">Nehráno</sys:String>
-    <sys:String x:Key="LOCPlaytimeCategoryLessThenHour">Méně pak Hodina</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1000plus">1000+ hours</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO500_1000">500 to 1000 hoursy</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO100_500">100 to 500 hours</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO10_100">10 to 100 hours</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1_10">1 to 10 hours</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryNotPlayed">Not Played</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour">Less Then a Hour</sys:String>
 
     <!-- DateSegmentField -->
-    <sys:String x:Key="LOCSegmentFieldMoreThenYear">Více pak před rokem</sys:String>
-    <sys:String x:Key="LOCSegmentFieldPastMonth">Minulý měsíc</sys:String>
-    <sys:String x:Key="LOCSegmentFieldPastWeek">Minulý týden</sys:String>
-    <sys:String x:Key="LOCSegmentFieldPastYear">Minulý rok</sys:String>
-    <sys:String x:Key="LOCSegmentFieldNever">Nikdy</sys:String>
-    <sys:String x:Key="LOCSegmentFieldToday">Dnes</sys:String>
-    <sys:String x:Key="LOCSegmentFieldYesterday">Včera</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldMoreThenYear">More Then a Year ago</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastMonth">Past Month</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastWeek">Past Week</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastYear">Past Year</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldNever">Never</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldToday">Today</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldYesterday">Yesterday</sys:String>
 
     <!-- InstallationStatus -->
-    <sys:String x:Key="LOCInstallationStatusInstalled">Nainstalováno</sys:String>
-    <sys:String x:Key="LOCInstallationStatusUninstalled">Odinstalováno</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusInstalled">Installed</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusUninstalled">Uninstalled</sys:String>
     
     <!-- ScoreGroup -->
-    <sys:String x:Key="LOCScoreGroupO0x">0 až 10</sys:String>
-    <sys:String x:Key="LOCScoreGroupO1x">10 až 20</sys:String>
-    <sys:String x:Key="LOCScoreGroupO2x">20 až 30</sys:String>
-    <sys:String x:Key="LOCScoreGroupO3x">30 až 40</sys:String>
-    <sys:String x:Key="LOCScoreGroupO4x">40 až 50</sys:String>
-    <sys:String x:Key="LOCScoreGroupO5x">50 až 60</sys:String>
-    <sys:String x:Key="LOCScoreGroupO6x">60 až 70</sys:String>
-    <sys:String x:Key="LOCScoreGroupO7x">70 až 80</sys:String>
-    <sys:String x:Key="LOCScoreGroupO8x">80 až 90</sys:String>
-    <sys:String x:Key="LOCScoreGroupO9x">90 až 100</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO0x">0 to 10</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO1x">10 to 20</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO2x">20 to 30</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO3x">30 to 40</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO4x">40 to 50</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO5x">50 to 60</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO6x">60 to 70</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO7x">70 to 80</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO8x">80 to 90</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO9x">90 to 100</sys:String>
     
     <!-- ScoreRating -->
-    <sys:String x:Key="LOCScoreRatingPositive">Pozitivní</sys:String>
-    <sys:String x:Key="LOCScoreRatingNone">Žádné skóre</sys:String>
-    <sys:String x:Key="LOCScoreRatingNegative">Záporný</sys:String>
-    <sys:String x:Key="LOCScoreRatingMixed">Smíšená</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingPositive">Positive</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingNone">No score</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingNegative">Negative</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingMixed">Mixed</sys:String>
 
 
     <!--- ProgresStatus -->
-    <sys:String x:Key="LOCErasingPreviousHTML">Mazání dříve generovaných html souborů...</sys:String>
-    <sys:String x:Key="LOCPreparingGenerateHTML">Příprava na generování html souborů...</sys:String>
-    <sys:String x:Key="LOCGeneratatingHTML">Generování html stránky</sys:String>
-    <sys:String x:Key="LOCGeneratatingHTMLOf">z</sys:String>
-    <sys:String x:Key="LOCGeneratatingHTMEntry">Zápis</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingPreviousHTML">Erasing previously generated html files...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">Preparing to generate html files...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">Generating html page</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTMLOf">of</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTMEntry">Entry</sys:String>
 
     <!-- Finisch text -->
-    <sys:String x:Key="LOCFinishedExportingHTML">Export do HTML...</sys:String>
-    <sys:String x:Key="LOCFinishedExportingHTMLElapsedtime">Uplynulý čas: </sys:String>
-    <sys:String x:Key="LOCFinishedExportingHTMLSuccess">Úspěšně exportované stránky: </sys:String>
-    <sys:String x:Key="LOCFinishedExportingHTMLErrors">Neexportované stránky - chyby: </sys:String>
-    <sys:String x:Key="LOCFinishedExportingHTMLErrorsTemplate">Neexportované stránky - chybná nebo chybějící šablona: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTML">Finished Exporting to HTML...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLElapsedtime">Elapsed time: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLSuccess">Succesfull exported pages: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLErrors">Not exported pages - errors: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLErrorsTemplate">Not exported pages - faulty or missing template: </sys:String>
 
     <!-- errors -->
-    <sys:String x:Key="LOCHTMLExportError">Chyba při exportu HTML</sys:String>
-    <sys:String x:Key="LOCErrorHTMLExpoterNoOutputFolder">V nastavení není zadána žádná stávající výstupní složka!</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExportError">HTML Export Error</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErrorHTMLExpoterNoOutputFolder">No existing output folder specified in settings!</sys:String>
 
     <!-- settingsviex -->
-    <sys:String x:Key="LOCRevertPagesQuestion1">Opravdu chcete vrátit všechny stránky do výchozího nastavení</sys:String>
-    <sys:String x:Key="LOCRevertPagesQuestion2">stránky?</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_RevertPagesQuestion1">Are you sure you want to revert all pages to the default</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_RevertPagesQuestion2">pages?</sys:String>
 
     <!-- true / false value -->
-    <sys:String x:Key="LOCHTMLExporterTrue">Pravda</sys:String>
-    <sys:String x:Key="LOCHTMLExporterFalse">Nepravda</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterTrue">True</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterFalse">False</sys:String>
     
     <!-- HTML Constants -->
-    <sys:String x:Key="LOCHTMLMainMenu">HLAVNÍ MENU</sys:String>
-    <sys:String x:Key="LOCHTMLQuickLinks">Rychlé odkazy</sys:String>
-    <sys:String x:Key="LOCHTMLLinks">Odkazy</sys:String>
-    <sys:String x:Key="LOCHTMLDescription">L 343, 22.12.2009, s. 1).</sys:String>
-    <sys:String x:Key="LOCHTMLDetails">Detaily</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLMainMenu">MAIN MENU</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLQuickLinks">Quick Links</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Links</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Description</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Details</sys:String>
 
 
 

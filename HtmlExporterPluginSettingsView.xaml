@@ -7,9 +7,9 @@
     
     <UserControl.Resources>
         <ContextMenu x:Key="cmRevert">
-            <MenuItem Name="MnuDefaultGrid" Header="{DynamicResource LOCMnuDefaultGrid}" Click="MnuDefaultGrid_Click" />
-            <MenuItem Name="MnuDefaultList" Header="{DynamicResource LOCMnuDefaultList}" Click="MnuDefaultList_Click" />
-            <MenuItem Name="MnuDefaultListText" Header="{DynamicResource LOCMnuDefaultListText}" Click="MnuDefaultListText_Click" />
+            <MenuItem Name="MnuDefaultGrid" Header="{DynamicResource LOC_HTMLEXPORTER_MnuDefaultGrid}" Click="MnuDefaultGrid_Click" />
+            <MenuItem Name="MnuDefaultList" Header="{DynamicResource LOC_HTMLEXPORTER_MnuDefaultList}" Click="MnuDefaultList_Click" />
+            <MenuItem Name="MnuDefaultListText" Header="{DynamicResource LOC_HTMLEXPORTER_MnuDefaultListText}" Click="MnuDefaultListText_Click" />
         </ContextMenu>
         
         <Style  x:Key="NoSpaceItems" TargetType="ComboBoxItem">
@@ -21,15 +21,15 @@
     <StackPanel Margin="5">
         <GroupBox Margin="0,0,0,0">
             <GroupBox.Header>
-                <Label FontWeight="Bold" Content="{DynamicResource LOCGenericSettings}"/>
+                <Label FontWeight="Bold" Content="{DynamicResource LOC_HTMLEXPORTER_GenericSettings}"/>
             </GroupBox.Header>
             <StackPanel>
-                <Label Content="{DynamicResource LOCOutPutFolder}"/>
+                <Label Content="{DynamicResource LOC_HTMLEXPORTER_OutPutFolder}"/>
                 <Grid>
                     <TextBox Height="23" 
                          Text="{Binding OutputFolder, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="TbOutputFolder" HorizontalContentAlignment="Stretch" Margin="0,0,80,0">
                     </TextBox>
-                    <Button x:Name="ButSelectFolder" DockPanel.Dock="Right" Content="{DynamicResource LOCSelect}" Width="75" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Click="ButSelectFolder_Click"/>
+                    <Button x:Name="ButSelectFolder" DockPanel.Dock="Right" Content="{DynamicResource LOC_HTMLEXPORTER_Select}" Width="75" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Click="ButSelectFolder_Click"/>
                 </Grid>
                 <Grid Margin="0,5,0,0">
                     <Grid.ColumnDefinitions>
@@ -39,8 +39,8 @@
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <CheckBox Grid.Column="0" Name="ChkCopyImages" Margin="0,5,0,0" IsChecked="{Binding CopyImages}" Content="{DynamicResource LOCCopyImages}"/>
-                    <CheckBox Grid.Column="1" Name="ChkHiddenGames" Margin="0,5,0,0" IsChecked="{Binding ExcludeHiddenGames}" Content="{DynamicResource LOCExcludeHiddenGames}" />
+                    <CheckBox Grid.Column="0" Name="ChkCopyImages" Margin="0,5,0,0" IsChecked="{Binding CopyImages}" Content="{DynamicResource LOC_HTMLEXPORTER_CopyImages}"/>
+                    <CheckBox Grid.Column="1" Name="ChkHiddenGames" Margin="0,5,0,0" IsChecked="{Binding ExcludeHiddenGames}" Content="{DynamicResource LOC_HTMLEXPORTER_ExcludeHiddenGames}" />
                 </Grid>
                 <Grid Margin="0,5,0,0">
                     <Grid.ColumnDefinitions>
@@ -52,27 +52,27 @@
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Label Grid.Column="0" Content="{DynamicResource LOCExcludedPlatforms}"/>
+                    <Label Grid.Column="0" Content="{DynamicResource LOC_HTMLEXPORTER_ExcludedPlatforms}"/>
                     <ComboBox Grid.Column="1" x:Name="PlatformsComboBox" ItemContainerStyle="{StaticResource NoSpaceItems}" StaysOpenOnEdit="True" IsSynchronizedWithCurrentItem="False" IsEditable="True" PreviewKeyUp="PlatformsComboBox_PreviewKeyUp"  IsTextSearchEnabled="False" DropDownClosed="PlatformsComboBox_DropDownClosed" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Margin="5,0,0,0"/>
-                    <Label Grid.Column="2" Margin="5,0,0,0" Content="{DynamicResource LOCExcludedSources}"/>
+                    <Label Grid.Column="2" Margin="5,0,0,0" Content="{DynamicResource LOC_HTMLEXPORTER_ExcludedSources}"/>
                     <ComboBox Grid.Column="3" x:Name="SourceComboBox" ItemContainerStyle="{StaticResource NoSpaceItems}" StaysOpenOnEdit="True" IsSynchronizedWithCurrentItem="False" IsEditable="True" PreviewKeyUp="SourceComboBox_PreviewKeyUp"  IsTextSearchEnabled="False" Margin="5,0,0,0" DropDownClosed="SourceComboBox_DropDownClosed" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
                 </Grid>
             </StackPanel>
         </GroupBox>
         <GroupBox Margin="0,5,0,0">
             <GroupBox.Header>
-                <Label FontWeight="Bold" Content="{DynamicResource LOCPageSettings}"/>
+                <Label FontWeight="Bold" Content="{DynamicResource LOC_HTMLEXPORTER_PageSettings}"/>
             </GroupBox.Header>
             <StackPanel>
                 <DataGrid Margin="0,0,0,0" SelectionMode="Single" x:Name="PagesDataGrid" Height="164" AutoGenerateColumns="False" 
                           CanUserSortColumns="False" LoadingRow="PagesDataGrid_LoadingRow" Loaded="PagesDataGrid_Loaded">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="{DynamicResource LOCColPageTitle}" Binding="{Binding Pagetitle}" Width="6*" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{DynamicResource LOCColTemplate}" Binding="{Binding Templatefoldername}" Width="5*" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{DynamicResource LOCColGroupField}" Binding="{Binding Groupfield}" Width="4*" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{DynamicResource LOCColAsc}" Binding="{Binding GroupAscending}" Width="50" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{DynamicResource LOCColSortField}" Binding="{Binding Sortfield}" Width="4*" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{DynamicResource LOCColAsc}" Binding="{Binding SortAscending}" Width="50" IsReadOnly="True" />
+                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColPageTitle}" Binding="{Binding Pagetitle}" Width="6*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColTemplate}" Binding="{Binding Templatefoldername}" Width="5*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColGroupField}" Binding="{Binding Groupfield}" Width="4*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColAsc}" Binding="{Binding GroupAscending}" Width="50" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColSortField}" Binding="{Binding Sortfield}" Width="4*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColAsc}" Binding="{Binding SortAscending}" Width="50" IsReadOnly="True" />
                     </DataGrid.Columns>
                 </DataGrid>
                 <StackPanel Margin="0,5,0,0">
@@ -87,11 +87,11 @@
                             <ColumnDefinition Width="90"/>
                             <ColumnDefinition Width="8*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource LOCColPageTitle}"/>
+                        <Label Grid.Row="0" Grid.Column="0" Content="{DynamicResource LOC_HTMLEXPORTER_ColPageTitle}"/>
                         <TextBox Grid.Row="0" Grid.Column="1" Name="PageTitle"  Height="23" DataContext="{Binding Path=SelectedItem, ElementName=PagesDataGrid}"
                         Text="{Binding Pagetitle}" VerticalAlignment="Center" HorizontalAlignment="Stretch" />
 
-                        <Label Grid.Row="1" Grid.Column="0" Content="{DynamicResource LOCColTemplate}"/>
+                        <Label Grid.Row="1" Grid.Column="0" Content="{DynamicResource LOC_HTMLEXPORTER_ColTemplate}"/>
                         <Grid Grid.Row="1" Grid.Column="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -105,7 +105,7 @@
                         </Grid>
 
 
-                        <Label Grid.Row="2" Grid.Column="0" Content="{DynamicResource LOCColGroupField}" />
+                        <Label Grid.Row="2" Grid.Column="0" Content="{DynamicResource LOC_HTMLEXPORTER_ColGroupField}" />
                         <Grid Grid.Row="2" Grid.Column="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -120,11 +120,11 @@
                             <ComboBox Grid.Row="0" Grid.Column="0" Name="GroupField"  Height="23" ItemsSource="{Binding AvailableGroupFields}"  
                      SelectedValue="{Binding Path=SelectedItem.Groupfield, ElementName=PagesDataGrid}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,5,0,0" Grid.ColumnSpan="3" />
                             <CheckBox Grid.Row="0" Grid.Column="3" Name="GroupAsc"  DataContext="{Binding Path=SelectedItem, ElementName=PagesDataGrid}"
-                     IsChecked="{Binding GroupAscending}"  HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="5,8,0,5" Content="{DynamicResource LOCAscending}"/>
+                     IsChecked="{Binding GroupAscending}"  HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="5,8,0,5" Content="{DynamicResource LOC_HTMLEXPORTER_Ascending}"/>
                         </Grid>
 
 
-                        <Label Grid.Row="4" Grid.Column="0" Content="{DynamicResource LOCColSortField}" />
+                        <Label Grid.Row="4" Grid.Column="0" Content="{DynamicResource LOC_HTMLEXPORTER_ColSortField}" />
                         <Grid Grid.Row="4" Grid.Column="1" >
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -137,7 +137,7 @@
                      SelectedValue="{Binding Path=SelectedItem.Sortfield, ElementName=PagesDataGrid}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,5,0,0" />
 
                             <CheckBox Grid.Row="0" Grid.Column="1" Name="SortAsc" DataContext="{Binding Path=SelectedItem, ElementName=PagesDataGrid}"
-                     IsChecked="{Binding SortAscending}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,0,0" Content="{DynamicResource LOCAscending}"/>
+                     IsChecked="{Binding SortAscending}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,0,0" Content="{DynamicResource LOC_HTMLEXPORTER_Ascending}"/>
                         </Grid>
                     </Grid>
                 </StackPanel>
@@ -153,11 +153,11 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Button Name="BtnAdd" Grid.Column="0" Margin="4,0,4,0" Click="BtnAdd_Click" Content="{DynamicResource LOCButAddPage}"></Button>
-                    <Button Name="BtnDel" Grid.Column="1" Margin="4,0,4,0" Click="BtnDel_Click" Content="{DynamicResource LOCButDelPage}"></Button>
-                    <Button Name="BtnMoveUp" Grid.Column="2" Margin="4,0,4,0" Click="BtnMoveUp_Click" Content="{DynamicResource LOCButPageUp}"></Button>
-                    <Button Name="BtnMoveDown" Grid.Column="3" Margin="4,0,4,0" Click="BtnMoveDown_Click" Content="{DynamicResource LOCButPageDown}"></Button>
-                    <Button Name="BtnReset" Grid.Column="4" Margin="4,0,4,0" Click="BtnReset_Click" VerticalAlignment="Bottom" Content="{DynamicResource LOCButRevertTo}"></Button>
+                    <Button Name="BtnAdd" Grid.Column="0" Margin="4,0,4,0" Click="BtnAdd_Click" Content="{DynamicResource LOC_HTMLEXPORTER_ButAddPage}"></Button>
+                    <Button Name="BtnDel" Grid.Column="1" Margin="4,0,4,0" Click="BtnDel_Click" Content="{DynamicResource LOC_HTMLEXPORTER_ButDelPage}"></Button>
+                    <Button Name="BtnMoveUp" Grid.Column="2" Margin="4,0,4,0" Click="BtnMoveUp_Click" Content="{DynamicResource LOC_HTMLEXPORTER_ButPageUp}"></Button>
+                    <Button Name="BtnMoveDown" Grid.Column="3" Margin="4,0,4,0" Click="BtnMoveDown_Click" Content="{DynamicResource LOC_HTMLEXPORTER_ButPageDown}"></Button>
+                    <Button Name="BtnReset" Grid.Column="4" Margin="4,0,4,0" Click="BtnReset_Click" VerticalAlignment="Bottom" Content="{DynamicResource LOC_HTMLEXPORTER_ButRevertTo}"></Button>
                 </Grid>
             </StackPanel>
 
