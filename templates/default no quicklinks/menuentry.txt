@@ -1,0 +1,1 @@
+<a Class="MenuButton" href="%pagefilename%">%pagetitle%</A>

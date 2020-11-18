@@ -1,0 +1,171 @@
+﻿<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+    <!-- settings screen -->
+    <sys:String x:Key="LOCGenericSettings">Общие настройки</sys:String>
+    <sys:String x:Key="LOCOutPutFolder">Выходная папка для html экспорта</sys:String>
+    <sys:String x:Key="LOCSelect">Выбрать</sys:String>
+    <sys:String x:Key="LOCCopyImages">Копировать изображения в папку для вывода</sys:String>
+    <sys:String x:Key="LOCExcludeHiddenGames">Исключить скрытые игры</sys:String>
+    <sys:String x:Key="LOCExcludedPlatforms">Исключенные платформы:</sys:String>
+    <sys:String x:Key="LOCExcludedSources">Исключенные источники:</sys:String>
+    <sys:String x:Key="LOCPageSettings">Настройки страницы</sys:String>
+
+    <sys:String x:Key="LOCColPageTitle">Название страницы</sys:String>
+    <sys:String x:Key="LOCColTemplate">Шаблон</sys:String>
+    <sys:String x:Key="LOCColGroupField">Поле группы</sys:String>
+    <sys:String x:Key="LOCColAsc">Asc.</sys:String>
+    <sys:String x:Key="LOCColSortField">Поле сортировки</sys:String>
+
+    <sys:String x:Key="LOCAscending">По возрастанию</sys:String>
+    
+    <sys:String x:Key="LOCButAddPage">Добавить страницу</sys:String>
+    <sys:String x:Key="LOCButDelPage">Del Page</sys:String>
+    <sys:String x:Key="LOCButPageUp">Страница вверх</sys:String>
+    <sys:String x:Key="LOCButPageDown">Страница вниз</sys:String>
+    <sys:String x:Key="LOCButRevertTo">Вернуться к</sys:String>
+
+    <sys:String x:Key="LOCMnuDefaultGrid">Сетка по умолчанию (требуется изображение)</sys:String>
+    <sys:String x:Key="LOCMnuDefaultList">Список по умолчанию (требуется изображение)</sys:String>
+    <sys:String x:Key="LOCMnuDefaultListText">Список по умолчанию (только текст)</sys:String>
+
+    <!-- misc -->
+    <sys:String x:Key="LOCNotGroupedField">[Не сгруппирован]</sys:String>
+    <sys:String x:Key="LOCNotGroupedSanitezedName">Не группируется</sys:String>
+    <sys:String x:Key="LOCUndefinedString">Не определено</sys:String>
+    <sys:String x:Key="LOCNotPlayedText">Не сыграно</sys:String>
+    <sys:String x:Key="LOCNeverText">Никогда</sys:String>
+    <sys:String x:Key="LOCNoneText">Нет</sys:String>
+    <sys:String x:Key="LOCDescendingText">по убыванию</sys:String>
+    <sys:String x:Key="LOCAscendingText">по возрастанию</sys:String>
+    <sys:String x:Key="LOCHTMLExporterMenu">Экспорт Html</sys:String>
+    <sys:String x:Key="LOCHTMLExporterSubMenu">Экспорт</sys:String>
+    
+    
+    
+    <!-- FIELDS -->
+    <sys:String x:Key="LOCReleaseYearFieldText">Год выпуска</sys:String>
+    <sys:String x:Key="LOCAgeRatingFieldText">Возраст рейтинга</sys:String>
+    <sys:String x:Key="LOCLastActivitySegmentFieldText">Последний сегмент активности</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryFieldText">Категория игрового времени</sys:String>
+    <sys:String x:Key="LOCCompletionStatusFieldText">Статус завершения</sys:String>
+    <sys:String x:Key="LOCUserScoreFieldText">Результат пользователя</sys:String>
+    <sys:String x:Key="LOCUserScoreGroupFieldText">Группа очков пользователя</sys:String>
+    <sys:String x:Key="LOCUserScoreRatingFieldText">Рейтинг Пользователя</sys:String>
+    <sys:String x:Key="LOCCommunityScoreFieldText">Результат сообщества</sys:String>
+    <sys:String x:Key="LOCCommunityScoreGroupFieldText">Группа очков сообщества</sys:String>
+    <sys:String x:Key="LOCCommunityScoreRatingFieldText">Рейтинг Сообщества</sys:String>
+    <sys:String x:Key="LOCCriticScoreFieldText">Критический Очки</sys:String>
+    <sys:String x:Key="LOCCriticScoreGroupFieldText">Группа очков критики</sys:String>
+    <sys:String x:Key="LOCCriticScoreRatingFieldText">Рейтинг критических оценок</sys:String>
+    <sys:String x:Key="LOCAddedSegmentFieldText">Добавлен сегмент</sys:String>
+    <sys:String x:Key="LOCInstallationStatusFieldText">Статус установки</sys:String>
+    <sys:String x:Key="LOCIsCustomGameFieldText">Другая игра</sys:String>
+    <sys:String x:Key="LOCModifiedSegmentFieldText">Изменённый сегмент</sys:String>
+    <sys:String x:Key="LOCPlayCountFieldText">Счетчик игр</sys:String>
+    <sys:String x:Key="LOCReleaseDateFieldText">Дата выпуска</sys:String>
+    <sys:String x:Key="LOCLastActivityFieldText">Последняя активность</sys:String>
+    <sys:String x:Key="LOCRegionFieldText">Регион</sys:String>
+    <sys:String x:Key="LOCAddedFieldText">Добавлено</sys:String>
+    <sys:String x:Key="LOCCategoryFieldText">Категория</sys:String>
+    <sys:String x:Key="LOCDeveloperFieldText">Разработчик</sys:String>
+    <sys:String x:Key="LOCFavoriteFieldText">Избранное</sys:String>
+    <sys:String x:Key="LOCFeatureFieldText">Функция</sys:String>
+    <sys:String x:Key="LOCGenreFieldText">Жанр</sys:String>
+    <sys:String x:Key="LOCHiddenFieldText">Hidden</sys:String>
+    <sys:String x:Key="LOCModifiedFieldText">Изменено</sys:String>
+    <sys:String x:Key="LOCNameFieldText">Наименование</sys:String>
+    <sys:String x:Key="LOCPlatformFieldText">Платформа</sys:String>
+    <sys:String x:Key="LOCPlaytimeFieldText">Время игры</sys:String>
+    <sys:String x:Key="LOCPublisherFieldText">Издатель</sys:String>
+    <sys:String x:Key="LOCSerieFieldText">Серия</sys:String>
+    <sys:String x:Key="LOCSourceFieldText">Источник</sys:String>
+    
+    <!-- CompletionStatus -->
+    <sys:String x:Key="LOCCompletionStatusAbandoned">Покинуто</sys:String>
+    <sys:String x:Key="LOCCompletionStatusBeaten">Бит</sys:String>
+    <sys:String x:Key="LOCCompletionStatusCompleted">Выполнено</sys:String>
+    <sys:String x:Key="LOCCompletionStatusNotPlayed">Не сыграно</sys:String>
+    <sys:String x:Key="LOCCompletionStatusOnHold">На удержании</sys:String>
+    <sys:String x:Key="LOCCompletionStatusPlayed">Играл</sys:String>
+    <sys:String x:Key="LOCCompletionStatusPlaying">Играет</sys:String>
+    <sys:String x:Key="LOCCompletionStatusPlanToPlay">План для игры</sys:String>
+
+    <!-- PlaytimeCategory -->
+    <sys:String x:Key="LOCPlaytimeCategoryO1000plus">1000+ hours</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO500_1000">от 500 до 1000 часов</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO100_500">от 100 до 500 часов</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO10_100">от 10 до 100 часов</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO1_10">от 1 до 10 часов</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryNotPlayed">Не сыграно</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryLessThenHour">Меньше чем сейчас</sys:String>
+
+    <!-- DateSegmentField -->
+    <sys:String x:Key="LOCSegmentFieldMoreThenYear">Ещё год назад</sys:String>
+    <sys:String x:Key="LOCSegmentFieldPastMonth">Прошлый месяц</sys:String>
+    <sys:String x:Key="LOCSegmentFieldPastWeek">Прошлая неделя</sys:String>
+    <sys:String x:Key="LOCSegmentFieldPastYear">Прошлый год</sys:String>
+    <sys:String x:Key="LOCSegmentFieldNever">Никогда</sys:String>
+    <sys:String x:Key="LOCSegmentFieldToday">Сегодня</sys:String>
+    <sys:String x:Key="LOCSegmentFieldYesterday">Вчера</sys:String>
+
+    <!-- InstallationStatus -->
+    <sys:String x:Key="LOCInstallationStatusInstalled">Установлено</sys:String>
+    <sys:String x:Key="LOCInstallationStatusUninstalled">Удалено</sys:String>
+    
+    <!-- ScoreGroup -->
+    <sys:String x:Key="LOCScoreGroupO0x">От 0 до 10</sys:String>
+    <sys:String x:Key="LOCScoreGroupO1x">от 10 до 20</sys:String>
+    <sys:String x:Key="LOCScoreGroupO2x">от 20 до 30</sys:String>
+    <sys:String x:Key="LOCScoreGroupO3x">от 30 до 40</sys:String>
+    <sys:String x:Key="LOCScoreGroupO4x">от 40 до 50</sys:String>
+    <sys:String x:Key="LOCScoreGroupO5x">от 50 до 60</sys:String>
+    <sys:String x:Key="LOCScoreGroupO6x">от 60 до 70</sys:String>
+    <sys:String x:Key="LOCScoreGroupO7x">от 70 до 80</sys:String>
+    <sys:String x:Key="LOCScoreGroupO8x">от 80 до 90</sys:String>
+    <sys:String x:Key="LOCScoreGroupO9x">от 90 до 100</sys:String>
+    
+    <!-- ScoreRating -->
+    <sys:String x:Key="LOCScoreRatingPositive">Положительный</sys:String>
+    <sys:String x:Key="LOCScoreRatingNone">Нет баллов</sys:String>
+    <sys:String x:Key="LOCScoreRatingNegative">Отрицательный</sys:String>
+    <sys:String x:Key="LOCScoreRatingMixed">Смешанный</sys:String>
+
+
+    <!--- ProgresStatus -->
+    <sys:String x:Key="LOCErasingPreviousHTML">Удаление ранее сгенерированных html-файлов...</sys:String>
+    <sys:String x:Key="LOCPreparingGenerateHTML">Подготовка к генерации html-файлов...</sys:String>
+    <sys:String x:Key="LOCGeneratatingHTML">Создание html-страницы</sys:String>
+    <sys:String x:Key="LOCGeneratatingHTMLOf">из</sys:String>
+    <sys:String x:Key="LOCGeneratatingHTMEntry">Вход</sys:String>
+
+    <!-- Finisch text -->
+    <sys:String x:Key="LOCFinishedExportingHTML">Экспорт в HTML...</sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLElapsedtime">Прошло времени: </sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLSuccess">Успешно экспортированы страницы: </sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLErrors">Не экспортированы страницы - ошибки: </sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLErrorsTemplate">Не экспортированы страницы - неверный или отсутствующий шаблон: </sys:String>
+
+    <!-- errors -->
+    <sys:String x:Key="LOCHTMLExportError">Ошибка экспорта HTML</sys:String>
+    <sys:String x:Key="LOCErrorHTMLExpoterNoOutputFolder">В настройках не указана папка вывода!</sys:String>
+
+    <!-- settingsviex -->
+    <sys:String x:Key="LOCRevertPagesQuestion1">Вы уверены, что хотите вернуть все страницы по умолчанию</sys:String>
+    <sys:String x:Key="LOCRevertPagesQuestion2">страницы?</sys:String>
+
+    <!-- true / false value -->
+    <sys:String x:Key="LOCHTMLExporterTrue">Истина</sys:String>
+    <sys:String x:Key="LOCHTMLExporterFalse">Ложь</sys:String>
+    
+    <!-- HTML Constants -->
+    <sys:String x:Key="LOCHTMLMainMenu">МАРШРУТ</sys:String>
+    <sys:String x:Key="LOCHTMLQuickLinks">Быстрые ссылки</sys:String>
+    <sys:String x:Key="LOCHTMLLinks">Ссылки</sys:String>
+    <sys:String x:Key="LOCHTMLDescription">Описание</sys:String>
+    <sys:String x:Key="LOCHTMLDetails">Детали</sys:String>
+
+
+
+</ResourceDictionary>

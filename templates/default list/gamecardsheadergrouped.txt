@@ -1,0 +1,8 @@
+</TBODY>
+<TBODY> 
+<TH id="quicklink-%groupname%"><TR><TD colspan="9"><h2 id="h2jscript" onclick="ShowHide('%groupname%')"><strong id="eye-%groupname%" style="color: #007962;">&#x25BC;</strong><strong>%groupname%<span>( %groupcount% )</span></strong></h2></TD></TR></TH>
+</TBODY>
+<TBODY id="%groupname%">
+
+%gamecardsheader%
+%gamecards%

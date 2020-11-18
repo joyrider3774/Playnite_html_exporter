@@ -1,0 +1,4 @@
+%gamecardsheader%
+<div id="%groupname%" class="cards">
+%gamecards%
+</div>

@@ -1,0 +1,1 @@
+<a href="%linkurl%" target="_blank">%linkname%</a><br/>

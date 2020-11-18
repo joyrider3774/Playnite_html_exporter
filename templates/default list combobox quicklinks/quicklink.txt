@@ -1,0 +1,1 @@
+<option value="#quicklink-%groupname%">%groupname% (%groupcount%)</option>

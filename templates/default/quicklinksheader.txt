@@ -1,0 +1,1 @@
+<h2><strong>%quicklinks_name%</strong></h2>

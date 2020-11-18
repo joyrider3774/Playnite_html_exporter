@@ -1,0 +1,1 @@
+<div id="quicklink-%groupname%"><h2 id="h2jscript" onclick="ShowHide('%groupname%')"><strong id="eye-%groupname%" style="color: #007962;">&#x25BC;</strong><strong>%groupname%<span>( %groupcount% )</span></strong></h2></div>

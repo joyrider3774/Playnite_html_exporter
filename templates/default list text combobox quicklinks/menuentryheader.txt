@@ -1,0 +1,1 @@
+<h2><strong>%mainmenu_name% - %pagetitle%<span>(%groupfield% %groupfieldsort% / %sortfield% %sortfieldsort%)</span></strong></h2>

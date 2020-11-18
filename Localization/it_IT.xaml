@@ -1,0 +1,171 @@
+﻿<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+    <!-- settings screen -->
+    <sys:String x:Key="LOCGenericSettings">Impostazioni Generiche</sys:String>
+    <sys:String x:Key="LOCOutPutFolder">Cartella di output per l'esportazione html</sys:String>
+    <sys:String x:Key="LOCSelect">Seleziona</sys:String>
+    <sys:String x:Key="LOCCopyImages">Copia immagini nella cartella di output</sys:String>
+    <sys:String x:Key="LOCExcludeHiddenGames">Escludi giochi nascosti</sys:String>
+    <sys:String x:Key="LOCExcludedPlatforms">Piattaforme Escluse:</sys:String>
+    <sys:String x:Key="LOCExcludedSources">Sorgenti Escluse</sys:String>
+    <sys:String x:Key="LOCPageSettings">Impostazioni Pagina</sys:String>
+
+    <sys:String x:Key="LOCColPageTitle">Titolo Della Pagina</sys:String>
+    <sys:String x:Key="LOCColTemplate">Modello</sys:String>
+    <sys:String x:Key="LOCColGroupField">Campo Gruppo</sys:String>
+    <sys:String x:Key="LOCColAsc">Asc.</sys:String>
+    <sys:String x:Key="LOCColSortField">Ordina Campo</sys:String>
+
+    <sys:String x:Key="LOCAscending">Crescente</sys:String>
+    
+    <sys:String x:Key="LOCButAddPage">Aggiungi Pagina</sys:String>
+    <sys:String x:Key="LOCButDelPage">Del Page</sys:String>
+    <sys:String x:Key="LOCButPageUp">Pagina Su</sys:String>
+    <sys:String x:Key="LOCButPageDown">Pagina Giù</sys:String>
+    <sys:String x:Key="LOCButRevertTo">Ripristina a</sys:String>
+
+    <sys:String x:Key="LOCMnuDefaultGrid">Griglia predefinita (Richiede immagini)</sys:String>
+    <sys:String x:Key="LOCMnuDefaultList">Elenco predefinito (Richiede immagini)</sys:String>
+    <sys:String x:Key="LOCMnuDefaultListText">Elenco predefinito (solo testo)</sys:String>
+
+    <!-- misc -->
+    <sys:String x:Key="LOCNotGroupedField">[Non Raggruppato]</sys:String>
+    <sys:String x:Key="LOCNotGroupedSanitezedName">Non Raggruppato</sys:String>
+    <sys:String x:Key="LOCUndefinedString">Indefinito</sys:String>
+    <sys:String x:Key="LOCNotPlayedText">Non Riprodotto</sys:String>
+    <sys:String x:Key="LOCNeverText">Mai</sys:String>
+    <sys:String x:Key="LOCNoneText">Nessuno</sys:String>
+    <sys:String x:Key="LOCDescendingText">discendente</sys:String>
+    <sys:String x:Key="LOCAscendingText">ascendente</sys:String>
+    <sys:String x:Key="LOCHTMLExporterMenu">Esportatore HTML</sys:String>
+    <sys:String x:Key="LOCHTMLExporterSubMenu">Esporta</sys:String>
+    
+    
+    
+    <!-- FIELDS -->
+    <sys:String x:Key="LOCReleaseYearFieldText">Anno Di Rilascio</sys:String>
+    <sys:String x:Key="LOCAgeRatingFieldText">Valutazione Dell'Età</sys:String>
+    <sys:String x:Key="LOCLastActivitySegmentFieldText">Ultima Attività Segmento</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryFieldText">Categoria Playtime</sys:String>
+    <sys:String x:Key="LOCCompletionStatusFieldText">Stato Completamento</sys:String>
+    <sys:String x:Key="LOCUserScoreFieldText">Punteggio Utente</sys:String>
+    <sys:String x:Key="LOCUserScoreGroupFieldText">Gruppo Punteggio Utente</sys:String>
+    <sys:String x:Key="LOCUserScoreRatingFieldText">Punteggio Utente</sys:String>
+    <sys:String x:Key="LOCCommunityScoreFieldText">Punteggio Della Community</sys:String>
+    <sys:String x:Key="LOCCommunityScoreGroupFieldText">Gruppo Punteggio Della Community</sys:String>
+    <sys:String x:Key="LOCCommunityScoreRatingFieldText">Punteggio Della Community</sys:String>
+    <sys:String x:Key="LOCCriticScoreFieldText">Punteggio Critico</sys:String>
+    <sys:String x:Key="LOCCriticScoreGroupFieldText">Gruppo Punteggio Critico</sys:String>
+    <sys:String x:Key="LOCCriticScoreRatingFieldText">Valutazione Punteggio Critico</sys:String>
+    <sys:String x:Key="LOCAddedSegmentFieldText">Segmento Aggiunto</sys:String>
+    <sys:String x:Key="LOCInstallationStatusFieldText">Stato Dell'Installazione</sys:String>
+    <sys:String x:Key="LOCIsCustomGameFieldText">Gioco Personalizzato</sys:String>
+    <sys:String x:Key="LOCModifiedSegmentFieldText">Segmento Modificato</sys:String>
+    <sys:String x:Key="LOCPlayCountFieldText">Contatore Riproduzioni</sys:String>
+    <sys:String x:Key="LOCReleaseDateFieldText">Data Di Rilascio</sys:String>
+    <sys:String x:Key="LOCLastActivityFieldText">Ultima Attività</sys:String>
+    <sys:String x:Key="LOCRegionFieldText">Regione</sys:String>
+    <sys:String x:Key="LOCAddedFieldText">Aggiunto</sys:String>
+    <sys:String x:Key="LOCCategoryFieldText">Categoria</sys:String>
+    <sys:String x:Key="LOCDeveloperFieldText">Sviluppatore</sys:String>
+    <sys:String x:Key="LOCFavoriteFieldText">Preferito</sys:String>
+    <sys:String x:Key="LOCFeatureFieldText">Caratteristica</sys:String>
+    <sys:String x:Key="LOCGenreFieldText">Genere</sys:String>
+    <sys:String x:Key="LOCHiddenFieldText">Hidden</sys:String>
+    <sys:String x:Key="LOCModifiedFieldText">Modificato</sys:String>
+    <sys:String x:Key="LOCNameFieldText">Nome</sys:String>
+    <sys:String x:Key="LOCPlatformFieldText">Piattaforma</sys:String>
+    <sys:String x:Key="LOCPlaytimeFieldText">Playtime</sys:String>
+    <sys:String x:Key="LOCPublisherFieldText">Editore</sys:String>
+    <sys:String x:Key="LOCSerieFieldText">Serie</sys:String>
+    <sys:String x:Key="LOCSourceFieldText">Fonte</sys:String>
+    
+    <!-- CompletionStatus -->
+    <sys:String x:Key="LOCCompletionStatusAbandoned">Abbandonato</sys:String>
+    <sys:String x:Key="LOCCompletionStatusBeaten">Beaten</sys:String>
+    <sys:String x:Key="LOCCompletionStatusCompleted">Completato</sys:String>
+    <sys:String x:Key="LOCCompletionStatusNotPlayed">Non Riprodotto</sys:String>
+    <sys:String x:Key="LOCCompletionStatusOnHold">In Attesa</sys:String>
+    <sys:String x:Key="LOCCompletionStatusPlayed">Giocato</sys:String>
+    <sys:String x:Key="LOCCompletionStatusPlaying">Riproduzione</sys:String>
+    <sys:String x:Key="LOCCompletionStatusPlanToPlay">Pianifica Di Giocare</sys:String>
+
+    <!-- PlaytimeCategory -->
+    <sys:String x:Key="LOCPlaytimeCategoryO1000plus">1000+ hours</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO500_1000">da 500 a 1000 ore</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO100_500">da 100 a 500 ore</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO10_100">da 10 a 100 ore</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO1_10">da 1 a 10 ore</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryNotPlayed">Non Riprodotto</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryLessThenHour">Meno di un'ora</sys:String>
+
+    <!-- DateSegmentField -->
+    <sys:String x:Key="LOCSegmentFieldMoreThenYear">Più Poi un anno fa</sys:String>
+    <sys:String x:Key="LOCSegmentFieldPastMonth">Mese Passato</sys:String>
+    <sys:String x:Key="LOCSegmentFieldPastWeek">Settimana Passata</sys:String>
+    <sys:String x:Key="LOCSegmentFieldPastYear">Anno Passato</sys:String>
+    <sys:String x:Key="LOCSegmentFieldNever">Mai</sys:String>
+    <sys:String x:Key="LOCSegmentFieldToday">Oggi</sys:String>
+    <sys:String x:Key="LOCSegmentFieldYesterday">Ieri</sys:String>
+
+    <!-- InstallationStatus -->
+    <sys:String x:Key="LOCInstallationStatusInstalled">Installato</sys:String>
+    <sys:String x:Key="LOCInstallationStatusUninstalled">Disinstallato</sys:String>
+    
+    <!-- ScoreGroup -->
+    <sys:String x:Key="LOCScoreGroupO0x">da 0 a 10</sys:String>
+    <sys:String x:Key="LOCScoreGroupO1x">da 10 a 20</sys:String>
+    <sys:String x:Key="LOCScoreGroupO2x">da 20 a 30</sys:String>
+    <sys:String x:Key="LOCScoreGroupO3x">da 30 a 40</sys:String>
+    <sys:String x:Key="LOCScoreGroupO4x">da 40 a 50</sys:String>
+    <sys:String x:Key="LOCScoreGroupO5x">da 50 a 60</sys:String>
+    <sys:String x:Key="LOCScoreGroupO6x">da 60 a 70</sys:String>
+    <sys:String x:Key="LOCScoreGroupO7x">da 70 a 80</sys:String>
+    <sys:String x:Key="LOCScoreGroupO8x">da 80 a 90</sys:String>
+    <sys:String x:Key="LOCScoreGroupO9x">da 90 a 100</sys:String>
+    
+    <!-- ScoreRating -->
+    <sys:String x:Key="LOCScoreRatingPositive">Positivo</sys:String>
+    <sys:String x:Key="LOCScoreRatingNone">Nessun punteggio</sys:String>
+    <sys:String x:Key="LOCScoreRatingNegative">Negativo</sys:String>
+    <sys:String x:Key="LOCScoreRatingMixed">Misto</sys:String>
+
+
+    <!--- ProgresStatus -->
+    <sys:String x:Key="LOCErasingPreviousHTML">Cancellazione dei file html precedentemente generati...</sys:String>
+    <sys:String x:Key="LOCPreparingGenerateHTML">Preparazione per generare i file html...</sys:String>
+    <sys:String x:Key="LOCGeneratatingHTML">Generazione pagina html</sys:String>
+    <sys:String x:Key="LOCGeneratatingHTMLOf">di</sys:String>
+    <sys:String x:Key="LOCGeneratatingHTMEntry">Voce</sys:String>
+
+    <!-- Finisch text -->
+    <sys:String x:Key="LOCFinishedExportingHTML">Esportazione terminata in HTML...</sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLElapsedtime">Tempo trascorso: </sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLSuccess">Pagine esportate con successo: </sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLErrors">Pagine non esportate - errori: </sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLErrorsTemplate">Pagine non esportate - modello difettoso o mancante: </sys:String>
+
+    <!-- errors -->
+    <sys:String x:Key="LOCHTMLExportError">Errore Di Esportazione Html</sys:String>
+    <sys:String x:Key="LOCErrorHTMLExpoterNoOutputFolder">Nessuna cartella di output esistente specificata nelle impostazioni!</sys:String>
+
+    <!-- settingsviex -->
+    <sys:String x:Key="LOCRevertPagesQuestion1">Sei sicuro di voler ripristinare tutte le pagine al valore predefinito</sys:String>
+    <sys:String x:Key="LOCRevertPagesQuestion2">pagine?</sys:String>
+
+    <!-- true / false value -->
+    <sys:String x:Key="LOCHTMLExporterTrue">Vero</sys:String>
+    <sys:String x:Key="LOCHTMLExporterFalse">Falso</sys:String>
+    
+    <!-- HTML Constants -->
+    <sys:String x:Key="LOCHTMLMainMenu">MENU PRINCIPALE</sys:String>
+    <sys:String x:Key="LOCHTMLQuickLinks">Collegamenti Rapidi</sys:String>
+    <sys:String x:Key="LOCHTMLLinks">Collegamenti</sys:String>
+    <sys:String x:Key="LOCHTMLDescription">Descrizione</sys:String>
+    <sys:String x:Key="LOCHTMLDetails">Dettagli</sys:String>
+
+
+
+</ResourceDictionary>

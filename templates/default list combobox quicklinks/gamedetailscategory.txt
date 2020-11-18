@@ -1,0 +1,1 @@
+<a href="%category_filename%#quicklink-%category%">%category%</a><br/>

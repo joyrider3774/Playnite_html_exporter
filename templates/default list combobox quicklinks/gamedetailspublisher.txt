@@ -1,0 +1,1 @@
+<a href="%publisher_filename%#quicklink-%publisher%">%publisher%</a><br/>

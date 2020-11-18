@@ -1,0 +1,4 @@
+%gamecardsheader%
+<div class="cards">
+%gamecards%
+</div>

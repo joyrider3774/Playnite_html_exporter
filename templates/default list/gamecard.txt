@@ -1,0 +1,12 @@
+<TR>
+	<TD><img class="lozad" data-src="%icon%" height="32"></TD>
+	<TD>%count%.</TD>
+	<TD><a href="%detailspagefilename%"><P id="label">%gamename%</P></a></TD>
+	<TD><a href="%%groupfieldrealnamelowerexceptname%_filename%#quicklink-%%groupfieldrealnamelowerexceptname%%">%%groupfieldrealnamelowerexceptname%%</a></TD>
+	<TD><a href="%lastactivitysegment_filename%#quicklink-%lastactivitysegment%">%lastactivitysegment%</a></TD>
+	<TD><a href="%added_filename%#quicklink-%addeddate%">%addeddate%</a> %addedtime%</TD>
+	<TD><a href="%playtime_filename%#quicklink-%playtime%">%playtime%</a></TD>
+	<TD><a href="%source_filename%#quicklink-%source%">%source%</a></TD>
+	<TD><a href="%platform_filename%#quicklink-%platform%">%platform%</a></TD>
+</TR>
+

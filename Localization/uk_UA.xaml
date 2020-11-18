@@ -1,0 +1,171 @@
+﻿<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+    <!-- settings screen -->
+    <sys:String x:Key="LOCGenericSettings">Загальне налаштування</sys:String>
+    <sys:String x:Key="LOCOutPutFolder">Вихідна папка для експорту html</sys:String>
+    <sys:String x:Key="LOCSelect">Вибрати</sys:String>
+    <sys:String x:Key="LOCCopyImages">Копіювати зображення в вихідну теку</sys:String>
+    <sys:String x:Key="LOCExcludeHiddenGames">Виключити приховані ігри</sys:String>
+    <sys:String x:Key="LOCExcludedPlatforms">Виключені платформи:</sys:String>
+    <sys:String x:Key="LOCExcludedSources">Виключені джерела:</sys:String>
+    <sys:String x:Key="LOCPageSettings">Параметри сторінки</sys:String>
+
+    <sys:String x:Key="LOCColPageTitle">Назва сторінки</sys:String>
+    <sys:String x:Key="LOCColTemplate">Шаблон</sys:String>
+    <sys:String x:Key="LOCColGroupField">Групувати поле</sys:String>
+    <sys:String x:Key="LOCColAsc">Asc.</sys:String>
+    <sys:String x:Key="LOCColSortField">Поле сортування</sys:String>
+
+    <sys:String x:Key="LOCAscending">За зростанням</sys:String>
+    
+    <sys:String x:Key="LOCButAddPage">Добавити сторінку</sys:String>
+    <sys:String x:Key="LOCButDelPage">Del Page</sys:String>
+    <sys:String x:Key="LOCButPageUp">Сторінка вгору</sys:String>
+    <sys:String x:Key="LOCButPageDown">Сторінка вниз</sys:String>
+    <sys:String x:Key="LOCButRevertTo">Повернутися до</sys:String>
+
+    <sys:String x:Key="LOCMnuDefaultGrid">Стандартна сітка (потрібне зображення)</sys:String>
+    <sys:String x:Key="LOCMnuDefaultList">Стандартний список (Потребує зображення)</sys:String>
+    <sys:String x:Key="LOCMnuDefaultListText">Стандартний список (лише для тексту)</sys:String>
+
+    <!-- misc -->
+    <sys:String x:Key="LOCNotGroupedField">[Не в групі]</sys:String>
+    <sys:String x:Key="LOCNotGroupedSanitezedName">Не згруповані</sys:String>
+    <sys:String x:Key="LOCUndefinedString">Невизначено</sys:String>
+    <sys:String x:Key="LOCNotPlayedText">Не зіграно</sys:String>
+    <sys:String x:Key="LOCNeverText">Ніколи</sys:String>
+    <sys:String x:Key="LOCNoneText">Без ефекту</sys:String>
+    <sys:String x:Key="LOCDescendingText">за спаданням</sys:String>
+    <sys:String x:Key="LOCAscendingText">за зростанням</sys:String>
+    <sys:String x:Key="LOCHTMLExporterMenu">Html експортер</sys:String>
+    <sys:String x:Key="LOCHTMLExporterSubMenu">Експорт</sys:String>
+    
+    
+    
+    <!-- FIELDS -->
+    <sys:String x:Key="LOCReleaseYearFieldText">Рік випуску</sys:String>
+    <sys:String x:Key="LOCAgeRatingFieldText">Віковий рейтинг</sys:String>
+    <sys:String x:Key="LOCLastActivitySegmentFieldText">Останній сегмент активності</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryFieldText">Категорія часу</sys:String>
+    <sys:String x:Key="LOCCompletionStatusFieldText">Статус завершення</sys:String>
+    <sys:String x:Key="LOCUserScoreFieldText">Оцінка користувачів</sys:String>
+    <sys:String x:Key="LOCUserScoreGroupFieldText">Група очок користувача</sys:String>
+    <sys:String x:Key="LOCUserScoreRatingFieldText">Рейтинг по аккаунту</sys:String>
+    <sys:String x:Key="LOCCommunityScoreFieldText">Оцінка спільноти</sys:String>
+    <sys:String x:Key="LOCCommunityScoreGroupFieldText">Група очок спільноти</sys:String>
+    <sys:String x:Key="LOCCommunityScoreRatingFieldText">Рейтинг очок спільноти</sys:String>
+    <sys:String x:Key="LOCCriticScoreFieldText">Оцінка критиків</sys:String>
+    <sys:String x:Key="LOCCriticScoreGroupFieldText">Група результатів критиків</sys:String>
+    <sys:String x:Key="LOCCriticScoreRatingFieldText">Рейтинг по критиках</sys:String>
+    <sys:String x:Key="LOCAddedSegmentFieldText">Додано сегмент</sys:String>
+    <sys:String x:Key="LOCInstallationStatusFieldText">Стан установки</sys:String>
+    <sys:String x:Key="LOCIsCustomGameFieldText">Свої Гри</sys:String>
+    <sys:String x:Key="LOCModifiedSegmentFieldText">Модифікований сегмент</sys:String>
+    <sys:String x:Key="LOCPlayCountFieldText">Кількість ігор</sys:String>
+    <sys:String x:Key="LOCReleaseDateFieldText">Дата випуску</sys:String>
+    <sys:String x:Key="LOCLastActivityFieldText">Остання активність</sys:String>
+    <sys:String x:Key="LOCRegionFieldText">Регіон</sys:String>
+    <sys:String x:Key="LOCAddedFieldText">Додано</sys:String>
+    <sys:String x:Key="LOCCategoryFieldText">Категорія</sys:String>
+    <sys:String x:Key="LOCDeveloperFieldText">Розробник</sys:String>
+    <sys:String x:Key="LOCFavoriteFieldText">Фаворит</sys:String>
+    <sys:String x:Key="LOCFeatureFieldText">Особливість</sys:String>
+    <sys:String x:Key="LOCGenreFieldText">Жанр</sys:String>
+    <sys:String x:Key="LOCHiddenFieldText">Hidden</sys:String>
+    <sys:String x:Key="LOCModifiedFieldText">Змінено</sys:String>
+    <sys:String x:Key="LOCNameFieldText">Ім'я</sys:String>
+    <sys:String x:Key="LOCPlatformFieldText">Платформа</sys:String>
+    <sys:String x:Key="LOCPlaytimeFieldText">Час гри</sys:String>
+    <sys:String x:Key="LOCPublisherFieldText">Автор</sys:String>
+    <sys:String x:Key="LOCSerieFieldText">Серія</sys:String>
+    <sys:String x:Key="LOCSourceFieldText">Джерело</sys:String>
+    
+    <!-- CompletionStatus -->
+    <sys:String x:Key="LOCCompletionStatusAbandoned">Покинутий</sys:String>
+    <sys:String x:Key="LOCCompletionStatusBeaten">Побито</sys:String>
+    <sys:String x:Key="LOCCompletionStatusCompleted">Завершені</sys:String>
+    <sys:String x:Key="LOCCompletionStatusNotPlayed">Не зіграно</sys:String>
+    <sys:String x:Key="LOCCompletionStatusOnHold">Призупинено</sys:String>
+    <sys:String x:Key="LOCCompletionStatusPlayed">Зіграно</sys:String>
+    <sys:String x:Key="LOCCompletionStatusPlaying">Відтворюється</sys:String>
+    <sys:String x:Key="LOCCompletionStatusPlanToPlay">План гри</sys:String>
+
+    <!-- PlaytimeCategory -->
+    <sys:String x:Key="LOCPlaytimeCategoryO1000plus">1000+ hours</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO500_1000">Від 500 до 1000 годин</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO100_500">Від 100 до 500 годин</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO10_100">Від 10 до 100 годин</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryO1_10">Від 1 до 10 годин</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryNotPlayed">Не зіграно</sys:String>
+    <sys:String x:Key="LOCPlaytimeCategoryLessThenHour">Менше потім на годину</sys:String>
+
+    <!-- DateSegmentField -->
+    <sys:String x:Key="LOCSegmentFieldMoreThenYear">Більше, ніж рік тому</sys:String>
+    <sys:String x:Key="LOCSegmentFieldPastMonth">Минулий місяць</sys:String>
+    <sys:String x:Key="LOCSegmentFieldPastWeek">Минулий тиждень</sys:String>
+    <sys:String x:Key="LOCSegmentFieldPastYear">Минулий рік</sys:String>
+    <sys:String x:Key="LOCSegmentFieldNever">Ніколи</sys:String>
+    <sys:String x:Key="LOCSegmentFieldToday">Сьогодні</sys:String>
+    <sys:String x:Key="LOCSegmentFieldYesterday">Вчора</sys:String>
+
+    <!-- InstallationStatus -->
+    <sys:String x:Key="LOCInstallationStatusInstalled">Встановлено</sys:String>
+    <sys:String x:Key="LOCInstallationStatusUninstalled">Видалено</sys:String>
+    
+    <!-- ScoreGroup -->
+    <sys:String x:Key="LOCScoreGroupO0x">від 0 до 10</sys:String>
+    <sys:String x:Key="LOCScoreGroupO1x">Від 10 до 20</sys:String>
+    <sys:String x:Key="LOCScoreGroupO2x">20 до 30</sys:String>
+    <sys:String x:Key="LOCScoreGroupO3x">від 30 до 40</sys:String>
+    <sys:String x:Key="LOCScoreGroupO4x">від 40 до 50</sys:String>
+    <sys:String x:Key="LOCScoreGroupO5x">Від 50 до 60</sys:String>
+    <sys:String x:Key="LOCScoreGroupO6x">від 60 до 70</sys:String>
+    <sys:String x:Key="LOCScoreGroupO7x">Від 70 до 80</sys:String>
+    <sys:String x:Key="LOCScoreGroupO8x">80 до 90</sys:String>
+    <sys:String x:Key="LOCScoreGroupO9x">90 до 100</sys:String>
+    
+    <!-- ScoreRating -->
+    <sys:String x:Key="LOCScoreRatingPositive">Позитивне</sys:String>
+    <sys:String x:Key="LOCScoreRatingNone">Немає очок</sys:String>
+    <sys:String x:Key="LOCScoreRatingNegative">Негатив</sys:String>
+    <sys:String x:Key="LOCScoreRatingMixed">Змішаний</sys:String>
+
+
+    <!--- ProgresStatus -->
+    <sys:String x:Key="LOCErasingPreviousHTML">Стирання раніше згенерованих HTML-файлів...</sys:String>
+    <sys:String x:Key="LOCPreparingGenerateHTML">Підготовка до генерації HTML-файлів...</sys:String>
+    <sys:String x:Key="LOCGeneratatingHTML">Створення HTML-сторінки</sys:String>
+    <sys:String x:Key="LOCGeneratatingHTMLOf">з</sys:String>
+    <sys:String x:Key="LOCGeneratatingHTMEntry">Матеріал</sys:String>
+
+    <!-- Finisch text -->
+    <sys:String x:Key="LOCFinishedExportingHTML">Експорт до HTML...</sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLElapsedtime">Минуло часу: </sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLSuccess">Успішно експортовані сторінки: </sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLErrors">Не експортовані сторінки - помилки: </sys:String>
+    <sys:String x:Key="LOCFinishedExportingHTMLErrorsTemplate">Не експортовані сторінки - помилковий або відсутній шаблон: </sys:String>
+
+    <!-- errors -->
+    <sys:String x:Key="LOCHTMLExportError">Помилка експорту HTML</sys:String>
+    <sys:String x:Key="LOCErrorHTMLExpoterNoOutputFolder">В налаштуваннях не вказана папка виводу відсутня!</sys:String>
+
+    <!-- settingsviex -->
+    <sys:String x:Key="LOCRevertPagesQuestion1">Ви впевнені, що хочете повернути усі сторінки на типові</sys:String>
+    <sys:String x:Key="LOCRevertPagesQuestion2">сторінок?</sys:String>
+
+    <!-- true / false value -->
+    <sys:String x:Key="LOCHTMLExporterTrue">Так</sys:String>
+    <sys:String x:Key="LOCHTMLExporterFalse">Хибне значення</sys:String>
+    
+    <!-- HTML Constants -->
+    <sys:String x:Key="LOCHTMLMainMenu">ГОЛОВНЕ МЕНЮ</sys:String>
+    <sys:String x:Key="LOCHTMLQuickLinks">Швидкі посилання</sys:String>
+    <sys:String x:Key="LOCHTMLLinks">Посилання</sys:String>
+    <sys:String x:Key="LOCHTMLDescription">Опис</sys:String>
+    <sys:String x:Key="LOCHTMLDetails">Подробиці</sys:String>
+
+
+
+</ResourceDictionary>

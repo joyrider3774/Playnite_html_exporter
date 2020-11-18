@@ -1,0 +1,1 @@
+<div id="%groupname%"><h2><strong>%groupname%<span>( %groupcount% )</span></strong></h2></div>
