@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<resources>
+
+
+
+    <string name="LOC_HTMLEXPORTER_GenericSettings">"Generic Settings"</string>
+    <string name="LOC_HTMLEXPORTER_OutPutFolder">"Output folder for html export"</string>
+    <string name="LOC_HTMLEXPORTER_Select">"Select"</string>
+    <string name="LOC_HTMLEXPORTER_CopyImages">"Copy Images to outputfolder"</string>
+    <string name="LOC_HTMLEXPORTER_ExcludeHiddenGames">"Exclude hidden games"</string>
+    <string name="LOC_HTMLEXPORTER_ExcludedPlatforms">"Excluded Platforms:"</string>
+    <string name="LOC_HTMLEXPORTER_ExcludedSources">"Excluded Sources:"</string>
+    <string name="LOC_HTMLEXPORTER_PageSettings">"Page Settings"</string>
+
+    <string name="LOC_HTMLEXPORTER_ColPageTitle">"Page Title"</string>
+    <string name="LOC_HTMLEXPORTER_ColTemplate">"Template"</string>
+    <string name="LOC_HTMLEXPORTER_ColGroupField">"Group Field"</string>
+    <string name="LOC_HTMLEXPORTER_ColAsc">"Asc."</string>
+    <string name="LOC_HTMLEXPORTER_ColSortField">"Sort Field"</string>
+
+    <string name="LOC_HTMLEXPORTER_Ascending">"Ascending"</string>
+    
+    <string name="LOC_HTMLEXPORTER_ButAddPage">"Add Page"</string>
+    <string name="LOC_HTMLEXPORTER_ButDelPage">"Del Page"</string>
+    <string name="LOC_HTMLEXPORTER_ButPageUp">"Page Up"</string>
+    <string name="LOC_HTMLEXPORTER_ButPageDown">"Page Down"</string>
+    <string name="LOC_HTMLEXPORTER_ButRevertTo">"Revert to"</string>
+
+    <string name="LOC_HTMLEXPORTER_MnuDefaultGrid">"Default grid (Requires images)"</string>
+    <string name="LOC_HTMLEXPORTER_MnuDefaultList">"Default list (Requires images)"</string>
+    <string name="LOC_HTMLEXPORTER_MnuDefaultListText">"Default list (Text only)"</string>
+
+
+    <string name="LOC_HTMLEXPORTER_NotGroupedField">"[Not Grouped]"</string>
+    <string name="LOC_HTMLEXPORTER_NotGroupedSanitezedName">"Not Grouped"</string>
+    <string name="LOC_HTMLEXPORTER_UndefinedString">"Undefined"</string>
+    <string name="LOC_HTMLEXPORTER_NotPlayedText">"Not Played"</string>
+    <string name="LOC_HTMLEXPORTER_NeverText">"Never"</string>
+    <string name="LOC_HTMLEXPORTER_NoneText">"None"</string>
+    <string name="LOC_HTMLEXPORTER_DescendingText">"descending"</string>
+    <string name="LOC_HTMLEXPORTER_AscendingText">"ascending"</string>
+    <string name="LOC_HTMLEXPORTER_HTMLExporterMenu">"Html Exporter"</string>
+    <string name="LOC_HTMLEXPORTER_HTMLExporterSubMenu">"Export"</string>
+    
+    
+    
+
+    <string name="LOC_HTMLEXPORTER_ReleaseYearFieldText">"Release Year"</string>
+    <string name="LOC_HTMLEXPORTER_AgeRatingFieldText">"Age Rating"</string>
+    <string name="LOC_HTMLEXPORTER_LastActivitySegmentFieldText">"Last Activity Segment"</string>
+    <string name="LOC_HTMLEXPORTER_PlaytimeCategoryFieldText">"Playtime Category"</string>
+    <string name="LOC_HTMLEXPORTER_CompletionStatusFieldText">"Completion Status"</string>
+    <string name="LOC_HTMLEXPORTER_UserScoreFieldText">"User Score"</string>
+    <string name="LOC_HTMLEXPORTER_UserScoreGroupFieldText">"User Score Group"</string>
+    <string name="LOC_HTMLEXPORTER_UserScoreRatingFieldText">"User Score Rating"</string>
+    <string name="LOC_HTMLEXPORTER_CommunityScoreFieldText">"Community Score"</string>
+    <string name="LOC_HTMLEXPORTER_CommunityScoreGroupFieldText">"Community Score Group"</string>
+    <string name="LOC_HTMLEXPORTER_CommunityScoreRatingFieldText">"Community Score Rating"</string>
+    <string name="LOC_HTMLEXPORTER_CriticScoreFieldText">"Critic Score"</string>
+    <string name="LOC_HTMLEXPORTER_CriticScoreGroupFieldText">"Critic Score Group"</string>
+    <string name="LOC_HTMLEXPORTER_CriticScoreRatingFieldText">"Critic Score Rating"</string>
+    <string name="LOC_HTMLEXPORTER_AddedSegmentFieldText">"Added Segment"</string>
+    <string name="LOC_HTMLEXPORTER_InstallationStatusFieldText">"Installation Status"</string>
+    <string name="LOC_HTMLEXPORTER_IsCustomGameFieldText">"Custom Game"</string>
+    <string name="LOC_HTMLEXPORTER_ModifiedSegmentFieldText">"Modified Segment"</string>
+    <string name="LOC_HTMLEXPORTER_PlayCountFieldText">"Play Count"</string>
+    <string name="LOC_HTMLEXPORTER_ReleaseDateFieldText">"Release Date"</string>
+    <string name="LOC_HTMLEXPORTER_LastActivityFieldText">"Last Activity"</string>
+    <string name="LOC_HTMLEXPORTER_RegionFieldText">"Region"</string>
+    <string name="LOC_HTMLEXPORTER_AddedFieldText">"Added"</string>
+    <string name="LOC_HTMLEXPORTER_CategoryFieldText">"Category"</string>
+    <string name="LOC_HTMLEXPORTER_DeveloperFieldText">"Developer"</string>
+    <string name="LOC_HTMLEXPORTER_FavoriteFieldText">"Favorite"</string>
+    <string name="LOC_HTMLEXPORTER_FeatureFieldText">"Feature"</string>
+    <string name="LOC_HTMLEXPORTER_GenreFieldText">"Genre"</string>
+    <string name="LOC_HTMLEXPORTER_HiddenFieldText">"Hidden"</string>
+    <string name="LOC_HTMLEXPORTER_ModifiedFieldText">"Modified"</string>
+    <string name="LOC_HTMLEXPORTER_NameFieldText">"Name"</string>
+    <string name="LOC_HTMLEXPORTER_PlatformFieldText">"Platform"</string>
+    <string name="LOC_HTMLEXPORTER_PlaytimeFieldText">"Playtime"</string>
+    <string name="LOC_HTMLEXPORTER_PublisherFieldText">"Publisher"</string>
+    <string name="LOC_HTMLEXPORTER_SerieFieldText">"Serie"</string>
+    <string name="LOC_HTMLEXPORTER_SourceFieldText">"Source"</string>
+    
+
+    <string name="LOC_HTMLEXPORTER_CompletionStatusAbandoned">"Abandoned"</string>
+    <string name="LOC_HTMLEXPORTER_CompletionStatusBeaten">"Beaten"</string>
+    <string name="LOC_HTMLEXPORTER_CompletionStatusCompleted">"Completed"</string>
+    <string name="LOC_HTMLEXPORTER_CompletionStatusNotPlayed">"Not Played"</string>
+    <string name="LOC_HTMLEXPORTER_CompletionStatusOnHold">"On Hold"</string>
+    <string name="LOC_HTMLEXPORTER_CompletionStatusPlayed">"Played"</string>
+    <string name="LOC_HTMLEXPORTER_CompletionStatusPlaying">"Playing"</string>
+    <string name="LOC_HTMLEXPORTER_CompletionStatusPlanToPlay">"Plan To Play"</string>
+
+
+    <string name="LOC_HTMLEXPORTER_PlaytimeCategoryO1000plus">"1000+ hours"</string>
+    <string name="LOC_HTMLEXPORTER_PlaytimeCategoryO500_1000">"500 to 1000 hoursy"</string>
+    <string name="LOC_HTMLEXPORTER_PlaytimeCategoryO100_500">"100 to 500 hours"</string>
+    <string name="LOC_HTMLEXPORTER_PlaytimeCategoryO10_100">"10 to 100 hours"</string>
+    <string name="LOC_HTMLEXPORTER_PlaytimeCategoryO1_10">"1 to 10 hours"</string>
+    <string name="LOC_HTMLEXPORTER_PlaytimeCategoryNotPlayed">"Not Played"</string>
+    <string name="LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour">"Less Then a Hour"</string>
+
+
+    <string name="LOC_HTMLEXPORTER_SegmentFieldMoreThenYear">"More Then a Year ago"</string>
+    <string name="LOC_HTMLEXPORTER_SegmentFieldPastMonth">"Past Month"</string>
+    <string name="LOC_HTMLEXPORTER_SegmentFieldPastWeek">"Past Week"</string>
+    <string name="LOC_HTMLEXPORTER_SegmentFieldPastYear">"Past Year"</string>
+    <string name="LOC_HTMLEXPORTER_SegmentFieldNever">"Never"</string>
+    <string name="LOC_HTMLEXPORTER_SegmentFieldToday">"Today"</string>
+    <string name="LOC_HTMLEXPORTER_SegmentFieldYesterday">"Yesterday"</string>
+
+
+    <string name="LOC_HTMLEXPORTER_InstallationStatusInstalled">"Installed"</string>
+    <string name="LOC_HTMLEXPORTER_InstallationStatusUninstalled">"Uninstalled"</string>
+    
+
+    <string name="LOC_HTMLEXPORTER_ScoreGroupO0x">"0 to 10"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreGroupO1x">"10 to 20"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreGroupO2x">"20 to 30"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreGroupO3x">"30 to 40"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreGroupO4x">"40 to 50"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreGroupO5x">"50 to 60"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreGroupO6x">"60 to 70"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreGroupO7x">"70 to 80"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreGroupO8x">"80 to 90"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreGroupO9x">"90 to 100"</string>
+    
+
+    <string name="LOC_HTMLEXPORTER_ScoreRatingPositive">"Positive"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreRatingNone">"No score"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreRatingNegative">"Negative"</string>
+    <string name="LOC_HTMLEXPORTER_ScoreRatingMixed">"Mixed"</string>
+
+
+
+    <string name="LOC_HTMLEXPORTER_ErasingPreviousHTML">"Erasing previously generated html files..."</string>
+    <string name="LOC_HTMLEXPORTER_PreparingGenerateHTML">"Preparing to generate html files..."</string>
+    <string name="LOC_HTMLEXPORTER_GeneratatingHTML">"Generating html page"</string>
+    <string name="LOC_HTMLEXPORTER_GeneratatingHTMLOf">"of"</string>
+    <string name="LOC_HTMLEXPORTER_GeneratatingHTMEntry">"Entry"</string>
+
+
+    <string name="LOC_HTMLEXPORTER_FinishedExportingHTML">"Finished Exporting to HTML..."</string>
+    <string name="LOC_HTMLEXPORTER_FinishedExportingHTMLElapsedtime">"Elapsed time: "</string>
+    <string name="LOC_HTMLEXPORTER_FinishedExportingHTMLSuccess">"Succesfull exported pages: "</string>
+    <string name="LOC_HTMLEXPORTER_FinishedExportingHTMLErrors">"Not exported pages - errors: "</string>
+    <string name="LOC_HTMLEXPORTER_FinishedExportingHTMLErrorsTemplate">"Not exported pages - faulty or missing template: "</string>
+
+
+    <string name="LOC_HTMLEXPORTER_HTMLExportError">"HTML Export Error"</string>
+    <string name="LOC_HTMLEXPORTER_ErrorHTMLExpoterNoOutputFolder">"No existing output folder specified in settings!"</string>
+
+
+    <string name="LOC_HTMLEXPORTER_RevertPagesQuestion1">"Are you sure you want to revert all pages to the default"</string>
+    <string name="LOC_HTMLEXPORTER_RevertPagesQuestion2">"pages?"</string>
+
+
+    <string name="LOC_HTMLEXPORTER_HTMLExporterTrue">"True"</string>
+    <string name="LOC_HTMLEXPORTER_HTMLExporterFalse">"False"</string>
+    
+
+    <string name="LOC_HTMLEXPORTER_HTMLMainMenu">"MAIN MENU"</string>
+    <string name="LOC_HTMLEXPORTER_HTMLQuickLinks">"Quick Links"</string>
+    <string name="LOC_HTMLEXPORTER_HTMLLinks">"Links"</string>
+    <string name="LOC_HTMLEXPORTER_HTMLDescription">"Description"</string>
+    <string name="LOC_HTMLEXPORTER_HTMLDetails">"Details"</string>
+
+
+
+</resources>
