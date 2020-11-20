@@ -2,33 +2,11 @@
 using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Playnite.SDK;
-using Playnite.SDK.Plugins;
-using System.ComponentModel;
-using System.Collections.ObjectModel;
-using System.Windows.Data;
-using System.Globalization;
 using System;
 using System.Windows;
 
 namespace HtmlExporterPlugin
 {
-    public class RowNumberConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            DataGridRow row = (DataGridRow)value;
-            if (row == null)
-                throw new InvalidOperationException("This converter class can only be used with DataGridRow elements.");
-
-            return row.GetIndex() + 1;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotSupportedException();
-        }
-    }
 
     public partial class HtmlExporterPluginSettingsView : UserControl
     {

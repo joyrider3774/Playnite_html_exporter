@@ -8,8 +8,6 @@ namespace HtmlExporterPlugin
     static class Constants
     {
         private static IResourceProvider resources = new ResourceProvider();
-
-
         
         public static string NotGroupedFieldSanitizedName = resources.GetString("LOC_HTMLEXPORTER_NotGroupedSanitezedName");
         public static string UndefinedString = resources.GetString("LOC_HTMLEXPORTER_UndefinedString"); 
@@ -412,9 +410,9 @@ namespace HtmlExporterPlugin
             }
         }
 
-        public static string GetNameFromField(string Field)
+        public static string GetNameFromField(string Field, bool convertNotGrouped = true)
         {
-            if (Field == Constants.NotGroupedField)
+            if (convertNotGrouped && (Field == Constants.NotGroupedField))
             {
                 return Constants.NotGroupedFieldSanitizedName;
             }
@@ -500,5 +498,157 @@ namespace HtmlExporterPlugin
             }
         }
 
+        public static string GetFieldFromName(string FieldText, bool convertNotGrouped = true)
+        {
+            if (convertNotGrouped && (FieldText == Constants.NotGroupedFieldSanitizedName))
+            {
+                return Constants.NotGroupedField;
+            }
+            if (FieldText == Constants.ReleaseYearFieldText)
+            {
+                return Constants.ReleaseYearField;
+            }
+            if (FieldText == Constants.AgeRatingFieldText)
+            {
+                return Constants.AgeRatingField;
+            }
+            if (FieldText == Constants.LastActivitySegmentFieldText)
+            {
+                return Constants.LastActivitySegmentField;
+            }
+            if (FieldText == Constants.PlaytimeCategoryFieldText)
+            {
+                return Constants.PlaytimeCategoryField;
+            }
+            if (FieldText == Constants.CompletionStatusFieldText)
+            {
+                return Constants.CompletionStatusField;
+            }
+            if (FieldText == Constants.UserScoreFieldText)
+            {
+                return Constants.UserScoreField;
+            }
+            if (FieldText == Constants.UserScoreGroupFieldText)
+            {
+                return Constants.UserScoreGroupField;
+            }
+            if (FieldText == Constants.UserScoreRatingFieldText)
+            {
+                return Constants.UserScoreRatingField;
+            }
+            if (FieldText == Constants.CommunityScoreFieldText)
+            {
+                return Constants.CommunityScoreField;
+            }
+            if (FieldText == Constants.CommunityScoreGroupFieldText)
+            {
+                return Constants.CommunityScoreGroupField;
+            }
+            if (FieldText == Constants.CommunityScoreRatingFieldText)
+            {
+                return Constants.CommunityScoreRatingField;
+            }
+            if (FieldText == Constants.CriticScoreFieldText)
+            {
+                return Constants.CriticScoreField;
+            }
+            if (FieldText == Constants.CriticScoreGroupFieldText)
+            {
+                return Constants.CriticScoreGroupField;
+            }
+            if (FieldText == Constants.CriticScoreRatingFieldText)
+            {
+                return Constants.CriticScoreRatingField;
+            }
+            if (FieldText == Constants.AddedSegmentFieldText)
+            {
+                return Constants.AddedSegmentField;
+            }
+            if (FieldText == Constants.InstallationStatusFieldText)
+            {
+                return Constants.InstallationStatusField;
+            }
+            if (FieldText == Constants.IsCustomGameFieldText)
+            {
+                return Constants.IsCustomGameField;
+            }
+            if (FieldText == Constants.ModifiedSegmentFieldText)
+            {
+                return Constants.ModifiedSegmentField;
+            }
+            if (FieldText == Constants.PlayCountFieldText)
+            {
+                return Constants.PlayCountField;
+            }
+            if (FieldText == Constants.ReleaseDateFieldText)
+            {
+                return Constants.ReleaseDateField;
+            }
+            if (FieldText == Constants.LastActivityFieldText)
+            {
+                return Constants.LastActivityField;
+            }
+            if (FieldText == Constants.RegionFieldText)
+            {
+                return Constants.RegionField;
+            }
+            if (FieldText == Constants.AddedFieldText)
+            {
+                return Constants.AddedField;
+            }
+            if (FieldText == Constants.CategoryFieldText)
+            {
+                return Constants.CategoryField;
+            }
+            if (FieldText == Constants.DeveloperFieldText)
+            {
+                return Constants.DeveloperField;
+            }
+            if (FieldText == Constants.FavoriteFieldText)
+            {
+                return Constants.FavoriteField;
+            }
+            if (FieldText == Constants.FeatureFieldText)
+            {
+                return Constants.FeatureField;
+            }
+            if (FieldText == Constants.GenreFieldText)
+            {
+                return Constants.GenreField;
+            }
+            if (FieldText == Constants.HiddenFieldText)
+            {
+                return Constants.HiddenField;
+            }
+            if (FieldText == Constants.ModifiedFieldText)
+            {
+                return Constants.ModifiedField;
+            }
+            if (FieldText == Constants.NameFieldText)
+            {
+                return Constants.NameField;
+            }
+            if (FieldText == Constants.PlatformFieldText)
+            {
+                return Constants.PlatformField;
+            }
+            if (FieldText == Constants.PlaytimeFieldText)
+            {
+                return Constants.PlaytimeField;
+            }
+            if (FieldText == Constants.PublisherFieldText)
+            {
+                return Constants.PublisherField;
+            }
+            if (FieldText == Constants.SerieFieldText)
+            {
+                return Constants.SerieField;
+            }
+            if (FieldText == Constants.SourceFieldText)
+            {
+                return Constants.SourceField;
+            }
+            return FieldText;
+        }
     }
 }

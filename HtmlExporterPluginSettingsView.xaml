@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:HtmlExporterPlugin"
              mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="526.333">
     
     <UserControl.Resources>
+        <local:BooleanConverter x:Key="BooleanConverter" />
+        <local:FieldToFieldTextConverter x:Key="FieldToFieldTextConverter" />
+        
         <ContextMenu x:Key="cmRevert">
             <MenuItem Name="MnuDefaultGrid" Header="{DynamicResource LOC_HTMLEXPORTER_MnuDefaultGrid}" Click="MnuDefaultGrid_Click" />
             <MenuItem Name="MnuDefaultList" Header="{DynamicResource LOC_HTMLEXPORTER_MnuDefaultList}" Click="MnuDefaultList_Click" />
@@ -69,10 +73,10 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColPageTitle}" Binding="{Binding Pagetitle}" Width="6*" IsReadOnly="True"/>
                         <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColTemplate}" Binding="{Binding Templatefoldername}" Width="5*" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColGroupField}" Binding="{Binding Groupfield}" Width="4*" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColAsc}" Binding="{Binding GroupAscending}" Width="50" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColSortField}" Binding="{Binding Sortfield}" Width="4*" IsReadOnly="True"/>
-                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColAsc}" Binding="{Binding SortAscending}" Width="50" IsReadOnly="True" />
+                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColGroupField}" Binding="{Binding Groupfield, Converter={StaticResource FieldToFieldTextConverter}}" Width="4*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColAsc}" Binding="{Binding GroupAscending, Converter={StaticResource BooleanConverter}}" Width="60"  IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColSortField}" Binding="{Binding Sortfield, Converter={StaticResource FieldToFieldTextConverter}}" Width="4*" IsReadOnly="True"/>
+                        <DataGridTextColumn Header="{DynamicResource LOC_HTMLEXPORTER_ColAsc}" Binding="{Binding SortAscending, Converter={StaticResource BooleanConverter}}" Width="60" IsReadOnly="True" />
                     </DataGrid.Columns>
                 </DataGrid>
                 <StackPanel Margin="0,5,0,0">
@@ -100,8 +104,10 @@
                                 <ColumnDefinition Width= "*"/>
                                 <ColumnDefinition Width= "*"/>
                             </Grid.ColumnDefinitions>
-                            <ComboBox Grid.Row="0" Grid.Column="0" Name="TemplateFolder" SelectedValue="{Binding Path=SelectedItem.Templatefoldername, ElementName=PagesDataGrid}"
-                              Height="23"  ItemsSource="{Binding AvailableTemplateFolders}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,5,0,0" />
+                            <ComboBox Grid.Row="0" Grid.Column="0" Name="TemplateFolder" 
+                                      SelectedValue="{Binding Path=SelectedItem.Templatefoldername, ElementName=PagesDataGrid}"
+                                      Height="23"  ItemsSource="{Binding AvailableTemplateFolders}" VerticalAlignment="Center" 
+                                      HorizontalAlignment="Stretch" Margin="0,5,0,0" />
                         </Grid>
 
 
@@ -118,9 +124,17 @@
                             </Grid.ColumnDefinitions>
 
                             <ComboBox Grid.Row="0" Grid.Column="0" Name="GroupField"  Height="23" ItemsSource="{Binding AvailableGroupFields}"  
-                     SelectedValue="{Binding Path=SelectedItem.Groupfield, ElementName=PagesDataGrid}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,5,0,0" Grid.ColumnSpan="3" />
+                                SelectedValue="{Binding Path=SelectedItem.Groupfield, ElementName=PagesDataGrid}" VerticalAlignment="Center" 
+                                      HorizontalAlignment="Stretch" Margin="0,5,0,0" Grid.ColumnSpan="3">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding Converter={StaticResource FieldToFieldTextConverter}}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
                             <CheckBox Grid.Row="0" Grid.Column="3" Name="GroupAsc"  DataContext="{Binding Path=SelectedItem, ElementName=PagesDataGrid}"
-                     IsChecked="{Binding GroupAscending}"  HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="5,8,0,5" Content="{DynamicResource LOC_HTMLEXPORTER_Ascending}"/>
+                                      IsChecked="{Binding GroupAscending}"  HorizontalAlignment="Left" VerticalAlignment="Center"
+                                      Margin="5,8,0,5" Content="{DynamicResource LOC_HTMLEXPORTER_Ascending}"/>
                         </Grid>
 
 
@@ -134,7 +148,14 @@
                                 <ColumnDefinition Width= "*"/>
                             </Grid.ColumnDefinitions>
                             <ComboBox Grid.Row="0" Grid.Column="0" Name="SortField" Height="23" ItemsSource="{Binding AvailableSortFields}"  
-                     SelectedValue="{Binding Path=SelectedItem.Sortfield, ElementName=PagesDataGrid}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,5,0,0" />
+                                      SelectedValue="{Binding Path=SelectedItem.Sortfield, ElementName=PagesDataGrid}" VerticalAlignment="Center" 
+                                      HorizontalAlignment="Stretch" Margin="0,5,0,0">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter Content="{Binding Converter={StaticResource FieldToFieldTextConverter}}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
                             <CheckBox Grid.Row="0" Grid.Column="1" Name="SortAsc" DataContext="{Binding Path=SelectedItem, ElementName=PagesDataGrid}"
                      IsChecked="{Binding SortAscending}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5,5,0,0" Content="{DynamicResource LOC_HTMLEXPORTER_Ascending}"/>

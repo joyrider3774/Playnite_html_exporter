@@ -1,5 +1,4 @@
-﻿using System.Security.Permissions;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace HtmlExporterPlugin
 {

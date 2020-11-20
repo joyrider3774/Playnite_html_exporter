@@ -4,9 +4,6 @@ using Playnite.SDK.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Controls;
-using System.Windows;
-using Playnite.SDK.Plugins;
-using System.Collections.ObjectModel;
 using System.IO;
 using System;
 
@@ -19,9 +16,9 @@ namespace HtmlExporterPlugin
         [JsonIgnore]
         public List<string> AvailableTemplateFolders => plugin.TemplateFolders;
         [JsonIgnore]
-        public List<string> AvailableSortFields { get; set; } = Constants.AvailableSortFields.AsQueryable().OrderBy(o => o).ToList();
+        public List<string> AvailableSortFields { get; set; } = Constants.AvailableSortFields.AsQueryable().OrderBy(o => Constants.GetNameFromField(o, false)).ToList();
         [JsonIgnore]
-        public List<string> AvailableGroupFields { get; set; } = Constants.AvailableGroupFields.AsQueryable().OrderBy(o => o).ToList();
+        public List<string> AvailableGroupFields { get; set; } = Constants.AvailableGroupFields.AsQueryable().OrderBy(o => Constants.GetNameFromField(o, false)).ToList();
 
         public string OutputFolder { get; set; } = string.Empty;
         public UniqueList<string> ExcludeSources { get; set; } = new UniqueList<string>();
