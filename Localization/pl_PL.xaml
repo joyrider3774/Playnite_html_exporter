@@ -3,168 +3,168 @@
 
 
     <!-- settings screen -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Generic Settings</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Output folder for html export</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Select">Select</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copy Images to outputfolder</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Exclude hidden games</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Excluded Platforms:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Excluded Sources:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">Page Settings</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Ustawienia ogólne</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Folder wyjściowy dla eksportu html</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Select">Wybierz</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Skopiuj obrazy do folderu wyjściowego</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Wyklucz ukryte gry</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Wykluczone platformy:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Wykluczone źródła:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">Ustawienia strony</sys:String>
 
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColPageTitle">Page Title</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColTemplate">Template</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColGroupField">Group Field</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColPageTitle">Tytuł Strony</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColTemplate">Szablon</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColGroupField">Pole Grupowe</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ColAsc">Asc.</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColSortField">Sort Field</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColSortField">Sortuj Pole</sys:String>
 
-    <sys:String x:Key="LOC_HTMLEXPORTER_Ascending">Ascending</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Ascending">Rosnąco</sys:String>
     
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButAddPage">Add Page</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButAddPage">Dodaj stronę</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ButDelPage">Del Page</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageUp">Page Up</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageDown">Page Down</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButRevertTo">Revert to</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageUp">Strona w górę</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageDown">Strona w dół</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButRevertTo">Przywróć do</sys:String>
 
-    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Default grid (Requires images)</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Default list (Requires images)</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Default list (Text only)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Siatka domyślna (wymaga obrazów)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Lista domyślna (wymaga obrazów)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Lista domyślna (tylko tekst)</sys:String>
 
     <!-- misc -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Not Grouped]</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedSanitezedName">Not Grouped</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_UndefinedString">Undefined</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NotPlayedText">Not Played</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NeverText">Never</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NoneText">None</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_DescendingText">descending</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">ascending</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Niezgrupowane]</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedSanitezedName">Niezgrupowane</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UndefinedString">Nieokreślony</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotPlayedText">Nie Grany</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NeverText">Nigdy</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NoneText">Żaden</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DescendingText">malejąco</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">rosnąco</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Html Exporter</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Export</sys:String>
     
     
     
     <!-- FIELDS -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Release Year</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_AgeRatingFieldText">Age Rating</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_LastActivitySegmentFieldText">Last Activity Segment</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryFieldText">Playtime Category</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusFieldText">Completion Status</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreFieldText">User Score</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreGroupFieldText">User Score Group</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreRatingFieldText">User Score Rating</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreFieldText">Community Score</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreGroupFieldText">Community Score Group</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreRatingFieldText">Community Score Rating</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreFieldText">Critic Score</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreGroupFieldText">Critic Score Group</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreRatingFieldText">Critic Score Rating</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_AddedSegmentFieldText">Added Segment</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusFieldText">Installation Status</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_IsCustomGameFieldText">Custom Game</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ModifiedSegmentFieldText">Modified Segment</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlayCountFieldText">Play Count</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseDateFieldText">Release Date</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_LastActivityFieldText">Last Activity</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Rok Wydania</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AgeRatingFieldText">Ocena Wieku</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_LastActivitySegmentFieldText">Ostatni Segment Aktywności</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryFieldText">Kategoria Zabawy</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusFieldText">Stan Ukończenia</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreFieldText">Ocena Użytkownika</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreGroupFieldText">Grupa Ocen Użytkowników</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreRatingFieldText">Ocena Wyniku Użytkownika</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreFieldText">Wynik Społeczności</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreGroupFieldText">Grupa Wyników Społeczności</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreRatingFieldText">Ocena Wyniku Społeczności</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreFieldText">Wynik Krytyczny</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreGroupFieldText">Krytyczny Wynik Grupowy</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreRatingFieldText">Wynik Ocen Krytycznych</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AddedSegmentFieldText">Dodany Segment</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusFieldText">Stan Instalacji</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_IsCustomGameFieldText">Gra Niestandardowa</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ModifiedSegmentFieldText">Zmodyfikowany Segment</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlayCountFieldText">Odliczanie Gry</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseDateFieldText">Data Wydania</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_LastActivityFieldText">Ostatnia Aktywność</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_RegionFieldText">Region</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_AddedFieldText">Added</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CategoryFieldText">Category</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_DeveloperFieldText">Developer</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_FavoriteFieldText">Favorite</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_FeatureFieldText">Feature</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_GenreFieldText">Genre</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HiddenFieldText">Hidden</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ModifiedFieldText">Modified</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NameFieldText">Name</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlatformFieldText">Platform</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeFieldText">Playtime</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PublisherFieldText">Publisher</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SerieFieldText">Serie</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SourceFieldText">Source</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AddedFieldText">Dodano</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CategoryFieldText">Kategoria</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DeveloperFieldText">Deweloper</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FavoriteFieldText">Ulubiony</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FeatureFieldText">Funkcja</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GenreFieldText">Gatunek</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HiddenFieldText">Ukryto</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ModifiedFieldText">Zmodyfikowano</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NameFieldText">Nazwa</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlatformFieldText">Platforma</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeFieldText">Czas Gry</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PublisherFieldText">Wydawca</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SerieFieldText">Seria</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SourceFieldText">Źródło</sys:String>
     
     <!-- CompletionStatus -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusAbandoned">Abandoned</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusBeaten">Beaten</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusCompleted">Completed</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusNotPlayed">Not Played</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusOnHold">On Hold</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlayed">Played</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlaying">Playing</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlanToPlay">Plan To Play</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusAbandoned">Opuszczono</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusBeaten">Przegrany</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusCompleted">Zakończony</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusNotPlayed">Nie Grany</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusOnHold">Wstrzymano</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlayed">Zagrano</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlaying">W Grze</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlanToPlay">Plan Do Gry</sys:String>
 
     <!-- PlaytimeCategory -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1000plus">1000+ hours</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO500_1000">500 to 1000 hoursy</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO100_500">100 to 500 hours</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO10_100">10 to 100 hours</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1_10">1 to 10 hours</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryNotPlayed">Not Played</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour">Less Then a Hour</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1000plus">1000+ godzin</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO500_1000">500 do 1000 godzin</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO100_500">100 do 500 godzin</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO10_100">10 do 100 godzin</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1_10">1 do 10 godzin</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryNotPlayed">Nie Grano</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour">Mniej niż Godzina</sys:String>
 
     <!-- DateSegmentField -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldMoreThenYear">More Then a Year ago</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastMonth">Past Month</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastWeek">Past Week</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastYear">Past Year</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldNever">Never</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldToday">Today</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldYesterday">Yesterday</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldMoreThenYear">Więcej niż rok temu</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastMonth">Ostatni Miesiąc</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastWeek">Ostatni Tydzień</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastYear">Ostatni Rok</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldNever">Nigdy</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldToday">Dzisiaj</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldYesterday">Wczoraj</sys:String>
 
     <!-- InstallationStatus -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusInstalled">Installed</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusUninstalled">Uninstalled</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusInstalled">Zainstalowano</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusUninstalled">Odinstalowano</sys:String>
     
     <!-- ScoreGroup -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO0x">0 to 10</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO1x">10 to 20</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO2x">20 to 30</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO3x">30 to 40</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO4x">40 to 50</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO5x">50 to 60</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO6x">60 to 70</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO7x">70 to 80</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO8x">80 to 90</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO9x">90 to 100</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO0x">0 do 10</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO1x">10 do 20</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO2x">20 do 30</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO3x">30 do 40</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO4x">40 do 50</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO5x">50 do 60</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO6x">60 do 70</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO7x">70 do 80</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO8x">80 do 90</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO9x">90 do 100</sys:String>
     
     <!-- ScoreRating -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingPositive">Positive</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingNone">No score</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingNegative">Negative</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingPositive">Pozytywny</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingNone">Brak wyniku</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingNegative">Negatywny</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingMixed">Mixed</sys:String>
 
 
     <!--- ProgresStatus -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingPreviousHTML">Erasing previously generated html files...</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">Preparing to generate html files...</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">Generating html page</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTMLOf">of</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTMEntry">Entry</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingPreviousHTML">Kasowanie wcześniej wygenerowanych plików html...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">Przygotowanie do generowania plików html...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">Generowanie strony html</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTMLOf">z</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTMEntry">Wejście</sys:String>
 
     <!-- Finisch text -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTML">Finished Exporting to HTML...</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLElapsedtime">Elapsed time: </sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLSuccess">Succesfull exported pages: </sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLErrors">Not exported pages - errors: </sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLErrorsTemplate">Not exported pages - faulty or missing template: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTML">Zakończono eksportowanie do HTML...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLElapsedtime">Upływający czas: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLSuccess">Pozytywnie wyeksportowane strony: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLErrors">Nie eksportowane strony - błędy: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLErrorsTemplate">Nie wyeksportowane strony - uszkodzony lub brakujący szablon: </sys:String>
 
     <!-- errors -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExportError">HTML Export Error</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ErrorHTMLExpoterNoOutputFolder">No existing output folder specified in settings!</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExportError">Błąd eksportu HTML</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErrorHTMLExpoterNoOutputFolder">Brak istniejącego folderu wyjściowego w ustawieniach!</sys:String>
 
     <!-- settingsviex -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_RevertPagesQuestion1">Are you sure you want to revert all pages to the default</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_RevertPagesQuestion2">pages?</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_RevertPagesQuestion1">Czy na pewno chcesz przywrócić domyślne ustawienia wszystkich stron</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_RevertPagesQuestion2">strony?</sys:String>
 
     <!-- true / false value -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterTrue">True</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterFalse">False</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterTrue">Prawda</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterFalse">Fałsz</sys:String>
     
     <!-- HTML Constants -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLMainMenu">MAIN MENU</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLQuickLinks">Quick Links</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Links</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Description</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Details</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLMainMenu">MENU GŁÓWNE</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLQuickLinks">Szybkie linki</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Linki</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Opis</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Detale</sys:String>
 
 
 
