@@ -8,22 +8,22 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_Select">Wybierz</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Skopiuj obrazy do folderu wyjściowego</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Wyklucz ukryte gry</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Wykluczone platformy:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Wyklucz. platformy:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Wykluczone źródła:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">Ustawienia strony</sys:String>
 
     <sys:String x:Key="LOC_HTMLEXPORTER_ColPageTitle">Tytuł Strony</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ColTemplate">Szablon</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ColGroupField">Pole Grupowe</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColAsc">Asc.</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColAsc">Ros.</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ColSortField">Sortuj Pole</sys:String>
 
     <sys:String x:Key="LOC_HTMLEXPORTER_Ascending">Rosnąco</sys:String>
     
     <sys:String x:Key="LOC_HTMLEXPORTER_ButAddPage">Dodaj stronę</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButDelPage">Del Page</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageUp">Strona w górę</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageDown">Strona w dół</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButDelPage">Usuń stronę</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageUp">Stro. w górę</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageDown">Str. w dół</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ButRevertTo">Przywróć do</sys:String>
 
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Siatka domyślna (wymaga obrazów)</sys:String>
@@ -39,8 +39,8 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_NoneText">Żaden</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_DescendingText">malejąco</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">rosnąco</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Html Exporter</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Export</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Eksporter do Html</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Eksport</sys:String>
     
     
     
@@ -130,7 +130,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingPositive">Pozytywny</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingNone">Brak wyniku</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingNegative">Negatywny</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingMixed">Mixed</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreRatingMixed">Mieszany</sys:String>
 
 
     <!--- ProgresStatus -->
