@@ -1449,7 +1449,7 @@ namespace HtmlExporterPlugin
                     MenuSection = "@" + Constants.HTMLExporterMenu,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
                     Description = Constants.HTMLExporterSubMenu,
-                    Action = (gameMenuItem) =>
+                    Action = (MainMenuItem) =>
                     {
                         List<string> ErrorList = new List<string>();
                         if(Settings.VerifySettings(out ErrorList))
