@@ -8,8 +8,8 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_Select">Sélectionner</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copier les images dans le dossier de sortie</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Exclure les jeux cachés</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Plateformes exclues:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Sources exclues:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Plateformes exclues :</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Sources exclues :</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">Paramètres de la page</sys:String>
 
     <sys:String x:Key="LOC_HTMLEXPORTER_ColPageTitle">Titre de la page</sys:String>

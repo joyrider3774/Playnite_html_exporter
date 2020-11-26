@@ -22,7 +22,7 @@
     
     <sys:String x:Key="LOC_HTMLEXPORTER_ButAddPage">Dodaj stronę</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ButDelPage">Usuń stronę</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageUp">Stro. w górę</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageUp">Str. w górę</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ButPageDown">Str. w dół</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ButRevertTo">Przywróć do</sys:String>
 
