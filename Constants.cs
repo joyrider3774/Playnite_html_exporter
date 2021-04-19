@@ -64,6 +64,7 @@ namespace HtmlExporterPlugin
         public const string UserScoreField = "UserScore";
         public const string UserScoreGroupField = "UserScoreGroup";
         public const string UserScoreRatingField = "UserScoreRating";
+        public const string LibraryField = "Library";
 
         //Texts for fields
         public static string RegionFieldText = resources.GetString("LOC_HTMLEXPORTER_RegionFieldText");
@@ -102,6 +103,7 @@ namespace HtmlExporterPlugin
         public static string PlayCountFieldText = resources.GetString("LOC_HTMLEXPORTER_PlayCountFieldText");
         public static string ReleaseDateFieldText = resources.GetString("LOC_HTMLEXPORTER_ReleaseDateFieldText");
         public static string LastActivityFieldText = resources.GetString("LOC_HTMLEXPORTER_LastActivityFieldText");
+        public static string LibraryFieldText = resources.GetString("LOC_HTMLEXPORTER_LibraryFieldText");
 
         //Completionstatustext
         public static string CompletionStatusAbandoned = resources.GetString("LOC_HTMLEXPORTER_CompletionStatusAbandoned");
@@ -191,11 +193,12 @@ namespace HtmlExporterPlugin
         public static string HTMLExporterSubMenu = resources.GetString("LOC_HTMLEXPORTER_HTMLExporterSubMenu");
 
         //lists
-        public static readonly ReadOnlyCollection<string> AvailableGroupFields = new ReadOnlyCollection<string>(new List<String> {NameField, SourceField, PlatformField, ReleaseYearField, AgeRatingField, FavoriteField,
+        public static readonly ReadOnlyCollection<string> AvailableGroupFields = new ReadOnlyCollection<string>(new List<String> {NameField, SourceField, LibraryField, PlatformField, ReleaseYearField, AgeRatingField, FavoriteField,
             LastActivitySegmentField, PlaytimeCategoryField, RegionField, CompletionStatusField, UserScoreField, UserScoreGroupField,
             UserScoreRatingField, CommunityScoreField, CommunityScoreGroupField, CommunityScoreRatingField, CriticScoreField, CriticScoreGroupField,
             CriticScoreRatingField, CategoryField, GenreField, AddedSegmentField, DeveloperField, FeatureField, InstallationStatusField, IsCustomGameField,
-            ModifiedSegmentField, PlayCountField, PublisherField, SerieField, HiddenField, AddedField, LastActivityField, ModifiedField, ReleaseDateField, PlaytimeField, NotGroupedField});
+            ModifiedSegmentField, PlayCountField, PublisherField, SerieField, HiddenField, AddedField, LastActivityField, ModifiedField, ReleaseDateField,
+            PlaytimeField, NotGroupedField});
 
         public static readonly ReadOnlyCollection<string> AvailableSortFields  = new ReadOnlyCollection<string>(new List<String> {NameField, SourceField, PlatformField, ReleaseYearField, AgeRatingField, FavoriteField,
             LastActivitySegmentField, PlaytimeCategoryField, RegionField, CompletionStatusField, UserScoreField, UserScoreGroupField,
@@ -212,7 +215,7 @@ namespace HtmlExporterPlugin
 
 
         public static readonly ReadOnlyCollection<string> FakeGameFields = new ReadOnlyCollection<string>(new List<String> {
-            CategoryField, DeveloperField, GenreField, FeatureField, SerieField, PublisherField });
+            CategoryField, DeveloperField, GenreField, FeatureField, SerieField, PublisherField, LibraryField });
 
 
 
@@ -491,6 +494,8 @@ namespace HtmlExporterPlugin
                     return Constants.SerieFieldText;
                 case Constants.SourceField:
                     return Constants.SourceFieldText;
+                case Constants.LibraryField:
+                    return Constants.LibraryFieldText;
 
 
                 default:
@@ -647,6 +652,10 @@ namespace HtmlExporterPlugin
             if (FieldText == Constants.SourceFieldText)
             {
                 return Constants.SourceField;
+            }
+            if (FieldText == Constants.LibraryFieldText)
+            {
+                return Constants.LibraryField;
             }
             return FieldText;
         }

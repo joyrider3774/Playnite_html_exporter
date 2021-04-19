@@ -296,6 +296,115 @@ namespace HtmlExporterPlugin
                               }
                               else
                               {
+                                  if (page.Groupfield == Constants.LibraryField)
+                                  {
+                                      List<FakeGame> list = new List<FakeGame>();
+                                      foreach (Game game in gameslist)
+                                      {
+                                          if ((!Settings.ExcludePlatforms.Contains(game.Platform == null ? Constants.UndefinedString : game.Platform.Name)) &&
+                                              (!Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                              (!(Settings.ExcludeHiddenGames && game.Hidden)))
+                                          {
+                                              FakeGame newgame = new FakeGame(game);
+                                              if ((game.PluginId == null) || (game.PluginId == Guid.Empty))
+                                              {
+                                                  newgame.Library = "Playnite";
+                                              }
+                                              //indiegala by lacro59
+                                              else if (game.PluginId == Guid.Parse("f7da6eb0-17d7-497c-92fd-347050914954"))
+                                              {
+                                                  newgame.Library = "Indiegala";
+                                              }
+                                              //occulus by shawson
+                                              else if (game.PluginId == Guid.Parse("77346DD6-B0CC-4F7D-80F0-C1D138CCAE58"))
+                                              {
+                                                  newgame.Library = "Occulus";
+                                              }
+                                              //rockstar by crow
+                                              else if (game.PluginId == Guid.Parse("88409022-088a-4de8-805a-fdbac291f00a"))
+                                              {
+                                                  newgame.Library = "Rockstar";
+                                              }
+                                              else
+                                              {
+                                                  switch (BuiltinExtensions.GetExtensionFromId(game.PluginId))
+                                                  {
+                                                      case BuiltinExtension.BattleNetLibrary:
+                                                          newgame.Library = "Battle.net";
+                                                          break;
+                                                      case BuiltinExtension.BethesdaLibrary:
+                                                          newgame.Library = "Bethesda";
+                                                          break;
+                                                      case BuiltinExtension.EpicLibrary:
+                                                          newgame.Library = "Epic";
+                                                          break;
+                                                      case BuiltinExtension.GogLibrary:
+                                                          newgame.Library = "GOG";
+                                                          break;
+                                                      case BuiltinExtension.ItchioLibrary:
+                                                          newgame.Library = "Itchio";
+                                                          break;
+                                                      case BuiltinExtension.OriginLibrary:
+                                                          newgame.Library = "Origin";
+                                                          break;
+                                                      case BuiltinExtension.SteamLibrary:
+                                                          newgame.Library = "Steam";
+                                                          break;
+                                                      case BuiltinExtension.UplayLibrary:
+                                                          newgame.Library = "Ubisoft Connect";
+                                                          break;
+                                                      case BuiltinExtension.TwitchLibrary:
+                                                          newgame.Library = "Twitch";
+                                                          break;
+                                                      case BuiltinExtension.HumbleLibrary:
+                                                          newgame.Library = "Humble";
+                                                          break;
+                                                      case BuiltinExtension.XboxLibrary:
+                                                          newgame.Library = "Xbox";
+                                                          break;
+                                                      case BuiltinExtension.AmazonGamesLibrary:
+                                                          newgame.Library = "Amazon Games";
+                                                          break;
+                                                      case BuiltinExtension.PSNLibrary:
+                                                          newgame.Library = "PlayStation";
+                                                          break;
+                                                      default:
+                                                          newgame.Library = "Unknown";
+                                                          break;
+                                                  }
+                                              }
+                                              list.Add(newgame);
+                                          }                                          
+                                      }
+
+                                      if (page.SortAscending)
+                                      {
+                                          if (page.GroupAscending)
+                                          {
+                                              fakegames = list.AsQueryable().OrderBy(o => o.Library).ThenBy(
+                                                  o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                          }
+                                          else
+                                          {
+                                              fakegames = list.AsQueryable().OrderByDescending(o => o.Library).ThenBy(
+                                                      o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                          }
+                                      }
+                                      else
+                                      {
+                                          if (page.GroupAscending)
+                                          {
+                                              fakegames = list.AsQueryable().OrderBy(o => o.Library).ThenByDescending(
+                                                  o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                          }
+                                          else
+                                          {
+                                              fakegames = list.AsQueryable().OrderByDescending(o => o.Library).ThenByDescending(
+                                                  o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                          }
+                                      }
+                                  }
+                                  else
                                   if (page.Groupfield == Constants.PublisherField)
                                   {
                                       List<FakeGame> list = new List<FakeGame>();
@@ -1131,6 +1240,8 @@ namespace HtmlExporterPlugin
                                   CurrentGameValuesDict["publisher"] = HttpUtility.HtmlEncode(fakegame.Publisher);
                                   CurrentGameValuesDict["serie"] = HttpUtility.HtmlEncode(fakegame.Serie);
                                   CurrentGameValuesDict["hidden"] = HttpUtility.HtmlEncode(HiddenField);
+                                  //CurrentGameValuesDict["pluginid"] = HttpUtility.HtmlEncode(fakegame.Library);
+                                  CurrentGameValuesDict["library"] = HttpUtility.HtmlEncode(fakegame.Library);
 
                                   foreach (string agroupfield in Constants.AvailableGroupFields)
                                   {

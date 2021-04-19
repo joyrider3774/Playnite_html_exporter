@@ -10,6 +10,7 @@ namespace HtmlExporterPlugin
         public string Publisher { get; set; }
         public string Serie { get; set; }
         public string Category { get; set; }
+        public string Library { get; set; }
         public Game OriginalGame { get; set; }
 
         public FakeGame(Game aGame)
