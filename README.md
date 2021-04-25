@@ -1,6 +1,8 @@
 # Playnite html exporter
 Export your [Playnite](https://www.playnite.link/) games library to (static) html using templates
 
+[Latest Release](https://github.com/joyrider3774/Playnite_html_exporter/releases/latest)
+
 ## Release / Help Video
 [![Playnite html exporter V1.0](http://img.youtube.com/vi/KR2R6ZWxbgM/0.jpg)](https://youtu.be/KR2R6ZWxbgM "Playnite html exporter V1.0")
 
