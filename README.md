@@ -14,7 +14,7 @@ The text only version can easily be used to share your games library with friend
 The project is translatable on [Crowdin](https://crowdin.com/project/playnite-game-speak)
 
 ## Credits
-* Used Icon made by [Freepik](http://www.freepik.com/)
+* Used Icon made by [Smartline](https://www.flaticon.com/authors/smartline) from [Flaticon](https://www.flaticon.com/)
 * Original Localization file loader by [Lacro59](https://github.com/Lacro59)
 
 ## Donations
