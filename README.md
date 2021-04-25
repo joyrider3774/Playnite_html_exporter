@@ -9,3 +9,13 @@ I have provided 3 templates myself a GRID based view, a LIST View and a TEXT Onl
 
 ### Hosting the files
 The text only version can easily be used to share your games library with friends or to host this on a website. If you use the images version you either must self host the html files using your own webserver (for example using [Wamp](https://www.wampserver.com/en/) on windows) and some dynamic dns provider (for example usin [NO-IP](https://www.noip.com/)). Another option is to upload your files to Onedrive or google drive and use https://drv.tw/ to make a website out of your shared files on those cloud services (this will be slower).
+
+## Translation
+The project is translatable on [Crowdin](https://crowdin.com/project/playnite-game-speak)
+
+## Credits
+* Used Icon made by [Freepik](http://www.freepik.com/)
+* Original Localization file loader by [Lacro59](https://github.com/Lacro59)
+
+## Donations
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/joyrider3774)
