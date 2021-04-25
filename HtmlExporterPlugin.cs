@@ -38,14 +38,49 @@ namespace HtmlExporterPlugin
             TemplateFolders.Sort();
         }
 
+        private static void CopyFilesRecursively(string sourcePath, string targetPath)
+        {
+            //Now Create all of the directories
+            foreach (string dirPath in Directory.GetDirectories(sourcePath, "*", SearchOption.AllDirectories))
+            {
+                Directory.CreateDirectory(dirPath.Replace(sourcePath, targetPath));
+            }
+
+            //Copy all the files & Replaces any files with the same name
+            foreach (string newPath in Directory.GetFiles(sourcePath, "*.*", SearchOption.AllDirectories))
+            {
+                File.Copy(newPath, newPath.Replace(sourcePath, targetPath), true);
+            }
+        }
+
+        public void InitialCopyTemplates()
+        {
+            try
+            {
+                string TemplatesFilesInstallPath = Path.Combine(pluginFolder, "Templates");
+                string TemplatesFilesDataPath = Path.Combine(GetPluginUserDataPath(), "Templates");
+
+                if (!Directory.Exists(TemplatesFilesDataPath))
+                {
+                    if (Directory.Exists(TemplatesFilesInstallPath))
+                    {
+                        Directory.CreateDirectory(TemplatesFilesDataPath);
+                        CopyFilesRecursively(TemplatesFilesInstallPath, TemplatesFilesDataPath);
+                    }
+                }
+            }
+            catch (Exception E)
+            {
+                logger.Error(E, "InitialCopyTemplates");
+            }
+        }
 
         public HtmlExporterPlugin(IPlayniteAPI api) : base(api)
         {
+            pluginFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            InitialCopyTemplates();
             TemplateFolder = Path.Combine(GetPluginUserDataPath(), "templates");
             UpdateTemplateFolders();
-            
-            pluginFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            
             Localization.SetPluginLanguage(pluginFolder, api.ApplicationSettings.Language);
 
             Settings = new HtmlExporterPluginSettings(this);
