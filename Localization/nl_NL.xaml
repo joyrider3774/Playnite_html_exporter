@@ -81,7 +81,9 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_PublisherFieldText">Uitgever</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_SerieFieldText">Serie</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_SourceFieldText">Bron</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_LibraryFieldText">Bibliotheek</sys:String>
     
+
     <!-- CompletionStatus -->
     <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusAbandoned">Afgebroken</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusBeaten">Verslagen</sys:String>

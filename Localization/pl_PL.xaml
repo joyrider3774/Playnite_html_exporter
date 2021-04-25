@@ -81,7 +81,9 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_PublisherFieldText">Wydawca</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_SerieFieldText">Seria</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_SourceFieldText">Źródło</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_LibraryFieldText">Library</sys:String>
     
+
     <!-- CompletionStatus -->
     <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusAbandoned">Opuszczono</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusBeaten">Przegrany</sys:String>

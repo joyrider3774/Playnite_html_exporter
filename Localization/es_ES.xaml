@@ -81,7 +81,9 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_PublisherFieldText">Editor</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_SerieFieldText">Serie</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_SourceFieldText">Fuente</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_LibraryFieldText">Library</sys:String>
     
+
     <!-- CompletionStatus -->
     <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusAbandoned">Abandonado</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusBeaten">Terminado</sys:String>
@@ -152,7 +154,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_ErrorHTMLExpoterNoOutputFolder">No hay una carpeta de salida especificada en la configuración!</sys:String>
 
     <!-- settingsviex -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_RevertPagesQuestion1">¿Está seguro de que desea revertir todas las páginas al valor predeterminado?</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_RevertPagesQuestion1">¿Está seguro de que desea revertir todas las páginas al valor predeterminado</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_RevertPagesQuestion2">páginas?</sys:String>
 
     <!-- true / false value -->
