@@ -1,6 +1,0 @@
-<figure class="card">
-  <a href="%detailspagefilename%">
-  <img class="lozad" data-src="%coverimage%"/>
-  <figcaption>%gamename%</figcaption>
-  </a>
-</figure>

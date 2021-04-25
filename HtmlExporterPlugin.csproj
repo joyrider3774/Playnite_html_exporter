@@ -506,51 +506,6 @@
     <None Include="templates\default list\quicklinksheader.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="templates\default no quicklinks\gamecard.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\gamecardsheader.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\gamecardsheadergrouped.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\gamedetails.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\gamedetailscategory.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\gamedetailsdeveloper.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\gamedetailsfeature.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\gamedetailsgenre.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\gamedetailspublisher.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\gamedetailsweblink.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\menuentry.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\menuentryheader.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\page.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\quicklink.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="templates\default no quicklinks\quicklinksheader.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="templates\default\gamecard.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
