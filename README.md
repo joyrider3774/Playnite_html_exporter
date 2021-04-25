@@ -2,7 +2,7 @@
 Export your games to (static) html using templates
 
 ### Release / Help Video
-[![Playnite html exporter V1.0](http://img.youtube.com/vi/KR2R6ZWxbgM/0.jpg)](https://youtu.be/KR2R6ZWxbgM "Playnite Sound V3.0 Release Video")
+[![Playnite html exporter V1.0](http://img.youtube.com/vi/KR2R6ZWxbgM/0.jpg)](https://youtu.be/KR2R6ZWxbgM "Playnite html exporter V1.0")
 
 ### Templates
 I have provided 3 templates myself a GRID based view, a LIST View and a TEXT Only version. In theory you can create your own templates but to describe this i need to provide a lot of documentation on how todo this and i will first see if there is any need for this.
