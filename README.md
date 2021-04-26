@@ -6,6 +6,21 @@ Export your [Playnite](https://www.playnite.link/) games library to (static) htm
 ## Release / Help Video
 [![Playnite html exporter V1.0](http://img.youtube.com/vi/KR2R6ZWxbgM/0.jpg)](https://youtu.be/KR2R6ZWxbgM "Playnite html exporter V1.0")
 
+## Export Speed
+The very first time when you export with images enabled it will take a longer time than the second time you will export. The very first time it has copy all images while the next times it only has to copy new images. Also generating the very first page takes longer than all other pages as the very first page also generates all detail pages of games. Also having playnite installed on a SSD and exporting to an SSD folder will be a lot faster than having playnite installed on platter disk or even worse an SMR platter disk. 
+
+Here are some statistics from my pc where i have about 2250 games in my library all containing images for every game when exporting with the default grid template and copying images:
+* 1st export on (non SMR) platter disk: 3 minutes 9 seconds
+* 2nd export on (non SMR) platter disk: 1 minute 15 seconds
+* 1st export on ssd disk: 50 seconds
+* 2nd export on ssd disk: 23 seconds
+
+## Export Size
+Export size highly depends on library size (nr of games), and when exporting images, images resolutions and the amount of games having all images (icons, cover, background). In my playnite all game images are optimzed according to playnite (not one games shows the optimazation warning for images). Here are the sizes for my current real export for about 2250 games:
+* Grid + Images: 2,14 GB
+* List + Images: 2,17 GB
+* List Text only (no images): 113 MB
+
 ## Templates
 I have provided 3 templates myself a GRID based view, a LIST View and a TEXT Only version. In theory you can create your own templates but to describe this i need to provide a lot of documentation on how todo this and i will first see if there is any need for this.
 
