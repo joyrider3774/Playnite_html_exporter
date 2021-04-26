@@ -16,7 +16,7 @@ Here are some statistics from my pc where i have about 2250 games in my library 
 * 2nd export on ssd disk: 23 seconds
 
 ## Export Size
-Export size highly depends on library size (nr of games), and when exporting images, images resolutions and the amount of games having all images (icons, cover, background). In my playnite all game images are optimzed according to playnite (not one games shows the optimazation warning for images). Here are the sizes for my current real export for about 2250 games:
+Export size highly depends on library size (nr of games), and when exporting images, images resolutions and the amount of games having all images (icons, cover, background). In my playnite all game images are optimzed according to playnite (not one game shows the optimazation warning for images). Here are the sizes for my current real export for about 2250 games:
 * Grid + Images: 2,14 GB
 * List + Images: 2,17 GB
 * List Text only (no images): 113 MB
