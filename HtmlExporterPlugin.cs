@@ -828,34 +828,78 @@ namespace HtmlExporterPlugin
                                                       }
                                                       else
                                                       {
-                                                          if (page.SortAscending)
+                                                          if (page.Groupfield == Constants.NameField)
                                                           {
-                                                              if (page.GroupAscending)
+                                                              if (page.SortAscending)
                                                               {
-                                                                  fakegames = list.AsQueryable().OrderBy(o
-                                                                      => o.OriginalGame.GetType().GetProperty(page.Groupfield).GetValue(o.OriginalGame)
-                                                                          ).ThenBy(o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  if (page.GroupAscending)
+                                                                  {
+                                                                      fakegames = list.AsQueryable().OrderBy(
+                                                                          o => o.OriginalGame.Name, new NameComparer())
+                                                                      .ThenBy(
+                                                                          o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  }
+                                                                  else
+                                                                  {
+                                                                      fakegames = list.AsQueryable().OrderByDescending(
+                                                                          o => o.OriginalGame.Name, new NameComparer())
+                                                                      .ThenBy(
+                                                                          o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  }
                                                               }
                                                               else
                                                               {
-                                                                  fakegames = list.AsQueryable().OrderByDescending(o
-                                                                      => o.OriginalGame.GetType().GetProperty(page.Groupfield).GetValue(o.OriginalGame)
-                                                                          ).ThenBy(o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  if (page.GroupAscending)
+                                                                  {
+                                                                      fakegames = list.AsQueryable().OrderBy(
+                                                                          o => o.OriginalGame.Name, new NameComparer())
+                                                                      .ThenByDescending(
+                                                                          o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  }
+                                                                  else
+                                                                  {
+                                                                      fakegames = list.AsQueryable().OrderByDescending(
+                                                                          o => o.OriginalGame.Name, new NameComparer())
+                                                                      .ThenByDescending(
+                                                                          o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  }
                                                               }
                                                           }
                                                           else
                                                           {
-                                                              if (page.GroupAscending)
+                                                              if (page.SortAscending)
                                                               {
-                                                                  fakegames = list.AsQueryable().OrderBy(o
-                                                                  => o.OriginalGame.GetType().GetProperty(page.Groupfield).GetValue(o.OriginalGame)
-                                                                      ).ThenByDescending(o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  if (page.GroupAscending)
+                                                                  {
+                                                                      fakegames = list.AsQueryable().OrderBy(
+                                                                          o => o.OriginalGame.GetType().GetProperty(page.Groupfield).GetValue(o.OriginalGame))
+                                                                      .ThenBy(
+                                                                          o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  }
+                                                                  else
+                                                                  {
+                                                                      fakegames = list.AsQueryable().OrderByDescending(
+                                                                          o => o.OriginalGame.GetType().GetProperty(page.Groupfield).GetValue(o.OriginalGame))
+                                                                      .ThenBy(
+                                                                          o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  }
                                                               }
                                                               else
                                                               {
-                                                                  fakegames = list.AsQueryable().OrderByDescending(o
-                                                                  => o.OriginalGame.GetType().GetProperty(page.Groupfield).GetValue(o.OriginalGame)
-                                                                      ).ThenByDescending(o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  if (page.GroupAscending)
+                                                                  {
+                                                                      fakegames = list.AsQueryable().OrderBy(
+                                                                          o => o.OriginalGame.GetType().GetProperty(page.Groupfield).GetValue(o.OriginalGame))
+                                                                      .ThenByDescending(
+                                                                          o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  }
+                                                                  else
+                                                                  {
+                                                                      fakegames = list.AsQueryable().OrderByDescending(
+                                                                          o => o.OriginalGame.GetType().GetProperty(page.Groupfield).GetValue(o.OriginalGame))
+                                                                      .ThenByDescending(
+                                                                          o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                                                  }
                                                               }
                                                           }
                                                       }
@@ -888,7 +932,7 @@ namespace HtmlExporterPlugin
                                       if (page.Groupfield == Constants.NameField)
                                       {
                                           prevlocalgroupfield = FirstGame.OriginalGame.Name.Substring(0, Math.Min(1, FirstGame.OriginalGame.Name.Length)).ToUpper();
-                                          if ((prevlocalgroupfield.Length > 0) && (Char.IsNumber(prevlocalgroupfield[0])))
+                                          if ((prevlocalgroupfield.Length > 0) && (!Char.IsLetter(prevlocalgroupfield[0])))
                                           {
                                               prevlocalgroupfield = Constants.NumberSign;
                                           }
@@ -965,7 +1009,7 @@ namespace HtmlExporterPlugin
                                       if (page.Groupfield == Constants.NameField)
                                       {
                                           localgroupfield = fakegame.OriginalGame.Name.Substring(0, Math.Min(1, fakegame.OriginalGame.Name.Length)).ToUpper();
-                                          if ((localgroupfield.Length > 0) && (Char.IsNumber(localgroupfield[0])))
+                                          if ((localgroupfield.Length > 0) && (!Char.IsLetter(localgroupfield[0])))
                                           {
                                               localgroupfield = Constants.NumberSign;
                                           }
