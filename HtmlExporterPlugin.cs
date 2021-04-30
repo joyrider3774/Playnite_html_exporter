@@ -1067,7 +1067,7 @@ namespace HtmlExporterPlugin
                                           }
                                           else
                                           {
-                                              if (!String.IsNullOrEmpty(realgame.Platform.Icon))
+                                              if (!String.IsNullOrEmpty(realgame.Platform?.Icon))
                                               {
                                                   gameicon = realgame.Platform.Icon.Replace("\\", "/");
                                               }
@@ -1102,7 +1102,7 @@ namespace HtmlExporterPlugin
                                           }
                                           else
                                           {
-                                              if (!String.IsNullOrEmpty(realgame.Platform.Cover))
+                                              if (!String.IsNullOrEmpty(realgame.Platform?.Cover))
                                               {
                                                   coverimage = realgame.Platform.Cover.Replace("\\", "/");
                                               }
@@ -1135,7 +1135,7 @@ namespace HtmlExporterPlugin
                                       }
                                       else
                                       {
-                                          if (!String.IsNullOrEmpty(realgame.Platform.Background))
+                                          if (!String.IsNullOrEmpty(realgame.Platform?.Background))
                                           {
                                               backgroundimage = realgame.Platform.Background.Replace("\\", "/");
                                           }
@@ -1213,7 +1213,7 @@ namespace HtmlExporterPlugin
                                   string FavoriteField = Constants.SantizeValue(realgame.Favorite.ToString(), "Favorite");
                                   string HiddenField = Constants.SantizeValue(realgame.Hidden.ToString(), "Hidden");
                                   string IsCustomGameField = Constants.SantizeValue(realgame.IsCustomGame.ToString(), "IsCustomGame");
-;
+
                                   CurrentGameValuesDict["gamename"] = HttpUtility.HtmlEncode(realgame.Name);
                                   CurrentGameValuesDict["name"] = HttpUtility.HtmlEncode(realgame.Name);
                                   CurrentGameValuesDict["groupname"] = HttpUtility.HtmlEncode(prevlocalgroupfield);
