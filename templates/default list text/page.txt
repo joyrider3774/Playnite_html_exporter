@@ -233,7 +233,7 @@ a:active {
 
 .detailstable td {
   text-align: left;                                    /* align text left */
-  vertical-align: middle;                                 /* align top */
+  vertical-align: middle;                              /* align top */
 }
 
 .detailstable {
@@ -241,18 +241,76 @@ a:active {
   padding: 5px;                                        /* add some padding */
 }
 
-	</style>
+input{
+  display: block;
+  background: #fff;
+  padding: .6rem;
+  border-radius: 0.3rem;
+  width: 300px;
+  border: 0.1rem solid #BDBDBD;
+  outline: none;
+  height: 1rem;
+}
+input:hover{
+	border: 0.1rem solid #0F52BA !important;
+}
+
+#searchbutton{
+  display: block;
+  background: #fff;
+  padding: .6rem;
+  border-radius: 0.3rem;
+  width: 175px;
+  border: 0.1rem solid #BDBDBD;
+  outline: none;
+  height: 2rem;
+}
+#searchbutton:hover{
+	border: 0.1rem solid #0F52BA !important;
+}
+  </style>
+  <script>
+	function search() {
+		var input, filter, games, game, i, txtValue, fragment, parentElement, table;
+		input = document.getElementById("search");
+		filter = input.value.toUpperCase();
+		table = document.getElementById("detailstable");
+		parentElement = table.parentElement;
+		fragment = document.createDocumentFragment();
+		fragment.appendChild(table.cloneNode(true));
+		games = fragment.childNodes[0].getElementsByTagName("P");
+		i = games.length - 1;
+		
+		while (i >= 0 ) {
+			game = games[i];
+			txtValue = game.innerText;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				game.parentElement.parentElement.parentElement.style.display = "";
+			} else {
+				game.parentElement.parentElement.parentElement.style.display = "none";
+			}
+			i--;
+		}
+		table.remove();
+		parentElement.appendChild(fragment.childNodes[0]);
+		
+		//have to renable this
+		const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+		observer.observe();
+	}
+  </script>
   </head>
   <body>
     <button onclick="topFunction()" id="BackTopButton" title="Go to top">Top</button>
     <div class="wrapper">
       %menuentryheader%
       <div class="Menu">%allmenuentries%</div>
+      <h2><strong>Search</strong></h2><input type="text" id="search" placeholder="Search for game.." title="Type in a name"><br/><button onclick="search()" id="searchbutton">Search</button>
       %quicklinksheader%
       <div class="quicklinks">%allquicklinks%</div>
       <h2></h2>
       <div class="cards">
-	  <TABLE  name="gamestable" class="detailstable">
+	  <TABLE  name="gamestable" class="detailstable" id="detailstable">
       <TR><TD></TD><TD><B><a href="%name_filename%">%name_name%</a></B></TD><TD><B><a href="%%groupfieldrealnamelowerexceptname%_filename%">%groupfieldexceptname% %groupfieldsortsymbolexceptname%</a></B></TD><TD><B><a href="%lastactivitysegment_filename%">%lastactivity_name%</a></B></TD><TD><B><a href="%added_filename%">%added_name%</a></B></TD><TD><B><a href="%playtime_filename%">%playtime_name%</a></B></TD><TD><B><a href="%source_filename%">%source_name%</a></B></TD><TD><B><a href="%platform_filename%">%platform_name%</a></B></TD></TR>
 	  <TBODY>
    	  %allgamecardswithheaders%
@@ -265,6 +323,20 @@ a:active {
 	const observer = lozad(); // lazy loads elements with default selector as '.lozad'
 	observer.observe();
 
+	// Get the input field
+	var input = document.getElementById("search");
+
+	// Execute a function when the user releases a key on the keyboard
+	input.addEventListener("keyup", function(event) {
+	  // Number 13 is the "Enter" key on the keyboard
+	  if (event.keyCode === 13) {
+		// Cancel the default action, if needed
+		event.preventDefault();
+		// Trigger the button element with a click
+		document.getElementById("searchbutton").click();
+	  }
+	});
+	
 	//Get the button:
 	mybutton = document.getElementById("BackTopButton");
 
@@ -298,15 +370,12 @@ a:active {
 		  elem.style.display = "";
 		  elemclick.innerHTML = "&#x25BC;";
 		  elemclick.style.color = "#007962";
-		  }
+		}
 		else {
 		  elem.style.display = "none";
 		  elemclick.innerHTML = "&#x25BA;";
 		  elemclick.style.color = "#790000";
-		  }
-		  
-
-		  
+		}
 		return true;
 	}
    </script>
