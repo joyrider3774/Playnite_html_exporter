@@ -1550,9 +1550,12 @@ namespace HtmlExporterPlugin
                                       {
                                           foreach (Link link in fakegame.OriginalGame.Links)
                                           {
-                                              string GameCardDetailsWeblinkOutput = GameCardDetailsWeblink.Replace("%linkname%", link.Name);
-                                              GameCardDetailsWeblinkOutput = GameCardDetailsWeblinkOutput.Replace("%linkurl%", link.Url);
-                                              WebLinksOutput.Append(GameCardDetailsWeblinkOutput);
+                                              if (link != null)
+                                              {
+                                                  string GameCardDetailsWeblinkOutput = GameCardDetailsWeblink.Replace("%linkname%", link.Name);
+                                                  GameCardDetailsWeblinkOutput = GameCardDetailsWeblinkOutput.Replace("%linkurl%", link.Url);
+                                                  WebLinksOutput.Append(GameCardDetailsWeblinkOutput);
+                                              }
                                           }
                                       }
                                       CurrentGameValuesDict["links"] = WebLinksOutput.ToString();
