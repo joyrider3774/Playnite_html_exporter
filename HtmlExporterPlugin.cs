@@ -23,19 +23,21 @@ namespace HtmlExporterPlugin
         public HtmlExporterPluginSettingsView SettingsView { get; private set; }
         private static readonly ILogger logger = LogManager.GetLogger();
         public static string pluginFolder;
-        private static string TemplateFolder;
-        public List<string> TemplateFolders = new List<string>();
+        public List<DirectoryInfo> TemplateFolders = new List<DirectoryInfo>();
         public override Guid Id { get; } = Guid.Parse("14bd031a-a1ff-4754-a586-0b9c23a6f557");
 
-        private void UpdateTemplateFolders()
+        private List<DirectoryInfo> GetAvailableTemplates()
         {
-            TemplateFolders.Clear();
-            foreach (var dir in Directory.GetDirectories(TemplateFolder, "*", SearchOption.TopDirectoryOnly))
-            {
-                var dirinfo = new DirectoryInfo(dir);
-                TemplateFolders.Add(dirinfo.Name.ToLower());
+            var templateDirectories = new List<DirectoryInfo>();
+            var templateSearchPaths = new List<string>() { Path.Combine(pluginFolder, "Templates"), Path.Combine(GetPluginUserDataPath(), "templates") };
+            foreach (var _searchPath in templateSearchPaths) {
+                foreach (var dir in Directory.GetDirectories(_searchPath, "*", SearchOption.TopDirectoryOnly))
+                {
+                    templateDirectories.Add(new DirectoryInfo(dir));
+                }
             }
-            TemplateFolders.Sort();
+            templateDirectories.Sort();
+            return templateDirectories;
         }
 
         private static void CopyFilesRecursively(string sourcePath, string targetPath)
@@ -53,34 +55,10 @@ namespace HtmlExporterPlugin
             }
         }
 
-        public void InitialCopyTemplates()
-        {
-            try
-            {
-                string TemplatesFilesInstallPath = Path.Combine(pluginFolder, "Templates");
-                string TemplatesFilesDataPath = Path.Combine(GetPluginUserDataPath(), "Templates");
-
-                if (!Directory.Exists(TemplatesFilesDataPath))
-                {
-                    if (Directory.Exists(TemplatesFilesInstallPath))
-                    {
-                        Directory.CreateDirectory(TemplatesFilesDataPath);
-                        CopyFilesRecursively(TemplatesFilesInstallPath, TemplatesFilesDataPath);
-                    }
-                }
-            }
-            catch (Exception E)
-            {
-                logger.Error(E, "InitialCopyTemplates");
-            }
-        }
-
         public HtmlExporterPlugin(IPlayniteAPI api) : base(api)
         {
             pluginFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            InitialCopyTemplates();
-            TemplateFolder = Path.Combine(GetPluginUserDataPath(), "templates");
-            UpdateTemplateFolders();
+            TemplateFolders = GetAvailableTemplates();
             Localization.SetPluginLanguage(pluginFolder, api.ApplicationSettings.Language);
 
             Settings = new HtmlExporterPluginSettings(this);
@@ -1773,7 +1751,7 @@ namespace HtmlExporterPlugin
 
         public override UserControl GetSettingsView(bool firstRunSettings)
         {
-            UpdateTemplateFolders();
+            TemplateFolders = GetAvailableTemplates();
             SettingsView = new HtmlExporterPluginSettingsView(this);
             return SettingsView;
         }
