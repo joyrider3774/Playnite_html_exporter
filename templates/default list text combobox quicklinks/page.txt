@@ -250,6 +250,7 @@ a:active {
 .detailstable {
   width: 100%;                                         /* set to full width of details */
   padding: 5px;                                        /* add some padding */
+  border-collapse: collapse;						   /* to make rows collapse if they are hidden using search */
 }
 
 input{
@@ -282,38 +283,108 @@ input:hover{
   </style>
   <script>
 	function search() {
-		var input, filter, games, game, i, txtValue, fragment, parentElement, table;
+		var input, filter, games, game, cards, card, i, j, txtValue, wrapper, quicklinks, quicklink, quicklinkid, needhide, numvisible, quicklinklinks, quicklinkvalue;
 		input = document.getElementById("search");
 		filter = input.value.toUpperCase();
-		table = document.getElementById("detailstable");
-		parentElement = table.parentElement;
+		wrapper = document.getElementById("wrapper");
+		parentElement = wrapper.parentElement;
 		fragment = document.createDocumentFragment();
-		fragment.appendChild(table.cloneNode(true));
+		fragment.appendChild(wrapper.cloneNode(true));
+		wrapper.remove();
 		games = fragment.childNodes[0].getElementsByTagName("P");
 		i = games.length - 1;
 		
 		while (i >= 0 ) {
 			game = games[i];
-			txtValue = game.innerText;
-			if (txtValue.toUpperCase().indexOf(filter) > -1) {
-				game.parentElement.parentElement.parentElement.style.display = "";
-			} else {
-				game.parentElement.parentElement.parentElement.style.display = "none";
+			if (game.id != "grouplabel")
+			{
+				txtValue = game.innerText;
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					game.parentElement.parentElement.parentElement.style.display = "";
+				} else {
+					game.parentElement.parentElement.parentElement.style.display = "none";
+				}
 			}
 			i--;
 		}
-		table.remove();
+
+		quicklinks = fragment.childNodes[0].querySelectorAll("th[id^='quicklink-']")
+		i = quicklinks.length - 1;
+		while (i >= 0) {
+			quicklink = quicklinks[i];
+			quicklinkid = quicklink.id;
+			quicklinkvalue = quicklinkid.replace("quicklink-", "");
+			cards = fragment.getElementById(quicklinkid.replace("quicklink-", ""));
+			needhide = true;
+			if(cards)
+			{
+				j = cards.children.length -1
+				numvisible = 0;
+				while (j >= 0)
+				{
+					if (cards.children[j].style.display == "")
+					{
+						needhide = false;
+						numvisible++;
+					}
+					j--;
+				}
+
+				quicklinklinks = fragment.childNodes[0].querySelectorAll("option[value=\"#" + quicklinkid.replace(/["\\]/g, '\\$&') + "\"]")
+				if (needhide)
+				{
+					quicklink.style.display = "none";
+					cards.style.display = "none";
+					if (quicklinklinks.length == 1)
+					{
+						quicklinklinks[0].innerText = quicklinkvalue + " (" + numvisible.toString() + ")";
+						header = quicklink.parentNode.nextSibling;
+						header.children[0].children[0].children[1].children[0].innerText = "( " + numvisible.toString() + " )";
+						header.style.display = "none";
+						quicklinklinks[0].style.display = "none";
+					}
+				} else {
+					quicklink.style.display = "";
+					cards.style.display = "";
+					if (quicklinklinks.length == 1)
+					{
+						quicklinklinks[0].innerText = quicklinkvalue + " (" + numvisible.toString() + ")";
+						header = quicklink.parentNode.nextSibling;
+						header.children[0].children[0].children[1].children[0].innerText = "( " + numvisible.toString() + " )";
+						header.style.display = "";
+						quicklinklinks[0].style.display = "";
+					}
+				}
+			}
+			i--;
+		}
+
 		parentElement.appendChild(fragment.childNodes[0]);
-		
+
 		//have to renable this
 		const observer = lozad(); // lazy loads elements with default selector as '.lozad'
 		observer.observe();
+
+		var input = document.getElementById("search");
+
+		// Execute a function when the user releases a key on the keyboard
+		input.addEventListener("keyup", function(event) 
+		{
+			// Number 13 is the "Enter" key on the keyboard
+			if (event.keyCode === 13) 
+			{
+				// Cancel the default action, if needed
+				event.preventDefault();
+				// Trigger the button element with a click
+				document.getElementById("searchbutton").click();
+			}
+		});
 	}
   </script>
   </head>
   <body>
     <button onclick="topFunction()" id="BackTopButton" title="Go to top">Top</button>
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper">
       %menuentryheader%
       <div class="Menu">%allmenuentries%</div>
       <h2><strong>Search</strong></h2><input type="text" id="search" placeholder="Search for game.." title="Type in a name"><br/><button onclick="search()" id="searchbutton">Search</button>
