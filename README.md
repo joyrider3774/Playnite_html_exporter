@@ -4,7 +4,12 @@ Export your [Playnite](https://www.playnite.link/) games library to (static) htm
 [Latest Release](https://github.com/joyrider3774/Playnite_html_exporter/releases/latest)
 
 ## Release / Help Video
+
+### V1.0
 [![Playnite html exporter V1.0](http://img.youtube.com/vi/KR2R6ZWxbgM/0.jpg)](https://youtu.be/KR2R6ZWxbgM "Playnite html exporter V1.0")
+
+### V2.0
+[![Playnite html exporter V2.0](http://img.youtube.com/vi/6WqE6oj33Fo/0.jpg)](https://youtu.be/6WqE6oj33Fo "Playnite html exporter V2.0")
 
 ## Export Speed
 The very first time when you export with images enabled it will take a longer time than the second time you will export. The very first time it has copy all images while the next times it only has to copy new images. Also generating the very first page takes longer than all other pages as the very first page also generates all detail pages of games. Also having playnite installed on a SSD and exporting to an SSD folder will be a lot faster than having playnite installed and exporting on platter disk or even worse an SMR platter disk. 
@@ -20,6 +25,18 @@ Export size highly depends on library size (nr of games), and when exporting ima
 * Grid + Images: 2,14 GB
 * List + Images: 2,17 GB
 * List Text only (no images): 113 MB
+
+As of version 2.0 of html exporter you can now reduce the size of the export by converting icon files to png and cover / background images to jpeg as well as resize images. Here are some results of my real export of about 2600 games:
+
+* Grid Copy only: 2,33 GB 
+* Grid Resize + Force 100% Jpeg Quality: 1,20 GB
+* Grid Resize + Force 85% Jpeg Quality: 554 MB
+* Grid Resize + Convert + Force 100% Jpeg Quality: 1,17 GB
+* **Grid Resize + Convert + Force 85% Jpeg Quality: 469 MB**
+* Grid Convert 100% Jpeg Quality: 2,28 GB
+* Grid Convert 85% Jpeg Quality: 2,18 GB
+* Grid Convert + Force 100% Jpeg Quality: 1,92 GB
+* Grid Convert + Force 85% Jpeg Quality: 895 MB
 
 ## Templates
 I have provided 3 templates myself a GRID based view, a LIST View and a TEXT Only version. In theory you can create your own templates but to describe this i need to provide a lot of documentation on how todo this and i will first see if there is any need for this.
