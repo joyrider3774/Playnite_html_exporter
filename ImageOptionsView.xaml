@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="HtmlExporterPlugin.ImageOptionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HtmlExporterPlugin"
+             mc:Ignorable="d">
+    
+    <StackPanel Margin="5" >
+        <GroupBox Margin="0,0,0,0" VerticalAlignment="Top">
+            <GroupBox.Header>
+                <Label FontWeight="Bold" Content="{DynamicResource LOC_HTMLEXPORTER_Optimizations}"/> 
+            </GroupBox.Header>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0,0,5,5">
+                    <CheckBox x:Name="ChkConvertToJpg" IsChecked="{Binding ConvertToJpg}" Content="{DynamicResource LOC_HTMLEXPORTER_ConvertJpg}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0,0,5,5">
+                    <CheckBox x:Name="ChkConvertToPng" IsChecked="{Binding ConvertToPng}" Content="{DynamicResource LOC_HTMLEXPORTER_ConvertPng}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+               </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0,0,5,5">
+                    <CheckBox x:Name="ChkForceConvert" IsChecked="{Binding ForceConversion}" Content="{DynamicResource LOC_HTMLEXPORTER_ForceConvert}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0,0,5,5">
+                    <CheckBox x:Name="ChkAwalysProcess" IsChecked="{Binding AlwaysProcess}" Content="{DynamicResource LOC_HTMLEXPORTER_AlwaysProcess}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0,0,5,5">
+                    <CheckBox x:Name="ChkResizeCoverImage" IsChecked="{Binding ResizeCoverImage}" Content="{DynamicResource LOC_HTMLEXPORTER_ResizeCoverImage}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <TextBox Height="23" PreviewTextInput="NumberValidationTextBox" Text="{Binding CoverImageWidth}" x:Name="tbCoverImageWidth" HorizontalContentAlignment="Stretch" Width="50">
+                    </TextBox>
+                    <Label Content="X"/>
+                    <TextBox Height="23" PreviewTextInput="NumberValidationTextBox" Text="{Binding CoverImageHeight}" x:Name="tbCoverImageHeight" HorizontalContentAlignment="Stretch" Width="50">
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0,0,5,5">
+                    <CheckBox x:Name="ChkResizeBackgroundImage" IsChecked="{Binding ResizeBackgroundImage}" Content="{DynamicResource LOC_HTMLEXPORTER_ResizeBackgroundImage}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <TextBox Height="23" PreviewTextInput="NumberValidationTextBox" Text="{Binding BackgroundImageWidth}" x:Name="tbBackgroundImageWidth" HorizontalContentAlignment="Stretch" Width="50">
+                    </TextBox>
+                    <Label Content="X"/>
+                    <TextBox Height="23" PreviewTextInput="NumberValidationTextBox" Text="{Binding BackgroundImageHeight}" x:Name="tbBackgroundImageHeight" HorizontalContentAlignment="Stretch" Width="50">
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0,0,5,5">
+                    <CheckBox x:Name="ChkResizeIconImage" IsChecked="{Binding ResizeIconImage}" Content="{DynamicResource LOC_HTMLEXPORTER_ResizeIconImage}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <TextBox Height="23" PreviewTextInput="NumberValidationTextBox" Text="{Binding IconImageWidth}" x:Name="tbIconImageWidth" HorizontalContentAlignment="Stretch" Width="50">
+                    </TextBox>
+                    <Label Content="X"/>
+                    <TextBox Height="23" PreviewTextInput="NumberValidationTextBox" Text="{Binding IconImageHeight}" x:Name="tbIconImageHeight" HorizontalContentAlignment="Stretch" Width="50">
+                    </TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0,0,5,5">
+                    <Label Content="{DynamicResource LOC_HTMLEXPORTER_JpegQuality}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <TextBox Height="23" PreviewTextInput="NumberValidationTextBox" Text="{Binding JpgQuality}" x:Name="tbJpgQuality" HorizontalContentAlignment="Stretch" Width="50"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0,0,5,5">
+                    <Label Content="{DynamicResource LOC_HTMLEXPORTER_MaxImageTasks}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                    <TextBox Height="23" PreviewTextInput="NumberValidationTextBox" Text="{Binding MaxTasks}" x:Name="tbMaxTasks" HorizontalContentAlignment="Stretch" Width="50"/>
+                </StackPanel>
+
+            </StackPanel>
+        
+        </GroupBox>
+        
+        <GroupBox Margin="0,0,0,0" VerticalAlignment="Top">
+            <GroupBox.Header>
+                <Label FontWeight="Bold" Content="Image Magick"/>
+            </GroupBox.Header>
+            <StackPanel>
+                <Label Content="{DynamicResource LOC_HTMLEXPORTER_MagickLocation}"/>
+                <Grid>
+                    <TextBox Height="23" 
+                         Text="{Binding ImageMagickLocation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Name="TbImageMagickLocation" HorizontalContentAlignment="Stretch" Margin="0,0,220,0"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="ButDetect" DockPanel.Dock="Right" Content="{DynamicResource LOC_HTMLEXPORTER_Detect}" Width="105" HorizontalContentAlignment="Center" Margin="5,0,0,0" Click="ButDetect_Click" />
+                        <Button x:Name="ButSelectExe" DockPanel.Dock="Right" Content="{DynamicResource LOC_HTMLEXPORTER_Select}" Width="105" HorizontalContentAlignment="Center" Margin="5,0,0,0" Click="ButSelectExe_Click"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+        </GroupBox>
+        <Button x:Name="ButClose" HorizontalAlignment="Right" Content="{DynamicResource LOC_HTMLEXPORTER_Close}" Width="90" HorizontalContentAlignment="Center" Margin="5,10,0,0" FontWeight="Bold" FontSize="16" IsDefault="True" VerticalAlignment="Top" />
+    </StackPanel>
+
+</UserControl>

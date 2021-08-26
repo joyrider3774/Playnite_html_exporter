@@ -1,6 +1,7 @@
 ﻿using Playnite.SDK;
 using Playnite.SDK.Models;
 using Playnite.SDK.Plugins;
+using Playnite.SDK.Data;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,8 +10,10 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Web;
 using System.Windows.Controls;
+//using ZetaProducerHtmlCompressor.Internal;
 
 namespace HtmlExporterPlugin
 {
@@ -100,6 +103,7 @@ namespace HtmlExporterPlugin
 
         public void DoExportToHtml()
         {
+            ImageProcessRunner ConvertImagesRunner = new ImageProcessRunner();
             var progressOptions = new GlobalProgressOptions(String.Empty, true)
             {
                 IsIndeterminate = false
@@ -121,8 +125,22 @@ namespace HtmlExporterPlugin
                       int PageNr = 0;
                       int Errors = 0;
                       int FaultyTemplate = 0;
-                      int Succes = 0;
+                      int Succes = 0;                      
+                      /*HtmlCompressor Compressor = new HtmlCompressor();
+                      Compressor.setCompressCss(true);
+                      Compressor.setRemoveComments(true);
+                      Compressor.setCompressJavaScript(true);*/
                       string AllMenuEntries = String.Empty;
+
+
+                      OriginalImageDataFile PreviousImageDataFile = new OriginalImageDataFile();
+                      if (PreviousImageDataFile.LoadFromFile(Path.Combine(GetPluginUserDataPath(), "PreviousImagesUsed.json")))
+                      {
+                          if (!PreviousImageDataFile.SameSettingsUsed(Settings))
+                              PreviousImageDataFile.Clear();
+                      }
+
+
                       progressAction.ProgressMaxValue = pagecount;
                       string outputfolder = Settings.OutputFolder;
                       if (!Directory.Exists(outputfolder))
@@ -409,7 +427,7 @@ namespace HtmlExporterPlugin
                                                   }
                                               }
                                               list.Add(newgame);
-                                          }                                          
+                                          }
                                       }
 
                                       if (page.SortAscending)
@@ -991,8 +1009,8 @@ namespace HtmlExporterPlugin
                                   count += 1;
                                   if ((count % 50 == 0) || (count == 1))
                                   {
-                                      progressAction.Text = Constants.GeneratatingHTML + " "  + PageNr.ToString() + " " + Constants.GeneratatingHTMLOf + " " + 
-                                        pagecount.ToString() + " " + Constants.GeneratatingHTMLEntry + " " + count.ToString() + " " + Constants.GeneratatingHTMLOf + " " + 
+                                      progressAction.Text = Constants.GeneratatingHTML + " " + PageNr.ToString() + " " + Constants.GeneratatingHTMLOf + " " +
+                                        pagecount.ToString() + " " + Constants.GeneratatingHTMLEntry + " " + count.ToString() + " " + Constants.GeneratatingHTMLOf + " " +
                                         gamescount.ToString();
                                   }
                                   if (progressAction.CancelToken.IsCancellationRequested)
@@ -1105,7 +1123,7 @@ namespace HtmlExporterPlugin
                                       }
                                       else
                                       {
-                                          if ((filespathicon != String.Empty) && (File.Exists(PlayniteApi.Database.GetFullFilePath(filespathicon))))
+                                          if ((filespathicon != String.Empty) && File.Exists(PlayniteApi.Database.GetFullFilePath(filespathicon)))
                                           {
                                               gameicon = realgame.Icon.Replace("\\", "/");
                                           }
@@ -1134,13 +1152,13 @@ namespace HtmlExporterPlugin
                                           filespathcover = realgame.CoverImage;
                                       }
 
-                                      if ((filespathcover.ToLower().StartsWith("https://") || filespathcover.ToLower().StartsWith("http://")))
+                                      if (filespathcover.ToLower().StartsWith("https://") || filespathcover.ToLower().StartsWith("http://"))
                                       {
                                           coverimage = filespathcover;
                                       }
                                       else
                                       {
-                                          if ((filespathcover != String.Empty) && (File.Exists(PlayniteApi.Database.GetFullFilePath(filespathcover))))
+                                          if ((filespathcover != String.Empty) && File.Exists(PlayniteApi.Database.GetFullFilePath(filespathcover)))
                                           {
                                               coverimage = realgame.CoverImage.Replace("\\", "/");
                                           }
@@ -1173,7 +1191,7 @@ namespace HtmlExporterPlugin
                                           backgroundimage = filespathbackground;
                                       }
                                       else
-                                          if ((filespathbackground != String.Empty) && (File.Exists(PlayniteApi.Database.GetFullFilePath(filespathbackground))))
+                                          if ((filespathbackground != String.Empty) && File.Exists(PlayniteApi.Database.GetFullFilePath(filespathbackground)))
                                       {
                                           backgroundimage = realgame.BackgroundImage.Replace("\\", "/");
                                       }
@@ -1269,9 +1287,11 @@ namespace HtmlExporterPlugin
                                   CurrentGameValuesDict["pagefilename"] = Uri.EscapeDataString(page.Pagefilename);
                                   CurrentGameValuesDict["pagetitle"] = HttpUtility.HtmlEncode(page.Pagetitle);
                                   CurrentGameValuesDict["count"] = count.ToString();
-                                  CurrentGameValuesDict["coverimage"] = coverimage;
-                                  CurrentGameValuesDict["icon"] = gameicon;
-                                  CurrentGameValuesDict["backgroundimage"] = backgroundimage;
+
+                                  CurrentGameValuesDict["coverimage"] = Settings.ConvertImageOptions.CoverDestFilename(coverimage);
+                                  CurrentGameValuesDict["icon"] = Settings.ConvertImageOptions.IconDestFilename(gameicon);
+                                  CurrentGameValuesDict["backgroundimage"] = Settings.ConvertImageOptions.BackgroundDestFilename(backgroundimage);
+
                                   CurrentGameValuesDict["lastactivitydate"] = HttpUtility.HtmlEncode(LastPlayedDate);
                                   CurrentGameValuesDict["lastactivitytime"] = HttpUtility.HtmlEncode(LastPlayedTime);
                                   CurrentGameValuesDict["addeddate"] = HttpUtility.HtmlEncode(AddedDateDate);
@@ -1348,6 +1368,8 @@ namespace HtmlExporterPlugin
                                       //to copy the files again.
                                       if (Settings.CopyImages)
                                       {
+                                          OriginalGameImageData ImageData = PreviousImageDataFile.GetOriginalGameImageData(fakegame.OriginalGame.Id.ToString());
+        
                                           if (!GameMediaCopyDoneDict.ContainsKey(fakegame.OriginalGame.Id.ToString()))
                                           {
                                               if (!String.IsNullOrEmpty(backgroundimage) &&
@@ -1359,25 +1381,19 @@ namespace HtmlExporterPlugin
                                                       string fullbackgroundimagedest = Path.Combine(outputfolder, backgroundimage.Replace("/", "\\"));
                                                       try
                                                       {
-                                                          if (File.Exists(fullbackgroundimage))
+                                                          string DestFile = Settings.ConvertImageOptions.BackgroundDestFilename(fullbackgroundimagedest);
+                                                          if (Settings.ConvertImageOptions.AlwaysProcess || !ImageData.BackgroundImageSame(fullbackgroundimage) || !File.Exists(DestFile))
                                                           {
-                                                              bool needcopy = false;
-                                                              if (File.Exists(fullbackgroundimagedest))
+                                                              if (File.Exists(fullbackgroundimage))
                                                               {
-                                                                  needcopy = (File.GetLastWriteTime(fullbackgroundimagedest).CompareTo(
-                                                                      File.GetLastWriteTime(fullbackgroundimagedest)) != 0);
-                                                              }
-                                                              else
-                                                              {
-                                                                  needcopy = true;
-                                                              }
-
-                                                              if (needcopy)
-                                                              {
-                                                                  Directory.CreateDirectory(Path.GetDirectoryName(fullbackgroundimagedest));
-                                                                  File.Copy(fullbackgroundimage, fullbackgroundimagedest, true);
+                                                                  bool needsConversion = Settings.ConvertImageOptions.BackgroundNeedsConversion(fullbackgroundimage);
+                                                                  
+                                                                  ConvertImagesRunner.addImageProcess(!needsConversion, fullbackgroundimage, fullbackgroundimagedest, DestFile, Settings.ConvertImageOptions.ImageMagickLocation,
+                                                                        fullbackgroundimage + " " + Settings.ConvertImageOptions.BackgroundOptions(Path.GetExtension(DestFile)) + " " + DestFile,
+                                                                        File.Exists(Settings.ConvertImageOptions.ImageMagickLocation)? Path.GetDirectoryName(Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
                                                               }
                                                           }
+                                                          ImageData.SetBackgroundImageData(fullbackgroundimage);
                                                       }
                                                       catch { };
                                                       GameMediaCopyDoneDict[Constants.MediaBackgroundText + backgroundimage] = true;
@@ -1393,25 +1409,19 @@ namespace HtmlExporterPlugin
                                                       string fullcoverimagedest = Path.Combine(outputfolder, coverimage.Replace("/", "\\"));
                                                       try
                                                       {
-                                                          if (File.Exists(fullcoverimage))
+                                                          string DestFile = Settings.ConvertImageOptions.CoverDestFilename(fullcoverimagedest);
+                                                          if (Settings.ConvertImageOptions.AlwaysProcess || !ImageData.CoverImageSame(fullcoverimage) || !File.Exists(DestFile))
                                                           {
-                                                              bool needcopy = false;
-                                                              if (File.Exists(fullcoverimagedest))
+                                                              if (File.Exists(fullcoverimage))
                                                               {
-                                                                  needcopy = (File.GetLastWriteTime(fullcoverimage).CompareTo(
-                                                                      File.GetLastWriteTime(fullcoverimagedest)) != 0);
-                                                              }
-                                                              else
-                                                              {
-                                                                  needcopy = true;
-                                                              }
-
-                                                              if (needcopy)
-                                                              {
-                                                                  Directory.CreateDirectory(Path.GetDirectoryName(fullcoverimagedest));
-                                                                  File.Copy(fullcoverimage, fullcoverimagedest, true);
+                                                                  bool needsConversion = Settings.ConvertImageOptions.CoverNeedsConversion(fullcoverimage);
+                                                                  
+                                                                  ConvertImagesRunner.addImageProcess(!needsConversion, fullcoverimage, fullcoverimagedest, DestFile, Settings.ConvertImageOptions.ImageMagickLocation,
+                                                                        fullcoverimage + " " + Settings.ConvertImageOptions.CoverOptions(Path.GetExtension(DestFile)) + " " + DestFile,
+                                                                        File.Exists(Settings.ConvertImageOptions.ImageMagickLocation) ? Path.GetDirectoryName(Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
                                                               }
                                                           }
+                                                          ImageData.SetCoverImageData(fullcoverimage);
                                                       }
                                                       catch { };
                                                       GameMediaCopyDoneDict[Constants.MediaCoverText + fakegame.OriginalGame.Id.ToString()] = true;
@@ -1427,26 +1437,20 @@ namespace HtmlExporterPlugin
                                                       string fulliconimagedest = Path.Combine(outputfolder, gameicon.Replace("/", "\\"));
                                                       try
                                                       {
-
-                                                          if (File.Exists(fulliconimage))
+                                                          string DestFile = Settings.ConvertImageOptions.IconDestFilename(fulliconimagedest);
+                                                          if (Settings.ConvertImageOptions.AlwaysProcess || !ImageData.IconImageSame(fulliconimage) || !File.Exists(DestFile))
                                                           {
-                                                              bool needcopy = false;
-                                                              if (File.Exists(fulliconimagedest))
+                                                              if (File.Exists(fulliconimage))
                                                               {
-                                                                  needcopy = (File.GetLastWriteTime(fulliconimage).CompareTo(
-                                                                      File.GetLastWriteTime(fulliconimagedest)) != 0);
-                                                              }
-                                                              else
-                                                              {
-                                                                  needcopy = true;
-                                                              }
+                                                                  bool needsConversion = Settings.ConvertImageOptions.IconNeedsConversion(fulliconimage);
+                                                                  
+                                                                  ConvertImagesRunner.addImageProcess(!needsConversion, fulliconimage, fulliconimagedest, DestFile, Settings.ConvertImageOptions.ImageMagickLocation,
+                                                                            fulliconimage + " " + Settings.ConvertImageOptions.IconOptions(Path.GetExtension(DestFile)) + " " + DestFile,
+                                                                            File.Exists(Settings.ConvertImageOptions.ImageMagickLocation) ? Path.GetDirectoryName(Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
 
-                                                              if (needcopy)
-                                                              {
-                                                                  Directory.CreateDirectory(Path.GetDirectoryName(fulliconimagedest));
-                                                                  File.Copy(fulliconimage, fulliconimagedest, true);
                                                               }
                                                           }
+                                                          ImageData.SetIconImageData(fulliconimage);
                                                       }
                                                       catch { };
                                                       GameMediaCopyDoneDict[Constants.MediaIconText + gameicon] = true;
@@ -1454,6 +1458,8 @@ namespace HtmlExporterPlugin
                                               }
                                               GameMediaCopyDoneDict[fakegame.OriginalGame.Id.ToString()] = true;
                                           }
+
+                                          PreviousImageDataFile.SetOriginalGameImageData(fakegame.OriginalGame.Id.ToString(), ImageData);
 
                                       }
 
@@ -1561,7 +1567,8 @@ namespace HtmlExporterPlugin
                                       CurrentGameValuesDict["links"] = WebLinksOutput.ToString();
 
                                       string GameDetailsOutPut = ReplaceDictionary(GameCardDetails, CurrentGameValuesDict);
-                                      string GameCardDetailsOutPutFilename = Path.Combine(outputfolder, realgame.Id.ToString() + ".html");
+                                      string GameCardDetailsOutPutFilename = Path.Combine(outputfolder, realgame.Id.ToString() + ".html");                                      
+                                      //GameDetailsOutPut = Compressor.compress(GameDetailsOutPut);
                                       File.WriteAllText(GameCardDetailsOutPutFilename, GameDetailsOutPut, Encoding.UTF8);
                                   }
                                   groupcount += 1;
@@ -1610,7 +1617,10 @@ namespace HtmlExporterPlugin
                               }
                               string IndexOutput = ReplaceDictionary(pageindex, IndexOutPutDict);
 
+                              //IndexOutput = Compressor.compress(IndexOutput);
                               File.WriteAllText(PageOutputFilename, IndexOutput, Encoding.UTF8);
+                             
+                             
                               PagesGenerated[page.Pagefilename] = true;
                               Succes++;
                           }
@@ -1620,19 +1630,79 @@ namespace HtmlExporterPlugin
                               Errors++;
                           }
                       }
+
+                      if (Settings.CopyImages && !progressAction.CancelToken.IsCancellationRequested)
+                      {
+                          if (ConvertImagesRunner.Count() > 0)
+                          {
+                              try
+                              {
+                                  progressAction.Text = Constants.ProcessingImagesText + " (0/" + ConvertImagesRunner.Count().ToString() + ")";
+                                  progressAction.CurrentProgressValue = 0;
+                                  progressAction.ProgressMaxValue = 1;
+
+                                  int UpdateProgressCount = ConvertImagesRunner.Count() > 1000 ? 50 : ConvertImagesRunner.Count() > 100 ? 5 : 1;
+
+                                  int MaxTasks = 1;
+                                  int.TryParse(Settings.ConvertImageOptions.MaxTasks, out MaxTasks);
+
+                                  ConvertImagesRunner.Start(MaxTasks,
+                                      (int count, int max) =>
+                                      {
+                                          if (count % UpdateProgressCount == 0)
+                                          {
+                                              if (progressAction.CancelToken.IsCancellationRequested)
+                                                  ConvertImagesRunner.Stop();
+                                              progressAction.CurrentProgressValue = count;
+                                              progressAction.ProgressMaxValue = max;
+                                              progressAction.Text = Constants.ProcessingImagesText + " (" + count.ToString() + "/" + max.ToString() + ")";
+                                          }
+                                      });
+
+                                  if (!progressAction.CancelToken.IsCancellationRequested)
+                                  {
+                                      PreviousImageDataFile.SaveToFile(Path.Combine(GetPluginUserDataPath(), "PreviousImagesUsed.json"), Settings);
+                                  }
+
+                                  foreach (string error in ConvertImagesRunner.FailedFiles)
+                                  {
+                                      logger.Warn("Failed processing image: " + error);
+                                  }
+                              }
+                              catch (Exception E)
+                              {
+                                  logger.Error(E, Constants.HTMLExportError);
+                              }
+                          }
+                      }
+
                       sw.Stop();
-                      PlayniteApi.Dialogs.ShowMessage( Constants.FinishedExportingHTML  + "\n\n" +
+
+                      string sMsg = Constants.FinishedExportingHTML + "\n\n" +
                           Constants.FinishedExportingHTMLElapsedtime + sw.Elapsed.ToString() + "\n\n" +
                           Constants.FinishedExportingHTMLSuccess + Succes.ToString() + "\n" +
                           Constants.FinishedExportingHTMLErrors + Errors.ToString() + "\n" +
-                          Constants.FinishedExportingHTMLErrorsTemplate + FaultyTemplate.ToString(), Constants.AppName);
+                          Constants.FinishedExportingHTMLErrorsTemplate + FaultyTemplate.ToString();
+
+                      if (Settings.CopyImages)
+                      {
+                          sMsg += "\n\n" +
+                            Constants.TotalImagesProcessText + ConvertImagesRunner.Count().ToString() + "\n" +
+                            Constants.SuccessImagesProcessText + ConvertImagesRunner.SuccesFullConverts.ToString() + "\n" +
+                            Constants.FailedImagesProcessText + ConvertImagesRunner.FailedConverts.ToString() + "\n";
+                      }
+                      PlayniteApi.Dialogs.ShowMessage(sMsg, Constants.AppName);
                   }
                   catch (Exception E)
                   {
                       logger.Error(E, Constants.HTMLExportError);
                   }
               }, progressOptions);
+
+
         }
+
+        public delegate void ImageProgress(string message);
 
         public override List<MainMenuItem> GetMainMenuItems(GetMainMenuItemsArgs args)
         {

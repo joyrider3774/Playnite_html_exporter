@@ -55,6 +55,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OriginalImageDataFile.cs" />
+    <Compile Include="OriginalGameImageData.cs" />
+    <Compile Include="ImageProcessRunner.cs" />
+    <Compile Include="ImageOptions.cs" />
     <Compile Include="NameComparer.cs" />
     <Compile Include="Converters.cs" />
     <Compile Include="Constants.cs" />
@@ -68,6 +72,9 @@
       <DependentUpon>HtmlExporterPluginSettingsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ImageOptionsView.xaml.cs">
+      <DependentUpon>ImageOptionsView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="extension.yaml">
@@ -275,6 +282,10 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Page Include="ImageOptionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <None Include="icon.png">
@@ -559,6 +570,6 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>xcopy $(SolutionDir)$(OutDir). N:\Games\playnite\Extensions\HtmlExporterPlugin /y /s /e</PostBuildEvent>
+    <PostBuildEvent>xcopy $(SolutionDir)$(OutDir). I:\Games\playnite\Extensions\HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557 /y /s /e</PostBuildEvent>
   </PropertyGroup>
 </Project>

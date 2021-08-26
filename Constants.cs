@@ -9,6 +9,15 @@ namespace HtmlExporterPlugin
     {
         private static IResourceProvider resources = new ResourceProvider();
         
+        public static string ImageOptionsText = resources.GetString("LOC_HTMLEXPORTER_ImageOptions");
+        public static string EnterValidValuesText = resources.GetString("LOC_HTMLEXPORTER_EnterValidValues");
+        public static string ProcessingImagesText = resources.GetString("LOC_HTMLEXPORTER_ProcessingImages");
+
+        public static string FailedImagesProcessText = resources.GetString("LOC_HTMLEXPORTER_FailedImagesProcess");
+        public static string SuccessImagesProcessText = resources.GetString("LOC_HTMLEXPORTER_SuccessImagesProcess");
+        public static string TotalImagesProcessText = resources.GetString("LOC_HTMLEXPORTER_TotalImagesProcess");
+
+
         public static string NotGroupedFieldSanitizedName = resources.GetString("LOC_HTMLEXPORTER_NotGroupedSanitezedName");
         public static string UndefinedString = resources.GetString("LOC_HTMLEXPORTER_UndefinedString"); 
         public static string NotPlayedText = resources.GetString("LOC_HTMLEXPORTER_NotPlayedText");
@@ -16,7 +25,8 @@ namespace HtmlExporterPlugin
         public static string NoneText = resources.GetString("LOC_HTMLEXPORTER_NoneText"); 
         public static string AscendingText = resources.GetString("LOC_HTMLEXPORTER_AscendingText");
         public static string DescendingText = resources.GetString("LOC_HTMLEXPORTER_DescendingText");
-       
+
+
 
         public const string AppName = "HTML Exporter";
         public const string NumberSign = "#";

@@ -6,7 +6,8 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Impostazioni generali</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Cartella di output per l'esportazione html</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Select">Seleziona</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copia immagini nella cartella di output</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copia Immagini</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Options">Opzioni</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Escludi i giochi nascosti</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Piattaforme Escluse:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Escludi fonti:</sys:String>
@@ -167,6 +168,29 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Collegamenti</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Descrizione</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Dettagli</sys:String>
+
+    <!-- Image options screen -->
+    <sys:String x:Key="LOC_HTMLEXPORTER_MagickLocation">Magick.exe Posizione</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Detect">Rileva</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ConvertJpg">Converti le immagini di sfondo e di copertina in Jpeg</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ConvertPng">Converti le immagini dell'icona in png</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeCoverImage">Ridimensiona Le Immagini Della Copertina:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeIconImage">Ridimensiona Le Immagini Dell'Icona:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeBackgroundImage">Ridimensiona Le Immagini Di Sfondo:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Close">Chiudi</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ImageOptions">Opzioni Immagine</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EnterValidValues">Inserisci valori validi!</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ProcessingImages">Elaborazione Immagini...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ForceConvert">Forza la conversione (anche converte l'immagine se il tipo di file è lo stesso, invece di solo copiare)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_JpegQuality">Percentuale di qualità Jpeg per le conversioni (1-100):</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MaxImageTasks">Max attività di immagine simultanee (1-16):</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SuccessImagesProcess">Immagini elaborate con successo:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FailedImagesProcess">Immagini elaborate fallite:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_TotalImagesProcess">Totale immagini da elaborare:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Elaborare sempre le immagini, anche se non sono cambiate</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">ottimizzazioni</sys:String>
+
+
 
 
 

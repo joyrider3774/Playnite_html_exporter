@@ -5,11 +5,12 @@
     <!-- settings screen -->
     <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Algemene instellingen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Uitvoer map voor de html export</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Select">Select.</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Afbeeldingen kopiëren naar uitvoer map</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Select">Selecteer</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Kopieer afbeeldingen</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Options">Opties</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Verborgen spelletjes uitsluiten</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Uitgesl. Platformen:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Uitgesl. Bronnen:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Uitgesloten Platformen:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Uitgesloten Bronnen:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">Pagina Instellingen</sys:String>
 
     <sys:String x:Key="LOC_HTMLEXPORTER_ColPageTitle">Pagina Titel</sys:String>
@@ -167,6 +168,29 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Koppelingen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Beschrijving</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Details</sys:String>
+
+    <!-- Image options screen -->
+    <sys:String x:Key="LOC_HTMLEXPORTER_MagickLocation">Magick.exe locatie</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Detect">Detecteer</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ConvertJpg">Converteer Achtergrond en cover afbeeldingen naar Jpeg</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ConvertPng">Converteer icoon afbeeldingen naar png</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeCoverImage">Schaal cover afbeeldingen:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeIconImage">Schaal icoon afbeeldingen:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeBackgroundImage">Schaal achtergrond afbeeldingen:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Close">Sluit</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ImageOptions">Afbeelding opties</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EnterValidValues">Gelieve geldige waarden in te voeren!</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ProcessingImages">Afbeeldingen verwerken...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ForceConvert">Forceer Converteren (converteert afbeelding ook als het bestandstype hetzelfde is, in plaats van gewoon kopiëren)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_JpegQuality">Jpeg kwaliteit percentage voor conversies (1-100):</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MaxImageTasks">Max. aantal gelijktijdige afbeelding taken (1-16):</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SuccessImagesProcess">Succesvol verwerkte afbeeldingen:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FailedImagesProcess">Mislukte verwerkte afbeeldingen:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_TotalImagesProcess">Totaal aantal afbeeldingen te verwerken:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Altijd afbeeldingen verwerken, zelfs wanneer deze niet gewijzigd zijn</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">optimalisaties</sys:String>
+
+
 
 
 

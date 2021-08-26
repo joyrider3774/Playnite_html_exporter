@@ -4,6 +4,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System;
 using System.Windows;
+using Playnite.SDK;
+using System.ComponentModel;
 
 namespace HtmlExporterPlugin
 {
@@ -12,6 +14,9 @@ namespace HtmlExporterPlugin
     {
 
         private readonly HtmlExporterPlugin plugin;
+        private ImageOptionsView ConvertImageOptionsView;
+        public ImageOptions ConvertImageOptions;
+
 
         public HtmlExporterPluginSettingsView()
         {
@@ -21,7 +26,7 @@ namespace HtmlExporterPlugin
         public HtmlExporterPluginSettingsView(HtmlExporterPlugin plugin)
         {
             this.plugin = plugin;
-
+            ConvertImageOptionsView = new ImageOptionsView(this.plugin);
             InitializeComponent();
         }
 
@@ -228,6 +233,54 @@ namespace HtmlExporterPlugin
         private void MnuDefaultListText_Click(object sender, RoutedEventArgs e)
         {
             DoReset("list text");
+        }
+
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            e.Cancel = !ConvertImageOptionsView.ValidateInput();
+            if (e.Cancel)
+            {
+                plugin.PlayniteApi.Dialogs.ShowMessage(Constants.EnterValidValuesText);
+            }
+        }
+
+        private void But_CloseClick(object sender, RoutedEventArgs e)
+        {
+            var myWindow = (Window)ConvertImageOptionsView.Parent;
+            myWindow.Close();
+        }
+
+       
+
+        private void ButImageOptions_Click(object sender, RoutedEventArgs e)
+        {
+            var window = plugin.PlayniteApi.Dialogs.CreateWindow(new WindowCreationOptions
+            {
+                ShowMinimizeButton = false,
+                ShowMaximizeButton = false
+            });
+            
+
+            window.Height = 450;
+            window.Width = 800;
+            window.Title = Constants.ImageOptionsText;
+
+            // Set content of a window. Can be loaded from xaml, loaded from UserControl or created from code behind
+
+            ConvertImageOptionsView.ButClose.Click += But_CloseClick;
+
+            window.Content = ConvertImageOptionsView;
+
+            window.DataContext = ConvertImageOptions;
+            
+            // Set owner if you need to create modal dialog window
+            window.Owner = plugin.PlayniteApi.Dialogs.GetCurrentAppWindow();
+            window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            window.Closing += Window_Closing;
+            // Use Show or ShowDialog to show the window
+            window.ShowDialog();
+
+           
         }
     }
 }
