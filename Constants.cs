@@ -131,7 +131,7 @@ namespace HtmlExporterPlugin
         public static string PlaytimeCategoryO100_500 = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryO100_500");
         public static string PlaytimeCategoryO10_100 = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryO10_100");
         public static string PlaytimeCategoryO1_10 = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryO1_10");
-        public static string PlaytimeCategoryNotPlayed = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryO1_10");
+        public static string PlaytimeCategoryNotPlayed = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryNotPlayed");
         public static string PlaytimeCategoryLessThenHour = resources.GetString("LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour");
 
         //DateSegMentField
