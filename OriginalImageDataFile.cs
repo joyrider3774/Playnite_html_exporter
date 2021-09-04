@@ -21,7 +21,6 @@ namespace HtmlExporterPlugin
 
         public bool LoadFromFile(string filename)
         {
-            string ImageDataFile = Path.Combine(filename);
             if (File.Exists(filename))
             {
                 Data = Serialization.FromJsonFile<ImageDataFileModel>(filename);
@@ -65,8 +64,11 @@ namespace HtmlExporterPlugin
             Data.ImageOptionsString = SettingsUsed.ConvertImageOptions.GetUniqueString();
             Data.ExportPath = SettingsUsed.OutputFolder;
             Directory.CreateDirectory(Path.GetDirectoryName(filename));
-            FileStream fs = File.OpenWrite(filename);
-            Serialization.ToJsonSteam(Data, fs, true);
+            var fileMode = File.Exists(filename) ? FileMode.Truncate : FileMode.CreateNew;
+            using (FileStream fs = File.Open(filename, fileMode, FileAccess.Write, FileShare.None))
+            {
+                Serialization.ToJsonSteam(Data, fs, true);
+            }
         }
     }
 }
