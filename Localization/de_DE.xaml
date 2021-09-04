@@ -189,6 +189,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_TotalImagesProcess">Gesamte zu verarbeitende Bilder:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Bilder immer verarbeiten, auch wenn sie nicht geändert wurden</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">optimierungen</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DetectDuplicates">Doppelte Bilder erkennen</sys:String>
 
 
 

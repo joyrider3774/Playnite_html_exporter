@@ -189,6 +189,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_TotalImagesProcess">Totaal aantal afbeeldingen te verwerken:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Altijd afbeeldingen verwerken, zelfs wanneer deze niet gewijzigd zijn</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">optimalisaties</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DetectDuplicates">Dubbele afbeeldingen detecteren</sys:String>
 
 
 

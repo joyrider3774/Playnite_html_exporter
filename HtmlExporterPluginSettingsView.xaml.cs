@@ -261,7 +261,7 @@ namespace HtmlExporterPlugin
             });
             
 
-            window.Height = 450;
+            window.Height = 475;
             window.Width = 800;
             window.Title = Constants.ImageOptionsText;
 

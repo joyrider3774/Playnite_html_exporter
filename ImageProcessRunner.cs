@@ -45,7 +45,7 @@ namespace HtmlExporterPlugin
         public int FailedConverts = 0;
         public List<string> FailedFiles = new List<string>();
         
-        private readonly List<ImageProcessDef> ImagesProcessDefList = new List<ImageProcessDef>();
+        private readonly Dictionary<string, ImageProcessDef> ImagesProcessDefDict = new Dictionary<string, ImageProcessDef>();
         private CancellationTokenSource cancellationTokenSource = null;  
 
         private static int StartProcessWait(string path, string arguments, string workDir, bool noWindow = false)
@@ -77,22 +77,25 @@ namespace HtmlExporterPlugin
 
         public void addImageProcess(bool copyonly, string source, string dest, string destconverted, string exepath, string arguments, string workDir, bool noWindow = false)
         {
-            ImageProcessDef ImageProcess = new ImageProcessDef();
-            ImageProcess.path = exepath;
-            ImageProcess.arguments = arguments;
-            ImageProcess.workDir = workDir;
-            ImageProcess.noWindow = noWindow;
-            ImageProcess.copyonly = copyonly;
-            ImageProcess.source = source;
-            ImageProcess.dest = dest;
-            ImageProcess.destconverted = destconverted;
-            ImagesProcessDefList.Add(ImageProcess);
+            if (!ImagesProcessDefDict.ContainsKey(source))
+            {
+                ImageProcessDef ImageProcess = new ImageProcessDef();
+                ImageProcess.path = exepath;
+                ImageProcess.arguments = arguments;
+                ImageProcess.workDir = workDir;
+                ImageProcess.noWindow = noWindow;
+                ImageProcess.copyonly = copyonly;
+                ImageProcess.source = source;
+                ImageProcess.dest = dest;
+                ImageProcess.destconverted = destconverted;
+                ImagesProcessDefDict.Add(source, ImageProcess);
+            }
 
         }
 
         public void Clear()
         {
-            ImagesProcessDefList.Clear();
+            ImagesProcessDefDict.Clear();
         }
         
         public void Stop()
@@ -105,14 +108,14 @@ namespace HtmlExporterPlugin
 
         public int Count()
         {
-            return ImagesProcessDefList.Count;
+            return ImagesProcessDefDict.Count;
         }
 
         public void Start(int maxConcurrency, DelCallback CallBack)
         {
             using (SemaphoreSlim concurrencySemaphore = new SemaphoreSlim(maxConcurrency))
             {
-                if (ImagesProcessDefList.Count == 0)
+                if (ImagesProcessDefDict.Count == 0)
                 {
                     return;
                 }
@@ -121,9 +124,9 @@ namespace HtmlExporterPlugin
                 FailedConverts = 0;
                 SuccesFullConverts = 0;
                 FailedFiles.Clear();
-                int max = ImagesProcessDefList.Count();
+                int max = ImagesProcessDefDict.Count();
                 List<Task<bool>> tasks = new List<Task<bool>>();
-                foreach (ImageProcessDef ImageProcess in ImagesProcessDefList)
+                foreach (ImageProcessDef ImageProcess in ImagesProcessDefDict.Values)
                 {
                     concurrencySemaphore.Wait();
                     Task<bool> t = Task.Factory.StartNew((object o) =>
@@ -185,6 +188,10 @@ namespace HtmlExporterPlugin
 
                                 return File.Exists(ImageProcessDefTask.destconverted);
                             }
+                        }
+                        catch
+                        {
+                            return false;
                         }
                         finally
                         {

@@ -189,6 +189,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_TotalImagesProcess">Total des images à traiter:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Toujours traiter les images, même si elles n'ont pas changé</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">optimizations</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DetectDuplicates">Détecter les doublons d'images</sys:String>
 
 
 

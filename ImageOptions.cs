@@ -32,6 +32,7 @@ namespace HtmlExporterPlugin
 
         public bool AlwaysProcess { get; set; } = false;
 
+        public bool DetectDuplicates { get; set; } = false;
 
         public string GetUniqueString(bool includeMaxTasks = false, bool includeAlwaysProcess = false)
         {
@@ -39,7 +40,7 @@ namespace HtmlExporterPlugin
                 ResizeCoverImage.ToString() + '_' + CoverImageWidth + '_' + CoverImageHeight + '_' +
                 ResizeBackgroundImage.ToString() + '_' + BackgroundImageWidth + '_' + BackgroundImageHeight + '_' +
                 ResizeIconImage.ToString() + '_' + IconImageWidth + '_' + IconImageHeight + '_' +
-                ForceConversion.ToString() + (includeMaxTasks ? '_' + MaxTasks.ToString() : String.Empty) +
+                ForceConversion.ToString() + '_' + DetectDuplicates.ToString() + (includeMaxTasks ? '_' + MaxTasks.ToString() : String.Empty) +
                 (includeAlwaysProcess ? '_' + AlwaysProcess.ToString() : String.Empty);
         }
 

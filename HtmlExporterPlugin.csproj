@@ -55,6 +55,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileDeDuplicator.cs" />
     <Compile Include="OriginalImageDataFile.cs" />
     <Compile Include="OriginalGameImageData.cs" />
     <Compile Include="ImageProcessRunner.cs" />

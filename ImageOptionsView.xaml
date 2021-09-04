@@ -25,6 +25,9 @@
                     <CheckBox x:Name="ChkAwalysProcess" IsChecked="{Binding AlwaysProcess}" Content="{DynamicResource LOC_HTMLEXPORTER_AlwaysProcess}" VerticalAlignment="Center" Margin="0,0,5,0"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"  Margin="0,0,5,5">
+                    <CheckBox x:Name="ChkDetectDuplicates" IsChecked="{Binding DetectDuplicates}" Content="{DynamicResource LOC_HTMLEXPORTER_DetectDuplicates}" VerticalAlignment="Center" Margin="0,0,5,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"  Margin="0,0,5,5">
                     <CheckBox x:Name="ChkResizeCoverImage" IsChecked="{Binding ResizeCoverImage}" Content="{DynamicResource LOC_HTMLEXPORTER_ResizeCoverImage}" VerticalAlignment="Center" Margin="0,0,5,0"/>
                     <TextBox Height="23" PreviewTextInput="NumberValidationTextBox" Text="{Binding CoverImageWidth}" x:Name="tbCoverImageWidth" HorizontalContentAlignment="Stretch" Width="50">
                     </TextBox>

@@ -189,6 +189,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_TotalImagesProcess">Total images to process:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Always process images, even if they have not changed</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">optimizations</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DetectDuplicates">Detect Duplicate Images</sys:String>
 
 
 

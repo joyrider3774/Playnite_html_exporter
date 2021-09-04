@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 using System.Windows.Controls;
+using System.Security.Cryptography;
 //using ZetaProducerHtmlCompressor.Internal;
 
 namespace HtmlExporterPlugin
@@ -121,6 +122,7 @@ namespace HtmlExporterPlugin
                       Dictionary<string, string> GameMediaHashtable = new Dictionary<string, string>();
                       Dictionary<string, bool> GameMediaCopyDoneDict = new Dictionary<string, bool>();
                       Dictionary<string, string> FirstGroupFieldFileNames = new Dictionary<string, string>();
+                      FileDeDuplicator DeDuplicator = new FileDeDuplicator();
                       int pagecount = Settings.Pages.Count;
                       int PageNr = 0;
                       int Errors = 0;
@@ -1134,6 +1136,7 @@ namespace HtmlExporterPlugin
                                                   gameicon = realgame.Platform.Icon.Replace("\\", "/");
                                               }
                                           }
+                                          gameicon = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(gameicon), gameicon, Settings.ConvertImageOptions.DetectDuplicates);
                                       }
                                       GameMediaHashtable[Constants.MediaIconText + realgame.Id.ToString()] = gameicon;
                                   }
@@ -1169,6 +1172,8 @@ namespace HtmlExporterPlugin
                                                   coverimage = realgame.Platform.Cover.Replace("\\", "/");
                                               }
                                           }
+
+                                          coverimage = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(coverimage), coverimage, Settings.ConvertImageOptions.DetectDuplicates);
                                       }
                                       GameMediaHashtable[Constants.MediaCoverText + realgame.Id.ToString()] = coverimage;
                                   }
@@ -1191,16 +1196,19 @@ namespace HtmlExporterPlugin
                                           backgroundimage = filespathbackground;
                                       }
                                       else
+                                      {
                                           if ((filespathbackground != String.Empty) && File.Exists(PlayniteApi.Database.GetFullFilePath(filespathbackground)))
-                                      {
-                                          backgroundimage = realgame.BackgroundImage.Replace("\\", "/");
-                                      }
-                                      else
-                                      {
-                                          if (!String.IsNullOrEmpty(realgame.Platform?.Background))
                                           {
-                                              backgroundimage = realgame.Platform.Background.Replace("\\", "/");
+                                              backgroundimage = realgame.BackgroundImage.Replace("\\", "/");
                                           }
+                                          else
+                                          {
+                                              if (!String.IsNullOrEmpty(realgame.Platform?.Background))
+                                              {
+                                                  backgroundimage = realgame.Platform.Background.Replace("\\", "/");
+                                              }
+                                          }
+                                          backgroundimage = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(backgroundimage), backgroundimage, Settings.ConvertImageOptions.DetectDuplicates);
                                       }
                                       GameMediaHashtable[Constants.MediaBackgroundText + realgame.Id.ToString()] = backgroundimage;
                                   }
