@@ -67,7 +67,7 @@ namespace HtmlExporterPlugin
             var fileMode = File.Exists(filename) ? FileMode.Truncate : FileMode.CreateNew;
             using (FileStream fs = File.Open(filename, fileMode, FileAccess.Write, FileShare.None))
             {
-                Serialization.ToJsonSteam(Data, fs, true);
+                Serialization.ToJsonStream(Data, fs, true);
             }
         }
     }

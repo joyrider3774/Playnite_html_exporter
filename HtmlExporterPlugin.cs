@@ -14,16 +14,17 @@ using System.Threading;
 using System.Web;
 using System.Windows.Controls;
 using System.Security.Cryptography;
+using Playnite.SDK.Events;
 //using ZetaProducerHtmlCompressor.Internal;
 
 namespace HtmlExporterPlugin
 {
     
 
-    public class HtmlExporterPlugin : Plugin
+    public class HtmlExporterPlugin : GenericPlugin
     {
         public static IResourceProvider resources = new ResourceProvider();
-        private HtmlExporterPluginSettings Settings { get; set; }
+        private HtmlExporterPluginSettingsViewModel Settings { get; set; }
         public HtmlExporterPluginSettingsView SettingsView { get; private set; }
         private static readonly ILogger logger = LogManager.GetLogger();
         public static string pluginFolder;
@@ -86,8 +87,11 @@ namespace HtmlExporterPlugin
             TemplateFolder = Path.Combine(GetPluginUserDataPath(), "templates");
             UpdateTemplateFolders();
             Localization.SetPluginLanguage(pluginFolder, api.ApplicationSettings.Language);
-
-            Settings = new HtmlExporterPluginSettings(this);
+            Settings = new HtmlExporterPluginSettingsViewModel(this);
+            Properties = new GenericPluginProperties
+            {
+                HasSettings = true
+            };
         }
 
         static readonly Regex re = new Regex(@"\%(\w+)\%", RegexOptions.Compiled);  //does not include empty string
@@ -123,7 +127,7 @@ namespace HtmlExporterPlugin
                       Dictionary<string, bool> GameMediaCopyDoneDict = new Dictionary<string, bool>();
                       Dictionary<string, string> FirstGroupFieldFileNames = new Dictionary<string, string>();
                       FileDeDuplicator DeDuplicator = new FileDeDuplicator();
-                      int pagecount = Settings.Pages.Count;
+                      int pagecount = Settings.Settings.Pages.Count;
                       int PageNr = 0;
                       int Errors = 0;
                       int FaultyTemplate = 0;
@@ -138,13 +142,13 @@ namespace HtmlExporterPlugin
                       OriginalImageDataFile PreviousImageDataFile = new OriginalImageDataFile();
                       if (PreviousImageDataFile.LoadFromFile(Path.Combine(GetPluginUserDataPath(), "PreviousImagesUsed.json")))
                       {
-                          if (!PreviousImageDataFile.SameSettingsUsed(Settings))
+                          if (!PreviousImageDataFile.SameSettingsUsed(Settings.Settings))
                               PreviousImageDataFile.Clear();
                       }
 
 
                       progressAction.ProgressMaxValue = pagecount;
-                      string outputfolder = Settings.OutputFolder;
+                      string outputfolder = Settings.Settings.OutputFolder;
                       if (!Directory.Exists(outputfolder))
                       {
                           Directory.CreateDirectory(outputfolder);
@@ -159,7 +163,7 @@ namespace HtmlExporterPlugin
                       progressAction.Text = Constants.PreparingGenerateHTML;
 
                       Dictionary<string, bool> PagesGenerated = new Dictionary<string, bool>();
-                      foreach (PageObject page in Settings.Pages)
+                      foreach (PageObject page in Settings.Settings.Pages)
                       {
                           try
                           {
@@ -259,7 +263,7 @@ namespace HtmlExporterPlugin
                               if (String.IsNullOrEmpty(AllMenuEntries))
                               {
                                   Dictionary<string, bool> filesdone = new Dictionary<string, bool>();
-                                  foreach (PageObject pagemenu in Settings.Pages)
+                                  foreach (PageObject pagemenu in Settings.Settings.Pages)
                                   {
                                       if (!filesdone.ContainsKey(pagemenu.Pagefilename))
                                       {
@@ -299,27 +303,268 @@ namespace HtmlExporterPlugin
                               }
 
                               List<FakeGame> fakegames;
+                              if (page.Groupfield == Constants.PlatformField)
+                              {
+                                  List<FakeGame> list = new List<FakeGame>();
+                                  foreach (Game game in gameslist)
+                                  {
+                                      List<Platform> platforms = new List<Platform>();
+
+                                      if ((game.Platforms == null) || (game.Platforms.Count == 0))
+                                      {
+                                          platforms.Add(null);
+                                      }
+                                      else
+                                      {
+                                          foreach (Platform tmpplatform in game.Platforms)
+                                          {
+                                              platforms.Add(tmpplatform);
+                                          }
+                                      }
+
+                                      foreach (Platform tmpplatform in platforms)
+                                      {
+                                          if ((!Settings.Settings.ExcludePlatforms.Contains(tmpplatform == null ? Constants.UndefinedString : tmpplatform.Name)) &&
+                                             (!Settings.Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                             (!(Settings.Settings.ExcludeHiddenGames && game.Hidden)))
+                                          {
+                                              FakeGame newgame = new FakeGame(game);
+                                              newgame.RealPlatform = tmpplatform;
+                                              list.Add(newgame);
+                                          }
+                                      }
+                                  }
+
+                                  if (page.SortAscending)
+                                  {
+                                      if (page.GroupAscending)
+                                      {
+                                          fakegames = list.AsQueryable().OrderBy(o => o.Platform).ThenBy(
+                                              o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                      }
+                                      else
+                                      {
+                                          fakegames = list.AsQueryable().OrderByDescending(o => o.Platform).ThenBy(
+                                              o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                      }
+
+                                  }
+                                  else
+                                  {
+                                      if (page.GroupAscending)
+                                      {
+                                          fakegames = list.AsQueryable().OrderBy(o => o.Platform).ThenByDescending(
+                                              o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                      }
+                                      else
+                                      {
+                                          fakegames = list.AsQueryable().OrderByDescending(o => o.Platform).ThenByDescending(
+                                              o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                      }
+                                  }
+                              }
+                              else
+                              { 
+                              if (page.Groupfield == Constants.AgeRatingField)
+                              {
+                                  List<FakeGame> list = new List<FakeGame>();
+                                  foreach (Game game in gameslist)
+                                  {
+                                      List<Platform> platforms = new List<Platform>();
+
+                                      if ((game.Platforms == null) || (game.Platforms.Count == 0))
+                                      {
+                                          platforms.Add(null);
+                                      }
+                                      else
+                                      {
+                                          foreach (Platform tmpplatform in game.Platforms)
+                                          {
+                                              platforms.Add(tmpplatform);
+                                          }
+                                      }
+
+                                      foreach (Platform tmpplatform in platforms)
+                                      {
+                                          if ((!Settings.Settings.ExcludePlatforms.Contains(tmpplatform == null ? Constants.UndefinedString : tmpplatform.Name)) &&
+                                             (!Settings.Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                             (!(Settings.Settings.ExcludeHiddenGames && game.Hidden)))
+                                          {
+                                              if ((game.AgeRatings == null) || (game.AgeRatings.Count == 0))
+                                              {
+                                                  FakeGame newgame = new FakeGame(game);
+                                                  newgame.RealPlatform = tmpplatform;
+                                                  newgame.AgeRating = String.Empty;
+                                                  list.Add(newgame);
+                                              }
+                                              else
+                                              {
+                                                  foreach (AgeRating agerating in game.AgeRatings)
+                                                  {
+                                                      FakeGame newgame = new FakeGame(game);
+                                                      newgame.RealPlatform = tmpplatform;
+                                                      newgame.AgeRating = agerating.Name;
+                                                      list.Add(newgame);
+                                                  }
+                                              }
+
+                                          }
+                                      }
+                                  }
+
+                                  if (page.SortAscending)
+                                  {
+                                      if (page.GroupAscending)
+                                      {
+                                          fakegames = list.AsQueryable().OrderBy(o => o.AgeRating).ThenBy(
+                                              o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                      }
+                                      else
+                                      {
+                                          fakegames = list.AsQueryable().OrderByDescending(o => o.AgeRating).ThenBy(
+                                              o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                      }
+
+                                  }
+                                  else
+                                  {
+                                      if (page.GroupAscending)
+                                      {
+                                          fakegames = list.AsQueryable().OrderBy(o => o.AgeRating).ThenByDescending(
+                                              o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                      }
+                                      else
+                                      {
+                                          fakegames = list.AsQueryable().OrderByDescending(o => o.AgeRating).ThenByDescending(
+                                              o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                      }
+                                  }
+                              }
+                              else
+                              {
+                                  if (page.Groupfield == Constants.RegionField)
+                                  {
+                                      List<FakeGame> list = new List<FakeGame>();
+                                      foreach (Game game in gameslist)
+                                      {
+                                          List<Platform> platforms = new List<Platform>();
+
+                                          if ((game.Platforms == null) || (game.Platforms.Count == 0))
+                                          {
+                                              platforms.Add(null);
+                                          }
+                                          else
+                                          {
+                                              foreach (Platform tmpplatform in game.Platforms)
+                                              {
+                                                  platforms.Add(tmpplatform);
+                                              }
+                                          }
+
+                                          foreach (Platform tmpplatform in platforms)
+                                          {
+                                              if ((!Settings.Settings.ExcludePlatforms.Contains(tmpplatform == null ? Constants.UndefinedString : tmpplatform.Name)) &&
+                                                 (!Settings.Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                                 (!(Settings.Settings.ExcludeHiddenGames && game.Hidden)))
+                                              {
+                                                  if ((game.Regions == null) || (game.Regions.Count == 0))
+                                                  {
+                                                      FakeGame newgame = new FakeGame(game);
+                                                      newgame.RealPlatform = tmpplatform;
+                                                      newgame.Region = String.Empty;
+                                                      list.Add(newgame);
+                                                  }
+                                                  else
+                                                  {
+                                                      foreach (Region region in game.Regions)
+                                                      {
+                                                          FakeGame newgame = new FakeGame(game);
+                                                          newgame.RealPlatform = tmpplatform;
+                                                          newgame.Region = region.Name;
+                                                          list.Add(newgame);
+                                                      }
+                                                  }
+
+                                              }
+                                          }
+                                      }
+
+                                      if (page.SortAscending)
+                                      {
+                                          if (page.GroupAscending)
+                                          {
+                                              fakegames = list.AsQueryable().OrderBy(o => o.Region).ThenBy(
+                                                  o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                          }
+                                          else
+                                          {
+                                              fakegames = list.AsQueryable().OrderByDescending(o => o.Region).ThenBy(
+                                                  o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                          }
+
+                                      }
+                                      else
+                                      {
+                                          if (page.GroupAscending)
+                                          {
+                                              fakegames = list.AsQueryable().OrderBy(o => o.Region).ThenByDescending(
+                                                  o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                          }
+                                          else
+                                          {
+                                              fakegames = list.AsQueryable().OrderByDescending(o => o.Region).ThenByDescending(
+                                                  o => o.OriginalGame.GetType().GetProperty(sortField).GetValue(o.OriginalGame)).ToList();
+                                          }
+                                      }
+                                  }
+                                  else
+                                  {
                               if (page.Groupfield == Constants.SerieField)
                               {
                                   List<FakeGame> list = new List<FakeGame>();
                                   foreach (Game game in gameslist)
                                   {
-                                      if ((!Settings.ExcludePlatforms.Contains(game.Platform == null ? Constants.UndefinedString : game.Platform.Name)) &&
-                                         (!Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
-                                         (!(Settings.ExcludeHiddenGames && game.Hidden)))
+                                              List<Platform> platforms = new List<Platform>();
+
+                                              if ((game.Platforms == null) || (game.Platforms.Count == 0))
                                       {
-                                          FakeGame newgame = new FakeGame(game);
+                                                  platforms.Add(null);
+                                              }
+                                              else
+                                              {
+                                                  foreach (Platform tmpplatform in game.Platforms)
+                                                  {
+                                                      platforms.Add(tmpplatform);
+                                                  }
+                                              }
+
+                                              foreach (Platform tmpplatform in platforms)
+                                              {
+                                                  if ((!Settings.Settings.ExcludePlatforms.Contains(tmpplatform == null ? Constants.UndefinedString : tmpplatform.Name)) &&
+                                                     (!Settings.Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                                     (!(Settings.Settings.ExcludeHiddenGames && game.Hidden)))
+                                                  {
                                           if (game.Series == null)
                                           {
+                                                          FakeGame newgame = new FakeGame(game);
+                                                          newgame.RealPlatform = tmpplatform;
                                               newgame.Serie = String.Empty;
+                                                          list.Add(newgame);
                                           }
                                           else
                                           {
-                                              newgame.Serie = game.Series.Name;
-                                          }
+                                                          foreach (Series serie in game.Series)
+                                                          {
+                                                              FakeGame newgame = new FakeGame(game);
+                                                              newgame.RealPlatform = tmpplatform;
+                                                              newgame.Serie = serie.Name;
                                           list.Add(newgame);
                                       }
                                   }
+
+                                                  }
+                                              }
+                                          }
 
                                   if (page.SortAscending)
                                   {
@@ -356,11 +601,28 @@ namespace HtmlExporterPlugin
                                       List<FakeGame> list = new List<FakeGame>();
                                       foreach (Game game in gameslist)
                                       {
-                                          if ((!Settings.ExcludePlatforms.Contains(game.Platform == null ? Constants.UndefinedString : game.Platform.Name)) &&
-                                              (!Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
-                                              (!(Settings.ExcludeHiddenGames && game.Hidden)))
+                                                  List<Platform> platforms = new List<Platform>();
+
+                                                  if ((game.Platforms == null) || (game.Platforms.Count == 0))
                                           {
+                                                      platforms.Add(null);
+                                                  }
+                                                  else
+                                                  {
+                                                      foreach (Platform tmpplatform in game.Platforms)
+                                                      {
+                                                          platforms.Add(tmpplatform);
+                                                      }
+                                                  }
+
+                                                  foreach (Platform tmpplatform in platforms)
+                                                  {
+                                                      if ((!Settings.Settings.ExcludePlatforms.Contains(tmpplatform == null ? Constants.UndefinedString : tmpplatform.Name)) &&
+                                                                  (!Settings.Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                                      (!(Settings.Settings.ExcludeHiddenGames && game.Hidden)))
+                                                      {
                                               FakeGame newgame = new FakeGame(game);
+                                                          newgame.RealPlatform = tmpplatform;
                                               if ((game.PluginId == null) || (game.PluginId == Guid.Empty))
                                               {
                                                   newgame.Library = "Playnite";
@@ -431,6 +693,7 @@ namespace HtmlExporterPlugin
                                               list.Add(newgame);
                                           }
                                       }
+                                              }
 
                                       if (page.SortAscending)
                                       {
@@ -465,15 +728,32 @@ namespace HtmlExporterPlugin
                                       List<FakeGame> list = new List<FakeGame>();
                                       foreach (Game game in gameslist)
                                       {
-                                          if ((!Settings.ExcludePlatforms.Contains(game.Platform == null ? Constants.UndefinedString : game.Platform.Name)) &&
-                                              (!Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
-                                              (!(Settings.ExcludeHiddenGames && game.Hidden)))
+                                                  List<Platform> platforms = new List<Platform>();
+
+                                                  if ((game.Platforms == null) || (game.Platforms.Count == 0))
                                           {
+                                                      platforms.Add(null);
+                                                  }
+                                                  else
+                                                  {
+                                                      foreach (Platform tmpplatform in game.Platforms)
+                                                      {
+                                                          platforms.Add(tmpplatform);
+                                                      }
+                                                  }
+
+                                                  foreach (Platform tmpplatform in platforms)
+                                                  {
+                                                      if ((!Settings.Settings.ExcludePlatforms.Contains(tmpplatform == null ? Constants.UndefinedString : tmpplatform.Name)) &&
+                                                              (!Settings.Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                                          (!(Settings.Settings.ExcludeHiddenGames && game.Hidden)))
+                                                      {
                                               if ((game.Publishers == null) || (game.Publishers.Count == 0))
                                               {
                                                   FakeGame newgame = new FakeGame(game)
                                                   {
-                                                      Publisher = String.Empty
+                                                                  Publisher = String.Empty,
+                                                                  RealPlatform = tmpplatform
                                                   };
                                                   list.Add(newgame);
                                               }
@@ -483,13 +763,15 @@ namespace HtmlExporterPlugin
                                                   {
                                                       FakeGame newgame = new FakeGame(game)
                                                       {
-                                                          Publisher = publisher.Name
+                                                                      Publisher = publisher.Name,
+                                                                      RealPlatform = tmpplatform
                                                       };
                                                       list.Add(newgame);
                                                   }
                                               }
                                           }
                                       }
+                                              }
 
                                       if (page.SortAscending)
                                       {
@@ -526,15 +808,32 @@ namespace HtmlExporterPlugin
 
                                           foreach (Game game in gameslist)
                                           {
-                                              if ((!Settings.ExcludePlatforms.Contains(game.Platform == null ? Constants.UndefinedString : game.Platform.Name)) &&
-                                              (!Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
-                                              (!(Settings.ExcludeHiddenGames && game.Hidden)))
+                                                      List<Platform> platforms = new List<Platform>();
+
+                                                      if ((game.Platforms == null) || (game.Platforms.Count == 0))
                                               {
+                                                          platforms.Add(null);
+                                                      }
+                                                      else
+                                                      {
+                                                          foreach (Platform tmpplatform in game.Platforms)
+                                                          {
+                                                              platforms.Add(tmpplatform);
+                                                          }
+                                                      }
+
+                                                      foreach (Platform tmpplatform in platforms)
+                                                      {
+                                                          if ((!Settings.Settings.ExcludePlatforms.Contains(tmpplatform == null ? Constants.UndefinedString : tmpplatform.Name)) &&
+                                                              (!Settings.Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                                              (!(Settings.Settings.ExcludeHiddenGames && game.Hidden)))
+                                                          {
                                                   if ((game.Features == null) || (game.Features.Count == 0))
                                                   {
                                                       FakeGame newgame = new FakeGame(game)
                                                       {
-                                                          Feature = String.Empty
+                                                                      Feature = String.Empty,
+                                                                      RealPlatform = tmpplatform
                                                       };
                                                       list.Add(newgame);
                                                   }
@@ -544,13 +843,16 @@ namespace HtmlExporterPlugin
                                                       {
                                                           FakeGame newgame = new FakeGame(game)
                                                           {
-                                                              Feature = Feature.Name
+                                                                          Feature = Feature.Name,
+                                                                          RealPlatform = tmpplatform
                                                           };
                                                           list.Add(newgame);
                                                       }
                                                   }
                                               }
                                           }
+                                                  }
+
                                           if (page.SortAscending)
                                           {
                                               if (page.GroupAscending)
@@ -588,15 +890,32 @@ namespace HtmlExporterPlugin
 
                                               foreach (Game game in gameslist)
                                               {
-                                                  if ((!Settings.ExcludePlatforms.Contains(game.Platform == null ? Constants.UndefinedString : game.Platform.Name)) &&
-                                                      (!Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
-                                                      (!(Settings.ExcludeHiddenGames && game.Hidden)))
+                                                          List<Platform> platforms = new List<Platform>();
+
+                                                          if ((game.Platforms == null) || (game.Platforms.Count == 0))
                                                   {
+                                                              platforms.Add(null);
+                                                          }
+                                                          else
+                                                          {
+                                                              foreach (Platform tmpplatform in game.Platforms)
+                                                              {
+                                                                  platforms.Add(tmpplatform);
+                                                              }
+                                                          }
+
+                                                          foreach (Platform tmpplatform in platforms)
+                                                          {
+                                                              if ((!Settings.Settings.ExcludePlatforms.Contains(tmpplatform == null ? Constants.UndefinedString : tmpplatform.Name)) &&
+                                                                  (!Settings.Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                                                  (!(Settings.Settings.ExcludeHiddenGames && game.Hidden)))
+                                                              {
                                                       if ((game.Genres == null) || (game.Genres.Count == 0))
                                                       {
                                                           FakeGame newgame = new FakeGame(game)
                                                           {
-                                                              Genre = String.Empty
+                                                                          Genre = String.Empty,
+                                                                          RealPlatform = tmpplatform
                                                           };
                                                           list.Add(newgame);
                                                       }
@@ -606,13 +925,16 @@ namespace HtmlExporterPlugin
                                                           {
                                                               FakeGame newgame = new FakeGame(game)
                                                               {
-                                                                  Genre = genre.Name
+                                                                              Genre = genre.Name,
+                                                                              RealPlatform = tmpplatform
                                                               };
                                                               list.Add(newgame);
                                                           }
                                                       }
                                                   }
                                               }
+                                                      }
+
                                               if (page.SortAscending)
                                               {
                                                   if (page.GroupAscending)
@@ -648,15 +970,32 @@ namespace HtmlExporterPlugin
 
                                                   foreach (Game game in gameslist)
                                                   {
-                                                      if ((!Settings.ExcludePlatforms.Contains(game.Platform == null ? Constants.UndefinedString : game.Platform.Name)) &&
-                                                         (!Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
-                                                         (!(Settings.ExcludeHiddenGames && game.Hidden)))
+                                                              List<Platform> platforms = new List<Platform>();
+
+                                                              if ((game.Platforms == null) || (game.Platforms.Count == 0))
                                                       {
+                                                                  platforms.Add(null);
+                                                              }
+                                                              else
+                                                              {
+                                                                  foreach (Platform tmpplatform in game.Platforms)
+                                                                  {
+                                                                      platforms.Add(tmpplatform);
+                                                                  }
+                                                              }
+
+                                                              foreach (Platform tmpplatform in platforms)
+                                                              {
+                                                                  if ((!Settings.Settings.ExcludePlatforms.Contains(tmpplatform == null ? Constants.UndefinedString : tmpplatform.Name)) &&
+                                                                      (!Settings.Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                                                      (!(Settings.Settings.ExcludeHiddenGames && game.Hidden)))
+                                                                  {
                                                           if ((game.Developers == null) || (game.Developers.Count == 0))
                                                           {
                                                               FakeGame newgame = new FakeGame(game)
                                                               {
-                                                                  Developer = String.Empty
+                                                                              Developer = String.Empty,
+                                                                              RealPlatform = tmpplatform
                                                               };
                                                               list.Add(newgame);
                                                           }
@@ -666,13 +1005,15 @@ namespace HtmlExporterPlugin
                                                               {
                                                                   FakeGame newgame = new FakeGame(game)
                                                                   {
-                                                                      Developer = developer.Name
+                                                                                  Developer = developer.Name,
+                                                                                  RealPlatform = tmpplatform
                                                                   };
                                                                   list.Add(newgame);
                                                               }
                                                           }
                                                       }
                                                   }
+                                                          }
                                                   if (page.SortAscending)
                                                   {
                                                       if (page.GroupAscending)
@@ -708,15 +1049,32 @@ namespace HtmlExporterPlugin
 
                                                       foreach (Game game in gameslist)
                                                       {
-                                                          if ((!Settings.ExcludePlatforms.Contains(game.Platform == null ? Constants.UndefinedString : game.Platform.Name)) &&
-                                                              (!Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
-                                                              (!(Settings.ExcludeHiddenGames && game.Hidden)))
+                                                                  List<Platform> platforms = new List<Platform>();
+
+                                                                  if ((game.Platforms == null) || (game.Platforms.Count == 0))
                                                           {
+                                                                      platforms.Add(null);
+                                                                  }
+                                                                  else
                                                               {
+                                                                      foreach (Platform tmpplatform in game.Platforms)
+                                                                      {
+                                                                          platforms.Add(tmpplatform);
+                                                                      }
+                                                                  }
+
+                                                                  foreach (Platform tmpplatform in platforms)
+                                                                  {
+                                                                      if ((!Settings.Settings.ExcludePlatforms.Contains(tmpplatform == null ? Constants.UndefinedString : tmpplatform.Name)) &&
+                                                                          (!Settings.Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                                                          (!(Settings.Settings.ExcludeHiddenGames && game.Hidden)))
+                                                                      {
+                                                                          {
                                                                   if ((game.Categories == null) || (game.Categories.Count == 0))
                                                                   {
                                                                       FakeGame newgame = new FakeGame(game)
                                                                       {
+                                                                                      RealPlatform = tmpplatform,
                                                                           Category = String.Empty
                                                                       };
                                                                       list.Add(newgame);
@@ -727,7 +1085,8 @@ namespace HtmlExporterPlugin
                                                                       {
                                                                           FakeGame newgame = new FakeGame(game)
                                                                           {
-                                                                              Category = category.Name
+                                                                                          Category = category.Name,
+                                                                                          RealPlatform = tmpplatform
                                                                           };
                                                                           list.Add(newgame);
                                                                       }
@@ -735,6 +1094,7 @@ namespace HtmlExporterPlugin
                                                               }
                                                           }
                                                       }
+                                                              }
 
                                                       if (page.SortAscending)
                                                       {
@@ -765,19 +1125,38 @@ namespace HtmlExporterPlugin
                                                       }
                                                   }
                                                   else
+
                                                   {
                                                       List<FakeGame> list = new List<FakeGame>();
 
                                                       foreach (Game game in gameslist)
                                                       {
-                                                          if ((!Settings.ExcludePlatforms.Contains(game.Platform == null ? Constants.UndefinedString : game.Platform.Name)) &&
-                                                             (!Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
-                                                             (!(Settings.ExcludeHiddenGames && game.Hidden)))
+                                                                  List<Platform> platforms = new List<Platform>();
+
+                                                                  if ((game.Platforms == null) || (game.Platforms.Count == 0))
                                                           {
+                                                                      platforms.Add(null);
+                                                                  }
+                                                                  else
+                                                                  {
+                                                                      foreach (Platform tmpplatform in game.Platforms)
+                                                                      {
+                                                                          platforms.Add(tmpplatform);
+                                                                      }
+                                                                  }
+
+                                                                  foreach (Platform tmpplatform in platforms)
+                                                                  {
+                                                                      if ((!Settings.Settings.ExcludePlatforms.Contains(tmpplatform == null ? Constants.UndefinedString : tmpplatform.Name)) &&
+                                                                          (!Settings.Settings.ExcludeSources.Contains(game.Source == null ? Constants.UndefinedString : game.Source.Name)) &&
+                                                                          (!(Settings.Settings.ExcludeHiddenGames && game.Hidden)))
+                                                                      {
                                                               FakeGame newgame = new FakeGame(game);
+                                                                          newgame.RealPlatform = tmpplatform;
                                                               list.Add(newgame);
                                                           }
                                                       }
+                                                              }
 
                                                       if (Constants.DateFields.Contains(page.Groupfield))
                                                       {
@@ -929,7 +1308,9 @@ namespace HtmlExporterPlugin
                                       }
                                   }
                               }
-
+                                  }
+                              }
+                              }
                               int groupcount = 0;
                               int count = 0;
                               string localgroupfield = String.Empty;
@@ -975,7 +1356,7 @@ namespace HtmlExporterPlugin
                                                   var tmp = FirstGame.OriginalGame.GetType().GetProperty(page.Groupfield).GetValue(FirstGame.OriginalGame);
                                                   if (tmp != null)
                                                   {
-                                                      prevlocalgroupfield = ConvertFromSeconds((Int64)tmp);
+                                                      prevlocalgroupfield = ConvertFromSeconds((ulong)tmp);
                                                   }
                                               }
                                               else
@@ -1053,7 +1434,7 @@ namespace HtmlExporterPlugin
                                                   var tmp = fakegame.OriginalGame.GetType().GetProperty(page.Groupfield).GetValue(fakegame.OriginalGame);
                                                   if (tmp != null)
                                                   {
-                                                      localgroupfield = ConvertFromSeconds((Int64)tmp);
+                                                      localgroupfield = ConvertFromSeconds((ulong)tmp);
                                                   }
                                               }
                                               else
@@ -1131,12 +1512,12 @@ namespace HtmlExporterPlugin
                                           }
                                           else
                                           {
-                                              if (!String.IsNullOrEmpty(realgame.Platform?.Icon))
+                                              if (!String.IsNullOrEmpty(fakegame.RealPlatform?.Icon))
                                               {
-                                                  gameicon = realgame.Platform.Icon.Replace("\\", "/");
+                                                  gameicon = fakegame.RealPlatform.Icon.Replace("\\", "/");
                                               }
                                           }
-                                          gameicon = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(gameicon), gameicon, Settings.ConvertImageOptions.DetectDuplicates);
+                                          gameicon = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(gameicon), gameicon, Settings.Settings.ConvertImageOptions.DetectDuplicates);
                                       }
                                       GameMediaHashtable[Constants.MediaIconText + realgame.Id.ToString()] = gameicon;
                                   }
@@ -1167,13 +1548,13 @@ namespace HtmlExporterPlugin
                                           }
                                           else
                                           {
-                                              if (!String.IsNullOrEmpty(realgame.Platform?.Cover))
+                                              if (!String.IsNullOrEmpty(fakegame.RealPlatform?.Cover))
                                               {
-                                                  coverimage = realgame.Platform.Cover.Replace("\\", "/");
+                                                  coverimage = fakegame.RealPlatform.Cover.Replace("\\", "/");
                                               }
                                           }
 
-                                          coverimage = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(coverimage), coverimage, Settings.ConvertImageOptions.DetectDuplicates);
+                                          coverimage = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(coverimage), coverimage, Settings.Settings.ConvertImageOptions.DetectDuplicates);
                                       }
                                       GameMediaHashtable[Constants.MediaCoverText + realgame.Id.ToString()] = coverimage;
                                   }
@@ -1203,12 +1584,12 @@ namespace HtmlExporterPlugin
                                           }
                                           else
                                           {
-                                              if (!String.IsNullOrEmpty(realgame.Platform?.Background))
+                                              if (!String.IsNullOrEmpty(fakegame.RealPlatform?.Background))
                                               {
-                                                  backgroundimage = realgame.Platform.Background.Replace("\\", "/");
+                                                  backgroundimage = fakegame.RealPlatform.Background.Replace("\\", "/");
                                               }
                                           }
-                                          backgroundimage = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(backgroundimage), backgroundimage, Settings.ConvertImageOptions.DetectDuplicates);
+                                          backgroundimage = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(backgroundimage), backgroundimage, Settings.Settings.ConvertImageOptions.DetectDuplicates);
                                       }
                                       GameMediaHashtable[Constants.MediaBackgroundText + realgame.Id.ToString()] = backgroundimage;
                                   }
@@ -1231,14 +1612,8 @@ namespace HtmlExporterPlugin
                                   string ReleaseDateTime = String.Empty;
                                   if (realgame.ReleaseDate.HasValue)
                                   {
-                                      ReleaseDateDate = ((DateTime)(realgame.ReleaseDate)).Date.ToShortDateString();
-                                      TimeSpan TmpReleaseDate = ((DateTime)(realgame.ReleaseDate)).TimeOfDay;
-                                      if (!((TmpReleaseDate.Days == 0) && (TmpReleaseDate.Hours == 0) &&
-                                          (TmpReleaseDate.Minutes == 0) && (TmpReleaseDate.Seconds == 0)))
-                                      {
-                                          ReleaseDateTime = TmpReleaseDate.ToString(@"h\:mm\:ss");
+                                      ReleaseDateDate = realgame.ReleaseDate.ToString();
                                       }
-                                  }
 
                                   string LastModifieddDate = Constants.NeverText;
                                   string LastModifiedTime = String.Empty;
@@ -1296,9 +1671,9 @@ namespace HtmlExporterPlugin
                                   CurrentGameValuesDict["pagetitle"] = HttpUtility.HtmlEncode(page.Pagetitle);
                                   CurrentGameValuesDict["count"] = count.ToString();
 
-                                  CurrentGameValuesDict["coverimage"] = Settings.ConvertImageOptions.CoverDestFilename(coverimage);
-                                  CurrentGameValuesDict["icon"] = Settings.ConvertImageOptions.IconDestFilename(gameicon);
-                                  CurrentGameValuesDict["backgroundimage"] = Settings.ConvertImageOptions.BackgroundDestFilename(backgroundimage);
+                                  CurrentGameValuesDict["coverimage"] = Settings.Settings.ConvertImageOptions.CoverDestFilename(coverimage);
+                                  CurrentGameValuesDict["icon"] = Settings.Settings.ConvertImageOptions.IconDestFilename(gameicon);
+                                  CurrentGameValuesDict["backgroundimage"] = Settings.Settings.ConvertImageOptions.BackgroundDestFilename(backgroundimage);
 
                                   CurrentGameValuesDict["lastactivitydate"] = HttpUtility.HtmlEncode(LastPlayedDate);
                                   CurrentGameValuesDict["lastactivitytime"] = HttpUtility.HtmlEncode(LastPlayedTime);
@@ -1316,13 +1691,13 @@ namespace HtmlExporterPlugin
                                   CurrentGameValuesDict["version"] = HttpUtility.HtmlEncode(realgame.Version);
                                   CurrentGameValuesDict["playtime"] = HttpUtility.HtmlEncode(Playtime);
                                   CurrentGameValuesDict["source"] = HttpUtility.HtmlEncode(realgame.Source);
-                                  CurrentGameValuesDict["platform"] = HttpUtility.HtmlEncode(realgame.Platform);
+                                  CurrentGameValuesDict["platform"] = HttpUtility.HtmlEncode(fakegame.Platform);
                                   CurrentGameValuesDict["releaseyear"] = HttpUtility.HtmlEncode(realgame.ReleaseYear);
-                                  CurrentGameValuesDict["agerating"] = HttpUtility.HtmlEncode(realgame.AgeRating);
+                                  CurrentGameValuesDict["agerating"] = HttpUtility.HtmlEncode(fakegame.AgeRating);
                                   CurrentGameValuesDict["favorite"] = HttpUtility.HtmlEncode(FavoriteField);
                                   CurrentGameValuesDict["lastactivitysegment"] = HttpUtility.HtmlEncode(LastActivitySegment);
                                   CurrentGameValuesDict["playtimecategory"] = HttpUtility.HtmlEncode(PlaytimeCategory);
-                                  CurrentGameValuesDict["region"] = HttpUtility.HtmlEncode(realgame.Region);
+                                  CurrentGameValuesDict["region"] = HttpUtility.HtmlEncode(fakegame.Region);
                                   CurrentGameValuesDict["completionstatus"] = HttpUtility.HtmlEncode(CompletionStatus);
                                   CurrentGameValuesDict["userscore"] = HttpUtility.HtmlEncode(realgame.UserScore);
                                   CurrentGameValuesDict["userscoregroup"] = HttpUtility.HtmlEncode(UserScoreGroup);
@@ -1374,7 +1749,7 @@ namespace HtmlExporterPlugin
                                       //uses hash table as we return platform images as well and they can be processes multiple times.
                                       //also if fakefield groupby was used we can encounter same game multiple times and no need
                                       //to copy the files again.
-                                      if (Settings.CopyImages)
+                                      if (Settings.Settings.CopyImages)
                                       {
                                           OriginalGameImageData ImageData = PreviousImageDataFile.GetOriginalGameImageData(fakegame.OriginalGame.Id.ToString());
         
@@ -1389,16 +1764,16 @@ namespace HtmlExporterPlugin
                                                       string fullbackgroundimagedest = Path.Combine(outputfolder, backgroundimage.Replace("/", "\\"));
                                                       try
                                                       {
-                                                          string DestFile = Settings.ConvertImageOptions.BackgroundDestFilename(fullbackgroundimagedest);
-                                                          if (Settings.ConvertImageOptions.AlwaysProcess || !ImageData.BackgroundImageSame(fullbackgroundimage) || !File.Exists(DestFile))
+                                                          string DestFile = Settings.Settings.ConvertImageOptions.BackgroundDestFilename(fullbackgroundimagedest);
+                                                          if (Settings.Settings.ConvertImageOptions.AlwaysProcess || !ImageData.BackgroundImageSame(fullbackgroundimage) || !File.Exists(DestFile))
                                                           {
                                                               if (File.Exists(fullbackgroundimage))
                                                               {
-                                                                  bool needsConversion = Settings.ConvertImageOptions.BackgroundNeedsConversion(fullbackgroundimage);
+                                                                  bool needsConversion = Settings.Settings.ConvertImageOptions.BackgroundNeedsConversion(fullbackgroundimage);
                                                                   
-                                                                  ConvertImagesRunner.addImageProcess(!needsConversion, fullbackgroundimage, fullbackgroundimagedest, DestFile, Settings.ConvertImageOptions.ImageMagickLocation,
-                                                                        "\"" + fullbackgroundimage + "\" " + Settings.ConvertImageOptions.BackgroundOptions(Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
-                                                                        File.Exists(Settings.ConvertImageOptions.ImageMagickLocation)? Path.GetDirectoryName(Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
+                                                                  ConvertImagesRunner.addImageProcess(!needsConversion, fullbackgroundimage, fullbackgroundimagedest, DestFile, Settings.Settings.ConvertImageOptions.ImageMagickLocation,
+                                                                        "\"" + fullbackgroundimage + "\" " + Settings.Settings.ConvertImageOptions.BackgroundOptions(Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
+                                                                        File.Exists(Settings.Settings.ConvertImageOptions.ImageMagickLocation)? Path.GetDirectoryName(Settings.Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
                                                               }
                                                           }
                                                           ImageData.SetBackgroundImageData(fullbackgroundimage);
@@ -1417,16 +1792,16 @@ namespace HtmlExporterPlugin
                                                       string fullcoverimagedest = Path.Combine(outputfolder, coverimage.Replace("/", "\\"));
                                                       try
                                                       {
-                                                          string DestFile = Settings.ConvertImageOptions.CoverDestFilename(fullcoverimagedest);
-                                                          if (Settings.ConvertImageOptions.AlwaysProcess || !ImageData.CoverImageSame(fullcoverimage) || !File.Exists(DestFile))
+                                                          string DestFile = Settings.Settings.ConvertImageOptions.CoverDestFilename(fullcoverimagedest);
+                                                          if (Settings.Settings.ConvertImageOptions.AlwaysProcess || !ImageData.CoverImageSame(fullcoverimage) || !File.Exists(DestFile))
                                                           {
                                                               if (File.Exists(fullcoverimage))
                                                               {
-                                                                  bool needsConversion = Settings.ConvertImageOptions.CoverNeedsConversion(fullcoverimage);
+                                                                  bool needsConversion = Settings.Settings.ConvertImageOptions.CoverNeedsConversion(fullcoverimage);
 
-                                                                  ConvertImagesRunner.addImageProcess(!needsConversion, fullcoverimage, fullcoverimagedest, DestFile, Settings.ConvertImageOptions.ImageMagickLocation,
-                                                                        "\"" + fullcoverimage + "\" " + Settings.ConvertImageOptions.CoverOptions(Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
-                                                                        File.Exists(Settings.ConvertImageOptions.ImageMagickLocation) ? Path.GetDirectoryName(Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
+                                                                  ConvertImagesRunner.addImageProcess(!needsConversion, fullcoverimage, fullcoverimagedest, DestFile, Settings.Settings.ConvertImageOptions.ImageMagickLocation,
+                                                                        "\"" + fullcoverimage + "\" " + Settings.Settings.ConvertImageOptions.CoverOptions(Path.GetExtension(DestFile)) + " \"" + DestFile + "\"" ,
+                                                                        File.Exists(Settings.Settings.ConvertImageOptions.ImageMagickLocation) ? Path.GetDirectoryName(Settings.Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
                                                               }
                                                           }
                                                           ImageData.SetCoverImageData(fullcoverimage);
@@ -1445,16 +1820,16 @@ namespace HtmlExporterPlugin
                                                       string fulliconimagedest = Path.Combine(outputfolder, gameicon.Replace("/", "\\"));
                                                       try
                                                       {
-                                                          string DestFile = Settings.ConvertImageOptions.IconDestFilename(fulliconimagedest);
-                                                          if (Settings.ConvertImageOptions.AlwaysProcess || !ImageData.IconImageSame(fulliconimage) || !File.Exists(DestFile))
+                                                          string DestFile = Settings.Settings.ConvertImageOptions.IconDestFilename(fulliconimagedest);
+                                                          if (Settings.Settings.ConvertImageOptions.AlwaysProcess || !ImageData.IconImageSame(fulliconimage) || !File.Exists(DestFile))
                                                           {
                                                               if (File.Exists(fulliconimage))
                                                               {
-                                                                  bool needsConversion = Settings.ConvertImageOptions.IconNeedsConversion(fulliconimage);
+                                                                  bool needsConversion = Settings.Settings.ConvertImageOptions.IconNeedsConversion(fulliconimage);
 
-                                                                  ConvertImagesRunner.addImageProcess(!needsConversion, fulliconimage, fulliconimagedest, DestFile, Settings.ConvertImageOptions.ImageMagickLocation,
-                                                                            "\"" + fulliconimage + "\" " + Settings.ConvertImageOptions.IconOptions(Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
-                                                                            File.Exists(Settings.ConvertImageOptions.ImageMagickLocation) ? Path.GetDirectoryName(Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
+                                                                  ConvertImagesRunner.addImageProcess(!needsConversion, fulliconimage, fulliconimagedest, DestFile, Settings.Settings.ConvertImageOptions.ImageMagickLocation,
+                                                                            "\"" + fulliconimage + "\" " + Settings.Settings.ConvertImageOptions.IconOptions(Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
+                                                                            File.Exists(Settings.Settings.ConvertImageOptions.ImageMagickLocation) ? Path.GetDirectoryName(Settings.Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
 
                                                               }
                                                           }
@@ -1639,7 +2014,7 @@ namespace HtmlExporterPlugin
                           }
                       }
 
-                      if (Settings.CopyImages && !progressAction.CancelToken.IsCancellationRequested)
+                      if (Settings.Settings.CopyImages && !progressAction.CancelToken.IsCancellationRequested)
                       {
                           if (ConvertImagesRunner.Count() > 0)
                           {
@@ -1652,7 +2027,7 @@ namespace HtmlExporterPlugin
                                   int UpdateProgressCount = ConvertImagesRunner.Count() > 1000 ? 50 : ConvertImagesRunner.Count() > 100 ? 5 : 1;
 
                                   int MaxTasks = 1;
-                                  int.TryParse(Settings.ConvertImageOptions.MaxTasks, out MaxTasks);
+                                  int.TryParse(Settings.Settings.ConvertImageOptions.MaxTasks, out MaxTasks);
 
                                   ConvertImagesRunner.Start(MaxTasks,
                                       (int count, int max) =>
@@ -1669,7 +2044,7 @@ namespace HtmlExporterPlugin
 
                                   if (!progressAction.CancelToken.IsCancellationRequested)
                                   {
-                                      PreviousImageDataFile.SaveToFile(Path.Combine(GetPluginUserDataPath(), "PreviousImagesUsed.json"), Settings);
+                                      PreviousImageDataFile.SaveToFile(Path.Combine(GetPluginUserDataPath(), "PreviousImagesUsed.json"), Settings.Settings);
                                   }
 
                                   foreach (string error in ConvertImagesRunner.FailedFiles)
@@ -1692,7 +2067,7 @@ namespace HtmlExporterPlugin
                           Constants.FinishedExportingHTMLErrors + Errors.ToString() + "\n" +
                           Constants.FinishedExportingHTMLErrorsTemplate + FaultyTemplate.ToString();
 
-                      if (Settings.CopyImages)
+                      if (Settings.Settings.CopyImages)
                       {
                           sMsg += "\n\n" +
                             Constants.TotalImagesProcessText + ConvertImagesRunner.Count().ToString() + "\n" +
@@ -1712,7 +2087,7 @@ namespace HtmlExporterPlugin
 
         public delegate void ImageProgress(string message);
 
-        public override List<MainMenuItem> GetMainMenuItems(GetMainMenuItemsArgs args)
+        public override IEnumerable<MainMenuItem> GetMainMenuItems(GetMainMenuItemsArgs args)
         {
             List<MainMenuItem> MainMenuItems = new List<MainMenuItem>
             {
@@ -1759,20 +2134,20 @@ namespace HtmlExporterPlugin
         }
 
 
-        public string ConvertFromSeconds(Int64 PlayTimeSeconds)
+        public string ConvertFromSeconds(ulong PlayTimeSeconds)
         {
             string playtime = String.Empty;
 
             if (PlayTimeSeconds > 0)
             {
                 double playtimetemp = PlayTimeSeconds;
-                long day = (long)Math.Truncate((double)playtimetemp / (24 * 3600));
+                ulong day = (ulong)Math.Truncate((double)playtimetemp / (24 * 3600));
                 playtimetemp %= (24 * 3600);
-                long hour = (long)Math.Truncate((double)playtimetemp / 3600);
+                ulong hour = (ulong)Math.Truncate((double)playtimetemp / 3600);
                 playtimetemp %= 3600;
-                long minutes = (long)Math.Truncate((double)playtimetemp / 60);
+                ulong minutes = (ulong)Math.Truncate((double)playtimetemp / 60);
                 playtimetemp %= 60;
-                long seconds = (long)playtimetemp;
+                ulong seconds = (ulong)playtimetemp;
 
                 if (day > 0)
                 {
@@ -1802,44 +2177,44 @@ namespace HtmlExporterPlugin
             }
             return playtime;
         }
-        
 
-        public override void OnGameInstalled(Game game)
+
+        public override void OnGameInstalled(OnGameInstalledEventArgs args)
         {
             // Add code to be executed when game is finished installing.
         }
 
-        public override void OnGameStarted(Game game)
+        public override void OnGameStarted(OnGameStartedEventArgs args)
         {
             // Add code to be executed when game is started running.
         }
 
-        public override void OnGameStarting(Game game)
+        public override void OnGameStarting(OnGameStartingEventArgs args)
         {
             // Add code to be executed when game is preparing to be started.
         }
 
-        public override void OnGameStopped(Game game, long elapsedSeconds)
+        public override void OnGameStopped(OnGameStoppedEventArgs args)
         {
             // Add code to be executed when game is preparing to be started.
         }
 
-        public override void OnGameUninstalled(Game game)
+        public override void OnGameUninstalled(OnGameUninstalledEventArgs args)
         {
             // Add code to be executed when game is uninstalled.
         }
 
-        public override void OnApplicationStarted()
+        public override void OnApplicationStarted(OnApplicationStartedEventArgs args)
         {
             // Add code to be executed when Playnite is initialized.
         }
 
-        public override void OnApplicationStopped()
+        public override void OnApplicationStopped(OnApplicationStoppedEventArgs args)
         {
             // Add code to be executed when Playnite is shutting down.
         }
 
-        public override void OnLibraryUpdated()
+        public override void OnLibraryUpdated(OnLibraryUpdatedEventArgs args)
         {
             // Add code to be executed when library is updated.
         }

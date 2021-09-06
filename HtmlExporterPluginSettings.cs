@@ -6,21 +6,12 @@ using System.Linq;
 using System.Windows.Controls;
 using System.IO;
 using System;
+using Playnite.SDK.Data;
 
 namespace HtmlExporterPlugin
 {
-    public class HtmlExporterPluginSettings : ISettings
+    public class HtmlExporterPluginSettings
     {
-        private readonly HtmlExporterPlugin plugin;
-        private HtmlExporterPluginSettings EditDataSettings;
-
-        [JsonIgnore]
-        public List<string> AvailableTemplateFolders => plugin.TemplateFolders;
-        [JsonIgnore]
-        public List<string> AvailableSortFields { get; set; } = Constants.AvailableSortFields.AsQueryable().OrderBy(o => Constants.GetNameFromField(o, false)).ToList();
-        [JsonIgnore]
-        public List<string> AvailableGroupFields { get; set; } = Constants.AvailableGroupFields.AsQueryable().OrderBy(o => Constants.GetNameFromField(o, false)).ToList();
-
         public string OutputFolder { get; set; } = string.Empty;
         public UniqueList<string> ExcludeSources { get; set; } = new UniqueList<string>();
         public UniqueList<string> ExcludePlatforms { get; set; } = new UniqueList<string>();
@@ -28,18 +19,36 @@ namespace HtmlExporterPlugin
         public bool CopyImages { get; set; } = false;
         public bool ExcludeHiddenGames { get; set; } = true;
         public ImageOptions ConvertImageOptions { get; set; } = new ImageOptions();
+    }
+
+    public class HtmlExporterPluginSettingsViewModel : ObservableObject, ISettings
+    { 
+        private readonly HtmlExporterPlugin plugin;
+        private HtmlExporterPluginSettings editingClone { get; set; }
+
+        private HtmlExporterPluginSettings settings;
+        public HtmlExporterPluginSettings Settings
+        {
+            get => settings;
+            set
+            {
+                settings = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public List<string> AvailableTemplateFolders => plugin.TemplateFolders;
+        public List<string> AvailableSortFields { get; set; } = Constants.AvailableSortFields.AsQueryable().OrderBy(o => Constants.GetNameFromField(o, false)).ToList();
+        public List<string> AvailableGroupFields { get; set; } = Constants.AvailableGroupFields.AsQueryable().OrderBy(o => Constants.GetNameFromField(o, false)).ToList();
+
+        
 
         // Playnite serializes settings object to a JSON object and saves it as text file.
         // If you want to exclude some property from being saved then use `JsonIgnore` ignore attribute.
         //  [JsonIgnore]
         // public bool OptionThatWontBeSaved { get; set; } = false;
 
-        // Parameterless constructor must exist if you want to use LoadPluginSettings method.
-        public HtmlExporterPluginSettings()
-        {
-        }
-
-        public HtmlExporterPluginSettings(HtmlExporterPlugin plugin)
+        public HtmlExporterPluginSettingsViewModel(HtmlExporterPlugin plugin)
         {
             // Injecting your plugin instance is required for Save/Load method because Playnite saves data to a location based on what plugin requested the operation.
             this.plugin = plugin;
@@ -50,16 +59,16 @@ namespace HtmlExporterPlugin
             // LoadPluginSettings returns null if not saved data is available.
             if (savedSettings != null)
             {
+                Settings = savedSettings;
                 //new option might not exits
-                if (savedSettings.ConvertImageOptions is null)
+                if (Settings.ConvertImageOptions is null)
                 {
-                    savedSettings.ConvertImageOptions = new ImageOptions();
-                } 
-
-                RestoreSettings(savedSettings);
+                    Settings.ConvertImageOptions = new ImageOptions();
+                }
             }
             else
             {
+                Settings = new HtmlExporterPluginSettings();
                 DoResetPages();
             }
         }
@@ -75,17 +84,17 @@ namespace HtmlExporterPlugin
 
                 if (Constants.FakeGameFields.Contains(groupfield))
                 {
-                    Pages.Add(plugin.CreatePageObject("default list text combobox quicklinks", groupfield, true, Constants.NameField, true, true));
+                    Settings.Pages.Add(plugin.CreatePageObject("default list text combobox quicklinks", groupfield, true, Constants.NameField, true, true));
                 }
                 else
                 {
                     if (Constants.DefaultDescGroupFields.Contains(groupfield))
                     {
-                        Pages.Add(plugin.CreatePageObject("default list text combobox quicklinks", groupfield, false, Constants.NameField, true, true));
+                        Settings.Pages.Add(plugin.CreatePageObject("default list text combobox quicklinks", groupfield, false, Constants.NameField, true, true));
                     }
                     else
                     {
-                        Pages.Add(plugin.CreatePageObject("default list text", groupfield, true, Constants.NameField, true, true));
+                        Settings.Pages.Add(plugin.CreatePageObject("default list text", groupfield, true, Constants.NameField, true, true));
                     }
                 }
             }
@@ -94,11 +103,11 @@ namespace HtmlExporterPlugin
         public void BeginEdit()
         {
             // Code executed when settings view is opened and user starts editing values.
-            EditDataSettings = new HtmlExporterPluginSettings(plugin);
+            editingClone = Serialization.GetClone(Settings);
 
-            plugin.SettingsView.ConvertImageOptions = ConvertImageOptions;
+            plugin.SettingsView.ConvertImageOptions = Settings.ConvertImageOptions;
 
-            foreach (PageObject page in Pages)
+            foreach (PageObject page in Settings.Pages)
             {
                 plugin.SettingsView.PagesDataGrid.Items.Add(page);
             }
@@ -110,7 +119,7 @@ namespace HtmlExporterPlugin
                 foreach (var source in plugin.PlayniteApi.Database.Sources.AsQueryable().OrderBy(o => (o != null) ? o.Name : null).Concat(new List<GameSource> { null }))
                 {
                     string sourceName = source != null ? source.Name : Constants.UndefinedString;
-                    if (ExcludeSources.Contains(sourceName))
+                    if (Settings.ExcludeSources.Contains(sourceName))
                     {
                         var cb = new CheckBox { Content = sourceName, Tag = source };
                         cb.IsChecked = true;
@@ -121,7 +130,7 @@ namespace HtmlExporterPlugin
                 foreach (var source in plugin.PlayniteApi.Database.Sources.AsQueryable().OrderBy(o => (o != null) ? o.Name : null).Concat(new List<GameSource> { null }))
                 {
                     string sourceName = source != null ? source.Name : Constants.UndefinedString;
-                    if (!ExcludeSources.Contains(sourceName))
+                    if (!Settings.ExcludeSources.Contains(sourceName))
                     {
                         var cb = new CheckBox { Content = sourceName, Tag = source };
                         cb.IsChecked = false;
@@ -138,7 +147,7 @@ namespace HtmlExporterPlugin
                 foreach (var platform in plugin.PlayniteApi.Database.Platforms.AsQueryable().OrderBy(o => (o != null) ? o.Name : null).Concat(new List<Platform> { null }))
                 {
                     string platformName = platform != null ? platform.Name : Constants.UndefinedString;
-                    if (ExcludeSources.Contains(platformName))
+                    if (Settings.ExcludeSources.Contains(platformName))
                     {
                         CheckBox cb = new CheckBox { Content = platformName, Tag = platform };
                         cb.IsChecked = true;
@@ -149,7 +158,7 @@ namespace HtmlExporterPlugin
                 foreach (var platform in plugin.PlayniteApi.Database.Platforms.AsQueryable().OrderBy(o => (o != null) ? o.Name : null).Concat(new List<Platform> { null }))
                 {
                     string platformName = platform != null ? platform.Name : Constants.UndefinedString;
-                    if (!ExcludeSources.Contains(platformName))
+                    if (!Settings.ExcludeSources.Contains(platformName))
                     {
                         var cb = new CheckBox { Content = platformName, Tag = platform };
                         cb.IsChecked = false;
@@ -165,7 +174,7 @@ namespace HtmlExporterPlugin
         {
             // Code executed when user decides to cancel any changes made since BeginEdit was called.
             // This method should revert any changes made to Option1 and Option2.
-            RestoreSettings(EditDataSettings);
+            Settings = editingClone;
         }
 
         public void EndEdit()
@@ -173,7 +182,7 @@ namespace HtmlExporterPlugin
             // Code executed when user decides to confirm changes made since BeginEdit was called.
             // This method should save settings made to Option1 and Option2.
 
-            ConvertImageOptions = plugin.SettingsView.ConvertImageOptions;
+            Settings.ConvertImageOptions = plugin.SettingsView.ConvertImageOptions;
 
             //Credit to felixkmh https://github.com/felixkmh/DuplicateHider/
             plugin.SettingsView.SourceComboBox.Items.Dispatcher.Invoke(() =>
@@ -183,11 +192,11 @@ namespace HtmlExporterPlugin
                     string name = cb.Content as string;
                     if (cb.IsChecked ?? false)
                     {
-                        ExcludeSources.AddMissing(name);
+                        Settings.ExcludeSources.AddMissing(name);
                     }
                     else
                     {
-                        ExcludeSources.Remove(name);
+                        Settings.ExcludeSources.Remove(name);
                     }
 
                 }
@@ -200,24 +209,23 @@ namespace HtmlExporterPlugin
                     string name = cb.Content as string;
                     if (cb.IsChecked ?? false)
                     {
-                        ExcludePlatforms.AddMissing(name);
+                        Settings.ExcludePlatforms.AddMissing(name);
                     }
                     else
                     {
-                        ExcludePlatforms.Remove(name);
+                        Settings.ExcludePlatforms.Remove(name);
                     }
 
                 }
             });
 
-            Pages.Clear();
+            Settings.Pages.Clear();
             foreach (PageObject page in plugin.SettingsView.PagesDataGrid.Items)
             {
-
-                Pages.Add(page);
+                Settings.Pages.Add(page);
             }
 
-            plugin.SavePluginSettings(this);
+            plugin.SavePluginSettings(Settings);
         }
 
         public bool VerifySettings(out List<string> errors)
@@ -229,24 +237,13 @@ namespace HtmlExporterPlugin
             bool returnvalue = true;
             errors = new List<string>();
 
-            if ((String.IsNullOrEmpty(OutputFolder)) || (!Directory.Exists(OutputFolder)))
+            if (String.IsNullOrEmpty(Settings.OutputFolder) || (!Directory.Exists(Settings.OutputFolder)))
             {
                 returnvalue = false;
                 errors.Add(Constants.ErrorHTMLExpoterNoOutputFolder);
             }
 
             return returnvalue;
-        }
-
-        private void RestoreSettings(HtmlExporterPluginSettings source)
-        {
-            OutputFolder = source.OutputFolder;
-            ExcludeSources = source.ExcludeSources;
-            ExcludePlatforms = source.ExcludePlatforms;
-            CopyImages = source.CopyImages;
-            Pages = source.Pages;
-            ExcludeHiddenGames = source.ExcludeHiddenGames;
-            ConvertImageOptions = source.ConvertImageOptions;
-        }
+        }        
     }
 }

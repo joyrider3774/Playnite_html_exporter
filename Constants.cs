@@ -210,22 +210,22 @@ namespace HtmlExporterPlugin
             ModifiedSegmentField, PlayCountField, PublisherField, SerieField, HiddenField, AddedField, LastActivityField, ModifiedField, ReleaseDateField,
             PlaytimeField, NotGroupedField});
 
-        public static readonly ReadOnlyCollection<string> AvailableSortFields  = new ReadOnlyCollection<string>(new List<String> {NameField, SourceField, PlatformField, ReleaseYearField, AgeRatingField, FavoriteField,
-            LastActivitySegmentField, PlaytimeCategoryField, RegionField, CompletionStatusField, UserScoreField, UserScoreGroupField,
+        public static readonly ReadOnlyCollection<string> AvailableSortFields  = new ReadOnlyCollection<string>(new List<String> {NameField, SourceField, ReleaseYearField, FavoriteField,
+            LastActivitySegmentField, PlaytimeCategoryField, CompletionStatusField, UserScoreField, UserScoreGroupField,
             UserScoreRatingField, CommunityScoreField, CommunityScoreGroupField, CommunityScoreRatingField, CriticScoreField, CriticScoreGroupField,
             CriticScoreRatingField, AddedSegmentField, InstallationStatusField, IsCustomGameField,
             ModifiedSegmentField, PlayCountField, HiddenField, AddedField, LastActivityField, ModifiedField, ReleaseDateField, PlaytimeField});
 
 
         public static readonly ReadOnlyCollection<string> DateFields = new ReadOnlyCollection<string> (new List<String> {
-          AddedField , ReleaseDateField, ModifiedField, LastActivityField });
+          AddedField , ModifiedField, LastActivityField });
 
         public static readonly ReadOnlyCollection<string> DefaultDescGroupFields = new ReadOnlyCollection<string>(new List<String> {
          AddedField , ReleaseDateField, ModifiedField, LastActivityField, PlayCountField, PlaytimeField, ReleaseYearField, UserScoreField, CriticScoreField, CommunityScoreField});
 
 
         public static readonly ReadOnlyCollection<string> FakeGameFields = new ReadOnlyCollection<string>(new List<String> {
-            CategoryField, DeveloperField, GenreField, FeatureField, SerieField, PublisherField, LibraryField });
+            CategoryField, DeveloperField, GenreField, FeatureField, SerieField, PublisherField, LibraryField, PlatformField, AgeRatingField, RegionField });
 
 
 

@@ -1,7 +1,7 @@
 ﻿Id: HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557
 Name: HTML Exporter
 Author: Joyrider3774
-Version: 2.1
+Version: 3.0
 Module: HtmlExporterPlugin.dll
 Type: GenericPlugin
 Icon: icon.png
@@ -10,3 +10,5 @@ Links:
       Url: https://github.com/joyrider3774/Playnite_html_exporter
     - Name: Forum Thread
       Url: https://www.playnite.link/forum/thread-664.html
+    - Name: Translate
+      Url: https://crowdin.com/project/playnite-game-speak
