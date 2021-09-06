@@ -1397,7 +1397,7 @@ namespace HtmlExporterPlugin
                                                                   bool needsConversion = Settings.ConvertImageOptions.BackgroundNeedsConversion(fullbackgroundimage);
                                                                   
                                                                   ConvertImagesRunner.addImageProcess(!needsConversion, fullbackgroundimage, fullbackgroundimagedest, DestFile, Settings.ConvertImageOptions.ImageMagickLocation,
-                                                                        fullbackgroundimage + " " + Settings.ConvertImageOptions.BackgroundOptions(Path.GetExtension(DestFile)) + " " + DestFile,
+                                                                        "\"" + fullbackgroundimage + "\" " + Settings.ConvertImageOptions.BackgroundOptions(Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
                                                                         File.Exists(Settings.ConvertImageOptions.ImageMagickLocation)? Path.GetDirectoryName(Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
                                                               }
                                                           }
@@ -1423,9 +1423,9 @@ namespace HtmlExporterPlugin
                                                               if (File.Exists(fullcoverimage))
                                                               {
                                                                   bool needsConversion = Settings.ConvertImageOptions.CoverNeedsConversion(fullcoverimage);
-                                                                  
+
                                                                   ConvertImagesRunner.addImageProcess(!needsConversion, fullcoverimage, fullcoverimagedest, DestFile, Settings.ConvertImageOptions.ImageMagickLocation,
-                                                                        fullcoverimage + " " + Settings.ConvertImageOptions.CoverOptions(Path.GetExtension(DestFile)) + " " + DestFile,
+                                                                        "\"" + fullcoverimage + "\" " + Settings.ConvertImageOptions.CoverOptions(Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
                                                                         File.Exists(Settings.ConvertImageOptions.ImageMagickLocation) ? Path.GetDirectoryName(Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
                                                               }
                                                           }
@@ -1451,9 +1451,9 @@ namespace HtmlExporterPlugin
                                                               if (File.Exists(fulliconimage))
                                                               {
                                                                   bool needsConversion = Settings.ConvertImageOptions.IconNeedsConversion(fulliconimage);
-                                                                  
+
                                                                   ConvertImagesRunner.addImageProcess(!needsConversion, fulliconimage, fulliconimagedest, DestFile, Settings.ConvertImageOptions.ImageMagickLocation,
-                                                                            fulliconimage + " " + Settings.ConvertImageOptions.IconOptions(Path.GetExtension(DestFile)) + " " + DestFile,
+                                                                            "\"" + fulliconimage + "\" " + Settings.ConvertImageOptions.IconOptions(Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
                                                                             File.Exists(Settings.ConvertImageOptions.ImageMagickLocation) ? Path.GetDirectoryName(Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
 
                                                               }
