@@ -29,7 +29,9 @@
 
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Standaard raster (vereist afbeeldingen)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Standaard lijst (vereist afbeeldingen)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTable">Standaard tabel (vereist afbeeldingen)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Standaard lijst (alleen tekst)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTableText">Standaard tabel (alleen tekst)</sys:String>
 
     <!-- misc -->
     <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Niet gegroepeerd]</sys:String>

@@ -29,7 +29,9 @@
 
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Cuadrícula predeterminada (requiere imágenes)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Lista predeterminada (requiere imágenes)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTable">Tabla predeterminada (requiere imágenes)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Lista predeterminada (sólo texto)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTableText">Tabla predeterminada (sólo texto)</sys:String>
 
     <!-- misc -->
     <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Sin agrupar]</sys:String>

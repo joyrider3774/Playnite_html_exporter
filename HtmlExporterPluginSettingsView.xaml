@@ -14,7 +14,9 @@
         <ContextMenu x:Key="cmRevert">
             <MenuItem Name="MnuDefaultGrid" Header="{DynamicResource LOC_HTMLEXPORTER_MnuDefaultGrid}" Click="MnuDefaultGrid_Click" />
             <MenuItem Name="MnuDefaultList" Header="{DynamicResource LOC_HTMLEXPORTER_MnuDefaultList}" Click="MnuDefaultList_Click" />
+            <MenuItem Name="MnuDefaultTable" Header="{DynamicResource LOC_HTMLEXPORTER_MnuDefaultTable}" Click="MnuDefaultTable_Click"/> 
             <MenuItem Name="MnuDefaultListText" Header="{DynamicResource LOC_HTMLEXPORTER_MnuDefaultListText}" Click="MnuDefaultListText_Click" />
+            <MenuItem Name="MnuDefaultTableText" Header="{DynamicResource LOC_HTMLEXPORTER_MnuDefaultTableText}" Click="MnuDefaultTableText_Click"/>
         </ContextMenu>
         
         <Style  x:Key="NoSpaceItems" TargetType="ComboBoxItem">

@@ -26,13 +26,15 @@ namespace HtmlExporterPlugin
         public string IconImageWidth { get; set; } = "48";
         public string IconImageHeight { get; set; } = "48";
 
-        public bool ForceConversion { get; set;} = false;
+        public bool ForceConversion { get; set; } = false;
 
         public string MaxTasks { get; set; } = "1";
 
         public bool AlwaysProcess { get; set; } = false;
 
         public bool DetectDuplicates { get; set; } = false;
+
+        private bool ImageMagickFound { get; set; } = false;
 
         public string GetUniqueString(bool includeMaxTasks = false, bool includeAlwaysProcess = false)
         {
@@ -44,29 +46,35 @@ namespace HtmlExporterPlugin
                 (includeAlwaysProcess ? '_' + AlwaysProcess.ToString() : String.Empty);
         }
 
-        public bool ImageMagickFound()
+        public ImageOptions()
         {
-            return !String.IsNullOrEmpty(ImageMagickLocation) && File.Exists(ImageMagickLocation);
+            CheckForImageMagick();
+        }
+
+        public bool CheckForImageMagick()
+        {
+            ImageMagickFound = !String.IsNullOrEmpty(ImageMagickLocation) && File.Exists(ImageMagickLocation);
+            return ImageMagickFound;
         }
 
         public bool BackgroundNeedsConversion(string filename)
         {
-            return ImageMagickFound() && (ConvertToJpg && (!Path.GetExtension(filename).ToLower().Equals(".jpg") || ForceConversion) || ResizeBackgroundImage);
+            return ImageMagickFound && (ConvertToJpg && (!Path.GetExtension(filename).ToLower().Equals(".jpg") || ForceConversion) || ResizeBackgroundImage);
         }
 
         public bool IconNeedsConversion(string filename)
         {            
-            return ImageMagickFound() && (ConvertToPng && (!Path.GetExtension(filename).ToLower().Equals(".png") || ForceConversion) || ResizeIconImage);
+            return ImageMagickFound && (ConvertToPng && (!Path.GetExtension(filename).ToLower().Equals(".png") || ForceConversion) || ResizeIconImage);
         }
 
         public bool CoverNeedsConversion(string filename)
         {
-            return ImageMagickFound() && (ConvertToJpg && (!Path.GetExtension(filename).ToLower().Equals(".jpg") || ForceConversion) || ResizeCoverImage);
+            return ImageMagickFound && (ConvertToJpg && (!Path.GetExtension(filename).ToLower().Equals(".jpg") || ForceConversion) || ResizeCoverImage);
         }
 
         public string CoverDestFilename(string filename)
         {
-            if (!ConvertToJpg || !ImageMagickFound())
+            if (!ConvertToJpg || !ImageMagickFound)
             {
                 return filename;
             }
@@ -78,7 +86,7 @@ namespace HtmlExporterPlugin
 
         public string BackgroundDestFilename(string filename)
         {
-            if (!ConvertToJpg || !ImageMagickFound())
+            if (!ConvertToJpg || !ImageMagickFound)
             {
                 return filename;
             }
@@ -90,7 +98,7 @@ namespace HtmlExporterPlugin
 
         public string IconDestFilename(string filename)
         {
-            if (!ConvertToPng || !ImageMagickFound())                
+            if (!ConvertToPng || !ImageMagickFound)
             {
                 return filename;
             }

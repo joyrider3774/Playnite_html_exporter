@@ -12,14 +12,11 @@ namespace HtmlExporterPlugin
         public string Serie { get; set; }
         public string Category { get; set; }
         public string Library { get; set; }
-        public string Platform {
-            get => RealPlatform == null ? String.Empty : RealPlatform.Name;
-        }
-        public Platform RealPlatform { get; set; }
-        public Game OriginalGame { get; set; }
+        public string Platform { get; set; }        
         public string AgeRating { get; set; }
         public string Region { get; set; }
-
+        public string Tag { get; set; }
+        public Game OriginalGame { get; set; }
         public FakeGame(Game aGame)
         {
             OriginalGame = aGame;

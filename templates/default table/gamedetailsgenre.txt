@@ -1,0 +1,1 @@
+<a href="%genre_filename%#quicklink-%genre%">%genre%</a><br/>

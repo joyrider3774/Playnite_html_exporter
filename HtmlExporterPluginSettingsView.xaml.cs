@@ -130,7 +130,7 @@ namespace HtmlExporterPlugin
             PagesDataGrid.Items.Refresh();
         }
 
-        public void DoReset(string context)
+        public void DoReset(string context, bool forcesingle = false)
         {
             if (plugin.PlayniteApi.Dialogs.ShowMessage(Constants.RevertPagesQuestion1 + " " + context + " " + Constants.RevertPagesQuestion2,
                 Constants.AppName, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
@@ -143,13 +143,15 @@ namespace HtmlExporterPlugin
                     {
                         continue;
                     }
-                    if (Constants.FakeGameFields.Contains(groupfield))
+                    if (Constants.FakeGameFields.Contains(groupfield) && (groupfield != Constants.PlatformField) &&
+                       (groupfield != Constants.AgeRatingField) && (groupfield != Constants.RegionField) &&
+                       (groupfield != Constants.LibraryField) && !forcesingle)
                     {
                         PagesDataGrid.Items.Add(plugin.CreatePageObject("default " + context + (String.IsNullOrEmpty(context) ? String.Empty : " ") + "combobox quicklinks", groupfield, true, Constants.NameField, true, true));
                     }
                     else
                     {
-                        if (Constants.DefaultDescGroupFields.Contains (groupfield))
+                        if (Constants.DefaultDescGroupFields.Contains (groupfield) && !forcesingle)
                         {
                             PagesDataGrid.Items.Add(plugin.CreatePageObject("default " + context + (String.IsNullOrEmpty(context) ? String.Empty : " ") + "combobox quicklinks", groupfield, false, Constants.NameField, true, true));
                         }
@@ -230,6 +232,16 @@ namespace HtmlExporterPlugin
             DoReset("list text");
         }
 
+        private void MnuDefaultTableText_Click(object sender, RoutedEventArgs e)
+        {
+            DoReset("table text", true);
+        }
+
+        private void MnuDefaultTable_Click(object sender, RoutedEventArgs e)
+        {
+            DoReset("table", true);
+        }
+
         private void Window_Closing(object sender, CancelEventArgs e)
         {
             e.Cancel = !ConvertImageOptionsView.ValidateInput();
@@ -277,5 +289,6 @@ namespace HtmlExporterPlugin
 
            
         }
+
     }
 }

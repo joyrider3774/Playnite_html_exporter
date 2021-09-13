@@ -29,7 +29,9 @@
 
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Griglia predefinita (Richiede immagini)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Elenco predefinito (Richiede immagini)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTable">Tabella predefinita (Richiede immagini)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Elenco predefinito (solo testo)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTableText">Tabella predefinita (solo testo)</sys:String>
 
     <!-- misc -->
     <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Non Raggruppato]</sys:String>

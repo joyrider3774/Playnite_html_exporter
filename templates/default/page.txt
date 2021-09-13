@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>%pagetitle%</title>
-    <style>
+    <link rel="manifest" href="manifest.webmanifest">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
+	<style>
 .abs,
 h2:after,
 .cards .card figcaption,
@@ -313,6 +315,8 @@ input:hover{
 					cards.style.display = "none";
 					if (quicklinklinks.length == 1)
 					{
+						quicklink.children[0].children[0].innerHTML = "&#x25BA;";
+						quicklink.children[0].children[0].style.color = "#790000";
 						quicklink.children[0].children[1].children[0].innerText = "( " + numvisible.toString() + " )"
 						quicklinklinks[0].style.display = "none";
 					}
@@ -321,6 +325,8 @@ input:hover{
 					cards.style.display = "";
 					if (quicklinklinks.length == 1)
 					{
+						quicklink.children[0].children[0].innerHTML = "&#x25BC;";
+						quicklink.children[0].children[0].style.color = "#007962";
 						quicklink.children[0].children[1].children[0].innerText = "( " + numvisible.toString() + " )";
 						quicklinklinks[0].style.display = "";
 					}

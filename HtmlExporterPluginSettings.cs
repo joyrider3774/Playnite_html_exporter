@@ -37,7 +37,8 @@ namespace HtmlExporterPlugin
             }
         }
 
-        public List<string> AvailableTemplateFolders => plugin.TemplateFolders;
+
+        public List<string> AvailableTemplateFolders { get; set; } = new List<string>();
         public List<string> AvailableSortFields { get; set; } = Constants.AvailableSortFields.AsQueryable().OrderBy(o => Constants.GetNameFromField(o, false)).ToList();
         public List<string> AvailableGroupFields { get; set; } = Constants.AvailableGroupFields.AsQueryable().OrderBy(o => Constants.GetNameFromField(o, false)).ToList();
 
@@ -52,6 +53,12 @@ namespace HtmlExporterPlugin
         {
             // Injecting your plugin instance is required for Save/Load method because Playnite saves data to a location based on what plugin requested the operation.
             this.plugin = plugin;
+
+            foreach (DirectoryInfo dir in plugin.TemplateFolders)
+            {
+                AvailableTemplateFolders.Add(dir.Name);
+            }
+            AvailableTemplateFolders.Sort();
 
             // Load saved settings.
             var savedSettings = plugin.LoadPluginSettings<HtmlExporterPluginSettings>();

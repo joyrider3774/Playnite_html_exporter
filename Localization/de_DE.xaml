@@ -29,7 +29,9 @@
 
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Standardraster (benötigt Bilder)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Standardliste (benötigt Bilder)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTable">Standardtabelle (benötigt Bilder)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Standardliste (Nur Text)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTableText">Standardtabelle (Nur Text)</sys:String>
 
     <!-- misc -->
     <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Nicht Gruppiert]</sys:String>

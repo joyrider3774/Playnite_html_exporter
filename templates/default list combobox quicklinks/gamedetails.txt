@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>%gamename%</title>
+		<meta name="viewport" content="width=device-width, initial-scale=0.55">
 		<style>
 body {
   background: #24282f;                                /* main background color in case of no image */
@@ -113,11 +114,6 @@ html {
 	max-width: 100%;                                   /* make sure images don't overflow in width to prevent scrollbars */
 }
 
-.footer {
-	grid-column:1;                                     /* 1st column of grid */
-	grid-row:3;                                        /* 3rd row of grid */
-}
-
 .MenuButton {
   border: none;                                        /* Remove borders */
   outline: none;                                       /* Remove outline */
@@ -217,12 +213,16 @@ a:active {
 								<TD><a href="%completionstatus_filename%#quicklink-%completionstatus%">%completionstatus%</a></TD>
 							</TR>
 							<TR>
+								<TD>%library_name%</TD>
+								<TD><a href="%library_filename%#quicklink-%library%">%library%</a></TD>
+							</TR>
+							<TR>
 								<TD>%source_name%</TD>
 								<TD><a href="%source_filename%#quicklink-%source%">%source%</a></TD>
 							</TR>
 							<TR>
 								<TD>%platform_name%</TD>
-								<TD><a href="%platform_filename%#quicklink-%platform%">%platform%</a></TD>
+								<TD>%platforms%</TD>
 							</TR>
 							<TR>
 								<TD>%releasedate_name%</TD>
@@ -260,6 +260,10 @@ a:active {
 								<TD>%links_name%</TD>
 								<TD>%links%</TD>
 							</TR>
+							<TR>
+								<TD>%tag_name%</TD>
+								<TD>%tags%</TD>
+							</TR>
 						</TABLE>
 					</div>
 				</div>
@@ -269,7 +273,6 @@ a:active {
 				<div class="description">
 					%description%
 				</div>
-				<div class="footer"> </div>
 			</div>
 		</div>
 		<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>

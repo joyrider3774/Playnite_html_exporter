@@ -6,8 +6,8 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Generelle instillinger</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Utdata-mappe for html-eksport</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Select">Velg</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copy Images</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Options">Options</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Kopier bilder</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Options">Innstillinger</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Ekskluder skjulte spill</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Ekskluderte plattformer:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Ekskluderte kilder:</sys:String>
@@ -29,7 +29,9 @@
 
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Standardtabell (krever bilder)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Standardliste (krever bilder)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTable">Default Table (Requires images)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Standardliste (kun tekst)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTableText">Default Table (Text only)</sys:String>
 
     <!-- misc -->
     <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Ikke gruppert]</sys:String>
@@ -97,34 +99,34 @@
 
     <!-- PlaytimeCategory -->
     <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1000plus">1000+ timer</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO500_1000">500 to 1000 hoursy</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO100_500">100 to 500 hours</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO10_100">10 to 100 hours</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1_10">1 to 10 hours</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryNotPlayed">Not Played</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour">Less Then a Hour</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO500_1000">500 til 1000 timer</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO100_500">100 til 500 timer</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO10_100">10 til 100 timer</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1_10">1 til 10 timer</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryNotPlayed">Ikke spilt</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour">Mindre enn 1 time</sys:String>
 
     <!-- DateSegmentField -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldMoreThenYear">More Then a Year ago</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastMonth">Past Month</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastWeek">Past Week</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastYear">Past Year</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldNever">Never</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldToday">Today</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldYesterday">Yesterday</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldMoreThenYear">Mer enn ett år siden</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastMonth">Siste måned</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastWeek">Siste uke</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastYear">Siste år</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldNever">Aldri</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldToday">I dag</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldYesterday">I går</sys:String>
 
     <!-- InstallationStatus -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusInstalled">Installed</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusUninstalled">Uninstalled</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusInstalled">Installert</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusUninstalled">Avinstallert</sys:String>
     
     <!-- ScoreGroup -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO0x">0 to 10</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO1x">10 to 20</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO2x">20 to 30</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO3x">30 to 40</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO4x">40 to 50</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO5x">50 to 60</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO6x">60 to 70</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO0x">0 til 10</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO1x">10 til 20</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO2x">20 til 30</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO3x">30 til 40</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO4x">40 til 50</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO5x">50 til 60</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO6x">60 til 70</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO7x">70 til 80</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO8x">80 til 90</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO9x">90 til 100</sys:String>
@@ -170,26 +172,26 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Detaljer</sys:String>
 
     <!-- Image options screen -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_MagickLocation">Magick.exe Location</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Detect">Detect</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ConvertJpg">Convert Background and cover Images to Jpeg</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ConvertPng">Convert Icon Images to png</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeCoverImage">Resize Cover Images:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeIconImage">Resize Icon Images:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeBackgroundImage">Resize Background Images:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Close">Close</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ImageOptions">Image Options</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_EnterValidValues">Please enter valid values!</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ProcessingImages">Processing Images...</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ForceConvert">Force Convert (also converts image if file type is the same, instead of just copying)</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_JpegQuality">Jpeg quality percentage for conversions (1-100):</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_MaxImageTasks">Max concurrent image tasks (1-16):</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SuccessImagesProcess">Successful processed images:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_FailedImagesProcess">Failed processed images:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_TotalImagesProcess">Total images to process:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Always process images, even if they have not changed</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">optimizations</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_DetectDuplicates">Detect Duplicate Images</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MagickLocation">Plassering for Magick.exe</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Detect">Oppdag</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ConvertJpg">Konverter bakgrunns- og omslagsbilder til jpeg</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ConvertPng">Konverter ikonbilder til png</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeCoverImage">Endre størrelse på forsidebilder:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeIconImage">Endre størrelse på ikonbilder:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeBackgroundImage">Endre størrelse på bakgrunnsbilde:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Close">Lukk</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ImageOptions">Bildealternativer</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EnterValidValues">Vennligst angi gyldige verdier!</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ProcessingImages">Behandler bilder...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ForceConvert">Tving konvertering (konverterer også bilde hvis filtypen er den samme, i stedet for å kun kopiere)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_JpegQuality">Kvalitetsprosent for jpeg-konvertering (1-100):</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MaxImageTasks">Maksimalt antall samtidige bildeoppgaver (1-16):</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SuccessImagesProcess">Vellykket behandling av bilder:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FailedImagesProcess">Mislykket behandling av bilder:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_TotalImagesProcess">Totalt antall bilde som skal behandles:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Behandle alltid bilder, selv om de ikke er endret</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">Optimaliseringer</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DetectDuplicates">Oppdag duplikatbilder</sys:String>
 
 
 
