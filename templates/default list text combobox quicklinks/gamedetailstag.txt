@@ -1,0 +1,1 @@
+<a href="%tag_filename%#quicklink-%tag%">%tag%</a><br/>
