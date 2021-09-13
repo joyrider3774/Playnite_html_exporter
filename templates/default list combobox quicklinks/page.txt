@@ -5,58 +5,33 @@
 	<link rel="manifest" href="manifest.webmanifest">
 	<meta name="viewport" content="width=device-width, initial-scale=0.5">
 	<style>
-.abs,
 h2:after,
 .cards .card:after {
   position: absolute;
 }
-.rel,
+
 h2,
 h2 strong,
 .cards .card
 {
   position: relative;
 }
-.fix {
-  position: fixed;
-}
-.dfix {
-  display: inline;
-}
-.dib {
-  display: inline-block;
-}
-.db {
-  display: block;
-}
-.dn {
-  display: none;
-}
-.df {
-  display: flex;
-}
-.dif {
-  display: inline-flex;
-}
-.dg {
-  display: grid;
-}
-.dig {
-  display: inline-grid;
-}
-.vm,
+
 h2,
 h2 strong,
 h2 span {
   vertical-align: middle;
 }
+
 body {
   background: #24282f;
   font-family: 'Arial';
 }
+
 .wrapper {
   padding: 15px;
 }
+
 h2 {
   padding: 10px;
   padding-left: 25px;
@@ -64,16 +39,19 @@ h2 {
   margin: 0;
   cursor:pointer;
 }
+
 h2 strong {
   z-index: 2;
   background: #24282f;
   padding: 4px 8px;
 }
+
 h2 span {
   font-size: 0.7em;
   color: #aaa;
   margin-left: 10px;
 }
+
 h2:after {
   content: '';
   z-index: 1;
@@ -88,6 +66,7 @@ h2:after {
 #h2jscript {
   cursor:pointer;
 }
+
 .quicklinks {
   display: flex;
   flex-flow: row wrap;
@@ -130,7 +109,6 @@ a:hover {
 a:active {
   color: #CCC;
 }
-
 
 .Menu {
   display: flex;
@@ -258,6 +236,7 @@ input{
   outline: none;
   height: 1rem;
 }
+
 input:hover{
 	border: 0.1rem solid #0F52BA !important;
 }
@@ -272,6 +251,7 @@ input:hover{
   outline: none;
   height: 2rem;
 }
+
 #searchbutton:hover{
 	border: 0.1rem solid #0F52BA !important;
 }

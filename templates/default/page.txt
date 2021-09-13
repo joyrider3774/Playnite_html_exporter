@@ -5,76 +5,57 @@
     <link rel="manifest" href="manifest.webmanifest">
 	<meta name="viewport" content="width=device-width, initial-scale=0.5">
 	<style>
-.abs,
 h2:after,
 .cards .card figcaption,
 .cards .card:after {
   position: absolute;
 }
-.rel,
+
 h2,
 h2 strong,
 .cards .card
 {
   position: relative;
 }
-.fix {
-  position: fixed;
-}
-.dfix {
-  display: inline;
-}
-.dib {
-  display: inline-block;
-}
-.db {
-  display: block;
-}
-.dn {
-  display: none;
-}
-.df,
+
 .cards {
   display: flex;
 }
-.dif {
-  display: inline-flex;
-}
-.dg {
-  display: grid;
-}
-.dig {
-  display: inline-grid;
-}
-.vm,
+
 h2,
 h2 strong,
 h2 span {
   vertical-align: middle;
 }
+
 body {
   background: #24282f;
   font-family: 'Arial';
 }
+
 .wrapper {
   padding: 15px;
 }
+
 h2 {
   padding: 10px;
   padding-left: 25px;
   color: #ccc;
   margin: 0;
 }
+
 h2 strong {
   z-index: 2;
   background: #24282f;
   padding: 4px 8px;
 }
+
 h2 span {
   font-size: 0.7em;
   color: #aaa;
   margin-left: 10px;
 }
+
 h2:after {
   content: '';
   z-index: 1;
@@ -85,9 +66,11 @@ h2:after {
   right: 0;
   background: #373d47;
 }
+
 .cards {
   flex-flow: row wrap;
 }
+
 .cards .card {
   margin: 20px;
   width: 180px;
@@ -99,10 +82,12 @@ h2:after {
   transform: translateZ(0);
   transition: 0.3s;
 }
+
 .cards .card img {
   width: 100%;
   min-height: 100%;
 }
+
 .cards .card figcaption {
   bottom: 0;
   left: 0;
@@ -124,11 +109,13 @@ h2:after {
   box-shadow: 0 8px 16px 3px rgba(0,0,0,0.6);
   transform: translateY(-3px) scale(1.05) rotateX(15deg);
 }
+
 .cards .card:hover figcaption,
 .cards .card:focus figcaption,
 .cards .card:active figcaption {
   transform: none;
 }
+
 .cards .card:hover:after,
 .cards .card:focus:after,
 .cards .card:active:after {
@@ -136,6 +123,7 @@ h2:after {
   top: -40%;
   opacity: 0.15;
 }
+
 .quicklinks {
   display: flex;
   flex-flow: row wrap;
@@ -242,6 +230,7 @@ input{
   outline: none;
   height: 1rem;
 }
+
 input:hover{
 	border: 0.1rem solid #0F52BA !important;
 }
@@ -256,6 +245,7 @@ input:hover{
   outline: none;
   height: 2rem;
 }
+
 #searchbutton:hover{
 	border: 0.1rem solid #0F52BA !important;
 }
