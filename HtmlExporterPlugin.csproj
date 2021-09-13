@@ -82,10 +82,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="LICENSE" />
-    <None Include="manifest.webmanifest">
+    <None Include="packages.config" />
+    <None Include="webdata\manifest.webmanifest">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="App.xaml">
@@ -689,6 +689,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="webdata\web-icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="templates\default table text\gamecard.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -803,9 +806,6 @@
     <None Include="templates\default table\quicklinksheader.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <Content Include="web-icon.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

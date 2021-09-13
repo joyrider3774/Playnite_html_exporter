@@ -2161,13 +2161,13 @@ namespace HtmlExporterPlugin
                           }
                       }
 
-                      string WebIconFile = Path.Combine(pluginFolder, "web-icon.png");
+                      string WebIconFile = Path.Combine(pluginFolder, "webdata", "web-icon.png");
                       if (File.Exists(WebIconFile))
                       {
                           File.Copy(WebIconFile, Path.Combine(Settings.Settings.OutputFolder, "web-icon.png"), true);
                       }
 
-                      string WebManifestFile = Path.Combine(pluginFolder, "manifest.webmanifest");
+                      string WebManifestFile = Path.Combine(pluginFolder, "webdata", "manifest.webmanifest");
                       if (File.Exists(WebManifestFile))
                       {
                           File.Copy(WebManifestFile, Path.Combine(Settings.Settings.OutputFolder, "manifest.webmanifest"), true);
