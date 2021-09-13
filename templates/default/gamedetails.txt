@@ -140,17 +140,17 @@ a {
  text-decoration: none;                                /* no text underline in links */
 }
 a:link {
-  color: #B1B1B1;                                      /* unvisited link color */
+  color: #CCC;                                         /* unvisited link color */
 }
 a:visited {
-  color: #B1B1B1;                                      /* visited link color */
+  color: #CCC;                                         /* visited link color */
 }
 a:hover {
-  color: #D1D1D1;                                      /* mouse over link color */
+  color: #EEE;                                         /* mouse over link color */
   text-decoration: underline;                          /* add text underline in links when mouse over */
 }
 a:active {
-  color: #B1B1B1;                                      /* selected link color */
+  color: #CCC;                                         /* selected link color */
 }
 
                                                        /* scrollbars W3C standard that is currently Firefox-only */
