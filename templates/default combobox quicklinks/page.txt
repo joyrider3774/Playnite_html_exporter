@@ -149,19 +149,19 @@ h2:after {
 
 /* unvisited link */
 a:link {
-  color: #888;
+  color: #ccc;
 }
 /* visited link */
 a:visited {
-  color: #888;
+  color: #ccc;
 }
 /* mouse over link */
 a:hover {
-  color: #777;
+  color: #EEE;
 }
 /* selected link */
 a:active {
-  color: #888;
+  color: #ccc;
 }
 
                                                        /* scrollbars W3C standard that is currently Firefox-only */
@@ -210,13 +210,13 @@ a:active {
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
   background-color: #555;/* Set a background color */
-  color: #999; /* Text color */
+  color: #ccc; /* Text color */
   padding: 5px; /* Some padding */
   border-radius: 4px; /* Rounded corners */
   font-size: 20px;/* Increase font size */
   margin-top: 10px;
   margin-left: 15px;
-  cursor:Pointer;
+  cursor:pointer;
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
@@ -225,10 +225,8 @@ a:active {
 
 .MenuButton:hover {
   background-color: #666; /* Add a dark-grey background on hover */
-  color: #999; /* Text color */
+  color: #eee; /* Text color */
 }
-
-
 
 #BackTopButton:hover {
   background-color: #555; /* Add a dark-grey background on hover */
@@ -236,13 +234,12 @@ a:active {
 
 select#combobselect {
     background-color:#555;
-    color:#999;
+    color:#CCC;
 }
-
 
 #label {
    font-size: 20px;
-   color: #999;
+   color: #CCC;
 }
 
 input{

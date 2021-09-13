@@ -86,11 +86,11 @@ a {
 
 /* unvisited link */
 a:link {
-  color: #888;
+  color: #CCC;
 }
 /* visited link */
 a:visited {
-  color: #888;
+  color: #CCC;
 }
 /* mouse over link */
 a:hover {
@@ -98,9 +98,8 @@ a:hover {
 }
 /* selected link */
 a:active {
-  color: #888;
+  color: #CCC;
 }
-
 
 .Menu {
   display: flex;
@@ -111,8 +110,7 @@ a:active {
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
   background-color: #555;/* Set a background color */
-  color: #999/* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
+  color: #ccc; /* Text color */
   padding: 5px; /* Some padding */
   border-radius: 4px; /* Rounded corners */
   font-size: 20px;/* Increase font size */
@@ -127,16 +125,13 @@ a:active {
 
 .MenuButton:hover {
   background-color: #666; /* Add a dark-grey background on hover */
-  color: #999; /* Text color */
+  color: #eee; /* Text color */
 }
-
-
 	                                                   /* scrollbars W3C standard that is currently Firefox-only */
 * {
   scrollbar-width: thin;                               /* small width */
   scrollbar-color: #888 transparent;                   /* trackbar color + transparant background */
 }
-
                                                        /* scrollbars on Chrome/Edge/Safari */
 *::-webkit-scrollbar {
   width: 12px;                                         /* small width */
@@ -151,7 +146,6 @@ a:active {
   border-radius: 20px;                                 /* rounded corner, border */
   border: 3px solid #888;                              /* add the border */
 }
-
 
 #filter-controls {
 	margin-bottom: 7px;
@@ -217,7 +211,7 @@ a:active {
 		data:tabledata,
 		layout:"fitColumns",
 		responsiveLayout:"hide",
-		height:"225px",
+		height:"450px",
 		columns:[
 		{title:"Nr", formatter:"rownum", width:57, responsive:0}, //incrementing row number
 		{title:"Icon", field:"icon", mutator:iconMutator, formatter:"html", width:34, responsive:0},

@@ -106,11 +106,11 @@ a {
 
 /* unvisited link */
 a:link {
-  color: #888;
+  color: #CCC;
 }
 /* visited link */
 a:visited {
-  color: #888;
+  color: #CCC;
 }
 /* mouse over link */
 a:hover {
@@ -118,7 +118,7 @@ a:hover {
 }
 /* selected link */
 a:active {
-  color: #888;
+  color: #CCC;
 }
 
 
@@ -147,8 +147,7 @@ a:active {
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
   background-color: #555;/* Set a background color */
-  color: #999/* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
+  color: #ccc; /* Text color */
   padding: 5px; /* Some padding */
   border-radius: 4px; /* Rounded corners */
   font-size: 20px;/* Increase font size */
@@ -163,7 +162,7 @@ a:active {
 
 .MenuButton:hover {
   background-color: #666; /* Add a dark-grey background on hover */
-  color: #999; /* Text color */
+  color: #eee; /* Text color */
 }
 
 #BackTopButton:hover {
@@ -172,21 +171,21 @@ a:active {
 
 #label {
    font-size: 18px;
-   color: #999;
-      margin: 5px;
+   color: #CCC;
+   margin: 5px;
 }
 
 #label a {
-   color: #999;
+   color: #CCC;
 }
 
 /* unvisited link */
 #label a:link {
-  color: #888;
+  color: #CCC;
 }
 /* visited link */
 #label a:visited {
-  color: #888;
+  color: #CCC;
 }
 /* mouse over link */
 #label a:hover {
@@ -194,7 +193,7 @@ a:active {
 }
 /* selected link */
 #label a:active {
-  color: #888;
+  color: #CCC;
 }
 
 	                                                   /* scrollbars W3C standard that is currently Firefox-only */
