@@ -1721,7 +1721,7 @@ namespace HtmlExporterPlugin
 
                                   string LastActivitySegment = Constants.SantizeValue(realgame.LastActivitySegment.ToString(), "LastActivitySegment");
                                   string PlaytimeCategory = Constants.SantizeValue(realgame.PlaytimeCategory.ToString(), "PlaytimeCategory");
-                                  string CompletionStatus = Constants.SantizeValue(realgame.CompletionStatus.ToString(), "CompletionStatus");
+                                  string CompletionStatus = Constants.SantizeValue(realgame.CompletionStatus?.ToString(), "CompletionStatus");
                                   string UserScoreGroup = Constants.SantizeValue(realgame.UserScoreGroup.ToString(), "UserScoreGroup");
                                   string CommunityScoreGroup = Constants.SantizeValue(realgame.CommunityScoreGroup.ToString(), "CommunityScoreGroup");
                                   string CriticScoreGroup = Constants.SantizeValue(realgame.CriticScoreGroup.ToString(), "CriticScoreGroup");
