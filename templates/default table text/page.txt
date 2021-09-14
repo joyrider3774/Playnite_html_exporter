@@ -4,7 +4,8 @@
     <title>%pagetitle%</title>
 	<link href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css" rel="stylesheet">
 	<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/he/1.2.0/he.min.js" integrity="sha512-PEsccDx9jqX6Dh4wZDCnWMaIO3gAaU0j46W//sSqQhUQxky6/eHZyeB3NrXD2xsyugAKd4KPiDANkcuoEa2JuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<link rel="manifest" href="manifest.webmanifest">
 	<meta name="viewport" content="width=device-width, initial-scale=0.5">
 	<style>
@@ -176,19 +177,6 @@ a:active {
 		  </select>
 		</span>
 
-		<span>
-		  <B>Type:</B>
-		  <select id="filter-type">
-			<option value="=">=</option>
-			<option value="<">&lt;</option>
-			<option value="<=">&lt;=</option>
-			<option value=">">&gt;</option>
-			<option value=">=">&gt;=</option>
-			<option value="!=">!=</option>
-			<option value="like">like</option>
-		  </select>
-		</span>
-
 		<span><B>Value: </B><input id="filter-value" type="text" placeholder="value to filter"></span>
 
 		<button id="filter-clear">Clear Filter</button>
@@ -239,45 +227,59 @@ a:active {
 		},
 	});
 
+	function escapeRegExp(string) {
+		return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+	}
+
+	function dataFilter(data, filterParams){
+		//data - the data for the row being filtered
+		//filterParams - params object passed to the filter
+		const regex = new RegExp(escapeRegExp(filterParams.compareval.toLowerCase()), 'g'); //comparevalue is text
+		return regex.test(he.decode(data[filterParams.field]).toLowerCase());
+    }
+
 	//Define variables for input elements
 	var fieldEl = document.getElementById("filter-field");
-	var typeEl = document.getElementById("filter-type");
 	var valueEl = document.getElementById("filter-value");
 
-	//Custom filter example
-	function customFilter(data){
-		return data.car && data.rating < 3;
+	//set filter if passed certain parameter
+	var url = window.location.href;
+	var hashindex = url.lastIndexOf("#quicklink-");
+	var urllen = url.length;
+
+	if (hashindex > -1)
+	{
+		var quicklinktext = "quicklink-";
+		hashindex += quicklinktext.length + 1;
+		
+		if (hashindex < urllen)
+		{
+			var filtervalue = url.substring(hashindex, urllen);
+			if (filtervalue != "")
+			{			
+				fieldEl.value = "data";
+				valueEl.value = decodeURI(filtervalue);
+				updateFilter();
+			}
+		}
 	}
 
 	//Trigger setFilter function with correct parameters
 	function updateFilter(){
 	  var filterVal = fieldEl.options[fieldEl.selectedIndex].value;
-	  var typeVal = typeEl.options[typeEl.selectedIndex].value;
-
-	  var filter = filterVal == "function" ? customFilter : filterVal;
-
-	  if(filterVal == "function" ){
-		typeEl.disabled = true;
-		valueEl.disabled = true;
-	  }else{
-		typeEl.disabled = false;
-		valueEl.disabled = false;
-	  }
-
+	
 	  if(filterVal){
-		table.setFilter(filter,typeVal, valueEl.value);
+		table.setFilter(dataFilter, {field:filterVal, compareval:valueEl.value});
 	  }
 	}
 
 	//Update filters on value change
 	document.getElementById("filter-field").addEventListener("change", updateFilter);
-	document.getElementById("filter-type").addEventListener("change", updateFilter);
 	document.getElementById("filter-value").addEventListener("keyup", updateFilter);
 
 	//Clear filters on "Clear Filters" button click
 	document.getElementById("filter-clear").addEventListener("click", function(){
 	  fieldEl.value = "";
-	  typeEl.value = "=";
 	  valueEl.value = "";
 
 	  table.clearFilter();
