@@ -151,13 +151,20 @@ namespace HtmlExporterPlugin
                     }
                     else
                     {
-                        if (Constants.DefaultDescGroupFields.Contains (groupfield) && !forcesingle)
+                        if (Constants.DefaultDescGroupFields.Contains(groupfield) && !forcesingle)
                         {
                             PagesDataGrid.Items.Add(plugin.CreatePageObject("default " + context + (String.IsNullOrEmpty(context) ? String.Empty : " ") + "combobox quicklinks", groupfield, false, Constants.NameField, true, true));
                         }
                         else
                         {
-                            PagesDataGrid.Items.Add(plugin.CreatePageObject("default" + (String.IsNullOrEmpty(context) ? String.Empty : " ") + context, groupfield, true, Constants.NameField, true, true));
+                            if (Constants.DefaultDescGroupFields.Contains(groupfield) && forcesingle)
+                            {
+                                PagesDataGrid.Items.Add(plugin.CreatePageObject("default" + (String.IsNullOrEmpty(context) ? String.Empty : " ") + context, groupfield, false, Constants.NameField, true, true));
+                            }
+                            else
+                            {
+                                PagesDataGrid.Items.Add(plugin.CreatePageObject("default" + (String.IsNullOrEmpty(context) ? String.Empty : " ") + context, groupfield, true, Constants.NameField, true, true));
+                            }
                         }
                     }
                 }
