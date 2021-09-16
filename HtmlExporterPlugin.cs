@@ -2294,53 +2294,15 @@ namespace HtmlExporterPlugin
             {
                 return "Playnite";
             }
-            //indiegala by lacro59
-            else if (PluginId == Guid.Parse("f7da6eb0-17d7-497c-92fd-347050914954"))
-            {
-                return "Indiegala";
-            }
-            //occulus by shawson
-            else if (PluginId == Guid.Parse("77346DD6-B0CC-4F7D-80F0-C1D138CCAE58"))
-            {
-                return "Occulus";
-            }
-            //rockstar by crow
-            else if (PluginId == Guid.Parse("88409022-088a-4de8-805a-fdbac291f00a"))
-            {
-                return "Rockstar";
-            }
             else
             {
-                switch (BuiltinExtensions.GetExtensionFromId(PluginId))
+                if (Constants.LibraryList.ContainsKey(PluginId))
                 {
-                    case BuiltinExtension.BattleNetLibrary:
-                        return "Battle.net";
-                    case BuiltinExtension.BethesdaLibrary:
-                        return "Bethesda";
-                    case BuiltinExtension.EpicLibrary:
-                        return "Epic";
-                    case BuiltinExtension.GogLibrary:
-                        return "GOG";
-                    case BuiltinExtension.ItchioLibrary:
-                        return "Itchio";
-                    case BuiltinExtension.OriginLibrary:
-                        return "Origin";
-                    case BuiltinExtension.SteamLibrary:
-                        return "Steam";
-                    case BuiltinExtension.UplayLibrary:
-                        return "Ubisoft Connect";
-                    case BuiltinExtension.TwitchLibrary:
-                        return "Twitch";
-                    case BuiltinExtension.HumbleLibrary:
-                        return "Humble";
-                    case BuiltinExtension.XboxLibrary:
-                        return "Xbox";
-                    case BuiltinExtension.AmazonGamesLibrary:
-                        return "Amazon Games";
-                    case BuiltinExtension.PSNLibrary:
-                        return "PlayStation";
-                    default:
-                        return "Unknown";
+                    return Constants.LibraryList[PluginId];
+                }
+                else
+                {
+                    return "Unknown";
                 }
             }
         }

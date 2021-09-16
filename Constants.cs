@@ -229,7 +229,26 @@ namespace HtmlExporterPlugin
         public static readonly ReadOnlyCollection<string> FakeGameFields = new ReadOnlyCollection<string>(new List<String> {
             CategoryField, DeveloperField, GenreField, FeatureField, SerieField, PublisherField, LibraryField, PlatformField, AgeRatingField, RegionField, TagField });
 
-
+        public static Dictionary<Guid, string> LibraryList { get; } = new Dictionary<Guid, string>
+        {
+            { Guid.Parse("E3C26A3D-D695-4CB7-A769-5FF7612C7EDD"), "Battle.net" },
+            { Guid.Parse("0E2E793E-E0DD-4447-835C-C44A1FD506EC"), "Bethesda" },
+            { Guid.Parse("00000002-DBD1-46C6-B5D0-B1BA559D10E4"), "Epic" },
+            { Guid.Parse("AEBE8B7C-6DC3-4A66-AF31-E7375C6B5E9E"), "Gog" },
+            { Guid.Parse("00000001-EBB2-4EEC-ABCB-7C89937A42BB"), "Itch.io" },
+            { Guid.Parse("85DD7072-2F20-4E76-A007-41035E390724"), "Origin" },
+            { Guid.Parse("CB91DFC9-B977-43BF-8E70-55F46E410FAB"), "Steam" },
+            { Guid.Parse("E2A7D494-C138-489D-BB3F-1D786BEEB675"), "Twitch" },
+            { Guid.Parse("C2F038E5-8B92-4877-91F1-DA9094155FC5"), "Ubisoft Connect" },
+            { Guid.Parse("96e8c4bc-ec5c-4c8b-87e7-18ee5a690626"), "Humble"},
+            { Guid.Parse("7e4fbb5e-2ae3-48d4-8ba0-6b30e7a4e287"), "Xbox" },
+            { Guid.Parse("402674cd-4af6-4886-b6ec-0e695bfa0688"), "Amazon Games" },
+            { Guid.Parse("e4ac81cb-1b1a-4ec9-8639-9a9633989a71"), "PlayStation" },
+            { Guid.Parse("f7da6eb0-17d7-497c-92fd-347050914954"), "Indiegala" },            //by lacro59
+            { Guid.Parse("77346DD6-B0CC-4F7D-80F0-C1D138CCAE58"), "Occulus" },              //by shawson
+            { Guid.Parse("88409022-088a-4de8-805a-fdbac291f00a"), "Rockstar" },             //by crow
+            { Guid.Parse("2366fb38-bf25-45ea-9a78-dcc797ee83c3"), "Importer for AniList" }  //by darklinkpower
+        };
 
         public static string SantizeValue(string value, string field)
         {
