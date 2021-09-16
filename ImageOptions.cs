@@ -108,40 +108,53 @@ namespace HtmlExporterPlugin
             }
         }
 
-        private string MakeOptions(string DestFileExt, bool NeedsResize, string Width, string Height, bool ConvertToJpg, bool ConvertToPng, string JpegQuality)
-        {
-            string Result = String.Empty;
-            if (DestFileExt.ToLower().Equals(".jpg") && !ConvertToPng)
+        private string MakeOptions(string SourceFileExt, string DestFileExt, bool NeedsResize, string Width, string Height, bool ConvertToJpg, bool ConvertToPng, string JpegQuality)
+        {            
+            string Result = string.Empty;
+            string SourceExt = SourceFileExt.ToLower();
+            //only icon converts to png but it seems gif files have same problem and playnite also allows ico and gif to be set for background and cover.
+            //This can still fail if the files got no extensions like some files do in playnite
+            if (ConvertToPng || SourceExt.Equals(".gif") || SourceExt.Equals(".ico") || SourceExt.Equals(".tiff"))
             {
-                Result = "-interlace plane -quality " + JpegQuality;
+                //converts multiple images inside an ico to a single image otherwise imagemagick generates multiple files
+                //credits https://legacy.imagemagick.org/discourse-server/viewtopic.php?p=164113#p164113
+                Result = "( -clone 0--1 -layers Merge ) -channel A -evaluate Multiply \" %[fx: w == u[-1].w ? 1 : 0] % \"  +channel +delete -background None -layers merge ";
             }
-            //converts multiple images inside an ico to a single image otherwise imagemagick generates multiple files
-            //credits https://legacy.imagemagick.org/discourse-server/viewtopic.php?p=164113#p164113
-            if (ConvertToPng && !ConvertToJpg)
+
+            if (DestFileExt.ToLower().Equals(".jpg"))
             {
-                Result = "( -clone 0--1 -layers Merge ) -channel A -evaluate Multiply \" %[fx: w == u[-1].w ? 1 : 0] % \"  +channel +delete -background None -layers merge";
+                if (!string.IsNullOrEmpty(Result))
+                {
+                    Result += " ";
+                }
+                Result +=  "-interlace plane -quality " + JpegQuality;
             }
+          
             //> only larger images to resize
             if (NeedsResize)
             {
-                Result += " -resize " + Width + "x" + Height + ">";
+                if (!string.IsNullOrEmpty(Result))
+                {
+                    Result += " ";
+                }
+                Result += "-resize " + Width + "x" + Height + ">";
             }
             return Result;
         }
 
-        public string BackgroundOptions(string DestFileExt)
+        public string BackgroundOptions(string SourceFileExt, string DestFileExt)
         {
-            return MakeOptions(DestFileExt, ResizeBackgroundImage, BackgroundImageWidth, BackgroundImageHeight, ConvertToJpg, false, JpgQuality);
+            return MakeOptions(SourceFileExt, DestFileExt, ResizeBackgroundImage, BackgroundImageWidth, BackgroundImageHeight, ConvertToJpg, false, JpgQuality);
         }
 
-        public string CoverOptions(string DestFileExt)
+        public string CoverOptions(string SourceFileExt, string DestFileExt)
         {
-            return MakeOptions(DestFileExt, ResizeCoverImage, CoverImageWidth, CoverImageHeight, ConvertToJpg, false, JpgQuality);
+            return MakeOptions(SourceFileExt, DestFileExt, ResizeCoverImage, CoverImageWidth, CoverImageHeight, ConvertToJpg, false, JpgQuality);
         }
 
-        public string IconOptions(string DestFileExt)
+        public string IconOptions(string SourceFileExt, string DestFileExt)
         {
-            return MakeOptions(DestFileExt, ResizeIconImage, IconImageWidth, IconImageHeight, false, ConvertToPng, JpgQuality);
+            return MakeOptions(SourceFileExt, DestFileExt, ResizeIconImage, IconImageWidth, IconImageHeight, false, ConvertToPng, JpgQuality);
         }
     }
 }
