@@ -105,7 +105,9 @@ namespace HtmlExporterPlugin
                       Dictionary<string, string> GameMediaHashtable = new Dictionary<string, string>();
                       Dictionary<string, bool> GameMediaCopyDoneDict = new Dictionary<string, bool>();
                       Dictionary<string, string> FirstGroupFieldFileNames = new Dictionary<string, string>();
-                      FileDeDuplicator DeDuplicator = new FileDeDuplicator();
+                      FileDeDuplicator IconDeDuplicator = new FileDeDuplicator();
+                      FileDeDuplicator BackgroundDeDuplicator = new FileDeDuplicator();
+                      FileDeDuplicator CoverDeDuplicator = new FileDeDuplicator();
                       int pagecount = Settings.Settings.Pages.Count;
                       int PageNr = 0;
                       int Errors = 0;
@@ -1593,7 +1595,7 @@ namespace HtmlExporterPlugin
                                                   gameicon = tmpplatform.Icon.Replace("\\", "/");
                                               }
                                           }
-                                          gameicon = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(gameicon), gameicon, Settings.Settings.ConvertImageOptions.DetectDuplicates);
+                                          gameicon = IconDeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(gameicon), gameicon, Settings.Settings.ConvertImageOptions.DetectDuplicates);
                                       }
                                       GameMediaHashtable[Constants.MediaIconText + realgame.Id.ToString()] = gameicon;
                                   }
@@ -1631,7 +1633,7 @@ namespace HtmlExporterPlugin
                                               }
                                           }
 
-                                          coverimage = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(coverimage), coverimage, Settings.Settings.ConvertImageOptions.DetectDuplicates);
+                                          coverimage = CoverDeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(coverimage), coverimage, Settings.Settings.ConvertImageOptions.DetectDuplicates);
                                       }
                                       GameMediaHashtable[Constants.MediaCoverText + realgame.Id.ToString()] = coverimage;
                                   }
@@ -1667,7 +1669,7 @@ namespace HtmlExporterPlugin
                                                   gameicon = tmpplatform.Background.Replace("\\", "/");
                                               }
                                           }
-                                          backgroundimage = DeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(backgroundimage), backgroundimage, Settings.Settings.ConvertImageOptions.DetectDuplicates);
+                                          backgroundimage = BackgroundDeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(backgroundimage), backgroundimage, Settings.Settings.ConvertImageOptions.DetectDuplicates);
                                       }
                                       GameMediaHashtable[Constants.MediaBackgroundText + realgame.Id.ToString()] = backgroundimage;
                                   }
