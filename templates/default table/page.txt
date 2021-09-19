@@ -148,6 +148,10 @@ a:active {
   border: 3px solid #888;                              /* add the border */
 }
 
+#gamestable {
+  width: 100%;
+}
+
 #filter-controls {
 	margin-bottom: 7px;
 }
@@ -177,7 +181,7 @@ a:active {
 
 		<button id="filter-clear">Clear Filter</button>
 	  </div>
-	  <div id="gamestable" width="100%"></div>
+	  <div id="gamestable"></div>
     </div>
 	
 	<script>
@@ -298,15 +302,15 @@ a:active {
 		<COLGROUP>
 		<COL>
 		<COL>
-		<COL WIDTH="170">
+		<COL style="width:170px;">
 		<COL>
 		<COL>
 		</COLGROUP>
-		<TR><TD rowspan="5"><img height="90" style="max-width: 100%;" src="" id="coverimage"></TD></TR>
+		<TR><TD rowspan="5"><img height="90" style="max-width: 100%;" src="" id="coverimage"></TD><TD colspan="4"></TD></TR>
 		<TR><TD><B>Name</B></TD><TD colspan="3" id="name"></TD></TR>
 		<TR><TD><B>Last Activity</B></TD><TD id="lastactivity"></TD><TD><B>%pagetitle%</B></TD><TD id="data"></TD></TR>
 		<TR><TD><B>Added Date</B></TD><TD id="addeddate"></TD><TD><B>Source</B></TD><TD id="source"></TR>
-		<TR><TD><B>Play Time</B></TD><TD id="playtime"></TD></TD><TD><B>Platform</B></TD><TD id="platform"></TD></TR>
+		<TR><TD><B>Play Time</B></TD><TD id="playtime"></TD><TD><B>Platform</B></TD><TD id="platform"></TD></TR>
 	</TABLE>
 	</body>
 </html>
