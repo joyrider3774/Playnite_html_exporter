@@ -29,7 +29,9 @@
 
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Grille par défaut (images requises)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Liste par défaut (images requises)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTable">Tableau par défaut (images requises)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Liste par défaut (Texte uniquement)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTableText">Tableau par défaut (Texte uniquement)</sys:String>
 
     <!-- misc -->
     <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Non groupé]</sys:String>

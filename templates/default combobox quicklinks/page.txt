@@ -2,77 +2,60 @@
 <html>
   <head>
     <title>%pagetitle%</title>
-    <style>
-.abs,
+    <link rel="manifest" href="manifest.webmanifest">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
+	<style>
 h2:after,
 .cards .card figcaption,
 .cards .card:after {
   position: absolute;
 }
-.rel,
+
 h2,
 h2 strong,
 .cards .card
 {
   position: relative;
 }
-.fix {
-  position: fixed;
-}
-.dfix {
-  display: inline;
-}
-.dib {
-  display: inline-block;
-}
-.db {
-  display: block;
-}
-.dn {
-  display: none;
-}
-.df,
+
 .cards {
   display: flex;
 }
-.dif {
-  display: inline-flex;
-}
-.dg {
-  display: grid;
-}
-.dig {
-  display: inline-grid;
-}
-.vm,
+
 h2,
 h2 strong,
 h2 span {
   vertical-align: middle;
 }
+
 body {
   background: #24282f;
   font-family: 'Arial';
 }
+
 .wrapper {
   padding: 15px;
 }
+
 h2 {
   padding: 10px;
   padding-left: 25px;
   color: #ccc;
   margin: 0;
 }
+
 h2 strong {
   z-index: 2;
   background: #24282f;
   padding: 4px 8px;
 }
+
 h2 span {
   font-size: 0.7em;
   color: #aaa;
   margin-left: 10px;
 }
+
 h2:after {
   content: '';
   z-index: 1;
@@ -83,9 +66,11 @@ h2:after {
   right: 0;
   background: #373d47;
 }
+
 .cards {
   flex-flow: row wrap;
 }
+
 .cards .card {
   margin: 20px;
   width: 180px;
@@ -97,10 +82,12 @@ h2:after {
   transform: translateZ(0);
   transition: 0.3s;
 }
+
 .cards .card img {
   width: 100%;
   min-height: 100%;
 }
+
 .cards .card figcaption {
   bottom: 0;
   left: 0;
@@ -122,11 +109,13 @@ h2:after {
   box-shadow: 0 8px 16px 3px rgba(0,0,0,0.6);
   transform: translateY(-3px) scale(1.05) rotateX(15deg);
 }
+
 .cards .card:hover figcaption,
 .cards .card:focus figcaption,
 .cards .card:active figcaption {
   transform: none;
 }
+
 .cards .card:hover:after,
 .cards .card:focus:after,
 .cards .card:active:after {
@@ -134,6 +123,7 @@ h2:after {
   top: -40%;
   opacity: 0.15;
 }
+
 .quicklinks {
   display: flex;
   flex-flow: row wrap;
@@ -147,19 +137,19 @@ h2:after {
 
 /* unvisited link */
 a:link {
-  color: #888;
+  color: #ccc;
 }
 /* visited link */
 a:visited {
-  color: #888;
+  color: #ccc;
 }
 /* mouse over link */
 a:hover {
-  color: #777;
+  color: #EEE;
 }
 /* selected link */
 a:active {
-  color: #888;
+  color: #ccc;
 }
 
                                                        /* scrollbars W3C standard that is currently Firefox-only */
@@ -208,13 +198,13 @@ a:active {
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
   background-color: #555;/* Set a background color */
-  color: #999; /* Text color */
+  color: #ccc; /* Text color */
   padding: 5px; /* Some padding */
   border-radius: 4px; /* Rounded corners */
   font-size: 20px;/* Increase font size */
   margin-top: 10px;
   margin-left: 15px;
-  cursor:Pointer;
+  cursor:pointer;
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
@@ -223,10 +213,8 @@ a:active {
 
 .MenuButton:hover {
   background-color: #666; /* Add a dark-grey background on hover */
-  color: #999; /* Text color */
+  color: #eee; /* Text color */
 }
-
-
 
 #BackTopButton:hover {
   background-color: #555; /* Add a dark-grey background on hover */
@@ -234,13 +222,12 @@ a:active {
 
 select#combobselect {
     background-color:#555;
-    color:#999;
+    color:#CCC;
 }
-
 
 #label {
    font-size: 20px;
-   color: #999;
+   color: #CCC;
 }
 
 input{
@@ -253,6 +240,7 @@ input{
   outline: none;
   height: 1rem;
 }
+
 input:hover{
 	border: 0.1rem solid #0F52BA !important;
 }
@@ -267,6 +255,7 @@ input:hover{
   outline: none;
   height: 2rem;
 }
+
 #searchbutton:hover{
 	border: 0.1rem solid #0F52BA !important;
 }
@@ -325,6 +314,8 @@ input:hover{
 					cards.style.display = "none";
 					if (quicklinklinks.length == 1)
 					{
+						quicklink.children[0].children[0].innerHTML = "&#x25BA;";
+						quicklink.children[0].children[0].style.color = "#790000";
 						quicklinklinks[0].innerText = quicklinkvalue + " (" + numvisible.toString() + ")";
 						quicklink.children[0].children[1].children[0].innerText = "(" + numvisible.toString() + ")"
 						quicklinklinks[0].style.display = "none";
@@ -334,6 +325,8 @@ input:hover{
 					cards.style.display = "";
 					if (quicklinklinks.length == 1)
 					{
+						quicklink.children[0].children[0].innerHTML = "&#x25BC;";
+						quicklink.children[0].children[0].style.color = "#007962";
 						quicklinklinks[0].innerText = quicklinkvalue + " (" + numvisible.toString() + ")";
 						quicklink.children[0].children[1].children[0].innerText = "(" + numvisible.toString() + ")"
 						quicklinklinks[0].style.display = "";

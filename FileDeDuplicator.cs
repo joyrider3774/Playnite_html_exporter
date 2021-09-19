@@ -31,7 +31,7 @@ namespace HtmlExporterPlugin
 
         public string GetUniqueFile(string fullfilename, string storedfilename, bool DoCheck)
         {
-            if (!DoCheck || !File.Exists(fullfilename))
+            if (!DoCheck || fullfilename.Equals(String.Empty) || !File.Exists(fullfilename))
             {
                 return storedfilename;
             }

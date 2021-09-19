@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>%pagetitle%</title>
+	<link href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css" rel="stylesheet">
+	<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/he/1.2.0/he.min.js" integrity="sha512-PEsccDx9jqX6Dh4wZDCnWMaIO3gAaU0j46W//sSqQhUQxky6/eHZyeB3NrXD2xsyugAKd4KPiDANkcuoEa2JuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
+	<style>
+h2:after,
+.cards .card:after {
+  position: absolute;
+}
+
+h2,
+h2 strong,
+.cards .card
+{
+  position: relative;
+}
+
+h2,
+h2 strong,
+h2 span {
+  vertical-align: middle;
+}
+
+body {
+  background: #24282f;
+  font-family: 'Arial';
+  color: #ccc;
+  font-size: 16px
+}
+
+.wrapper {
+  padding: 15px;
+}
+
+h2 {
+  padding: 10px;
+  padding-left: 25px;
+  color: #ccc;
+  margin: 0;
+  cursor:pointer;
+}
+
+h2 strong {
+  z-index: 2;
+  background: #24282f;
+  padding: 4px 8px;
+}
+
+h2 span {
+  font-size: 0.7em;
+  color: #aaa;
+  margin-left: 10px;
+}
+
+h2:after {
+  content: '';
+  z-index: 1;
+  bottom: 50%;
+  margin-bottom: -2px;
+  height: 2px;
+  left: 0;
+  right: 0;
+  background: #373d47;
+}
+
+.quicklinks {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.quicklink {
+  margin: 10px;
+}
+
+/* link no underline */
+a {
+  text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+  color: #CCC;
+}
+/* visited link */
+a:visited {
+  color: #CCC;
+}
+/* mouse over link */
+a:hover {
+  color: #EEE;
+}
+/* selected link */
+a:active {
+  color: #CCC;
+}
+
+.Menu {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.MenuButton {
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #555;/* Set a background color */
+  color: #ccc; /* Text color */
+  padding: 5px; /* Some padding */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 20px;/* Increase font size */
+  margin-top: 10px;
+  margin-left: 15px;
+  cursor:pointer;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+}
+
+.MenuButton:hover {
+  background-color: #666; /* Add a dark-grey background on hover */
+  color: #eee; /* Text color */
+}
+
+
+	                                                   /* scrollbars W3C standard that is currently Firefox-only */
+* {
+  scrollbar-width: thin;                               /* small width */
+  scrollbar-color: #888 transparent;                   /* trackbar color + transparant background */
+}
+
+                                                       /* scrollbars on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;                                         /* small width */
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;                             /* background color track */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #AAA;                              /* background */
+  border-radius: 20px;                                 /* rounded corner, border */
+  border: 3px solid #888;                              /* add the border */
+}
+
+#gamestable {
+  width: 100%;
+}
+
+#filter-controls {
+	margin-bottom: 7px;
+}
+  </style>
+  </head>
+  <body>
+    <div class="wrapper" id="wrapper">
+      %menuentryheader%
+	  <div class="Menu">%allmenuentries%</div>
+	  <h2></h2>
+	  <div id="filter-controls">
+		<span>
+		  <B>Field:</B>
+		  <select id="filter-field">
+			<option></option>
+			<option value="name">Name</option>
+			<option value="data">%pagetitle%</option>
+			<option value="lastactivity">Last Activity</option>
+			<option value="addeddate">Added Date</option>
+			<option value="playtime">Play Time</option>
+			<option value="source">Source</option>
+			<option value="platform">Platform</option>
+		  </select>
+		</span>
+
+		<span><B>Value: </B><input id="filter-value" type="text" placeholder="value to filter"></span>
+
+		<button id="filter-clear">Clear Filter</button>
+	  </div>
+	  <div id="gamestable"></div>
+    </div>
+	
+	<script>
+
+	var tabledata = [		
+ 	%allgamecardswithheaders%
+	];
+
+	var table = new Tabulator("#gamestable", {
+		data:tabledata,
+		layout:"fitColumns",
+		responsiveLayout:"hide",
+		height:"450px",
+		columns:[
+		{title:"Nr", formatter:"rownum", width:57, responsive:0}, //incrementing row number
+		{title:"Name", field:"name", widthGrow:2, minWidth:115, formatter:"html", responsive:0},
+		{title:"%pagetitle%", field:"data", widthGrow:1, minWidth:115, formatter:"html", responsive:0},
+		{title:"Last Activity", field:"lastactivity", widthGrow:1, minWidth:125, maxWidth:180, responsive:8},
+		{title:"Added", field:"addeddate", width:95, sorter:"date", sorterParams:{format:"DD/MM/YYYY"}, responsive:9}, 
+		{title:"Play Time", field:"playtime", width:125, responsive:9},
+		{title:"Source", field:"source", widthGrow:1, minWidth:125, formatter:"html", responsive:7},
+		{title:"Platform", field:"platform", widthGrow:1, minWidth:135, formatter:"html", responsive:0},
+		],
+		rowDblClick:function(e, row){ 
+ 			window.location=row.getData().gamefile;
+		},
+		rowClick:function(e, row){ 
+			var rowdata = row.getData(); 
+			var tmp = document.getElementById("name");
+			tmp.innerHTML = "<a href='" + row.getData().gamefile + "'>" + rowdata.name + "</a>";
+			tmp = document.getElementById("data");
+			tmp.innerHTML = rowdata.data;
+			tmp = document.getElementById("lastactivity");
+			tmp.innerHTML = rowdata.lastactivity;
+			tmp = document.getElementById("addeddate");
+			tmp.innerHTML = rowdata.addeddate;
+			tmp = document.getElementById("playtime");
+			tmp.innerHTML = rowdata.playtime;
+			tmp = document.getElementById("source");
+			tmp.innerHTML = rowdata.source;
+			tmp = document.getElementById("platform");
+			tmp.innerHTML = rowdata.platform;
+		},
+	});
+
+	function escapeRegExp(string) {
+		return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+	}
+
+	function dataFilter(data, filterParams){
+		//data - the data for the row being filtered
+		//filterParams - params object passed to the filter
+		const regex = new RegExp(escapeRegExp(filterParams.compareval.toLowerCase()), 'g'); //comparevalue is text
+		return regex.test(he.decode(data[filterParams.field]).toLowerCase());
+    }
+
+	//Define variables for input elements
+	var fieldEl = document.getElementById("filter-field");
+	var valueEl = document.getElementById("filter-value");
+
+	//set filter if passed certain parameter
+	var url = window.location.href;
+	var hashindex = url.lastIndexOf("#quicklink-");
+	var urllen = url.length;
+
+	if (hashindex > -1)
+	{
+		var quicklinktext = "quicklink-";
+		hashindex += quicklinktext.length + 1;
+		
+		if (hashindex < urllen)
+		{
+			var filtervalue = url.substring(hashindex, urllen);
+			if (filtervalue != "")
+			{			
+				fieldEl.value = "data";
+				valueEl.value = decodeURI(filtervalue);
+				updateFilter();
+			}
+		}
+	}
+
+	//Trigger setFilter function with correct parameters
+	function updateFilter(){
+	  var filterVal = fieldEl.options[fieldEl.selectedIndex].value;
+	
+	  if(filterVal){
+		table.setFilter(dataFilter, {field:filterVal, compareval:valueEl.value});
+	  }
+	}
+
+	//Update filters on value change
+	document.getElementById("filter-field").addEventListener("change", updateFilter);
+	document.getElementById("filter-value").addEventListener("keyup", updateFilter);
+
+	//Clear filters on "Clear Filters" button click
+	document.getElementById("filter-clear").addEventListener("click", function(){
+	  fieldEl.value = "";
+	  valueEl.value = "";
+
+	  table.clearFilter();
+	});
+
+   </script>
+   <TABLE class="detailstable">
+	 <COLGROUP>
+	   <COL>
+	   <COL style="width:170px;">
+	   <COL>
+	   <COL>
+	 </COLGROUP>
+	 <TR><TD><B>Name</B></TD><TD colspan="3" id="name"></TD></TR>
+	 <TR><TD><B>Last Activity</B></TD><TD id="lastactivity"></TD><TD><B>%pagetitle%</B></TD><TD id="data"></TD></TR>
+     <TR><TD><B>Added Date</B></TD><TD id="addeddate"></TD><TD><B>Source</B></TD><TD id="source"></TR>
+     <TR><TD><B>Play Time</B></TD><TD id="playtime"></TD><TD><B>Platform</B></TD><TD id="platform"></TD></TR>
+   </TABLE>
+  </body>
+</html>

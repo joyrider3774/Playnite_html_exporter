@@ -29,7 +29,9 @@
 
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Grade padrão (Requer imagens)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Lista padrão (Requer imagens)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTable">Default Table (Requires images)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Lista padrão (Apenas texto)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTableText">Default Table (Text only)</sys:String>
 
     <!-- misc -->
     <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Não Agrupado]</sys:String>

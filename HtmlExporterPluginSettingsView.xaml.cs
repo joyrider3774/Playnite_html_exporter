@@ -130,7 +130,7 @@ namespace HtmlExporterPlugin
             PagesDataGrid.Items.Refresh();
         }
 
-        public void DoReset(string context)
+        public void DoReset(string context, bool forcesingle = false)
         {
             if (plugin.PlayniteApi.Dialogs.ShowMessage(Constants.RevertPagesQuestion1 + " " + context + " " + Constants.RevertPagesQuestion2,
                 Constants.AppName, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
@@ -143,19 +143,28 @@ namespace HtmlExporterPlugin
                     {
                         continue;
                     }
-                    if (Constants.FakeGameFields.Contains(groupfield))
+                    if (Constants.FakeGameFields.Contains(groupfield) && (groupfield != Constants.PlatformField) &&
+                       (groupfield != Constants.AgeRatingField) && (groupfield != Constants.RegionField) &&
+                       (groupfield != Constants.LibraryField) && !forcesingle)
                     {
                         PagesDataGrid.Items.Add(plugin.CreatePageObject("default " + context + (String.IsNullOrEmpty(context) ? String.Empty : " ") + "combobox quicklinks", groupfield, true, Constants.NameField, true, true));
                     }
                     else
                     {
-                        if (Constants.DefaultDescGroupFields.Contains (groupfield))
+                        if (Constants.DefaultDescGroupFields.Contains(groupfield) && !forcesingle)
                         {
                             PagesDataGrid.Items.Add(plugin.CreatePageObject("default " + context + (String.IsNullOrEmpty(context) ? String.Empty : " ") + "combobox quicklinks", groupfield, false, Constants.NameField, true, true));
                         }
                         else
                         {
-                            PagesDataGrid.Items.Add(plugin.CreatePageObject("default" + (String.IsNullOrEmpty(context) ? String.Empty : " ") + context, groupfield, true, Constants.NameField, true, true));
+                            if (Constants.DefaultDescGroupFields.Contains(groupfield) && forcesingle)
+                            {
+                                PagesDataGrid.Items.Add(plugin.CreatePageObject("default" + (String.IsNullOrEmpty(context) ? String.Empty : " ") + context, groupfield, false, Constants.NameField, true, true));
+                            }
+                            else
+                            {
+                                PagesDataGrid.Items.Add(plugin.CreatePageObject("default" + (String.IsNullOrEmpty(context) ? String.Empty : " ") + context, groupfield, true, Constants.NameField, true, true));
+                            }
                         }
                     }
                 }
@@ -170,11 +179,6 @@ namespace HtmlExporterPlugin
             ContextMenu cm = this.FindResource("cmRevert") as ContextMenu;
             cm.PlacementTarget = sender as Button;
             cm.IsOpen = true;
-        }
-
-        private void PagesDataGrid_LoadingRow(object sender, DataGridRowEventArgs e)
-        {
-            e.Row.Header = (e.Row.GetIndex() + 1).ToString();
         }
 
         private void BtnMoveUp_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -235,6 +239,16 @@ namespace HtmlExporterPlugin
             DoReset("list text");
         }
 
+        private void MnuDefaultTableText_Click(object sender, RoutedEventArgs e)
+        {
+            DoReset("table text", true);
+        }
+
+        private void MnuDefaultTable_Click(object sender, RoutedEventArgs e)
+        {
+            DoReset("table", true);
+        }
+
         private void Window_Closing(object sender, CancelEventArgs e)
         {
             e.Cancel = !ConvertImageOptionsView.ValidateInput();
@@ -282,5 +296,6 @@ namespace HtmlExporterPlugin
 
            
         }
+
     }
 }

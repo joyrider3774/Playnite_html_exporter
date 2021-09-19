@@ -2,60 +2,36 @@
 <html>
   <head>
     <title>%pagetitle%</title>
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
 	<style>
-.abs,
 h2:after,
 .cards .card:after {
   position: absolute;
 }
-.rel,
+
 h2,
 h2 strong,
 .cards .card
 {
   position: relative;
 }
-.fix {
-  position: fixed;
-}
-.dfix {
-  display: inline;
-}
-.dib {
-  display: inline-block;
-}
-.db {
-  display: block;
-}
-.dn {
-  display: none;
-}
-.df,
-.cards {
-  display: flex;
-}
-.dif {
-  display: inline-flex;
-}
-.dg {
-  display: grid;
-}
-.dig {
-  display: inline-grid;
-}
-.vm,
+
 h2,
 h2 strong,
 h2 span {
   vertical-align: middle;
 }
+
 body {
   background: #24282f;
   font-family: 'Arial';
 }
+
 .wrapper {
   padding: 15px;
 }
+
 h2 {
   padding: 10px;
   padding-left: 25px;
@@ -63,16 +39,19 @@ h2 {
   margin: 0;
   cursor:pointer;
 }
+
 h2 strong {
   z-index: 2;
   background: #24282f;
   padding: 4px 8px;
 }
+
 h2 span {
   font-size: 0.7em;
   color: #aaa;
   margin-left: 10px;
 }
+
 h2:after {
   content: '';
   z-index: 1;
@@ -83,19 +62,11 @@ h2:after {
   right: 0;
   background: #373d47;
 }
-.cards {
-
-}
-.card {
-  margin: 20px;
-  width: 350px;
-  overflow: hidden;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.8);
-}
 
 #h2jscript {
   cursor:pointer;
 }
+
 .quicklinks {
   display: flex;
   flex-flow: row wrap;
@@ -129,7 +100,6 @@ a:active {
   color: #888;
 }
 
-
 .Menu {
   display: flex;
   flex-flow: row wrap;
@@ -155,8 +125,7 @@ a:active {
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
   background-color: #555;/* Set a background color */
-  color: #999/* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
+  color: #ccc; /* Text color */
   padding: 5px; /* Some padding */
   border-radius: 4px; /* Rounded corners */
   font-size: 20px;/* Increase font size */
@@ -171,7 +140,7 @@ a:active {
 
 .MenuButton:hover {
   background-color: #666; /* Add a dark-grey background on hover */
-  color: #999; /* Text color */
+  color: #eee; /* Text color */
 }
 
 #BackTopButton:hover {
@@ -180,21 +149,21 @@ a:active {
 
 #label {
    font-size: 18px;
-   color: #999;
+   color: #CCC;
       margin: 5px;
 }
 
 #label a {
-   color: #999;
+   color: #CCC;
 }
 
 /* unvisited link */
 #label a:link {
-  color: #888;
+  color: #CCC;
 }
 /* visited link */
 #label a:visited {
-  color: #888;
+  color: #CCC;
 }
 /* mouse over link */
 #label a:hover {
@@ -202,7 +171,7 @@ a:active {
 }
 /* selected link */
 #label a:active {
-  color: #888;
+  color: #CCC;
 }
 
 	                                                   /* scrollbars W3C standard that is currently Firefox-only */
@@ -229,17 +198,22 @@ a:active {
 .detailstable th, td {
   border: 0px;                                         /* no borders on td, th elements */
   color: #ccc;                                         /* details table text color */
+  vertical-align: middle;                              /* align middle */
+  text-align: left;                                    /* align text left */
 }
 
-.detailstable td {
+.tdname {
+  border: 0px;                                         /* no borders on td, th elements */
+  color: #ccc;                                         /* details table text color */
+  vertical-align: middle;                              /* align middle */
   text-align: left;                                    /* align text left */
-  vertical-align: middle;                              /* align top */
 }
 
 .detailstable {
   width: 100%;                                         /* set to full width of details */
   padding: 5px;                                        /* add some padding */
   border-collapse: collapse;						   /* to make rows collapse if they are hidden using search */
+  table-layout: fixed;
 }
 
 input{
@@ -252,6 +226,7 @@ input{
   outline: none;
   height: 1rem;
 }
+
 input:hover{
 	border: 0.1rem solid #0F52BA !important;
 }
@@ -266,11 +241,12 @@ input:hover{
   outline: none;
   height: 2rem;
 }
+
 #searchbutton:hover{
 	border: 0.1rem solid #0F52BA !important;
 }
   </style>
-    <script>
+  <script>
 	function search() {
 		var input, filter, games, game, i, j, txtValue, fragment, parentElement, wrapper, quicklinks, quicklink, quicklinkid, cards, needhide, numvisible, quicklinklinks, header;
 		input = document.getElementById("search");
@@ -280,21 +256,21 @@ input:hover{
 		fragment = document.createDocumentFragment();
 		fragment.appendChild(wrapper.cloneNode(true));
 		wrapper.remove();
-		games = fragment.childNodes[0].getElementsByTagName("P");
+		games = fragment.childNodes[0].getElementsByClassName("tdname");
 		i = games.length - 1;
 		
 		while (i >= 0 ) {
 			game = games[i];
-			txtValue = game.innerText;
+			txtValue = game.childNodes[0].innerText;
 			if (txtValue.toUpperCase().indexOf(filter) > -1) {
-				game.parentElement.parentElement.parentElement.style.display = "";
+				game.parentElement.style.display = "";
 			} else {
-				game.parentElement.parentElement.parentElement.style.display = "none";
+				game.parentElement.style.display = "none";
 			}
 			i--;
 		}
 
-		quicklinks = fragment.childNodes[0].querySelectorAll("th[id^='quicklink-']")
+		quicklinks = fragment.childNodes[0].querySelectorAll("tr[id^='quicklink-']")
 		i = quicklinks.length - 1;
 		while (i >= 0) {
 			quicklink = quicklinks[i];
@@ -319,22 +295,21 @@ input:hover{
 				if (needhide)
 				{
 					quicklink.style.display = "none";
-					cards.style.display = "none";
+					quicklink.children[0].children[0].children[0].innerHTML = "&#x25BA;";
+					quicklink.children[0].children[0].children[0].style.color = "#790000";
+					quicklink.children[0].children[0].children[1].children[0].innerText = "( " + numvisible.toString() + " )";
 					if (quicklinklinks.length == 1)
-					{
-						header = quicklink.parentNode.nextSibling;
-						header.children[0].children[0].children[1].children[0].innerText = "( " + numvisible.toString() + " )";
-						header.style.display = "none";
+					{						
 						quicklinklinks[0].style.display = "none";
 					}
 				} else {
-					quicklink.style.display = "";
 					cards.style.display = "";
+					quicklink.style.display = "";
+					quicklink.children[0].children[0].children[0].innerHTML = "&#x25BC;";
+					quicklink.children[0].children[0].children[0].style.color = "#007962";
+					quicklink.children[0].children[0].children[1].children[0].innerText = "( " + numvisible.toString() + " )";
 					if (quicklinklinks.length == 1)
-					{
-						header = quicklink.parentNode.nextSibling;
-						header.children[0].children[0].children[1].children[0].innerText = "( " + numvisible.toString() + " )";
-						header.style.display = "";
+					{						
 						quicklinklinks[0].style.display = "";
 					}
 				}
@@ -376,14 +351,14 @@ input:hover{
       <h2></h2>
       <div class="cards">
 	  <TABLE  name="gamestable" class="detailstable" id="detailstable">
-      <TR><TD></TD><TD><B><a href="%name_filename%">%name_name%</a></B></TD><TD><B><a href="%%groupfieldrealnamelowerexceptname%_filename%">%groupfieldexceptname% %groupfieldsortsymbolexceptname%</a></B></TD><TD><B><a href="%lastactivitysegment_filename%">%lastactivity_name%</a></B></TD><TD><B><a href="%added_filename%">%added_name%</a></B></TD><TD><B><a href="%playtime_filename%">%playtime_name%</a></B></TD><TD><B><a href="%source_filename%">%source_name%</a></B></TD><TD><B><a href="%platform_filename%">%platform_name%</a></B></TD></TR>
+      <COLGROUP><COL WIDTH="60"><COL WIDTH="22%"><COL WIDTH="width="13%"><COL WIDTH="13%"><COL WIDHT="13%"><COL WIDHT="13%"><COL WIDHT="13%"><COL WIDHT="13%"></COLGROUP>
+	  <THEAD><TR><TH></TH><TH><B><a href="%name_filename%">%name_name%</a></B></TH><TH><B><a href="%%groupfieldrealnamelowerexceptname%_filename%">%groupfieldexceptname% %groupfieldsortsymbolexceptname%</a></B></TH><TH><B><a href="%lastactivitysegment_filename%">%lastactivity_name%</a></B></TH><TH><B><a href="%added_filename%">%added_name%</a></B></TH><TH><B><a href="%playtime_filename%">%playtime_name%</a></B></TH><TH><B><a href="%source_filename%">%source_name%</a></B></TH><TH><B><a href="%platform_filename%">%platform_name%</a></B></TH></TR></THEAD>
 	  <TBODY>
    	  %allgamecardswithheaders%
 	  </TBODY>
 	  </TABLE>
       </div>
     </div>
-	<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 	<script>
 	const observer = lozad(); // lazy loads elements with default selector as '.lozad'
 	observer.observe();
@@ -401,7 +376,7 @@ input:hover{
 		document.getElementById("searchbutton").click();
 	  }
 	});
-	
+
 	//Get the button:
 	mybutton = document.getElementById("BackTopButton");
 

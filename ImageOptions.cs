@@ -26,13 +26,15 @@ namespace HtmlExporterPlugin
         public string IconImageWidth { get; set; } = "48";
         public string IconImageHeight { get; set; } = "48";
 
-        public bool ForceConversion { get; set;} = false;
+        public bool ForceConversion { get; set; } = false;
 
         public string MaxTasks { get; set; } = "1";
 
         public bool AlwaysProcess { get; set; } = false;
 
         public bool DetectDuplicates { get; set; } = false;
+
+        private bool ImageMagickFound { get; set; } = false;
 
         public string GetUniqueString(bool includeMaxTasks = false, bool includeAlwaysProcess = false)
         {
@@ -44,29 +46,35 @@ namespace HtmlExporterPlugin
                 (includeAlwaysProcess ? '_' + AlwaysProcess.ToString() : String.Empty);
         }
 
-        public bool ImageMagickFound()
+        public ImageOptions()
         {
-            return !String.IsNullOrEmpty(ImageMagickLocation) && File.Exists(ImageMagickLocation);
+            CheckForImageMagick();
+        }
+
+        public bool CheckForImageMagick()
+        {
+            ImageMagickFound = !String.IsNullOrEmpty(ImageMagickLocation) && File.Exists(ImageMagickLocation);
+            return ImageMagickFound;
         }
 
         public bool BackgroundNeedsConversion(string filename)
         {
-            return ImageMagickFound() && (ConvertToJpg && (!Path.GetExtension(filename).ToLower().Equals(".jpg") || ForceConversion) || ResizeBackgroundImage);
+            return ImageMagickFound && (ConvertToJpg && (!Path.GetExtension(filename).ToLower().Equals(".jpg") || ForceConversion) || ResizeBackgroundImage);
         }
 
         public bool IconNeedsConversion(string filename)
         {            
-            return ImageMagickFound() && (ConvertToPng && (!Path.GetExtension(filename).ToLower().Equals(".png") || ForceConversion) || ResizeIconImage);
+            return ImageMagickFound && (ConvertToPng && (!Path.GetExtension(filename).ToLower().Equals(".png") || ForceConversion) || ResizeIconImage);
         }
 
         public bool CoverNeedsConversion(string filename)
         {
-            return ImageMagickFound() && (ConvertToJpg && (!Path.GetExtension(filename).ToLower().Equals(".jpg") || ForceConversion) || ResizeCoverImage);
+            return ImageMagickFound && (ConvertToJpg && (!Path.GetExtension(filename).ToLower().Equals(".jpg") || ForceConversion) || ResizeCoverImage);
         }
 
         public string CoverDestFilename(string filename)
         {
-            if (!ConvertToJpg || !ImageMagickFound())
+            if (!ConvertToJpg || !ImageMagickFound)
             {
                 return filename;
             }
@@ -78,7 +86,7 @@ namespace HtmlExporterPlugin
 
         public string BackgroundDestFilename(string filename)
         {
-            if (!ConvertToJpg || !ImageMagickFound())
+            if (!ConvertToJpg || !ImageMagickFound)
             {
                 return filename;
             }
@@ -90,7 +98,7 @@ namespace HtmlExporterPlugin
 
         public string IconDestFilename(string filename)
         {
-            if (!ConvertToPng || !ImageMagickFound())                
+            if (!ConvertToPng || !ImageMagickFound)
             {
                 return filename;
             }
@@ -100,40 +108,53 @@ namespace HtmlExporterPlugin
             }
         }
 
-        private string MakeOptions(string DestFileExt, bool NeedsResize, string Width, string Height, bool ConvertToJpg, bool ConvertToPng, string JpegQuality)
-        {
-            string Result = String.Empty;
-            if (DestFileExt.ToLower().Equals(".jpg") && !ConvertToPng)
+        private string MakeOptions(string SourceFileExt, string DestFileExt, bool NeedsResize, string Width, string Height, bool ConvertToJpg, bool ConvertToPng, string JpegQuality)
+        {            
+            string Result = string.Empty;
+            string SourceExt = SourceFileExt.ToLower();
+            //only icon converts to png but it seems gif files have same problem and playnite also allows ico and gif to be set for background and cover.
+            //This can still fail if the files got no extensions like some files do in playnite
+            if (ConvertToPng || SourceExt.Equals(".gif") || SourceExt.Equals(".ico") || SourceExt.Equals(".tiff"))
             {
-                Result = "-interlace plane -quality " + JpegQuality;
+                //converts multiple images inside an ico to a single image otherwise imagemagick generates multiple files
+                //credits https://legacy.imagemagick.org/discourse-server/viewtopic.php?p=164113#p164113
+                Result = "( -clone 0--1 -layers Merge ) -channel A -evaluate Multiply \" %[fx: w == u[-1].w ? 1 : 0] % \"  +channel +delete -background None -layers merge ";
             }
-            //converts multiple images inside an ico to a single image otherwise imagemagick generates multiple files
-            //credits https://legacy.imagemagick.org/discourse-server/viewtopic.php?p=164113#p164113
-            if (ConvertToPng && !ConvertToJpg)
+
+            if (DestFileExt.ToLower().Equals(".jpg"))
             {
-                Result = "( -clone 0--1 -layers Merge ) -channel A -evaluate Multiply \" %[fx: w == u[-1].w ? 1 : 0] % \"  +channel +delete -background None -layers merge";
+                if (!string.IsNullOrEmpty(Result))
+                {
+                    Result += " ";
+                }
+                Result +=  "-interlace plane -quality " + JpegQuality;
             }
+          
             //> only larger images to resize
             if (NeedsResize)
             {
-                Result += " -resize " + Width + "x" + Height + ">";
+                if (!string.IsNullOrEmpty(Result))
+                {
+                    Result += " ";
+                }
+                Result += "-resize " + Width + "x" + Height + ">";
             }
             return Result;
         }
 
-        public string BackgroundOptions(string DestFileExt)
+        public string BackgroundOptions(string SourceFileExt, string DestFileExt)
         {
-            return MakeOptions(DestFileExt, ResizeBackgroundImage, BackgroundImageWidth, BackgroundImageHeight, ConvertToJpg, false, JpgQuality);
+            return MakeOptions(SourceFileExt, DestFileExt, ResizeBackgroundImage, BackgroundImageWidth, BackgroundImageHeight, ConvertToJpg, false, JpgQuality);
         }
 
-        public string CoverOptions(string DestFileExt)
+        public string CoverOptions(string SourceFileExt, string DestFileExt)
         {
-            return MakeOptions(DestFileExt, ResizeCoverImage, CoverImageWidth, CoverImageHeight, ConvertToJpg, false, JpgQuality);
+            return MakeOptions(SourceFileExt, DestFileExt, ResizeCoverImage, CoverImageWidth, CoverImageHeight, ConvertToJpg, false, JpgQuality);
         }
 
-        public string IconOptions(string DestFileExt)
+        public string IconOptions(string SourceFileExt, string DestFileExt)
         {
-            return MakeOptions(DestFileExt, ResizeIconImage, IconImageWidth, IconImageHeight, false, ConvertToPng, JpgQuality);
+            return MakeOptions(SourceFileExt, DestFileExt, ResizeIconImage, IconImageWidth, IconImageHeight, false, ConvertToPng, JpgQuality);
         }
     }
 }

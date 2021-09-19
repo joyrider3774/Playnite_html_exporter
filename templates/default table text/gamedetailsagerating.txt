@@ -1,0 +1,1 @@
+<a href="%agerating_filename%#quicklink-%agerating%">%agerating%</a><br/>

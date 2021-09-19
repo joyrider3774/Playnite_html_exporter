@@ -1,6 +1,6 @@
 <TR>
 	<TD>%count%.</TD>
-	<TD><a href="%detailspagefilename%"><P id="label">%gamename%</P></a></TD>
+	<TD class="tdname"><a href="%detailspagefilename%">%gamename%</a></TD>
 	<TD><a href="%%groupfieldrealnamelowerexceptname%_filename%#quicklink-%%groupfieldrealnamelowerexceptname%%">%%groupfieldrealnamelowerexceptname%%</a></TD>
 	<TD><a href="%lastactivitysegment_filename%#quicklink-%lastactivitysegment%">%lastactivitysegment%</a></TD>
 	<TD><a href="%added_filename%#quicklink-%addeddate%">%addeddate%</a> %addedtime%</TD>
