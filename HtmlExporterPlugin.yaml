@@ -1,0 +1,23 @@
+AddonId: 'HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557'
+Packages:
+  - Version: 3.0
+    RequiredApiVersion: 6.0.0
+    ReleaseDate: 2021-09-19
+    PackageUrl: https://github.com/joyrider3774/Playnite_html_exporter/releases/download/v3.0/HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557_3_0.pext
+    Changelog:
+      - Playnite 9 Support
+      - Fix Links sometimes not clickable on details page
+      - Make list templates use fixed table to prevent table repositioning
+      - New "Table" Template using Tabulator which also works fast on phones
+      - New "Tag" Group & export field / page
+      - Load Templates from both Plugin as Plugin data Folder, Plugin folder having preference
+      - Don't check for Image Magick existance of every function call, do it once before starting export
+      - AgeRating, Region and Platform are no longer sortfields, they still are groupfields.
+      - Added Tags on Game Details page
+      - Fix Library Field not always available in templates
+      - Fix bug in Templates javascript where collapsed groups would still show collapsed icon after search
+      - Added Viewport the templates for better mobile usage
+      - Add Support for "Add to Homescreen" option in the templates for mobile usage
+      - Fix Gif, Tif, Ico generating multiple files when not used as icon
+      - Make Links Clearer / more visible in exported html pages.
+      - Use FileDeDuplicator per image type instead of global one
