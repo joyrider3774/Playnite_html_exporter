@@ -11,6 +11,9 @@ Export your [Playnite](https://www.playnite.link/) games library to (static) htm
 ### V2.0
 [![Playnite html exporter V2.0](http://img.youtube.com/vi/6WqE6oj33Fo/0.jpg)](https://youtu.be/6WqE6oj33Fo "Playnite html exporter V2.0")
 
+### V3.0
+[![Playnite html exporter V2.0](http://img.youtube.com/vi/xdtpItr2iC4/0.jpg)](https://youtu.be/xdtpItr2iC4 "Playnite html exporter V3.0")
+
 ## Export Speed
 The very first time when you export with images enabled it will take a longer time than the second time you will export. The very first time it has copy all images while the next times it only has to copy new images. Also generating the very first page takes longer than all other pages as the very first page also generates all detail pages of games. Also having playnite installed on a SSD and exporting to an SSD folder will be a lot faster than having playnite installed and exporting on platter disk or even worse an SMR platter disk. 
 
