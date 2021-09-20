@@ -1,5 +1,20 @@
 AddonId: 'HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557'
 Packages:
+  - Version: 3.1
+    RequiredApiVersion: 6.0.0
+    ReleaseDate: 2021-09-20
+    PackageUrl: https://github.com/joyrider3774/Playnite_html_exporter/releases/download/v3.1/HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557_3_1.pext
+    Changelog:
+      - Quicklink filtering with "field starts with" search for table templates
+      - Quicklink filtering is used instead of field filtering for hasthag links to html files based on table templates (from details pages)
+      - Constant text replaced with translatable text in multiple templates
+      - Columns in Table template was not using translatable text
+      - ScoreGroup fields returning always english "none" instead of translatable "none" value
+      - Combobox List Templates duplicating header groupfield name after doing a search for a game
+      - Top Button not working in Default List Text TemplateFolders
+      - List Text Templates not using improved visibility for menu buttons and links.
+      - removal of leftover lazzy loading scripts in Text Only templates
+      - Update of translations (especially "Portugese - Brazilian" by JCraftPlay)
   - Version: 3.0
     RequiredApiVersion: 6.0.0
     ReleaseDate: 2021-09-19
