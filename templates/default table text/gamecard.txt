@@ -1,1 +1,1 @@
-{id:%count%, name:"%gamename%", data:"%%groupfieldrealnamelowerexceptname%%", lastactivity:"%lastactivitysegment%", addeddate:"%addeddate%", playtime:"%playtime%", source:"%source%", platform:"%platform%", gamefile:"%detailspagefilename%"},
+{id:%count%, name:"%gamename%", data:"%%groupfieldrealnamelower%%", lastactivity:"%lastactivitysegment%", addeddate:"%addeddate%", playtime:"%playtime%", source:"%source%", platform:"%platform%", gamefile:"%detailspagefilename%"},

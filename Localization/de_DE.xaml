@@ -170,6 +170,15 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Links</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Beschreibung</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Details</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLField">Feld</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLStartsWith">beginnt mit:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLContains">enthält</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLClearFilter">Filter löschen</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLValueToFilter">wert zu filtern</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLSearch">Suchen</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLTypeInAGameNameToSearch">Gib einen Spielnamen ein um zu suchen</sys:String>
+    
+
 
     <!-- Image options screen -->
     <sys:String x:Key="LOC_HTMLEXPORTER_MagickLocation">Magick.exe Standort</sys:String>

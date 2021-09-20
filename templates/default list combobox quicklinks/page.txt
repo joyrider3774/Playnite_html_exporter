@@ -357,13 +357,13 @@ input:hover{
     <div class="wrapper" id="wrapper">
       %menuentryheader%
       <div class="Menu">%allmenuentries%</div>
-      <h2><strong>Search</strong></h2><input type="text" id="search" placeholder="Search for game.." title="Type in a name"><br/><button onclick="search()" id="searchbutton">Search</button>
+      <h2><strong>%search_name%</strong></h2><input type="text" id="search" placeholder="%typeinagamenametosearch_name%"><br/><button onclick="search()" id="searchbutton">%search_name%</button>
       %quicklinksheader%
       <div class="quicklinks"><P id="grouplabel">%groupfield%: <select id="combobselect" onchange="window.location=this.options[this.selectedIndex].value">%allquicklinks%</select></P></div>
       <h2></h2>
       <div class="cards">
 	  <TABLE  name="gamestable" class="detailstable" id="detailstable">
-      	  <COLGROUP><COL WIDTH="50"><COL WIDTH="60"><COL WIDTH="22%"><COL WIDTH="width="13%"><COL WIDTH="13%"><COL WIDHT="13%"><COL WIDHT="13%"><COL WIDHT="13%"><COL WIDHT="13%"></COLGROUP>
+      <COLGROUP><COL WIDTH="50"><COL WIDTH="60"><COL WIDTH="22%"><COL WIDTH="width="13%"><COL WIDTH="13%"><COL WIDHT="13%"><COL WIDHT="13%"><COL WIDHT="13%"><COL WIDHT="13%"></COLGROUP>
 	  <THEAD><TR><TH></TH><TH></TH><TH><B><a href="%name_filename%">%name_name%</a></B></TH><TH><B><a href="%%groupfieldrealnamelowerexceptname%_filename%">%groupfieldexceptname% %groupfieldsortsymbolexceptname%</a></B></TH><TH><B><a href="%lastactivitysegment_filename%">%lastactivity_name%</a></B></TH><TH><B><a href="%added_filename%">%added_name%</a></B></TH><TH><B><a href="%playtime_filename%">%playtime_name%</a></B></TH><TH><B><a href="%source_filename%">%source_name%</a></B></TH><TH><B><a href="%platform_filename%">%platform_name%</a></B></TH></TR></THEAD>
 	  <TBODY>
    	  %allgamecardswithheaders%

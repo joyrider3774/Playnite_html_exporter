@@ -350,7 +350,7 @@ input:hover{
     <div class="wrapper" id="wrapper">
       %menuentryheader%
       <div class="Menu">%allmenuentries%</div>
-      <h2><strong>Search</strong></h2><input type="text" id="search" placeholder="Search for game.." title="Type in a name"><br/><button onclick="search()" id="searchbutton">Search</button>
+      <h2><strong>%search_name%</strong></h2><input type="text" id="search" placeholder="%typeinagamenametosearch_name%"><br/><button onclick="search()" id="searchbutton">%search_name%</button>
       %quicklinksheader%
 	  <div class="quicklinks">%allquicklinks%</div>
       %allgamecardswithheaders%

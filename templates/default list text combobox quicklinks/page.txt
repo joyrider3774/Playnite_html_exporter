@@ -159,7 +159,7 @@ a:active {
 #label {
    font-size: 18px;
    color: #CCC;
-      margin: 5px;
+   margin: 5px;
 }
 
 #label a {
@@ -284,7 +284,6 @@ input:hover{
 		while (i >= 0) {
 			quicklink = quicklinks[i];
 			quicklinkid = quicklink.id;
-			quicklinkvalue = quicklinkid.replace("quicklink-", "");
 			cards = fragment.getElementById(quicklinkid.replace("quicklink-", ""));
 			needhide = true;
 			if(cards)
@@ -308,7 +307,7 @@ input:hover{
 					quicklink.style.display = "none";
 					quicklink.children[0].children[0].children[0].innerHTML = "&#x25BA;";
 					quicklink.children[0].children[0].children[0].style.color = "#790000";
-					quicklink.children[0].children[0].children[1].children[0].innerText = quicklinkvalue + " ( " + numvisible.toString() + " )";
+					quicklink.children[0].children[0].children[1].children[0].innerText = "( " + numvisible.toString() + " )";
 					if (quicklinklinks.length == 1)
 					{						
 						quicklinklinks[0].style.display = "none";
@@ -318,7 +317,7 @@ input:hover{
 					quicklink.style.display = "";
 					quicklink.children[0].children[0].children[0].innerHTML = "&#x25BC;";
 					quicklink.children[0].children[0].children[0].style.color = "#007962";
-					quicklink.children[0].children[0].children[1].children[0].innerText = quicklinkvalue + " ( " + numvisible.toString() + " )";
+					quicklink.children[0].children[0].children[1].children[0].innerText = "( " + numvisible.toString() + " )";
 					if (quicklinklinks.length == 1)
 					{						
 						quicklinklinks[0].style.display = "";
@@ -356,7 +355,7 @@ input:hover{
     <div class="wrapper" id="wrapper">
       %menuentryheader%
       <div class="Menu">%allmenuentries%</div>
-      <h2><strong>Search</strong></h2><input type="text" id="search" placeholder="Search for game.." title="Type in a name"><br/><button onclick="search()" id="searchbutton">Search</button>
+      <h2><strong>%search_name%</strong></h2><input type="text" id="search" placeholder="%typeinagamenametosearch_name%"><br/><button onclick="search()" id="searchbutton">%search_name%</button>
       %quicklinksheader%
       <div class="quicklinks"><P id="grouplabel">%groupfield%: <select id="combobselect" onchange="window.location=this.options[this.selectedIndex].value">%allquicklinks%</select></P></div>
       <h2></h2>
@@ -370,10 +369,7 @@ input:hover{
 	  </TABLE>
       </div>
     </div>
-	<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 	<script>
-	const observer = lozad(); // lazy loads elements with default selector as '.lozad'
-	observer.observe();
 
 	// Get the input field
 	var input = document.getElementById("search");
@@ -408,7 +404,7 @@ input:hover{
 	  document.body.scrollTop = 0; // For Safari
 	  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 	}
-		
+
 	function ShowHide(body_id){
 	var elem
 

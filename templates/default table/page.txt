@@ -152,7 +152,7 @@ a:active {
   width: 100%;
 }
 
-#filter-controls {
+.filter-controls {
 	margin-bottom: 7px;
 }
   </style>
@@ -162,24 +162,30 @@ a:active {
       %menuentryheader%
 	  <div class="Menu">%allmenuentries%</div>
 	  <h2></h2>
-	  <div id="filter-controls">
+	  <div class="filter-controls">
 		<span>
-		  <B>Field:</B>
+			<B>%groupfield% %startswith_name%</B>
+		    <select id="filter-quickfield" onchange="applyQuickField();"><option></option>%allquicklinks%</select>
+		</span>
+	  </div>
+	  <div class="filter-controls">
+		<span>
+		  <B>%field_name% </B>
 		  <select id="filter-field">
 			<option></option>
-			<option value="name">Name</option>
-			<option value="data">%pagetitle%</option>
-			<option value="lastactivity">Last Activity</option>
-			<option value="addeddate">Added Date</option>
-			<option value="playtime">Play Time</option>
-			<option value="source">Source</option>
-			<option value="platform">Platform</option>
+			<option value="name">%name_name%</option>
+			<option value="data">%groupfield%</option>
+			<option value="lastactivity">%lastactivity_name%</option>
+			<option value="addeddate">%added_name%</option>
+			<option value="playtime">%playtime_name%</option>
+			<option value="source">%source_name%</option>
+			<option value="platform">%platform_name%</option>
 		  </select>
 		</span>
 
-		<span><B>Value: </B><input id="filter-value" type="text" placeholder="value to filter"></span>
+		<span><B>%contains_name% </B><input id="filter-value" type="text" placeholder="%valuetofilter_name%"></span>
 
-		<button id="filter-clear">Clear Filter</button>
+		<button id="filter-clear">%clearfilter_name%</button>
 	  </div>
 	  <div id="gamestable"></div>
     </div>
@@ -205,15 +211,15 @@ a:active {
 		responsiveLayout:"hide",
 		height:"450px",
 		columns:[
-		{title:"Nr", formatter:"rownum", width:57, responsive:0}, //incrementing row number
-		{title:"Icon", field:"icon", mutator:iconMutator, formatter:"html", width:34, responsive:0},
-		{title:"Name", field:"name", widthGrow:2, minWidth:115, formatter:"html", responsive:0},
-		{title:"%pagetitle%", field:"data", widthGrow:1, minWidth:115, formatter:"html", responsive:0},
-		{title:"Last Activity", field:"lastactivity", widthGrow:1, minWidth:125, maxWidth:180, responsive:8},
-		{title:"Added", field:"addeddate", width:95, sorter:"date", sorterParams:{format:"DD/MM/YYYY"}, responsive:9}, 
-		{title:"Play Time", field:"playtime", width:125, responsive:9},
-		{title:"Source", field:"source", widthGrow:1, minWidth:125, formatter:"html", responsive:7},
-		{title:"Platform", field:"platform", widthGrow:1, minWidth:135, formatter:"html", responsive:0},
+		{title:"#", formatter:"rownum", width:57, responsive:0}, //incrementing row number
+		{title:"", field:"icon", mutator:iconMutator, formatter:"html", width:41, responsive:0},
+		{title:"%name_name%", field:"name", widthGrow:2, minWidth:115, formatter:"html", responsive:0},
+		{title:"%groupfield%", field:"data", widthGrow:1, minWidth:115, formatter:"html", responsive:0},
+		{title:"%lastactivity_name%", field:"lastactivity", widthGrow:1, minWidth:125, maxWidth:180, responsive:8},
+		{title:"%added_name%", field:"addeddate", width:95, sorter:"date", sorterParams:{format:"DD/MM/YYYY"}, responsive:9}, 
+		{title:"%playtime_name%", field:"playtime", width:125, responsive:9},
+		{title:"%source_name%", field:"source", widthGrow:1, minWidth:125, formatter:"html", responsive:7},
+		{title:"%platform_name%", field:"platform", widthGrow:1, minWidth:135, formatter:"html", responsive:0},
 		],
 		rowDblClick:function(e, row){ 
  			window.location=row.getData().gamefile;
@@ -236,24 +242,69 @@ a:active {
 			tmp.innerHTML = rowdata.platform;
 			tmp = document.getElementById("coverimage");
 			tmp.src = rowdata.coverimage;
+			tmp = document.getElementById("coverimagelink");
+			tmp.href = row.getData().gamefile;			
 		},
 	});
-	
+
 	function escapeRegExp(string) {
 		return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+	}
+
+	function applyQuickField() {
+		var filterval = quickEl.options[quickEl.selectedIndex].value;
+		if (filterval.value == "")
+		{
+			table.clearFilter();
+		}
+		else
+		{
+			if (filterval == "%nonetext_name%")
+			{
+				table.setFilter(dataFilter, {field:"data", compareval:filterval, exactMatch:true, noneOrEmpty:true});
+			}
+			else
+			{
+				table.setFilter(dataFilter, {field:"data", compareval:filterval, exactMatch:true, noneOrEmpty:false});
+			}
+		}
 	}
 
 	function dataFilter(data, filterParams){
 		//data - the data for the row being filtered
 		//filterParams - params object passed to the filter
-		const regex = new RegExp(escapeRegExp(filterParams.compareval.toLowerCase()), 'g'); //comparevalue is text
-		return regex.test(he.decode(data[filterParams.field]).toLowerCase());
+		if (filterParams.noneOrEmpty)
+		{
+			return ((he.decode(data[filterParams.field]).toLowerCase() == "") || (he.decode(data[filterParams.field]) == "%nonetext_name%"));
+		}
+		else
+		{
+			if (filterParams.exactMatch)
+			{
+				if (filterParams.compareval == "#")
+				{
+					var firstchar = he.decode(data[filterParams.field]).toLowerCase().charAt(0);
+					return ((firstchar >= '0') && (firstchar <= '9')); 
+				}
+				else
+				{
+					//need to use indexof for the date fields as they contains times also
+					return he.decode(data[filterParams.field]).toLowerCase().indexOf(filterParams.compareval.toLowerCase()) == 0;
+				}
+			}
+			else
+			{
+				const regex = new RegExp(escapeRegExp(filterParams.compareval.toLowerCase()), 'g'); //comparevalue is text
+				return regex.test(he.decode(data[filterParams.field]).toLowerCase());
+			}
+		}
     }
 
 	//Define variables for input elements
 	var fieldEl = document.getElementById("filter-field");
 	var valueEl = document.getElementById("filter-value");
-	
+	var quickEl = document.getElementById("filter-quickfield"); 
+
 	//set filter if passed certain parameter
 	var url = window.location.href;
 	var hashindex = url.lastIndexOf("#quicklink-");
@@ -269,9 +320,8 @@ a:active {
 			var filtervalue = url.substring(hashindex, urllen);
 			if (filtervalue != "")
 			{			
-				fieldEl.value = "data";
-				valueEl.value = decodeURI(filtervalue);
-				updateFilter();
+				quickEl.value = decodeURI(filtervalue);	
+				applyQuickField();
 			}
 		}
 	}
@@ -281,7 +331,7 @@ a:active {
 	  var filterVal = fieldEl.options[fieldEl.selectedIndex].value;
 
 	  if(filterVal){
-		table.setFilter(dataFilter, {field:filterVal, compareval:valueEl.value});
+		table.setFilter(dataFilter, {field:filterVal, compareval:valueEl.value, exactMatch:false, noneOrEmpty:false});
 	  }
 	}
 
@@ -293,7 +343,7 @@ a:active {
 	document.getElementById("filter-clear").addEventListener("click", function(){
 	  fieldEl.value = "";
 	  valueEl.value = "";
-
+	  quickEl.value = "";
 	  table.clearFilter();
 	});
 
@@ -306,11 +356,11 @@ a:active {
 		<COL>
 		<COL>
 		</COLGROUP>
-		<TR><TD rowspan="5"><img height="90" style="max-width: 100%;" src="" id="coverimage"></TD><TD colspan="4"></TD></TR>
-		<TR><TD><B>Name</B></TD><TD colspan="3" id="name"></TD></TR>
-		<TR><TD><B>Last Activity</B></TD><TD id="lastactivity"></TD><TD><B>%pagetitle%</B></TD><TD id="data"></TD></TR>
-		<TR><TD><B>Added Date</B></TD><TD id="addeddate"></TD><TD><B>Source</B></TD><TD id="source"></TR>
-		<TR><TD><B>Play Time</B></TD><TD id="playtime"></TD><TD><B>Platform</B></TD><TD id="platform"></TD></TR>
+		<TR><TD rowspan="5"><a href="" id="coverimagelink"><img height="90" style="max-width: 100%;" id="coverimage" src=""></a></TD><TD colspan="4"></TD></TR>
+		<TR><TD><B>%name_name%</B></TD><TD colspan="3" id="name"></TD></TR>
+		<TR><TD><B>%lastactivity_name%</B></TD><TD id="lastactivity"></TD><TD><B>%groupfield%</B></TD><TD id="data"></TD></TR>
+		<TR><TD><B>%added_name%</B></TD><TD id="addeddate"></TD><TD><B>%source_name%</B></TD><TD id="source"></TR>
+		<TR><TD><B>%playtime_name%</B></TD><TD id="playtime"></TD><TD><B>%platform_name%</B></TD><TD id="platform"></TD></TR>
 	</TABLE>
 	</body>
 </html>

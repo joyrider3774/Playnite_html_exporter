@@ -170,6 +170,15 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Koppelingen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Beschrijving</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Details</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLField">Veld</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLStartsWith">begint met:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLContains">bevat</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLClearFilter">Wis filter</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLValueToFilter">waarde om te filteren</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLSearch">Zoeken</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLTypeInAGameNameToSearch">Voer een spelnaam in om te zoeken</sys:String>
+    
+
 
     <!-- Image options screen -->
     <sys:String x:Key="LOC_HTMLEXPORTER_MagickLocation">Magick.exe locatie</sys:String>

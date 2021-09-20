@@ -170,6 +170,15 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Linki</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Opis</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Detale</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLField">Field</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLStartsWith">starts with:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLContains">contains</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLClearFilter">Clear filter</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLValueToFilter">value to filter</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLSearch">Search</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLTypeInAGameNameToSearch">Type in a game name to search</sys:String>
+    
+
 
     <!-- Image options screen -->
     <sys:String x:Key="LOC_HTMLEXPORTER_MagickLocation">Magick.exe Location</sys:String>

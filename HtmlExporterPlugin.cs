@@ -251,7 +251,15 @@ namespace HtmlExporterPlugin
                                   ["quicklinks_name"] = HttpUtility.HtmlEncode(Constants.HTMLQuickLinks),
                                   ["links_name"] = HttpUtility.HtmlEncode(Constants.HTMLLinks),
                                   ["description_name"] = HttpUtility.HtmlEncode(Constants.HTMLDescription),
-                                  ["details_name"] = HttpUtility.HtmlEncode(Constants.HTMLDetails)
+                                  ["field_name"] = HttpUtility.HtmlEncode(Constants.HTMLField),
+                                  ["startswith_name"] = HttpUtility.HtmlEncode(Constants.HTMLStartsWith),
+                                  ["contains_name"] = HttpUtility.HtmlEncode(Constants.HTMLContains),
+                                  ["clearfilter_name"] = HttpUtility.HtmlEncode(Constants.HTMLClearFilter),
+                                  ["details_name"] = HttpUtility.HtmlEncode(Constants.HTMLDetails),
+                                  ["search_name"] = HttpUtility.HtmlEncode(Constants.HTMLSearch),
+                                  ["typeinagamenametosearch_name"] = HttpUtility.HtmlEncode(Constants.HTMLTypeInAGameNameToSearch),
+                                  ["nonetext_name"] = HttpUtility.HtmlEncode(Constants.NoneText),                                  
+                                  ["valuetofilter_name"] = HttpUtility.HtmlEncode(Constants.HTMLValueToFilter)
                               };
 
                               string MenuEntryHeaderoutput = ReplaceDictionary(MenuEntryHeader, CurrentPageValuesDict);

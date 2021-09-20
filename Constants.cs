@@ -199,6 +199,13 @@ namespace HtmlExporterPlugin
         public static string HTMLLinks = resources.GetString("LOC_HTMLEXPORTER_HTMLLinks");
         public static string HTMLDescription = resources.GetString("LOC_HTMLEXPORTER_HTMLDescription");
         public static string HTMLDetails = resources.GetString("LOC_HTMLEXPORTER_HTMLDetails");
+        public static string HTMLField = resources.GetString("LOC_HTMLEXPORTER_HTMLField");
+        public static string HTMLStartsWith = resources.GetString("LOC_HTMLEXPORTER_HTMLStartsWith");
+        public static string HTMLContains = resources.GetString("LOC_HTMLEXPORTER_HTMLContains");
+        public static string HTMLClearFilter = resources.GetString("LOC_HTMLEXPORTER_HTMLClearFilter");
+        public static string HTMLValueToFilter = resources.GetString("LOC_HTMLEXPORTER_HTMLValueToFilter");
+        public static string HTMLSearch = resources.GetString("LOC_HTMLEXPORTER_HTMLSearch");
+        public static string HTMLTypeInAGameNameToSearch = resources.GetString("LOC_HTMLEXPORTER_HTMLTypeInAGameNameToSearch");
 
         //playnite menus
         public static string HTMLExporterMenu = resources.GetString("LOC_HTMLEXPORTER_HTMLExporterMenu");
@@ -361,6 +368,8 @@ namespace HtmlExporterPlugin
                                     return Constants.ScoreGroupO8x;
                                 case "O9x":
                                     return Constants.ScoreGroupO9x;
+                                case "None":
+                                    return Constants.NoneText;
                                 default:
                                     return value;
                             }
