@@ -251,10 +251,11 @@ namespace HtmlExporterPlugin
             { Guid.Parse("7e4fbb5e-2ae3-48d4-8ba0-6b30e7a4e287"), "Xbox" },
             { Guid.Parse("402674cd-4af6-4886-b6ec-0e695bfa0688"), "Amazon Games" },
             { Guid.Parse("e4ac81cb-1b1a-4ec9-8639-9a9633989a71"), "PlayStation" },
-            { Guid.Parse("f7da6eb0-17d7-497c-92fd-347050914954"), "Indiegala" },            //by lacro59
-            { Guid.Parse("77346DD6-B0CC-4F7D-80F0-C1D138CCAE58"), "Occulus" },              //by shawson
-            { Guid.Parse("88409022-088a-4de8-805a-fdbac291f00a"), "Rockstar" },             //by crow
-            { Guid.Parse("2366fb38-bf25-45ea-9a78-dcc797ee83c3"), "Importer for AniList" }  //by darklinkpower
+            { Guid.Parse("f7da6eb0-17d7-497c-92fd-347050914954"), "Indiegala" },             //by lacro59
+            { Guid.Parse("77346DD6-B0CC-4F7D-80F0-C1D138CCAE58"), "Occulus" },               //by shawson
+            { Guid.Parse("88409022-088a-4de8-805a-fdbac291f00a"), "Rockstar" },              //by crow
+            { Guid.Parse("2366fb38-bf25-45ea-9a78-dcc797ee83c3"), "Importer for AniList" },  //by darklinkpower
+            { Guid.Parse("5befaf7a-a0af-4ce2-992c-bc048d94e71b"), "XCloud" }                 //by joyrider3774
         };
 
         public static string SantizeValue(string value, string field)
