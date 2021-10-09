@@ -29,9 +29,9 @@
 
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Standardtabell (krever bilder)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Standardliste (krever bilder)</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTable">Default Table (Requires images)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTable">Standardtabell (krever bilder)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Standardliste (kun tekst)</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTableText">Default Table (Text only)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTableText">Standardtabell (kun tekst)</sys:String>
 
     <!-- misc -->
     <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Ikke gruppert]</sys:String>
@@ -170,13 +170,13 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Lenker</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Beskrivelse</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Detaljer</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLField">Field</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLStartsWith">starts with:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLContains">contains</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLClearFilter">Clear filter</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLValueToFilter">value to filter</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLSearch">Search</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLTypeInAGameNameToSearch">Type in a game name to search</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLField">Felt</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLStartsWith">starter med:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLContains">inneholder</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLClearFilter">Tøm filter</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLValueToFilter">verdi å filtrere</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLSearch">Søk</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLTypeInAGameNameToSearch">Skriv inn et spillnavn for å søke</sys:String>
     
 
 

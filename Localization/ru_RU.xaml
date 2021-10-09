@@ -3,57 +3,57 @@
 
 
     <!-- settings screen -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Generic Settings</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Output folder for html export</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Select">Select</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copy Images</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Options">Options</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Exclude hidden games</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Excluded Platforms:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Excluded Sources:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">Page Settings</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Общие Настройки</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Папка для экспорта</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Select">Выбрать</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Копировать изображения</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Options">Параметры</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Искелючить скрытые игры</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Исключить платформы:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Исключить источники:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">Параметры страницы</sys:String>
 
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColPageTitle">Page Title</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColTemplate">Template</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColGroupField">Group Field</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColAsc">Asc.</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColSortField">Sort Field</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColPageTitle">Заголовок страницы</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColTemplate">Шаблон</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColGroupField">Группировать поля</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColAsc">По возрастанию.</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColSortField">Поле сортировки</sys:String>
 
-    <sys:String x:Key="LOC_HTMLEXPORTER_Ascending">Ascending</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Ascending">По возрастанию</sys:String>
     
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButAddPage">Add Page</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButDelPage">Del Page</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageUp">Page Up</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButAddPage">Добавить страницу</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButDelPage">Удалить страницу</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButPageUp">Page up</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ButPageDown">Page Down</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButRevertTo">Revert to</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButRevertTo">Вернуться к</sys:String>
 
-    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Default grid (Requires images)</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Default list (Requires images)</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTable">Default Table (Requires images)</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Default list (Text only)</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTableText">Default Table (Text only)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultGrid">Сетка по умолчанию (требуется изображение)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultList">Список по умолчанию (требуется изображение)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTable">Таблица по умолчанию (требуется изображение)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultListText">Список по умолчанию (только текст)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_MnuDefaultTableText">Таблица по умолчанию (только текст)</sys:String>
 
     <!-- misc -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Not Grouped]</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedSanitezedName">Not Grouped</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_UndefinedString">Undefined</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NotPlayedText">Not Played</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NeverText">Never</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NoneText">None</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_DescendingText">descending</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">ascending</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Html Exporter</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Export</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">Не сгруппировано</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedSanitezedName">Не сгруппировано</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UndefinedString">Не определено</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotPlayedText">Не играл</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NeverText">Никогда</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NoneText">Нет</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DescendingText">по убыванию</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">по возрастанию</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Экспорт Html</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Экспорт</sys:String>
     
     
     
     <!-- FIELDS -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Release Year</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_AgeRatingFieldText">Age Rating</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_LastActivitySegmentFieldText">Last Activity Segment</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryFieldText">Playtime Category</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusFieldText">Completion Status</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreFieldText">User Score</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Год выпуска</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AgeRatingFieldText">Возрастной рейтинг</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_LastActivitySegmentFieldText">Последняя активность</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryFieldText">По времени игры</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusFieldText">Статус</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreFieldText">Оценка пользователей</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreGroupFieldText">User Score Group</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreRatingFieldText">User Score Rating</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreFieldText">Community Score</sys:String>
