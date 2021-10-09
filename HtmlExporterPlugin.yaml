@@ -1,5 +1,17 @@
 AddonId: 'HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557'
 Packages:
+  - Version: 3.2
+    RequiredApiVersion: 6.0.0
+    ReleaseDate: 2021-10-09
+    PackageUrl: https://github.com/joyrider3774/Playnite_html_exporter/releases/download/v3.2/HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557_3_2.pext
+    Changelog:
+      - Set all columns in table template to html (fixes certain columns in foreign languages displaying html codes)
+      - Added XCloud Library ID
+      - Added Nintendo Library ID
+      - Fix Output folder getting cleared when cancelling dialog
+      - Norwegian translations update by MeatBoy
+      - Russian language update by voi__Wood 
+      - Target Playnite 9 release SDK
   - Version: 3.1
     RequiredApiVersion: 6.0.0
     ReleaseDate: 2021-09-20
