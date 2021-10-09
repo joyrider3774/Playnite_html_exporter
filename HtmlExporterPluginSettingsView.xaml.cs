@@ -32,7 +32,11 @@ namespace HtmlExporterPlugin
 
         private void ButSelectFolder_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            TbOutputFolder.Text = plugin.PlayniteApi.Dialogs.SelectFolder();
+            string tmp = plugin.PlayniteApi.Dialogs.SelectFolder();
+            if (tmp != string.Empty)
+            {
+                TbOutputFolder.Text = tmp;
+            }
         }
         
         //Credit to felixkmh https://github.com/felixkmh/DuplicateHider/
