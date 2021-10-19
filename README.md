@@ -51,7 +51,8 @@ The text only version can easily be used to share your games library with friend
 The project is translatable on [Crowdin](https://crowdin.com/project/playnite-game-speak)
 
 #### People who contributed to translations:
-MeatBoy, voi__Wood, JCraftPlay, joyrider3774, zolini, pedroazevedo1999, atemporal, Federico Pezzuolo
+joyrider3774, slippy, MeatBoy, voi__Wood, JCraftPlay, zolini, pedroazevedo1999, atemporal_, Federico Pezzuolo 
+
 
 ## Credits
 * Used Icon made by [Smartline](https://www.flaticon.com/authors/smartline) from [Flaticon](https://www.flaticon.com/)

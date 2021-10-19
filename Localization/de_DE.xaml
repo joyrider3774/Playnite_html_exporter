@@ -5,17 +5,17 @@
     <!-- settings screen -->
     <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Allgemeine Einstellungen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Ausgabeordner für Html-Export</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Select">Wählen</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Select">Auswählen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Bilder kopieren</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Options">Optionen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Versteckte Spiele ausschließen</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Ausgeschlo. Plattformen:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Ausgeschlo. Quellen:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Ausgeschl. Plattformen:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Ausgeschl. Quellen:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">Seiteneinstellungen</sys:String>
 
     <sys:String x:Key="LOC_HTMLEXPORTER_ColPageTitle">Seitentitel</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ColTemplate">Vorlage</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColGroupField">Gruppen Feld</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColGroupField">Gruppenfeld</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ColAsc">Auf.</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ColSortField">Sortierfeld</sys:String>
 
@@ -53,20 +53,20 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_LastActivitySegmentFieldText">Letztes Aktivitätssegment</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryFieldText">Spielzeitkategorie</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusFieldText">Fertigstellungsstatus</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreFieldText">Benutzer Punktzahl</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreGroupFieldText">Benutzerpunktzahl Gruppe</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreFieldText">Benutzerwertung</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreGroupFieldText">Benutzerbewertung Gruppe</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_UserScoreRatingFieldText">Benutzer Punktzahl Bewertung</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreFieldText">Community Punkte</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreGroupFieldText">Community Punkte Gruppe</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreFieldText">Community Bewertungen</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreGroupFieldText">Community Bewertungsgruppe</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CommunityScoreRatingFieldText">Community Punkte bewertung</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreFieldText">Kritiker Punktzahl</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreFieldText">Kritiker Punkte</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreGroupFieldText">Kritiker Punktegruppe</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreRatingFieldText">Kritiker Punkte bewertung</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_AddedSegmentFieldText">Hinzugefügtes Segment</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CriticScoreRatingFieldText">Kritiker Punkte Bewertung</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_AddedSegmentFieldText">Segment hinzufügen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusFieldText">Installationsstatus</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_IsCustomGameFieldText">Benutzerdefinierte Spiel</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ModifiedSegmentFieldText">Verändertes Segment</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlayCountFieldText">Wiedergabeanzahl</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlayCountFieldText">Spielhäufigkeit</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseDateFieldText">Veröffentlichungsdatum</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_LastActivityFieldText">Letzte Aktivität</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_RegionFieldText">Region</sys:String>
@@ -143,17 +143,17 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">Vorbereitung um Html-Dateien zu generieren...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">Generiere Html-Seite</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTMLOf">von</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTMEntry">Item</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTMEntry">Eintrag</sys:String>
 
     <!-- Finisch text -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTML">Export zu HTML beendet...</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLElapsedtime">Vergangene Zeit: </sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTML">Exportieren zu HTML beendet...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLElapsedtime">Verstrichene Zeit: </sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLSuccess">Erfolgreich exportierte Seiten: </sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLErrors">Nicht exportierte Seiten - Fehler: </sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_FinishedExportingHTMLErrorsTemplate">Nicht exportierte Seiten - fehlerhafte oder fehlende Vorlagen: </sys:String>
 
     <!-- errors -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExportError">HTML Export Fehler</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExportError">Fehler beim HTML Exportieren</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ErrorHTMLExpoterNoOutputFolder">Kein existierender Ausgabeordner in den Einstellungen angegeben!</sys:String>
 
     <!-- settingsviex -->
@@ -166,7 +166,7 @@
     
     <!-- HTML Constants -->
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLMainMenu">HAUPTMENÜ</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLQuickLinks">Schnell-Links</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLQuickLinks">Schnelllinks</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Links</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Beschreibung</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Details</sys:String>
@@ -185,21 +185,21 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_Detect">Erkennen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ConvertJpg">Hintergrund- und Cover-Bilder in Jpeg konvertieren</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ConvertPng">Icon-Bilder in png konvertieren</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeCoverImage">Cover-Bilder skalieren:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeIconImage">Icon-Bilder skalieren:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeCoverImage">Cover Bilder skalieren:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ResizeIconImage">Icon Bilder skalieren:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ResizeBackgroundImage">Hintergrundbilder skalieren:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Close">Schließen</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ImageOptions">Bild-Optionen</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_EnterValidValues">Bitte geben Sie gültige Werte ein!</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ImageOptions">Bildoptionen</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EnterValidValues">Bitte geben Sie einen gültigen Wert ein!</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ProcessingImages">Bilder werden verarbeitet...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ForceConvert">Konvertieren erzwingen (auch wenn der Dateityp gleich ist, anstatt nur zu kopieren)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_JpegQuality">Prozentsatz der Jpeg-Qualität für Konversionen (1-100):</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MaxImageTasks">Max. gleichzeitige Bildaufgaben (1-16):</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_SuccessImagesProcess">Erfolgreich verarbeitete Bilder:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_FailedImagesProcess">Verarbeitete Bilder fehlgeschlagen:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_FailedImagesProcess">Fehler bei der Verarbeitung der Bilder:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_TotalImagesProcess">Gesamte zu verarbeitende Bilder:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Bilder immer verarbeiten, auch wenn sie nicht geändert wurden</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">optimierungen</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">Optimierungen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_DetectDuplicates">Doppelte Bilder erkennen</sys:String>
 
 
