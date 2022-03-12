@@ -3,6 +3,11 @@ Export your [Playnite](https://www.playnite.link/) games library to (static) htm
 
 [Latest Release](https://github.com/joyrider3774/Playnite_html_exporter/releases/latest)
 
+## Buy me a "koffie" if you feel like supporting 
+I do everything in my spare time for free, if you feel something aided you and you want to support me, you can always buy me a "koffie" as we say in dutch, no obligations whatsoever...
+
+<a href='https://ko-fi.com/Q5Q3BKI5S' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi2.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+
 ## Release / Help Video
 
 ### V1.0
@@ -57,6 +62,3 @@ joyrider3774, slippy, MeatBoy, voi__Wood, JCraftPlay, zolini, pedroazevedo1999, 
 ## Credits
 * Used Icon made by [Smartline](https://www.flaticon.com/authors/smartline) from [Flaticon](https://www.flaticon.com/)
 * Original Localization file loader by [Lacro59](https://github.com/Lacro59)
-
-## Donations
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://paypal.me/joyrider3774)
