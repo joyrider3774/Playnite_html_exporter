@@ -84,7 +84,7 @@ namespace HtmlExporterPlugin
             return re2.Replace(temp, match => match.Groups[1].Value == string.Empty ? String.Empty : keywords.TryGetValue(match.Groups[1].Value, out var val) ? val : "%" + match.Groups[1].Value + "%");
         }
 
-        public void DoExportToHtml()
+        public void DoExportToHtml(List<Game> gameslist)
         {
             ImageProcessRunner ConvertImagesRunner = new ImageProcessRunner();
             var progressOptions = new GlobalProgressOptions(String.Empty, true)
@@ -102,7 +102,7 @@ namespace HtmlExporterPlugin
                       //trick to get real storagepath i looked at sources what GetFullFilePath did and it combines the root
                       //folder with the supplied string
                       string StoragePath = PlayniteApi.Database.GetFullFilePath(String.Empty);
-                      IItemCollection<Game> gameslist = PlayniteApi.Database.Games;
+
                       Dictionary<string, string> GameMediaHashtable = new Dictionary<string, string>();
                       Dictionary<string, bool> GameMediaCopyDoneDict = new Dictionary<string, bool>();
                       Dictionary<string, string> FirstGroupFieldFileNames = new Dictionary<string, string>();
@@ -2290,7 +2290,29 @@ namespace HtmlExporterPlugin
                         List<string> ErrorList = new List<string>();
                         if(Settings.VerifySettings(out ErrorList))
                         {
-                            DoExportToHtml();
+                            DoExportToHtml(PlayniteApi.Database.Games.ToList());
+                        }
+                        else
+                        {
+                            StringBuilder errorbuilder = new StringBuilder();
+                            foreach(string error in ErrorList)
+                            {
+                                errorbuilder.Append(error + "\n");
+                            }
+                            PlayniteApi.Dialogs.ShowMessage(errorbuilder.ToString(), Constants.AppName);
+                        }
+                    }
+                },
+                new MainMenuItem {
+                    MenuSection = "@" + Constants.HTMLExporterMenu,
+                    Icon = Path.Combine(pluginFolder, "icon.png"),
+                    Description = Constants.HTMLExporterSubMenuFilter,
+                    Action = (MainMenuItem) => 
+                    {
+                        List<string> ErrorList = new List<string>();
+                        if(Settings.VerifySettings(out ErrorList))
+                        {
+                            DoExportToHtml(PlayniteApi.MainView.FilteredGames.ToList());
                         }
                         else
                         {

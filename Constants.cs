@@ -211,6 +211,7 @@ namespace HtmlExporterPlugin
         //playnite menus
         public static string HTMLExporterMenu = resources.GetString("LOC_HTMLEXPORTER_HTMLExporterMenu");
         public static string HTMLExporterSubMenu = resources.GetString("LOC_HTMLEXPORTER_HTMLExporterSubMenu");
+        public static string HTMLExporterSubMenuFilter = resources.GetString("LOC_HTMLEXPORTER_HTMLExporterSubMenuFilter");
 
         //lists
         public static readonly ReadOnlyCollection<string> AvailableGroupFields = new ReadOnlyCollection<string>(new List<String> {NameField, SourceField, LibraryField, PlatformField, ReleaseYearField, AgeRatingField, FavoriteField,

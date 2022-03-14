@@ -45,9 +45,8 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">ascending</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Html Exporter</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Export</sys:String>
-    
-    
-    
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenuFilter">Export (filtered games)</sys:String>
+
     <!-- FIELDS -->
     <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Release Year</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AgeRatingFieldText">Age Rating</sys:String>
