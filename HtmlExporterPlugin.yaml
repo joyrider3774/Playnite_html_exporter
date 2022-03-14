@@ -1,5 +1,17 @@
 AddonId: 'HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557'
 Packages:
+  - Version: 3.3
+    RequiredApiVersion: 6.2.2
+    ReleaseDate: 2022-03-14
+    PackageUrl: https://github.com/joyrider3774/Playnite_html_exporter/releases/download/v3.3/HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557_3_3.pext
+    Changelog:
+      - Added option to completely erase output folder before exporting (also erases exported images)
+      - Added option to export only currently filtered games (extra export menu item added)
+      - Fixed Ico to png conversion failing 
+      - Fixed gif conversions possibly taking a big amount of time (it will now only convert the 1st frame of a gif image).
+      - Arabic Translations by X4Lo
+      - Chinese Simplified Translations by ATNewHope
+      - Ukranian Translations by SmithMD24
   - Version: 3.2
     RequiredApiVersion: 6.0.0
     ReleaseDate: 2021-10-09
