@@ -114,11 +114,12 @@ namespace HtmlExporterPlugin
             string SourceExt = SourceFileExt.ToLower();
             //only icon converts to png but it seems gif files have same problem and playnite also allows ico and gif to be set for background and cover.
             //This can still fail if the files got no extensions like some files do in playnite
-            if (ConvertToPng || SourceExt.Equals(".gif") || SourceExt.Equals(".ico") || SourceExt.Equals(".tiff"))
+            //gif and tiff needs to take 1st frame and this is handled elsewhere
+            if ((ConvertToPng || SourceExt.Equals(".ico")) && !SourceExt.Equals(".gif") && !SourceExt.Equals(".tiff"))
             {
                 //converts multiple images inside an ico to a single image otherwise imagemagick generates multiple files
                 //credits https://legacy.imagemagick.org/discourse-server/viewtopic.php?p=164113#p164113
-                Result = "( -clone 0--1 -layers Merge ) -channel A -evaluate Multiply \" %[fx: w == u[-1].w ? 1 : 0] % \"  +channel +delete -background None -layers merge ";
+                Result = "( -clone 0--1 -layers Merge ) -channel A -evaluate Multiply \"%[fx: w == u[-1].w ? 1 : 0]\"  +channel +delete -background None -layers merge ";
             }
 
             if (DestFileExt.ToLower().Equals(".jpg"))

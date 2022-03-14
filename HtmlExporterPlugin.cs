@@ -12,6 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
+using System.Net;
 using System.Windows.Controls;
 using System.Security.Cryptography;
 using Playnite.SDK.Events;
@@ -1861,7 +1862,7 @@ namespace HtmlExporterPlugin
                                                                   bool needsConversion = Settings.Settings.ConvertImageOptions.BackgroundNeedsConversion(fullbackgroundimage);
 
                                                                   ConvertImagesRunner.addImageProcess(!needsConversion, fullbackgroundimage, fullbackgroundimagedest, DestFile, Settings.Settings.ConvertImageOptions.ImageMagickLocation,
-                                                                        "\"" + fullbackgroundimage + "\" " + Settings.Settings.ConvertImageOptions.BackgroundOptions(Path.GetExtension(fullbackgroundimage), Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
+                                                                        "\"" + AdaptedSourceFilename(fullbackgroundimage) + "\" " + Settings.Settings.ConvertImageOptions.BackgroundOptions(Path.GetExtension(fullbackgroundimage), Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
                                                                         File.Exists(Settings.Settings.ConvertImageOptions.ImageMagickLocation) ? Path.GetDirectoryName(Settings.Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
                                                               }
                                                           }
@@ -1889,7 +1890,7 @@ namespace HtmlExporterPlugin
                                                                   bool needsConversion = Settings.Settings.ConvertImageOptions.CoverNeedsConversion(fullcoverimage);
 
                                                                   ConvertImagesRunner.addImageProcess(!needsConversion, fullcoverimage, fullcoverimagedest, DestFile, Settings.Settings.ConvertImageOptions.ImageMagickLocation,
-                                                                        "\"" + fullcoverimage + "\" " + Settings.Settings.ConvertImageOptions.CoverOptions(Path.GetExtension(fullcoverimage), Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
+                                                                        "\"" + AdaptedSourceFilename(fullcoverimage) + "\" " + Settings.Settings.ConvertImageOptions.CoverOptions(Path.GetExtension(fullcoverimage), Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
                                                                         File.Exists(Settings.Settings.ConvertImageOptions.ImageMagickLocation) ? Path.GetDirectoryName(Settings.Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
                                                               }
                                                           }
@@ -1917,7 +1918,7 @@ namespace HtmlExporterPlugin
                                                                   bool needsConversion = Settings.Settings.ConvertImageOptions.IconNeedsConversion(fulliconimage);
 
                                                                   ConvertImagesRunner.addImageProcess(!needsConversion, fulliconimage, fulliconimagedest, DestFile, Settings.Settings.ConvertImageOptions.ImageMagickLocation,
-                                                                            "\"" + fulliconimage + "\" " + Settings.Settings.ConvertImageOptions.IconOptions(Path.GetExtension(fulliconimage), Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
+                                                                            "\"" + AdaptedSourceFilename(fulliconimage) + "\" " + Settings.Settings.ConvertImageOptions.IconOptions(Path.GetExtension(fulliconimage), Path.GetExtension(DestFile)) + " \"" + DestFile + "\"",
                                                                             File.Exists(Settings.Settings.ConvertImageOptions.ImageMagickLocation) ? Path.GetDirectoryName(Settings.Settings.ConvertImageOptions.ImageMagickLocation) : "", true);
 
                                                               }
@@ -2376,6 +2377,11 @@ namespace HtmlExporterPlugin
             return playtime;
         }
 
+        public string AdaptedSourceFilename(string Filename)
+        {
+            string SourceExt = Path.GetExtension(Filename).ToLower();
+            return SourceExt.Equals(".gif") || SourceExt.Equals(".tiff") ? Filename + "[0]" : Filename;
+        }
 
         public override void OnGameInstalled(OnGameInstalledEventArgs args)
         {
