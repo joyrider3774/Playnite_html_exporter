@@ -128,20 +128,40 @@ namespace HtmlExporterPlugin
                               PreviousImageDataFile.Clear();
                       }
 
-
                       progressAction.ProgressMaxValue = pagecount;
                       string outputfolder = Settings.Settings.OutputFolder;
-                      if (!Directory.Exists(outputfolder))
+
+                      if (Directory.Exists(outputfolder))
+                      {
+                          if (Settings.Settings.EraseOutputFolder)
+                          {
+                              progressAction.Text = Constants.ErasingOutputFolder;
+                              try
+                              {
+                                  Directory.Delete(outputfolder, true);
+                              }
+                              catch { };
+
+                              if (!Directory.Exists(outputfolder))
+                              {
+                                  Directory.CreateDirectory(outputfolder);
+                              }
+                          }
+                          else
+                          {
+                              System.IO.DirectoryInfo di = new DirectoryInfo(outputfolder);
+                              progressAction.Text = Constants.ErasingPreviousHTML;
+                              foreach (FileInfo file in di.GetFiles("*.html", SearchOption.TopDirectoryOnly))
+                              {
+                                  file.Delete();
+                              }
+                          }
+                      }
+                      else
                       {
                           Directory.CreateDirectory(outputfolder);
                       }
 
-                      System.IO.DirectoryInfo di = new DirectoryInfo(outputfolder);
-                      progressAction.Text = Constants.ErasingPreviousHTML;
-                      foreach (FileInfo file in di.GetFiles("*.html", SearchOption.TopDirectoryOnly))
-                      {
-                          file.Delete();
-                      }
                       progressAction.Text = Constants.PreparingGenerateHTML;
 
                       Dictionary<string, bool> PagesGenerated = new Dictionary<string, bool>();

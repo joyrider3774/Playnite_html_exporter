@@ -18,6 +18,7 @@ namespace HtmlExporterPlugin
         public List<PageObject> Pages { get; set; } = new List<PageObject>();
         public bool CopyImages { get; set; } = false;
         public bool ExcludeHiddenGames { get; set; } = true;
+        public bool EraseOutputFolder { get; set; } = false;
         public ImageOptions ConvertImageOptions { get; set; } = new ImageOptions();
     }
 

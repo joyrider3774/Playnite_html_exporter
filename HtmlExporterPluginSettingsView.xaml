@@ -40,9 +40,10 @@
                         <Button x:Name="ButSelectFolder" DockPanel.Dock="Right" Content="{DynamicResource LOC_HTMLEXPORTER_Select}" Width="105" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Click="ButSelectFolder_Click"/>
                     </Grid>
                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-
+                        <CheckBox Name="ChkEraseOutputFolder" Margin="0,0,5,0" IsChecked="{Binding Settings.EraseOutputFolder}" Content="{DynamicResource LOC_HTMLEXPORTER_EraseOutPutFolder}" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                         <CheckBox Name="ChkCopyImages" Margin="0,0,5,0" IsChecked="{Binding Settings.CopyImages}" Content="{DynamicResource LOC_HTMLEXPORTER_CopyImages}" VerticalAlignment="Center" HorizontalAlignment="Left" />
-                   
                         <Button Name="ButImageOptions" Margin="0,0,5,0" Content="{DynamicResource LOC_HTMLEXPORTER_Options}" Click="ButImageOptions_Click" Width="85" />
                         <CheckBox Grid.Column="2" Name="ChkHiddenGames" Margin="0,5,0,0" IsChecked="{Binding Settings.ExcludeHiddenGames}" Content="{DynamicResource LOC_HTMLEXPORTER_ExcludeHiddenGames}" VerticalAlignment="Center" />
                     </StackPanel>

@@ -168,6 +168,7 @@ namespace HtmlExporterPlugin
         public static string ScoreRatingMixed = resources.GetString("LOC_HTMLEXPORTER_ScoreRatingMixed");
 
         //progressstatus
+        public static string ErasingOutputFolder = resources.GetString("LOC_HTMLEXPORTER_ErasingOutputFolder");
         public static string ErasingPreviousHTML = resources.GetString("LOC_HTMLEXPORTER_ErasingPreviousHTML");
         public static string PreparingGenerateHTML = resources.GetString("LOC_HTMLEXPORTER_PreparingGenerateHTML");
         public static string GeneratatingHTML = resources.GetString("LOC_HTMLEXPORTER_GeneratatingHTML");
