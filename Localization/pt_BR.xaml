@@ -6,6 +6,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Configurações Gerais</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Pasta de saída para exportação de html</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Select">Selecione</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">Completely erase outputfolder before exporting (will erase images also)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copiar imagens</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Options">Opções</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Excluir jogos ocultos</sys:String>
@@ -44,9 +45,8 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">ascendente</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Exportar Html</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Exportar</sys:String>
-    
-    
-    
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenuFilter">Export (filtered games)</sys:String>
+
     <!-- FIELDS -->
     <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Ano de Lançamento</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AgeRatingFieldText">Classificação Indicativa</sys:String>
@@ -139,6 +139,7 @@
 
 
     <!--- ProgresStatus -->
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingOutputFolder">Erasing output folder...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ErasingPreviousHTML">Apagando arquivos html gerados anteriormente...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">Preparando para gerar arquivos html...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">Gerando página html</sys:String>
@@ -170,13 +171,13 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLLinks">Links</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDescription">Descrição</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLDetails">Detalhes</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLField">Field</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLStartsWith">starts with:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLContains">contains</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLClearFilter">Clear filter</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLValueToFilter">value to filter</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLSearch">Search</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLTypeInAGameNameToSearch">Type in a game name to search</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLField">Campo</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLStartsWith">começa com:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLContains">contém</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLClearFilter">Limpar filtro</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLValueToFilter">valor para filtrar</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLSearch">Buscar</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLTypeInAGameNameToSearch">Digite o nome de um jogo para pesquisar</sys:String>
     
 
 

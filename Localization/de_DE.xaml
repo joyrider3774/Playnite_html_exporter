@@ -6,6 +6,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Allgemeine Einstellungen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Ausgabeordner für Html-Export</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Select">Auswählen</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">Ausgabeordner vor dem Export komplett löschen (löscht auch Bilder)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Bilder kopieren</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Options">Optionen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Versteckte Spiele ausschließen</sys:String>
@@ -44,9 +45,8 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">aufsteigend</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Html Exporter</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Exportieren</sys:String>
-    
-    
-    
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenuFilter">Exportieren (gefilterte Spiele)</sys:String>
+
     <!-- FIELDS -->
     <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Erscheinungsjahr</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AgeRatingFieldText">Alterseinstufung</sys:String>
@@ -139,6 +139,7 @@
 
 
     <!--- ProgresStatus -->
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingOutputFolder">Ausgabeordner wird gelöscht...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ErasingPreviousHTML">Löschen von zuvor generierten Html-Dateien...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">Vorbereitung um Html-Dateien zu generieren...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">Generiere Html-Seite</sys:String>

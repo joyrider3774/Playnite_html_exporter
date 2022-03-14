@@ -6,6 +6,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Algemene instellingen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Uitvoer map voor de html export</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Select">Selecteer</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">Uitvoermap wordt volledig gewist voor het exporteren (zal ook afbeeldingen verwijderen)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Kopieer afbeeldingen</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Options">Opties</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Verborgen spelletjes uitsluiten</sys:String>
@@ -44,9 +45,8 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">oplopend</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Html Exporteur</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Exporteren</sys:String>
-    
-    
-    
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenuFilter">Exporteren (gefilterde spellen)</sys:String>
+
     <!-- FIELDS -->
     <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Release Jaar</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AgeRatingFieldText">Leeftijdsbeoordeling</sys:String>
@@ -139,6 +139,7 @@
 
 
     <!--- ProgresStatus -->
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingOutputFolder">Uitvoermap wissen...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ErasingPreviousHTML">Eerder gegenereerde html-bestanden wissen...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">Genereren van html-bestanden wordt voorbereid...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">Genereren van html pagina</sys:String>
