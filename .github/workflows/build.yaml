@@ -38,7 +38,7 @@ jobs:
           mkdir release
           playnite\toolbox.exe pack "bin\release" "release"
           $contents = Get-ChildItem -Path "release" -Force -Recurse -File | Select-Object -First 1
-          echo "PEXTFILE=$contents.Name" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
+          echo "PEXTFILE=$contents" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
           
       - name: Upload Release Asset
         id: upload-release-asset
