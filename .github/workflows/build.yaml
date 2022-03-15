@@ -1,0 +1,52 @@
+on:
+  release:
+    types: [published]
+
+name: Build and Upload Release Asset
+
+jobs:
+  build:
+    name: Build and Upload Release Asset
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.3
+        
+      - name: Setup NuGet.exe
+        uses: nuget/setup-nuget@v1
+      
+      - name: Restore NuGet Packages
+        run: nuget restore HtmlExporterPlugin.sln
+  
+      - name: Build and Publish
+        run: |
+          msbuild HtmlExporterPlugin.sln /p:Configuration=Release
+          $version = ($env:GITHUB_REF -Split "/")[-1]
+          echo "VERSION=$version" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
+      
+      - name: Setup Playnite
+        run: |
+          mkdir playnite
+          Invoke-WebRequest -Uri "https://github.com/JosefNemec/Playnite/releases/download/9.16/Playnite916.zip" -OutFile "playnite\Playnite916.zip"
+          Expand-Archive "playnite\playnite916.zip" -DestinationPath "playnite"
+      
+      - name: Package release
+        run: |
+          mkdir release
+          playnite\toolbox.exe pack "bin\release" "release"
+          $contents = Get-ChildItem -Path "release" -Force -Recurse -File | Select-Object -First 1
+          echo "PEXTFILE=$contents.Name" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append
+          
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ${{ env.PEXTFILE }}
+          asset_name: Html-Exporter-${{ env.VERSION }}.pext
+          asset_content_type: application/zip
