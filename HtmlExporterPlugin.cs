@@ -1658,7 +1658,7 @@ namespace HtmlExporterPlugin
                                               var tmpplatform = realgame.Platforms?.FirstOrDefault(o => !String.IsNullOrEmpty(o.Cover));
                                               if (!String.IsNullOrEmpty(tmpplatform?.Cover))
                                               {
-                                                  gameicon = tmpplatform.Cover.Replace("\\", "/");
+                                                  coverimage = tmpplatform.Cover.Replace("\\", "/");
                                               }
                                           }
 
@@ -1695,7 +1695,7 @@ namespace HtmlExporterPlugin
                                               var tmpplatform = realgame.Platforms?.FirstOrDefault(o => !String.IsNullOrEmpty(o.Background));
                                               if (!String.IsNullOrEmpty(tmpplatform?.Background))
                                               {
-                                                  gameicon = tmpplatform.Background.Replace("\\", "/");
+                                                  backgroundimage = tmpplatform.Background.Replace("\\", "/");
                                               }
                                           }
                                           backgroundimage = BackgroundDeDuplicator.GetUniqueFile(PlayniteApi.Database.GetFullFilePath(backgroundimage), backgroundimage, Settings.Settings.ConvertImageOptions.DetectDuplicates);
