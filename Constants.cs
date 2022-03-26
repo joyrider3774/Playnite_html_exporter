@@ -253,13 +253,25 @@ namespace HtmlExporterPlugin
             { Guid.Parse("7e4fbb5e-2ae3-48d4-8ba0-6b30e7a4e287"), "Xbox" },
             { Guid.Parse("402674cd-4af6-4886-b6ec-0e695bfa0688"), "Amazon Games" },
             { Guid.Parse("e4ac81cb-1b1a-4ec9-8639-9a9633989a71"), "PlayStation" },
-            { Guid.Parse("f7da6eb0-17d7-497c-92fd-347050914954"), "Indiegala" },             //by lacro59
-            { Guid.Parse("77346DD6-B0CC-4F7D-80F0-C1D138CCAE58"), "Occulus" },               //by shawson
-            { Guid.Parse("88409022-088a-4de8-805a-fdbac291f00a"), "Rockstar" },              //by crow
-            { Guid.Parse("2366fb38-bf25-45ea-9a78-dcc797ee83c3"), "Importer for AniList" },  //by darklinkpower
-            { Guid.Parse("5befaf7a-a0af-4ce2-992c-bc048d94e71b"), "XCloud" },                //by joyrider3774
-            { Guid.Parse("e4ac81cb-1b1a-4ec9-8639-9a9633989a72"), "Nintendo" },              //by Xenor
-        
+            { Guid.Parse("f7da6eb0-17d7-497c-92fd-347050914954"), "Indiegala" },                                //by lacro59
+            { Guid.Parse("77346DD6-B0CC-4F7D-80F0-C1D138CCAE58"), "Occulus" },                                  //by Jesibu & Ransel
+            { Guid.Parse("88409022-088a-4de8-805a-fdbac291f00a"), "Rockstar" },                                 //by crow
+            { Guid.Parse("2366fb38-bf25-45ea-9a78-dcc797ee83c3"), "Importer for AniList" },                     //by darklinkpower
+            { Guid.Parse("5befaf7a-a0af-4ce2-992c-bc048d94e71b"), "XCloud" },                                   //by joyrider3774
+            { Guid.Parse("e4ac81cb-1b1a-4ec9-8639-9a9633989a72"), "Nintendo" },                                 //by Xenor
+            { Guid.Parse("d0217e44-0df5-45f7-8515-478bdf21a883"), "Battlestate Games (Escape from Tarkov)" },   //by Aliaksandr Dzik (DrinkFromTheCup)
+            { Guid.Parse("317a5e2e-eac1-48bc-adb3-fb9e321afd3f"), "Riot Launcher" },                            //by Aliaksandr Dzik (DrinkFromTheCup)
+            { Guid.Parse("3bf61d13-9730-442a-b9c0-f7228c8cd529"), "Space Station 13 (BYOND)" },                 //by Aliaksandr Dzik (DrinkFromTheCup)
+            { Guid.Parse("ef6a8a8d-7d89-4a26-be54-a6584e33b478"), "Last Epoch" },                               //by Aliaksandr Dzik (DrinkFromTheCup)
+            { Guid.Parse("a21f1ec0-9a7f-4adb-b8a5-78587ecb5394"), "Path of Exile" },                            //by Aliaksandr Dzik (DrinkFromTheCup)
+            { Guid.Parse("5a25b200-7283-40a2-ad36-51abf4eb7ca0"), "Paradox" },                                  //by Aliaksandr Dzik (DrinkFromTheCup)
+            { Guid.Parse("ef17cc27-95d4-45e7-bd49-214ba2e5f4b2"), "Fanatical" },                                //by NosyN00b
+            { Guid.Parse("6ab2531e-4800-404b-a938-4421b28a9f3e"), "MultiMC" },                                  //by Maxine
+            { Guid.Parse("62ac4052-e08a-4a1a-b70a-c2c0c3673bb9"), "Humble Keys Library" },                      //by Fierce Punch Studios
+            { Guid.Parse("41e49490-0583-4148-94d2-940c7c74f1d9"), "EmuLibrary" }                                //by Nicholas Hastings (psychonic)
+
+
+
         };
 
         public static string SantizeValue(string value, string field)
