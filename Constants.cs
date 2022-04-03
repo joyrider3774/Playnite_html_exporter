@@ -268,7 +268,8 @@ namespace HtmlExporterPlugin
             { Guid.Parse("ef17cc27-95d4-45e7-bd49-214ba2e5f4b2"), "Fanatical" },                                //by NosyN00b
             { Guid.Parse("6ab2531e-4800-404b-a938-4421b28a9f3e"), "MultiMC" },                                  //by Maxine
             { Guid.Parse("62ac4052-e08a-4a1a-b70a-c2c0c3673bb9"), "Humble Keys Library" },                      //by Fierce Punch Studios
-            { Guid.Parse("41e49490-0583-4148-94d2-940c7c74f1d9"), "EmuLibrary" }                                //by Nicholas Hastings (psychonic)
+            { Guid.Parse("41e49490-0583-4148-94d2-940c7c74f1d9"), "EmuLibrary" },                               //by Nicholas Hastings (psychonic)
+            { Guid.Parse("34c3178f-6e1d-4e27-8885-99d4f031b168"), "Legacy Games" }                              //by Jesibu
 
 
 
