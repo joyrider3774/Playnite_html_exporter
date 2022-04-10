@@ -1,7 +1,7 @@
-# Playnite html exporter
-Export your [Playnite](https://www.playnite.link/) games library to (static) html using templates
+# Playnite html exporter 
+![DownloadCountTotal](https://img.shields.io/github/downloads/joyrider3774/Playnite_html_exporter/total?label=total%20downloads&style=plastic) ![DownloadCountLatest](https://img.shields.io/github/downloads/joyrider3774/Playnite_html_exporter/latest/total?style=plastic) ![LatestVersion](https://img.shields.io/github/v/tag/joyrider3774/Playnite_html_exporter?label=Latest%20version&style=plastic) ![License](https://img.shields.io/github/license/joyrider3774/Playnite_html_exporter?style=plastic)
 
-[Latest Release](https://github.com/joyrider3774/Playnite_html_exporter/releases/latest)
+Export your [Playnite](https://www.playnite.link/) games library to (static) html using templates
 
 ## Buy me a "koffie" if you feel like supporting 
 I do everything in my spare time for free, if you feel something aided you and you want to support me, you can always buy me a "koffie" as we say in dutch, no obligations whatsoever...
