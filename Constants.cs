@@ -269,10 +269,10 @@ namespace HtmlExporterPlugin
             { Guid.Parse("6ab2531e-4800-404b-a938-4421b28a9f3e"), "MultiMC" },                                  //by Maxine
             { Guid.Parse("62ac4052-e08a-4a1a-b70a-c2c0c3673bb9"), "Humble Keys Library" },                      //by Fierce Punch Studios
             { Guid.Parse("41e49490-0583-4148-94d2-940c7c74f1d9"), "EmuLibrary" },                               //by Nicholas Hastings (psychonic)
-            { Guid.Parse("34c3178f-6e1d-4e27-8885-99d4f031b168"), "Legacy Games" }                              //by Jesibu
-
-
-
+            { Guid.Parse("34c3178f-6e1d-4e27-8885-99d4f031b168"), "Legacy Games" },                             //by Jesibu
+            { Guid.Parse("5f2dfd12-5f13-46fe-bcdd-64eb53ace26a"), "NVIDIA GeForce NOW" },                       //by darklinkpower
+            { Guid.Parse("d407a620-5953-4ca4-a25c-8194c8559381"), "JAST USA" },                                 //by darklinkpower
+            { Guid.Parse("42ff71aa-34dc-4b12-86b6-1328136c958f"), "Groupees" }                                  //by Jesibu
         };
 
         public static string SantizeValue(string value, string field)
