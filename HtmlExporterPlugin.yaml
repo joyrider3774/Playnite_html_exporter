@@ -1,5 +1,12 @@
 AddonId: 'HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557'
 Packages:
+  - Version: 3.8
+    RequiredApiVersion: 6.2.2
+    ReleaseDate: 2022-04-20
+    PackageUrl: https://github.com/joyrider3774/Playnite_html_exporter/releases/download/v3.8/Html-Exporter-v3.8.pext
+    Changelog:
+      - Update library plugin Id's (to detect libraries)
+      - Updated translations
   - Version: 3.7
     RequiredApiVersion: 6.2.2
     ReleaseDate: 2022-03-26
