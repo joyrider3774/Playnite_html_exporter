@@ -6,7 +6,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">الإعدادات العامة</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">مجلد الإخراج لتصدير html</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Select">اختر</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">Completely erase outputfolder before exporting (will erase images also)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">مسح مجلد الإخراج بالكامل قبل التصدير (سيمسح الصور أيضا)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">نسخ الصور</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Options">الخيارات</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">استثناء الألعاب المخفية</sys:String>
@@ -45,7 +45,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">تصاعدي</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">مُصدِّر Html</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">تصدير</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenuFilter">Export (filtered games)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenuFilter">تصدير (الألعاب المصفوفة)</sys:String>
 
     <!-- FIELDS -->
     <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">سنة الإصدار</sys:String>
@@ -139,7 +139,7 @@
 
 
     <!--- ProgresStatus -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingOutputFolder">Erasing output folder...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingOutputFolder">مسح مجلد الإخراج...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ErasingPreviousHTML">مسح ملفات html التي تم إنشاؤها سابقاً...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">جارٍ الإعداد لإنشاء ملفات html...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">إنشاء صفحة html</sys:String>

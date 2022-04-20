@@ -6,7 +6,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Загальні налаштування</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Вихідна тека для експорту html</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Select">Обрати</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">Completely erase outputfolder before exporting (will erase images also)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">Повністю видалити теку вихідних даних перед експортом (включно із зображеннями)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Копіювати зображення</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Options">Параметри</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Виключити приховані ігри</sys:String>
@@ -45,7 +45,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">за зростанням</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Html Експортер</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Експорт</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenuFilter">Export (filtered games)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenuFilter">Експорт (відфільтровані ігри)</sys:String>
 
     <!-- FIELDS -->
     <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Рік виходу</sys:String>
@@ -139,7 +139,7 @@
 
 
     <!--- ProgresStatus -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingOutputFolder">Erasing output folder...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingOutputFolder">Стирання теку вихідних даних...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ErasingPreviousHTML">Стирання раніше згенерованих HTML-файлів...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">Підготовка до генерування HTML-файлів...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">Генерування HTML-сторінки</sys:String>
