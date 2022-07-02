@@ -1958,181 +1958,223 @@ namespace HtmlExporterPlugin
 
                                       }
 
-                                      StringBuilder CategoriesOutput = new StringBuilder();
-
-                                      if (fakegame.OriginalGame.Categories != null)
+                                      CurrentGameValuesDict["categories"] = "";
+                                      if (GameCardDetailsCategory.Length > 0)
                                       {
-                                          string filename = String.Empty;
-                                          if (FirstGroupFieldFileNames.ContainsKey(Constants.CategoryField))
+                                          StringBuilder CategoriesOutput = new StringBuilder();
+                                          if (fakegame.OriginalGame.Categories != null)
                                           {
-                                              filename = (string)FirstGroupFieldFileNames[Constants.CategoryField];
-                                          }
-
-                                          foreach (Category category in fakegame.OriginalGame.Categories)
-                                          {
-                                              string GameCardDetailsCategoryOutput = GameCardDetailsCategory.Replace("%category%", category.Name);
-                                              GameCardDetailsCategoryOutput = GameCardDetailsCategoryOutput.Replace("%category_filename%", filename);
-                                              CategoriesOutput.Append(GameCardDetailsCategoryOutput);
-                                          }
-                                      }
-                                      CurrentGameValuesDict["categories"] = CategoriesOutput.ToString();
-
-                                      StringBuilder GenresOutput = new StringBuilder();
-                                      if (fakegame.OriginalGame.Genres != null)
-                                      {
-                                          string filename = String.Empty;
-                                          if (FirstGroupFieldFileNames.ContainsKey(Constants.GenreField))
-                                          {
-                                              filename = (string)FirstGroupFieldFileNames[Constants.GenreField];
-                                          }
-
-                                          foreach (Genre genre in fakegame.OriginalGame.Genres)
-                                          {
-                                              string GameCardDetailsGenreOutput = GameCardDetailsGenre.Replace("%genre%", genre.Name);
-                                              GameCardDetailsGenreOutput = GameCardDetailsGenreOutput.Replace("%genre_filename%", filename);
-                                              GenresOutput.Append(GameCardDetailsGenreOutput);
-                                          }
-                                      }
-                                      CurrentGameValuesDict["genres"] = GenresOutput.ToString();
-
-                                      StringBuilder FeaturesOutput = new StringBuilder();
-                                      if (fakegame.OriginalGame.Features != null)
-                                      {
-                                          string filename = String.Empty;
-                                          if (FirstGroupFieldFileNames.ContainsKey(Constants.FeatureField))
-                                          {
-                                              filename = (string)FirstGroupFieldFileNames[Constants.FeatureField];
-                                          }
-                                          foreach (GameFeature feature in fakegame.OriginalGame.Features)
-                                          {
-                                              string GameCardDetailsFeatureOutput = GameCardDetailsFeature.Replace("%feature%", feature.Name);
-                                              GameCardDetailsFeatureOutput = GameCardDetailsFeatureOutput.Replace("%feature_filename%", filename);
-                                              FeaturesOutput.Append(GameCardDetailsFeatureOutput);
-                                          }
-                                      }
-                                      CurrentGameValuesDict["features"] = FeaturesOutput.ToString();
-
-                                      StringBuilder DevelopersOutput = new StringBuilder();
-                                      if (fakegame.OriginalGame.Developers != null)
-                                      {
-                                          string filename = String.Empty;
-                                          if (FirstGroupFieldFileNames.ContainsKey(Constants.DeveloperField))
-                                          {
-                                              filename = (string)FirstGroupFieldFileNames[Constants.DeveloperField];
-                                          }
-                                          foreach (Company developer in fakegame.OriginalGame.Developers)
-                                          {
-                                              string GameCardDetailsDeveloperOutput = GameCardDetailsDeveloper.Replace("%developer%", developer.Name);
-                                              GameCardDetailsDeveloperOutput = GameCardDetailsDeveloperOutput.Replace("%developer_filename%", filename);
-                                              DevelopersOutput.Append(GameCardDetailsDeveloperOutput);
-                                          }
-                                      }
-                                      CurrentGameValuesDict["developers"] = DevelopersOutput.ToString();
-
-                                      StringBuilder PublishersOutput = new StringBuilder();
-                                      if (fakegame.OriginalGame.Publishers != null)
-                                      {
-                                          string filename = String.Empty;
-                                          if (FirstGroupFieldFileNames.ContainsKey(Constants.PublisherField))
-                                          {
-                                              filename = (string)FirstGroupFieldFileNames[Constants.PublisherField];
-                                          }
-                                          foreach (Company publisher in fakegame.OriginalGame.Publishers)
-                                          {
-                                              string GameCardDetailsPublisherOutput = GameCardDetailsPublisher.Replace("%publisher%", publisher.Name);
-                                              GameCardDetailsPublisherOutput = GameCardDetailsPublisherOutput.Replace("%publisher_filename%", filename);
-                                              PublishersOutput.Append(GameCardDetailsPublisherOutput);
-                                          }
-                                      }
-                                      CurrentGameValuesDict["publishers"] = PublishersOutput.ToString();
-
-                                      StringBuilder TagsOutput = new StringBuilder();
-                                      if (fakegame.OriginalGame.Tags != null)
-                                      {
-                                          string filename = String.Empty;
-                                          if (FirstGroupFieldFileNames.ContainsKey(Constants.TagField))
-                                          {
-                                              filename = (string)FirstGroupFieldFileNames[Constants.TagField];
-                                          }
-                                          foreach (Tag tag in fakegame.OriginalGame.Tags)
-                                          {
-                                              string GameCardDetailsTagOutput = GameCardDetailsTag.Replace("%tag%", tag.Name);
-                                              GameCardDetailsTagOutput = GameCardDetailsTagOutput.Replace("%tag_filename%", filename);
-                                              TagsOutput.Append(GameCardDetailsTagOutput);
-                                          }
-                                      }
-                                      CurrentGameValuesDict["tags"] = TagsOutput.ToString();
-
-                                      StringBuilder PlatformOutput = new StringBuilder();
-                                      if (fakegame.OriginalGame.Platforms != null)
-                                      {
-                                          string filename = String.Empty;
-                                          if (FirstGroupFieldFileNames.ContainsKey(Constants.PlatformField))
-                                          {
-                                              filename = (string)FirstGroupFieldFileNames[Constants.PlatformField];
-                                          }
-                                          foreach (Platform platform in fakegame.OriginalGame.Platforms)
-                                          {
-                                              string GameCardDetailsPlatformOutput = GameCardDetailsPlatform.Replace("%platform%", platform.Name);
-                                              GameCardDetailsPlatformOutput = GameCardDetailsPlatformOutput.Replace("%platform_filename%", filename);
-                                              PlatformOutput.Append(GameCardDetailsPlatformOutput);
-                                          }
-                                      }
-                                      CurrentGameValuesDict["platforms"] = PlatformOutput.ToString();
-
-                                      StringBuilder RegionOutput = new StringBuilder();
-                                      if (fakegame.OriginalGame.Regions != null)
-                                      {
-                                          string filename = String.Empty;
-                                          if (FirstGroupFieldFileNames.ContainsKey(Constants.RegionField))
-                                          {
-                                              filename = (string)FirstGroupFieldFileNames[Constants.RegionField];
-                                          }
-                                          foreach (Region region in fakegame.OriginalGame.Regions)
-                                          {
-                                              string GameCardDetailsRegionOutput = GameCardDetailsRegion.Replace("%region%", region.Name);
-                                              GameCardDetailsRegionOutput = GameCardDetailsRegionOutput.Replace("%region_filename%", filename);
-                                              RegionOutput.Append(GameCardDetailsRegionOutput);
-                                          }
-                                      }
-                                      CurrentGameValuesDict["regions"] = RegionOutput.ToString();
-
-                                      StringBuilder AgeRatingOutput = new StringBuilder();
-                                      if (fakegame.OriginalGame.AgeRatings != null)
-                                      {
-                                          string filename = String.Empty;
-                                          if (FirstGroupFieldFileNames.ContainsKey(Constants.AgeRatingField))
-                                          {
-                                              filename = (string)FirstGroupFieldFileNames[Constants.AgeRatingField];
-                                          }
-                                          foreach (AgeRating ageRating in fakegame.OriginalGame.AgeRatings)
-                                          {
-                                              string GameCardDetailsAgeRatingOutput = GameCardDetailsAgeRating.Replace("%agerating%", ageRating.Name);
-                                              GameCardDetailsAgeRatingOutput = GameCardDetailsAgeRatingOutput.Replace("%agerating_filename%", filename);
-                                              AgeRatingOutput.Append(GameCardDetailsAgeRatingOutput);
-                                          }
-                                      }
-                                      CurrentGameValuesDict["ageratings"] = AgeRatingOutput.ToString();
-
-                                      StringBuilder WebLinksOutput = new StringBuilder();
-                                      if (fakegame.OriginalGame.Links != null)
-                                      {
-                                          foreach (Link link in fakegame.OriginalGame.Links)
-                                          {
-                                              if (link != null)
+                                              string filename = String.Empty;
+                                              if (FirstGroupFieldFileNames.ContainsKey(Constants.CategoryField))
                                               {
-                                                  string GameCardDetailsWeblinkOutput = GameCardDetailsWeblink.Replace("%linkname%", link.Name);
-                                                  GameCardDetailsWeblinkOutput = GameCardDetailsWeblinkOutput.Replace("%linkurl%", link.Url);
-                                                  WebLinksOutput.Append(GameCardDetailsWeblinkOutput);
+                                                  filename = (string)FirstGroupFieldFileNames[Constants.CategoryField];
+                                              }
+
+                                              foreach (Category category in fakegame.OriginalGame.Categories)
+                                              {
+                                                  string GameCardDetailsCategoryOutput = GameCardDetailsCategory.Replace("%category%", category.Name);
+                                                  GameCardDetailsCategoryOutput = GameCardDetailsCategoryOutput.Replace("%category_filename%", filename);
+                                                  CategoriesOutput.Append(GameCardDetailsCategoryOutput);
                                               }
                                           }
+                                          CurrentGameValuesDict["categories"] = CategoriesOutput.ToString();
                                       }
-                                      CurrentGameValuesDict["links"] = WebLinksOutput.ToString();
 
-                                      string GameDetailsOutPut = ReplaceDictionary(GameCardDetails, CurrentGameValuesDict);
-                                      string GameCardDetailsOutPutFilename = Path.Combine(outputfolder, realgame.Id.ToString() + ".html");
-                                      //GameDetailsOutPut = Compressor.compress(GameDetailsOutPut);
-                                      File.WriteAllText(GameCardDetailsOutPutFilename, GameDetailsOutPut, Encoding.UTF8);
+                                      CurrentGameValuesDict["genres"] = "";
+                                      if (GameCardDetailsGenre.Length > 0)
+                                      {
+                                          StringBuilder GenresOutput = new StringBuilder();
+                                          if (fakegame.OriginalGame.Genres != null)
+                                          {
+                                              string filename = String.Empty;
+                                              if (FirstGroupFieldFileNames.ContainsKey(Constants.GenreField))
+                                              {
+                                                  filename = (string)FirstGroupFieldFileNames[Constants.GenreField];
+                                              }
+
+                                              foreach (Genre genre in fakegame.OriginalGame.Genres)
+                                              {
+                                                  string GameCardDetailsGenreOutput = GameCardDetailsGenre.Replace("%genre%", genre.Name);
+                                                  GameCardDetailsGenreOutput = GameCardDetailsGenreOutput.Replace("%genre_filename%", filename);
+                                                  GenresOutput.Append(GameCardDetailsGenreOutput);
+                                              }
+                                          }
+                                          CurrentGameValuesDict["genres"] = GenresOutput.ToString();
+                                      }
+
+                                      CurrentGameValuesDict["features"] = "";
+                                      if (GameCardDetailsFeature.Length > 0)
+                                      {
+                                          StringBuilder FeaturesOutput = new StringBuilder();
+                                          if (fakegame.OriginalGame.Features != null)
+                                          {
+                                              string filename = String.Empty;
+                                              if (FirstGroupFieldFileNames.ContainsKey(Constants.FeatureField))
+                                              {
+                                                  filename = (string)FirstGroupFieldFileNames[Constants.FeatureField];
+                                              }
+                                              foreach (GameFeature feature in fakegame.OriginalGame.Features)
+                                              {
+                                                  string GameCardDetailsFeatureOutput = GameCardDetailsFeature.Replace("%feature%", feature.Name);
+                                                  GameCardDetailsFeatureOutput = GameCardDetailsFeatureOutput.Replace("%feature_filename%", filename);
+                                                  FeaturesOutput.Append(GameCardDetailsFeatureOutput);
+                                              }
+                                          }
+                                          CurrentGameValuesDict["features"] = FeaturesOutput.ToString();
+                                      }
+
+                                      CurrentGameValuesDict["developers"] = "";
+                                      if (GameCardDetailsDeveloper.Length > 0)
+                                      {
+                                          StringBuilder DevelopersOutput = new StringBuilder();
+                                          if (fakegame.OriginalGame.Developers != null)
+                                          {
+                                              string filename = String.Empty;
+                                              if (FirstGroupFieldFileNames.ContainsKey(Constants.DeveloperField))
+                                              {
+                                                  filename = (string)FirstGroupFieldFileNames[Constants.DeveloperField];
+                                              }
+                                              foreach (Company developer in fakegame.OriginalGame.Developers)
+                                              {
+                                                  string GameCardDetailsDeveloperOutput = GameCardDetailsDeveloper.Replace("%developer%", developer.Name);
+                                                  GameCardDetailsDeveloperOutput = GameCardDetailsDeveloperOutput.Replace("%developer_filename%", filename);
+                                                  DevelopersOutput.Append(GameCardDetailsDeveloperOutput);
+                                              }
+                                          }
+                                          CurrentGameValuesDict["developers"] = DevelopersOutput.ToString();
+                                      }
+
+                                      CurrentGameValuesDict["publishers"] = "";
+                                      if (GameCardDetailsPublisher.Length > 0)
+                                      {
+                                          StringBuilder PublishersOutput = new StringBuilder();
+                                          if (fakegame.OriginalGame.Publishers != null)
+                                          {
+                                              string filename = String.Empty;
+                                              if (FirstGroupFieldFileNames.ContainsKey(Constants.PublisherField))
+                                              {
+                                                  filename = (string)FirstGroupFieldFileNames[Constants.PublisherField];
+                                              }
+                                              foreach (Company publisher in fakegame.OriginalGame.Publishers)
+                                              {
+                                                  string GameCardDetailsPublisherOutput = GameCardDetailsPublisher.Replace("%publisher%", publisher.Name);
+                                                  GameCardDetailsPublisherOutput = GameCardDetailsPublisherOutput.Replace("%publisher_filename%", filename);
+                                                  PublishersOutput.Append(GameCardDetailsPublisherOutput);
+                                              }
+                                          }
+                                          CurrentGameValuesDict["publishers"] = PublishersOutput.ToString();
+                                      }
+
+                                      CurrentGameValuesDict["tags"] = "";
+                                      if (GameCardDetailsTag.Length > 0)
+                                      {
+                                          StringBuilder TagsOutput = new StringBuilder();
+                                          if (fakegame.OriginalGame.Tags != null)
+                                          {
+                                              string filename = String.Empty;
+                                              if (FirstGroupFieldFileNames.ContainsKey(Constants.TagField))
+                                              {
+                                                  filename = (string)FirstGroupFieldFileNames[Constants.TagField];
+                                              }
+                                              foreach (Tag tag in fakegame.OriginalGame.Tags)
+                                              {
+                                                  string GameCardDetailsTagOutput = GameCardDetailsTag.Replace("%tag%", tag.Name);
+                                                  GameCardDetailsTagOutput = GameCardDetailsTagOutput.Replace("%tag_filename%", filename);
+                                                  TagsOutput.Append(GameCardDetailsTagOutput);
+                                              }
+                                          }
+                                          CurrentGameValuesDict["tags"] = TagsOutput.ToString();
+                                      }
+
+                                      CurrentGameValuesDict["platforms"] = "";
+                                      if (GameCardDetailsPlatform.Length > 0)
+                                      {
+                                          StringBuilder PlatformOutput = new StringBuilder();
+                                          if (fakegame.OriginalGame.Platforms != null)
+                                          {
+                                              string filename = String.Empty;
+                                              if (FirstGroupFieldFileNames.ContainsKey(Constants.PlatformField))
+                                              {
+                                                  filename = (string)FirstGroupFieldFileNames[Constants.PlatformField];
+                                              }
+                                              foreach (Platform platform in fakegame.OriginalGame.Platforms)
+                                              {
+                                                  string GameCardDetailsPlatformOutput = GameCardDetailsPlatform.Replace("%platform%", platform.Name);
+                                                  GameCardDetailsPlatformOutput = GameCardDetailsPlatformOutput.Replace("%platform_filename%", filename);
+                                                  PlatformOutput.Append(GameCardDetailsPlatformOutput);
+                                              }
+                                          }
+                                          CurrentGameValuesDict["platforms"] = PlatformOutput.ToString();
+                                      }
+
+                                      CurrentGameValuesDict["regions"] = "";
+                                      if (GameCardDetailsRegion.Length > 0)
+                                      {
+                                          StringBuilder RegionOutput = new StringBuilder();
+                                          if (fakegame.OriginalGame.Regions != null)
+                                          {
+                                              string filename = String.Empty;
+                                              if (FirstGroupFieldFileNames.ContainsKey(Constants.RegionField))
+                                              {
+                                                  filename = (string)FirstGroupFieldFileNames[Constants.RegionField];
+                                              }
+                                              foreach (Region region in fakegame.OriginalGame.Regions)
+                                              {
+                                                  string GameCardDetailsRegionOutput = GameCardDetailsRegion.Replace("%region%", region.Name);
+                                                  GameCardDetailsRegionOutput = GameCardDetailsRegionOutput.Replace("%region_filename%", filename);
+                                                  RegionOutput.Append(GameCardDetailsRegionOutput);
+                                              }
+                                          }
+                                          CurrentGameValuesDict["regions"] = RegionOutput.ToString();
+                                      }
+
+                                      CurrentGameValuesDict["ageratings"] = "";
+                                      if (GameCardDetailsAgeRating.Length > 0)
+                                      {
+                                          StringBuilder AgeRatingOutput = new StringBuilder();
+                                          if (fakegame.OriginalGame.AgeRatings != null)
+                                          {
+                                              string filename = String.Empty;
+                                              if (FirstGroupFieldFileNames.ContainsKey(Constants.AgeRatingField))
+                                              {
+                                                  filename = (string)FirstGroupFieldFileNames[Constants.AgeRatingField];
+                                              }
+                                              foreach (AgeRating ageRating in fakegame.OriginalGame.AgeRatings)
+                                              {
+                                                  string GameCardDetailsAgeRatingOutput = GameCardDetailsAgeRating.Replace("%agerating%", ageRating.Name);
+                                                  GameCardDetailsAgeRatingOutput = GameCardDetailsAgeRatingOutput.Replace("%agerating_filename%", filename);
+                                                  AgeRatingOutput.Append(GameCardDetailsAgeRatingOutput);
+                                              }
+                                          }
+                                          CurrentGameValuesDict["ageratings"] = AgeRatingOutput.ToString();
+                                      }
+
+                                      CurrentGameValuesDict["links"] = "";
+                                      if (GameCardDetailsWeblink.Length > 0)
+                                      {
+                                          StringBuilder WebLinksOutput = new StringBuilder();
+                                          if (fakegame.OriginalGame.Links != null)
+                                          {
+                                              foreach (Link link in fakegame.OriginalGame.Links)
+                                              {
+                                                  if (link != null)
+                                                  {
+                                                      string GameCardDetailsWeblinkOutput = GameCardDetailsWeblink.Replace("%linkname%", link.Name);
+                                                      GameCardDetailsWeblinkOutput = GameCardDetailsWeblinkOutput.Replace("%linkurl%", link.Url);
+                                                      WebLinksOutput.Append(GameCardDetailsWeblinkOutput);
+                                                  }
+                                              }
+                                          }
+                                          CurrentGameValuesDict["links"] = WebLinksOutput.ToString();
+                                      }
+
+                                      if (GameCardDetails.Length > 0)
+                                      {
+                                          string GameDetailsOutPut = ReplaceDictionary(GameCardDetails, CurrentGameValuesDict);
+                                          string GameCardDetailsOutPutFilename = Path.Combine(outputfolder, realgame.Id.ToString() + ".html");
+                                          //GameDetailsOutPut = Compressor.compress(GameDetailsOutPut);
+                                          File.WriteAllText(GameCardDetailsOutPutFilename, GameDetailsOutPut, Encoding.UTF8);
+                                      }
                                   }
                                   groupcount += 1;
                               }
