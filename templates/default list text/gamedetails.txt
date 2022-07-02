@@ -25,14 +25,14 @@ html {
   margin: 0;                                          /* no margins */
   background-color: black;                            /* black background */
   vertical-align: middle;                             /* align vertical middle */
-  heigth: 48px;
+  height: 48px;
 }
 
 .title {
 	width: 100%;                                      /* title container width 100% */
 	grid-column: 1 / span 3;                          /* column 1 but spans 3 */
     grid-row: 1;                                      /* row 1 */
-	heigth: 48px;
+	height: 48px;
 }
 .cards {                                              /* empty not used here */
 }

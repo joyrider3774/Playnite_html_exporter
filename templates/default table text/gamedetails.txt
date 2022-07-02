@@ -25,23 +25,23 @@ html {
   margin: 0;                                          /* no margins */
   background-color: black;                            /* black background */
   vertical-align: middle;                             /* align vertical middle */
-  heigth: 48px;
+  height: 48px;
 }
 
 .title {
-	width: 100%;                                      /* title container width 100% */
-	grid-column: 1 / span 3;                          /* column 1 but spans 3 */
-    grid-row: 1;                                      /* row 1 */
-	heigth: 48px;
+  width: 100%;                                      /* title container width 100% */
+  grid-column: 1 / span 3;                          /* column 1 but spans 3 */
+  grid-row: 1;                                      /* row 1 */
+  height: 48px;
 }
 .cards {                                              /* empty not used here */
 }
 
 .card {
-	display: grid;                                    /* container which is the grid */
-	grid-template-columns: min-content;               /* size columns to minimum content */
-	grid-template-rows: min-content min-content;      /* size rows to minimum content */
-	height: 100vh;                                    /* 100% viewport height */
+  display: grid;                                    /* container which is the grid */
+  grid-template-columns: min-content;               /* size columns to minimum content */
+  grid-template-rows: min-content min-content;      /* size rows to minimum content */
+  height: 100vh;                                    /* 100% viewport height */
 }
 
 .detailstitle{
@@ -65,9 +65,9 @@ html {
  
 .detailstitle h3,
 .descriptiontitle h3 {
-	border-bottom: 1px solid #ccc;                     /* titles of description details should have line under it */
-	padding: 5px;                                      /* add some padding */
-	color: #ccc;                                       /* text color of the titles */
+  border-bottom: 1px solid #ccc;                     /* titles of description details should have line under it */
+  padding: 5px;                                      /* add some padding */
+  color: #ccc;                                       /* text color of the titles */
 }
 
 .detailstable th, td {
@@ -94,17 +94,17 @@ html {
 
 
 .description {
-	color: #ccc;                                       /* text color */
-	grid-column: 2;                                    /* 2nd column of grid */
-	grid-row: 3;                                       /* 3rd row of grid */
-	overflow-y: auto;                                  /* overflow-y automatic (for adding scrollbar) */
-	overflow-x:hidden;                                 /* prevent horizontal scrollbar */
-	padding-left: 10px;                                /* some padding left */
-	padding-right: 10px;                               /* some padding right */
+  color: #ccc;                                       /* text color */
+  grid-column: 2;                                    /* 2nd column of grid */
+  grid-row: 3;                                       /* 3rd row of grid */
+  overflow-y: auto;                                  /* overflow-y automatic (for adding scrollbar) */
+  overflow-x:hidden;                                 /* prevent horizontal scrollbar */
+  padding-left: 10px;                                /* some padding left */
+  padding-right: 10px;                               /* some padding right */
 }
 
 .description img {
-	max-width: 100%;                                   /* make sure images don't overflow in width to prevent scrollbars */
+  max-width: 100%;                                   /* make sure images don't overflow in width to prevent scrollbars */
 }
 
 .MenuButton {
