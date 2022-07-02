@@ -3,26 +3,26 @@
 
 
     <!-- settings screen -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Generic Settings</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">הגדרות כלליות</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Output folder for html export</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Select">Select</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Select">בחר</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">Completely erase outputfolder before exporting (will erase images also)</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copy Images</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Options">Options</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">העתק תמונות</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Options">הגדרות</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Exclude hidden games</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedPlatforms">Excluded Platforms:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludedSources">Excluded Sources:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">Page Settings</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PageSettings">הגדרות עמוד</sys:String>
 
     <sys:String x:Key="LOC_HTMLEXPORTER_ColPageTitle">Page Title</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColTemplate">Template</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColTemplate">תבנית</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ColGroupField">Group Field</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ColAsc">Asc.</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ColAsc">עולה</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ColSortField">Sort Field</sys:String>
 
-    <sys:String x:Key="LOC_HTMLEXPORTER_Ascending">Ascending</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Ascending">עולה</sys:String>
     
-    <sys:String x:Key="LOC_HTMLEXPORTER_ButAddPage">Add Page</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ButAddPage">הוסף דף</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ButDelPage">Del Page</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ButPageUp">Page Up</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ButPageDown">Page Down</sys:String>
@@ -37,10 +37,10 @@
     <!-- misc -->
     <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedField">[Not Grouped]</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_NotGroupedSanitezedName">Not Grouped</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_UndefinedString">Undefined</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NotPlayedText">Not Played</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NeverText">Never</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NoneText">None</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_UndefinedString">לא מוגדר</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NotPlayedText">לא שוחקו</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NeverText">לעולם לא</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NoneText">כלום</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_DescendingText">descending</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">ascending</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Html Exporter</sys:String>
@@ -76,57 +76,57 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_FavoriteFieldText">Favorite</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_FeatureFieldText">Feature</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_GenreFieldText">Genre</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HiddenFieldText">Hidden</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ModifiedFieldText">Modified</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_NameFieldText">Name</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlatformFieldText">Platform</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeFieldText">Playtime</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PublisherFieldText">Publisher</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SerieFieldText">Serie</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SourceFieldText">Source</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_LibraryFieldText">Library</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HiddenFieldText">מוסתר</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ModifiedFieldText">עודכן</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_NameFieldText">שם</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlatformFieldText">פלטפורמה</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeFieldText">זמן משחק</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PublisherFieldText">מוציא לאור</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SerieFieldText">סדרה</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SourceFieldText">מקור</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_LibraryFieldText">ספריה</sys:String>
     
 
     <!-- CompletionStatus -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusAbandoned">Abandoned</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusBeaten">Beaten</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusCompleted">Completed</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusNotPlayed">Not Played</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusOnHold">On Hold</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlayed">Played</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlaying">Playing</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlanToPlay">Plan To Play</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusAbandoned">ננטשו</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusBeaten">הובסו</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusCompleted">הושלמו</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusNotPlayed">לא שוחק</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusOnHold">בהמתנה</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlayed">שוחקו</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlaying">משוחקים</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_CompletionStatusPlanToPlay">בתכנון לשחק</sys:String>
 
     <!-- PlaytimeCategory -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1000plus">1000+ hours</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO500_1000">500 to 1000 hoursy</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO100_500">100 to 500 hours</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO10_100">10 to 100 hours</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1_10">1 to 10 hours</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryNotPlayed">Not Played</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour">Less Then a Hour</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1000plus">1000+ שעות</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO500_1000">500 עד 1000 שעות</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO100_500">100 עד 500 שעות</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO10_100">10 עד 100 שעות</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1_10">שעה עד 10 שעות</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryNotPlayed">לא שוחק</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour">פחות משעה</sys:String>
 
     <!-- DateSegmentField -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldMoreThenYear">More Then a Year ago</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastMonth">Past Month</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastWeek">Past Week</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastYear">Past Year</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldNever">Never</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldToday">Today</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldYesterday">Yesterday</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldMoreThenYear">לפני יותר משנה</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastMonth">בחודש האחרון</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastWeek">בשבוע האחרון</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastYear">בשנה האחרונה</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldNever">אף פעם</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldToday">היום</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldYesterday">אתמול</sys:String>
 
     <!-- InstallationStatus -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusInstalled">Installed</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusUninstalled">Uninstalled</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusInstalled">מותקן</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_InstallationStatusUninstalled">הוסר</sys:String>
     
     <!-- ScoreGroup -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO0x">0 to 10</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO1x">10 to 20</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO2x">20 to 30</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO3x">30 to 40</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO4x">40 to 50</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO5x">50 to 60</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO6x">60 to 70</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO0x">0 עד 10</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO1x">10 עד 20</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO2x">20 עד 30</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO3x">30 עד 40</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO4x">40 עד 50</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO5x">50 עד 60</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO6x">60 עד 70</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO7x">70 to 80</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO8x">80 to 90</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ScoreGroupO9x">90 to 100</sys:String>
@@ -189,18 +189,18 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_ResizeCoverImage">Resize Cover Images:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ResizeIconImage">Resize Icon Images:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ResizeBackgroundImage">Resize Background Images:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Close">Close</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ImageOptions">Image Options</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_EnterValidValues">Please enter valid values!</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_ProcessingImages">Processing Images...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Close">סגור</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ImageOptions">אפשרויות תמונה</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EnterValidValues">נא להזין ערך תקין!</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ProcessingImages">מעבד תמונות...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ForceConvert">Force Convert (also converts image if file type is the same, instead of just copying)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_JpegQuality">Jpeg quality percentage for conversions (1-100):</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_MaxImageTasks">Max concurrent image tasks (1-16):</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_SuccessImagesProcess">Successful processed images:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_FailedImagesProcess">Failed processed images:</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_TotalImagesProcess">Total images to process:</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_TotalImagesProcess">סך הכל תמונות לעיבוד:</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Always process images, even if they have not changed</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">optimizations</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">מיטובים</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_DetectDuplicates">Detect Duplicate Images</sys:String>
 
 
