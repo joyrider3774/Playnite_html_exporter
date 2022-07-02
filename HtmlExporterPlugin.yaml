@@ -1,5 +1,15 @@
 AddonId: 'HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557'
 Packages:
+  - Version: 3.9
+    RequiredApiVersion: 6.2.2
+    ReleaseDate: 2022-07-02
+    PackageUrl: https://github.com/joyrider3774/Playnite_html_exporter/releases/download/v3.9/Html-Exporter-v3.9.pext
+    Changelog:
+      - Fix index.html not generating. First page will now always be named index.html
+      - Fix not being able to create multiple pages with Name group field
+      - Fix typo's in the html and css of the templates
+      - If gamedetails.txt, of the template used in the first page is empty, there will be no game detail pages generated anymore. (in case you only need a single index.html page or so with all your games)
+      - Updated translations
   - Version: 3.8
     RequiredApiVersion: 6.2.2
     ReleaseDate: 2022-04-20
