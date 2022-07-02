@@ -188,7 +188,7 @@ namespace HtmlExporterPlugin
                                   continue;
                               }
                               string FullTemplateFolder = TemplateFolderDir.FullName;
-                              string PageOutputFilename = Path.Combine(outputfolder, page.Pagefilename);
+                              string PageOutputFilename = Path.Combine(outputfolder, PageNr == 1 ? "index.html" : page.Pagefilename);
                               string PageFilename = Path.Combine(FullTemplateFolder, "page.txt");
                               string GameCardFilename = Path.Combine(FullTemplateFolder, "gamecard.txt");
                               string GameCardsHeaderFilename = Path.Combine(FullTemplateFolder, "gamecardsheader.txt");
@@ -260,7 +260,7 @@ namespace HtmlExporterPlugin
                                   ["groupfieldrealnamelowerexceptname"] = HttpUtility.HtmlEncode(page.Groupfield == Constants.NameField ? "" : PageGroupFieldRealNameLower),
                                   ["sortfield"] = HttpUtility.HtmlEncode(PageSortFieldName),
                                   ["sortfieldrealnamelower"] = HttpUtility.HtmlEncode(PageSortFieldRealNameLower),
-                                  ["pagefilename"] = Uri.EscapeDataString(page.Pagefilename),
+                                  ["pagefilename"] = Uri.EscapeDataString(PageNr == 1 ? "index.html" : page.Pagefilename),
                                   ["pagetitle"] = HttpUtility.HtmlEncode(page.Pagetitle),
                                   ["groupfieldsort"] = HttpUtility.HtmlEncode(page.GroupAscending ? Constants.AscendingText : Constants.DescendingText),
                                   ["groupfieldsortexceptname"] = page.Groupfield == Constants.NameField ? "" : HttpUtility.HtmlEncode(page.GroupAscending ? Constants.AscendingText : Constants.DescendingText),
@@ -288,9 +288,11 @@ namespace HtmlExporterPlugin
 
                               if (String.IsNullOrEmpty(AllMenuEntries))
                               {
+                                  int PageNrMenu = 0;
                                   Dictionary<string, bool> filesdone = new Dictionary<string, bool>();
                                   foreach (PageObject pagemenu in Settings.Settings.Pages)
                                   {
+                                      PageNrMenu++;
                                       if (!filesdone.ContainsKey(pagemenu.Pagefilename))
                                       {
                                           Dictionary<string, string> MenuEntryDict = new Dictionary<string, string>
@@ -302,7 +304,7 @@ namespace HtmlExporterPlugin
                                               ["groupfield"] = HttpUtility.HtmlEncode(Constants.GetNameFromField(pagemenu.Groupfield)),
                                               ["groupfieldexceptname"] = pagemenu.Groupfield == Constants.NameField ? "" : HttpUtility.HtmlEncode(Constants.GetNameFromField(pagemenu.Groupfield)),
                                               ["sortfield"] = HttpUtility.HtmlEncode(Constants.GetNameFromField(pagemenu.Sortfield)),
-                                              ["pagefilename"] = Uri.EscapeDataString(pagemenu.Pagefilename),
+                                              ["pagefilename"] = Uri.EscapeDataString(PageNrMenu == 1 ? "index.html" : pagemenu.Pagefilename),
                                               ["pagetitle"] = HttpUtility.HtmlEncode(pagemenu.Pagetitle),
                                               ["groupfieldsort"] = HttpUtility.HtmlEncode(pagemenu.GroupAscending ? Constants.AscendingText : Constants.DescendingText),
                                               ["groupfieldsortexceptname"] = pagemenu.Groupfield == Constants.NameField ? "" : HttpUtility.HtmlEncode(pagemenu.GroupAscending ? Constants.AscendingText : Constants.DescendingText),
@@ -321,7 +323,7 @@ namespace HtmlExporterPlugin
 
                                           if (!FirstGroupFieldFileNames.ContainsKey(pagemenu.Groupfield))
                                           {
-                                              FirstGroupFieldFileNames[pagemenu.Groupfield] = Uri.EscapeDataString(pagemenu.Pagefilename);
+                                              FirstGroupFieldFileNames[pagemenu.Groupfield] = Uri.EscapeDataString(PageNrMenu == 1 ? "index.html" : pagemenu.Pagefilename);
                                           }
                                           filesdone[pagemenu.Pagefilename] = true;
                                       }
@@ -1776,7 +1778,7 @@ namespace HtmlExporterPlugin
                                   CurrentGameValuesDict["groupfield"] = HttpUtility.HtmlEncode(PageGroupFieldName); ;
                                   CurrentGameValuesDict["groupfieldrealnamelower"] = HttpUtility.HtmlEncode(PageGroupFieldRealNameLower);
                                   CurrentGameValuesDict["sortfieldrealnamelower"] = HttpUtility.HtmlEncode(PageSortFieldRealNameLower);
-                                  CurrentGameValuesDict["pagefilename"] = Uri.EscapeDataString(page.Pagefilename);
+                                  CurrentGameValuesDict["pagefilename"] = Uri.EscapeDataString(PageNr == 1 ? "index.html" : page.Pagefilename);
                                   CurrentGameValuesDict["pagetitle"] = HttpUtility.HtmlEncode(page.Pagetitle);
                                   CurrentGameValuesDict["count"] = count.ToString();
 
@@ -2182,7 +2184,7 @@ namespace HtmlExporterPlugin
                               File.WriteAllText(PageOutputFilename, IndexOutput, Encoding.UTF8);
 
 
-                              PagesGenerated[page.Pagefilename] = true;
+                              PagesGenerated[PageNr == 1 ? "index.html" : page.Pagefilename] = true;
                               Succes++;
                           }
                           catch (Exception E)

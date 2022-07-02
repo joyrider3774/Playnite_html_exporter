@@ -11,8 +11,8 @@ namespace HtmlExporterPlugin
             get =>
                 Groupfield == Constants.NotGroupedField ?
                 Templatefoldername + "_" + (Sortfield.ToLower() + "_" + (SortAscending ? Constants.AscendingText : Constants.DescendingText) + ".html") :
-                (Groupfield == Constants.NameField ? "index.html" : Templatefoldername + "_" + Groupfield.ToLower() + "_" + (GroupAscending ? Constants.AscendingText : Constants.DescendingText) + "_" +
-                Sortfield.ToLower() + "_" + (SortAscending ? Constants.AscendingText : Constants.DescendingText) + ".html");
+                Templatefoldername + "_" + Groupfield.ToLower() + "_" + (GroupAscending ? Constants.AscendingText : Constants.DescendingText) + "_" +
+                Sortfield.ToLower() + "_" + (SortAscending ? Constants.AscendingText : Constants.DescendingText) + ".html";
         }
         public string Templatefoldername { get; set; }
         public string Groupfield { get; set; }
