@@ -104,10 +104,10 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO10_100">10 to 100 hours</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryO1_10">1 to 10 hours</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryNotPlayed">Not Played</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour">Less Then a Hour</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_PlaytimeCategoryLessThenHour">Less Than a Hour</sys:String>
 
     <!-- DateSegmentField -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldMoreThenYear">More Then a Year ago</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldMoreThenYear">More Than a Year ago</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastMonth">Past Month</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastWeek">Past Week</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_SegmentFieldPastYear">Past Year</sys:String>
