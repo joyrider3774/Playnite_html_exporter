@@ -365,7 +365,15 @@ namespace HtmlExporterPlugin
                                               {
                                                   Tag = String.Empty,
                                                   Platform = GetGamePlatform(game.Platforms),
-                                                  Library = GetGameLibrary(game.PluginId)
+                                                  Library = GetGameLibrary(game.PluginId),
+                                                  AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                  Category = GetGameCategory(game.Categories),
+                                                  Developer = GetGameDeveloper(game.Developers),
+                                                  Feature = GetGameFeature(game.Features),
+                                                  Genre = GetGameGenre(game.Genres),
+                                                  Publisher = GetGamePublisher(game.Publishers),
+                                                  Region = GetGameRegion(game.Regions),
+                                                  Serie = GetGameSerie(game.Series)
                                               };
                                               list.Add(newgame);
                                           }
@@ -377,7 +385,15 @@ namespace HtmlExporterPlugin
                                                   {
                                                       Tag = tag.Name,
                                                       Platform = GetGamePlatform(game.Platforms),
-                                                      Library = GetGameLibrary(game.PluginId)
+                                                      Library = GetGameLibrary(game.PluginId),
+                                                      AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                      Category = GetGameCategory(game.Categories),
+                                                      Developer = GetGameDeveloper(game.Developers),
+                                                      Feature = GetGameFeature(game.Features),
+                                                      Genre = GetGameGenre(game.Genres),
+                                                      Publisher = GetGamePublisher(game.Publishers),
+                                                      Region = GetGameRegion(game.Regions),
+                                                      Serie = GetGameSerie(game.Series),
                                                   };
                                                   list.Add(newgame);
                                               }
@@ -449,7 +465,16 @@ namespace HtmlExporterPlugin
                                                   FakeGame newgame = new FakeGame(game)
                                                   {
                                                       Platform = String.Empty,
-                                                      Library = GetGameLibrary(game.PluginId)
+                                                      Library = GetGameLibrary(game.PluginId),
+                                                      AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                      Category = GetGameCategory(game.Categories),
+                                                      Developer = GetGameDeveloper(game.Developers),
+                                                      Feature = GetGameFeature(game.Features),
+                                                      Genre = GetGameGenre(game.Genres),
+                                                      Publisher = GetGamePublisher(game.Publishers),
+                                                      Region = GetGameRegion(game.Regions),
+                                                      Serie = GetGameSerie(game.Series),
+                                                      Tag = GetGameTag(game.Tags)
                                                   };
                                                   list.Add(newgame);
                                               }
@@ -460,7 +485,16 @@ namespace HtmlExporterPlugin
                                                       FakeGame newgame = new FakeGame(game)
                                                       {
                                                           Platform = platform.Name,
-                                                          Library = GetGameLibrary(game.PluginId)
+                                                          Library = GetGameLibrary(game.PluginId),
+                                                          AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                          Category = GetGameCategory(game.Categories),
+                                                          Developer = GetGameDeveloper(game.Developers),
+                                                          Feature = GetGameFeature(game.Features),
+                                                          Genre = GetGameGenre(game.Genres),
+                                                          Publisher = GetGamePublisher(game.Publishers),
+                                                          Region = GetGameRegion(game.Regions),
+                                                          Serie = GetGameSerie(game.Series),
+                                                          Tag = GetGameTag(game.Tags)
                                                       };
                                                       list.Add(newgame);
                                                   }
@@ -531,7 +565,15 @@ namespace HtmlExporterPlugin
                                                       {
                                                           AgeRating = String.Empty,
                                                           Platform = GetGamePlatform(game.Platforms),
-                                                          Library = GetGameLibrary(game.PluginId)
+                                                          Library = GetGameLibrary(game.PluginId),
+                                                          Category = GetGameCategory(game.Categories),
+                                                          Developer = GetGameDeveloper(game.Developers),
+                                                          Feature = GetGameFeature(game.Features),
+                                                          Genre = GetGameGenre(game.Genres),
+                                                          Publisher = GetGamePublisher(game.Publishers),
+                                                          Region = GetGameRegion(game.Regions),
+                                                          Serie = GetGameSerie(game.Series),
+                                                          Tag = GetGameTag(game.Tags)
                                                       };
                                                       list.Add(newgame);
                                                   }
@@ -543,7 +585,15 @@ namespace HtmlExporterPlugin
                                                           {
                                                               AgeRating = agerating.Name,
                                                               Platform = GetGamePlatform(game.Platforms),
-                                                              Library = GetGameLibrary(game.PluginId)
+                                                              Library = GetGameLibrary(game.PluginId),
+                                                              Category = GetGameCategory(game.Categories),
+                                                              Developer = GetGameDeveloper(game.Developers),
+                                                              Feature = GetGameFeature(game.Features),
+                                                              Genre = GetGameGenre(game.Genres),
+                                                              Publisher = GetGamePublisher(game.Publishers),
+                                                              Region = GetGameRegion(game.Regions),
+                                                              Serie = GetGameSerie(game.Series),
+                                                              Tag = GetGameTag(game.Tags)
                                                           };
                                                           list.Add(newgame);
                                                       }
@@ -615,7 +665,15 @@ namespace HtmlExporterPlugin
                                                           {
                                                               Region = String.Empty,
                                                               Platform = GetGamePlatform(game.Platforms),
-                                                              Library = GetGameLibrary(game.PluginId)
+                                                              Library = GetGameLibrary(game.PluginId),
+                                                              AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                              Category = GetGameCategory(game.Categories),
+                                                              Developer = GetGameDeveloper(game.Developers),
+                                                              Feature = GetGameFeature(game.Features),
+                                                              Genre = GetGameGenre(game.Genres),
+                                                              Publisher = GetGamePublisher(game.Publishers),
+                                                              Serie = GetGameSerie(game.Series),
+                                                              Tag = GetGameTag(game.Tags)
                                                           };
                                                           list.Add(newgame);
                                                       }
@@ -627,7 +685,15 @@ namespace HtmlExporterPlugin
                                                               {
                                                                   Region = region.Name,
                                                                   Platform = GetGamePlatform(game.Platforms),
-                                                                  Library = GetGameLibrary(game.PluginId)
+                                                                  Library = GetGameLibrary(game.PluginId),
+                                                                  AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                  Category = GetGameCategory(game.Categories),
+                                                                  Developer = GetGameDeveloper(game.Developers),
+                                                                  Feature = GetGameFeature(game.Features),
+                                                                  Genre = GetGameGenre(game.Genres),
+                                                                  Publisher = GetGamePublisher(game.Publishers),
+                                                                  Serie = GetGameSerie(game.Series),
+                                                                  Tag = GetGameTag(game.Tags)
                                                               };
                                                               list.Add(newgame);
                                                           }
@@ -697,7 +763,15 @@ namespace HtmlExporterPlugin
                                                               {
                                                                   Serie = String.Empty,
                                                                   Platform = GetGamePlatform(game.Platforms),
-                                                                  Library = GetGameLibrary(game.PluginId)
+                                                                  Library = GetGameLibrary(game.PluginId),
+                                                                  AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                  Category = GetGameCategory(game.Categories),
+                                                                  Developer = GetGameDeveloper(game.Developers),
+                                                                  Feature = GetGameFeature(game.Features),
+                                                                  Genre = GetGameGenre(game.Genres),
+                                                                  Publisher = GetGamePublisher(game.Publishers),
+                                                                  Region = GetGameRegion(game.Regions),
+                                                                  Tag = GetGameTag(game.Tags)
                                                               };
                                                               list.Add(newgame);
                                                           }
@@ -709,7 +783,15 @@ namespace HtmlExporterPlugin
                                                                   {
                                                                       Serie = serie.Name,
                                                                       Platform = GetGamePlatform(game.Platforms),
-                                                                      Library = GetGameLibrary(game.PluginId)
+                                                                      Library = GetGameLibrary(game.PluginId),
+                                                                      AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                      Category = GetGameCategory(game.Categories),
+                                                                      Developer = GetGameDeveloper(game.Developers),
+                                                                      Feature = GetGameFeature(game.Features),
+                                                                      Genre = GetGameGenre(game.Genres),
+                                                                      Publisher = GetGamePublisher(game.Publishers),
+                                                                      Region = GetGameRegion(game.Regions),
+                                                                      Tag = GetGameTag(game.Tags)
                                                                   };
                                                                   list.Add(newgame);
                                                               }
@@ -778,7 +860,16 @@ namespace HtmlExporterPlugin
                                                               FakeGame newgame = new FakeGame(game)
                                                               {
                                                                   Platform = GetGamePlatform(game.Platforms),
-                                                                  Library = GetGameLibrary(game.PluginId)
+                                                                  Library = GetGameLibrary(game.PluginId),
+                                                                  AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                  Category = GetGameCategory(game.Categories),
+                                                                  Developer = GetGameDeveloper(game.Developers),
+                                                                  Feature = GetGameFeature(game.Features),
+                                                                  Genre = GetGameGenre(game.Genres),
+                                                                  Publisher = GetGamePublisher(game.Publishers),
+                                                                  Region = GetGameRegion(game.Regions),
+                                                                  Serie = GetGameSerie(game.Series),
+                                                                  Tag = GetGameTag(game.Tags)
                                                               };
                                                               list.Add(newgame);
                                                           }
@@ -845,7 +936,15 @@ namespace HtmlExporterPlugin
                                                                   {
                                                                       Publisher = String.Empty,
                                                                       Platform = GetGamePlatform(game.Platforms),
-                                                                      Library = GetGameLibrary(game.PluginId)
+                                                                      Library = GetGameLibrary(game.PluginId),
+                                                                      AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                      Category = GetGameCategory(game.Categories),
+                                                                      Developer = GetGameDeveloper(game.Developers),
+                                                                      Feature = GetGameFeature(game.Features),
+                                                                      Genre = GetGameGenre(game.Genres),
+                                                                      Region = GetGameRegion(game.Regions),
+                                                                      Serie = GetGameSerie(game.Series),
+                                                                      Tag = GetGameTag(game.Tags)
                                                                   };
                                                                   list.Add(newgame);
                                                               }
@@ -857,7 +956,15 @@ namespace HtmlExporterPlugin
                                                                       {
                                                                           Publisher = publisher.Name,
                                                                           Platform = GetGamePlatform(game.Platforms),
-                                                                          Library = GetGameLibrary(game.PluginId)
+                                                                          Library = GetGameLibrary(game.PluginId),
+                                                                          AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                          Category = GetGameCategory(game.Categories),
+                                                                          Developer = GetGameDeveloper(game.Developers),
+                                                                          Feature = GetGameFeature(game.Features),
+                                                                          Genre = GetGameGenre(game.Genres),
+                                                                          Region = GetGameRegion(game.Regions),
+                                                                          Serie = GetGameSerie(game.Series),
+                                                                          Tag = GetGameTag(game.Tags)
                                                                       };
                                                                       list.Add(newgame);
                                                                   }
@@ -928,7 +1035,15 @@ namespace HtmlExporterPlugin
                                                                       {
                                                                           Feature = String.Empty,
                                                                           Platform = GetGamePlatform(game.Platforms),
-                                                                          Library = GetGameLibrary(game.PluginId)
+                                                                          Library = GetGameLibrary(game.PluginId),
+                                                                          AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                          Category = GetGameCategory(game.Categories),
+                                                                          Developer = GetGameDeveloper(game.Developers),
+                                                                          Genre = GetGameGenre(game.Genres),
+                                                                          Publisher = GetGamePublisher(game.Publishers),
+                                                                          Region = GetGameRegion(game.Regions),
+                                                                          Serie = GetGameSerie(game.Series),
+                                                                          Tag = GetGameTag(game.Tags)
                                                                       };
                                                                       list.Add(newgame);
                                                                   }
@@ -940,7 +1055,15 @@ namespace HtmlExporterPlugin
                                                                           {
                                                                               Feature = Feature.Name,
                                                                               Platform = GetGamePlatform(game.Platforms),
-                                                                              Library = GetGameLibrary(game.PluginId)
+                                                                              Library = GetGameLibrary(game.PluginId),
+                                                                              AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                              Category = GetGameCategory(game.Categories),
+                                                                              Developer = GetGameDeveloper(game.Developers),
+                                                                              Genre = GetGameGenre(game.Genres),
+                                                                              Publisher = GetGamePublisher(game.Publishers),
+                                                                              Region = GetGameRegion(game.Regions),
+                                                                              Serie = GetGameSerie(game.Series),
+                                                                              Tag = GetGameTag(game.Tags)
                                                                           };
                                                                           list.Add(newgame);
                                                                       }
@@ -1012,7 +1135,15 @@ namespace HtmlExporterPlugin
                                                                           {
                                                                               Genre = String.Empty,
                                                                               Platform = GetGamePlatform(game.Platforms),
-                                                                              Library = GetGameLibrary(game.PluginId)
+                                                                              Library = GetGameLibrary(game.PluginId),
+                                                                              AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                              Category = GetGameCategory(game.Categories),
+                                                                              Developer = GetGameDeveloper(game.Developers),
+                                                                              Feature = GetGameFeature(game.Features),
+                                                                              Publisher = GetGamePublisher(game.Publishers),
+                                                                              Region = GetGameRegion(game.Regions),
+                                                                              Serie = GetGameSerie(game.Series),
+                                                                              Tag = GetGameTag(game.Tags)
                                                                           };
                                                                           list.Add(newgame);
                                                                       }
@@ -1024,7 +1155,15 @@ namespace HtmlExporterPlugin
                                                                               {
                                                                                   Genre = genre.Name,
                                                                                   Platform = GetGamePlatform(game.Platforms),
-                                                                                  Library = GetGameLibrary(game.PluginId)
+                                                                                  Library = GetGameLibrary(game.PluginId),
+                                                                                  AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                                  Category = GetGameCategory(game.Categories),
+                                                                                  Developer = GetGameDeveloper(game.Developers),
+                                                                                  Feature = GetGameFeature(game.Features),
+                                                                                  Publisher = GetGamePublisher(game.Publishers),
+                                                                                  Region = GetGameRegion(game.Regions),
+                                                                                  Serie = GetGameSerie(game.Series),
+                                                                                  Tag = GetGameTag(game.Tags)
                                                                               };
                                                                               list.Add(newgame);
                                                                           }
@@ -1095,7 +1234,15 @@ namespace HtmlExporterPlugin
                                                                               {
                                                                                   Developer = String.Empty,
                                                                                   Platform = GetGamePlatform(game.Platforms),
-                                                                                  Library = GetGameLibrary(game.PluginId)
+                                                                                  Library = GetGameLibrary(game.PluginId),
+                                                                                  AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                                  Category = GetGameCategory(game.Categories),
+                                                                                  Feature = GetGameFeature(game.Features),
+                                                                                  Genre = GetGameGenre(game.Genres),
+                                                                                  Publisher = GetGamePublisher(game.Publishers),
+                                                                                  Region = GetGameRegion(game.Regions),
+                                                                                  Serie = GetGameSerie(game.Series),
+                                                                                  Tag = GetGameTag(game.Tags)
                                                                               };
                                                                               list.Add(newgame);
                                                                           }
@@ -1107,7 +1254,15 @@ namespace HtmlExporterPlugin
                                                                                   {
                                                                                       Developer = developer.Name,
                                                                                       Platform = GetGamePlatform(game.Platforms),
-                                                                                      Library = GetGameLibrary(game.PluginId)
+                                                                                      Library = GetGameLibrary(game.PluginId),
+                                                                                      AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                                      Category = GetGameCategory(game.Categories),
+                                                                                      Feature = GetGameFeature(game.Features),
+                                                                                      Genre = GetGameGenre(game.Genres),
+                                                                                      Publisher = GetGamePublisher(game.Publishers),
+                                                                                      Region = GetGameRegion(game.Regions),
+                                                                                      Serie = GetGameSerie(game.Series),
+                                                                                      Tag = GetGameTag(game.Tags)
                                                                                   };
                                                                                   list.Add(newgame);
                                                                               }
@@ -1178,7 +1333,15 @@ namespace HtmlExporterPlugin
                                                                                       {
                                                                                           Category = String.Empty,
                                                                                           Platform = GetGamePlatform(game.Platforms),
-                                                                                          Library = GetGameLibrary(game.PluginId)
+                                                                                          Library = GetGameLibrary(game.PluginId),
+                                                                                          AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                                          Developer = GetGameDeveloper(game.Developers),
+                                                                                          Feature = GetGameFeature(game.Features),
+                                                                                          Genre = GetGameGenre(game.Genres),
+                                                                                          Publisher = GetGamePublisher(game.Publishers),
+                                                                                          Region = GetGameRegion(game.Regions),
+                                                                                          Serie = GetGameSerie(game.Series),
+                                                                                          Tag = GetGameTag(game.Tags)
                                                                                       };
                                                                                       list.Add(newgame);
                                                                                   }
@@ -1190,7 +1353,15 @@ namespace HtmlExporterPlugin
                                                                                           {
                                                                                               Category = category.Name,
                                                                                               Platform = GetGamePlatform(game.Platforms),
-                                                                                              Library = GetGameLibrary(game.PluginId)
+                                                                                              Library = GetGameLibrary(game.PluginId),
+                                                                                              AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                                              Developer = GetGameDeveloper(game.Developers),
+                                                                                              Feature = GetGameFeature(game.Features),
+                                                                                              Genre = GetGameGenre(game.Genres),
+                                                                                              Publisher = GetGamePublisher(game.Publishers),
+                                                                                              Region = GetGameRegion(game.Regions),
+                                                                                              Serie = GetGameSerie(game.Series),
+                                                                                              Tag = GetGameTag(game.Tags)
                                                                                           };
                                                                                           list.Add(newgame);
                                                                                       }
@@ -1257,8 +1428,17 @@ namespace HtmlExporterPlugin
                                                                           {
                                                                               FakeGame newgame = new FakeGame(game)
                                                                               {
-                                                                                  Library = GetGameLibrary(game.PluginId),
                                                                                   Platform = GetGamePlatform(game.Platforms),
+                                                                                  Library = GetGameLibrary(game.PluginId),
+                                                                                  AgeRating = GetGameAgeRating(game.AgeRatings),
+                                                                                  Category = GetGameCategory(game.Categories),
+                                                                                  Developer = GetGameDeveloper(game.Developers),
+                                                                                  Feature = GetGameFeature(game.Features),
+                                                                                  Genre = GetGameGenre(game.Genres),
+                                                                                  Publisher = GetGamePublisher(game.Publishers),
+                                                                                  Region = GetGameRegion(game.Regions),
+                                                                                  Serie = GetGameSerie(game.Series),
+                                                                                  Tag = GetGameTag(game.Tags)
                                                                               };
                                                                               list.Add(newgame);
                                                                           }
@@ -2371,6 +2551,114 @@ namespace HtmlExporterPlugin
                 }
              };
             return MainMenuItems;
+        }
+
+        public static string GetGameTag(List<Tag> Tags)
+        {
+            if (Tags == null || Tags.Count == 0)
+            {
+                return String.Empty;
+            }
+            else
+            {
+                return String.Join(", ", Tags);
+            }
+        }
+
+        public static string GetGameAgeRating(List<AgeRating> AgeRatings)
+        {
+            if (AgeRatings == null || AgeRatings.Count == 0)
+            {
+                return String.Empty;
+            }
+            else
+            {
+                return String.Join(", ", AgeRatings);
+            }
+        }
+
+        public static string GetGameRegion(List<Region> Regions)
+        {
+            if (Regions == null || Regions.Count == 0)
+            {
+                return String.Empty;
+            }
+            else
+            {
+                return String.Join(", ", Regions);
+            }
+        }
+
+        public static string GetGameSerie(List<Series> Series)
+        {
+            if (Series == null || Series.Count == 0)
+            {
+                return String.Empty;
+            }
+            else
+            {
+                return String.Join(", ", Series);
+            }
+        }
+
+        public static string GetGamePublisher(List<Company> Publishers)
+        {
+            if (Publishers == null || Publishers.Count == 0)
+            {
+                return String.Empty;
+            }
+            else
+            {
+                return String.Join(", ", Publishers);
+            }
+        }
+
+        public static string GetGameFeature(List<GameFeature> Features)
+        {
+            if (Features == null || Features.Count == 0)
+            {
+                return String.Empty;
+            }
+            else
+            {
+                return String.Join(", ", Features);
+            }
+        }
+
+        public static string GetGameGenre(List<Genre> Genres)
+        {
+            if (Genres == null || Genres.Count == 0)
+            {
+                return String.Empty;
+            }
+            else
+            {
+                return String.Join(", ", Genres);
+            }
+        }
+
+        public static string GetGameDeveloper(List<Company> Developers)
+        {
+            if (Developers == null || Developers.Count == 0)
+            {
+                return String.Empty;
+            }
+            else
+            {
+                return String.Join(", ", Developers);
+            }
+        }
+
+        public static string GetGameCategory(List<Category> Categories)
+        {
+            if (Categories == null || Categories.Count == 0)
+            {
+                return String.Empty;
+            }
+            else
+            {
+                return String.Join(", ", Categories);
+            }
         }
 
         public static string GetGamePlatform(List<Platform> Platforms)
