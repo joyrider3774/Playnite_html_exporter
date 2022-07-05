@@ -1,5 +1,12 @@
 AddonId: 'HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557'
 Packages:
+  - Version: 3.10
+    RequiredApiVersion: 6.2.2
+    ReleaseDate: 2022-07-05
+    PackageUrl: https://github.com/joyrider3774/Playnite_html_exporter/releases/download/v3.10/Html-Exporter-v3.10.pext
+    Changelog:
+      - Fill up fakegame fields even when they are not the groupfield
+      - Fix language typo
   - Version: 3.9
     RequiredApiVersion: 6.2.2
     ReleaseDate: 2022-07-02
