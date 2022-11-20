@@ -6,7 +6,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Impostazioni generali</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Cartella di output per l'esportazione html</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Select">Seleziona</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">Completely erase outputfolder before exporting (will erase images also)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">Cancellare la cartella di output prima dell'esportazione (cancellerà anche le immagini)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copia Immagini</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Options">Opzioni</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Escludi i giochi nascosti</sys:String>
@@ -45,7 +45,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_AscendingText">crescente</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterMenu">Esportatore Html</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenu">Esporta</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenuFilter">Export (filtered games)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_HTMLExporterSubMenuFilter">Esporta (giochi filtrati)</sys:String>
 
     <!-- FIELDS -->
     <sys:String x:Key="LOC_HTMLEXPORTER_ReleaseYearFieldText">Anno di uscita</sys:String>
@@ -139,7 +139,7 @@
 
 
     <!--- ProgresStatus -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingOutputFolder">Erasing output folder...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingOutputFolder">Cancellazione cartella di output...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ErasingPreviousHTML">Cancellazione dei file html precedentemente generati...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">Preparazione alla generazione dei file html...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">Generazione pagina html</sys:String>
@@ -202,6 +202,9 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Elaborare sempre le immagini, anche se non sono cambiate</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">ottimizzazioni</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_DetectDuplicates">Rileva Immagini Duplicate</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DetectedRootDrive">It is not allowed to select a root drive folder as output folder while erase output folder is enabled, as the whole drive would get erased!</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EraseQuestion">The Following folder &quot;{0}&quot; will get completely erased! Are you sure you want to continue?</sys:String>
+
 
 
 

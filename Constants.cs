@@ -25,7 +25,7 @@ namespace HtmlExporterPlugin
         public static string NoneText = resources.GetString("LOC_HTMLEXPORTER_NoneText"); 
         public static string AscendingText = resources.GetString("LOC_HTMLEXPORTER_AscendingText");
         public static string DescendingText = resources.GetString("LOC_HTMLEXPORTER_DescendingText");
-
+        public static string EraseQuestionText = resources.GetString("LOC_HTMLEXPORTER_EraseQuestion");
 
 
         public const string AppName = "HTML Exporter";
@@ -184,7 +184,8 @@ namespace HtmlExporterPlugin
 
         
         //errors
-        public static string ErrorHTMLExpoterNoOutputFolder = resources.GetString("LOC_HTMLEXPORTER_ErrorHTMLExpoterNoOutputFolder");
+        public static string ErrorHTMLExporterNoOutputFolder = resources.GetString("LOC_HTMLEXPORTER_ErrorHTMLExpoterNoOutputFolder");
+        public static string ErrorHTMLExporterDetectedRootDriveErase = resources.GetString("LOC_HTMLEXPORTER_DetectedRootDrive");
 
         //settingsview
         public static string RevertPagesQuestion1 = resources.GetString("LOC_HTMLEXPORTER_RevertPagesQuestion1");

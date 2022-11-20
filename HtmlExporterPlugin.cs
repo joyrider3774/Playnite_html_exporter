@@ -16,6 +16,7 @@ using System.Net;
 using System.Windows.Controls;
 using System.Security.Cryptography;
 using Playnite.SDK.Events;
+using System.Windows;
 //using ZetaProducerHtmlCompressor.Internal;
 
 namespace HtmlExporterPlugin
@@ -86,6 +87,18 @@ namespace HtmlExporterPlugin
 
         public void DoExportToHtml(List<Game> gameslist)
         {
+            string folder = Settings.Settings.OutputFolder;
+
+            if (Directory.Exists(folder))
+            {
+                if (Settings.Settings.EraseOutputFolder)
+                {
+                    if (PlayniteApi.Dialogs.ShowMessage(string.Format(Constants.EraseQuestionText, folder), Constants.AppName, MessageBoxButton.YesNo) == MessageBoxResult.No)
+                    {
+                        return;
+                    }
+                }
+            }
             ImageProcessRunner ConvertImagesRunner = new ImageProcessRunner();
             var progressOptions = new GlobalProgressOptions(String.Empty, true)
             {

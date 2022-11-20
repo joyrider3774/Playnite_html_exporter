@@ -248,7 +248,13 @@ namespace HtmlExporterPlugin
             if (String.IsNullOrEmpty(Settings.OutputFolder) || (!Directory.Exists(Settings.OutputFolder)))
             {
                 returnvalue = false;
-                errors.Add(Constants.ErrorHTMLExpoterNoOutputFolder);
+                errors.Add(Constants.ErrorHTMLExporterNoOutputFolder);
+            }
+
+            if (Settings.EraseOutputFolder && !String.IsNullOrEmpty(Settings.OutputFolder) && Directory.Exists(Settings.OutputFolder) && Utils.IsRootDrive(Settings.OutputFolder))
+            {
+                returnvalue = false;
+                errors.Add(Constants.ErrorHTMLExporterDetectedRootDriveErase);
             }
 
             return returnvalue;

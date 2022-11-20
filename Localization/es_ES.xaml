@@ -6,7 +6,7 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_GenericSettings">Ajustes genéricos</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_OutPutFolder">Carpeta de salida para exportar html</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Select">Seleccionar</sys:String>
-    <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">Completely erase outputfolder before exporting (will erase images also)</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EraseOutPutFolder">Borrar completamente la carpeta de salida antes de exportar (También borrará las imágenes)</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_CopyImages">Copiar imágenes</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Options">Opciones</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ExcludeHiddenGames">Excluir juegos ocultos</sys:String>
@@ -139,7 +139,7 @@
 
 
     <!--- ProgresStatus -->
-    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingOutputFolder">Erasing output folder...</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_ErasingOutputFolder">Borrando carpeta de salida...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_ErasingPreviousHTML">Borrando archivos html previamente generados...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_PreparingGenerateHTML">Preparando para generar archivos html...</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_GeneratatingHTML">Generando página html</sys:String>
@@ -202,6 +202,9 @@
     <sys:String x:Key="LOC_HTMLEXPORTER_AlwaysProcess">Siempre procesar imágenes, incluso si no han cambiado</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_Optimizations">optimizaciones</sys:String>
     <sys:String x:Key="LOC_HTMLEXPORTER_DetectDuplicates">Detectar imágenes duplicadas</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_DetectedRootDrive">It is not allowed to select a root drive folder as output folder while erase output folder is enabled, as the whole drive would get erased!</sys:String>
+    <sys:String x:Key="LOC_HTMLEXPORTER_EraseQuestion">The Following folder &quot;{0}&quot; will get completely erased! Are you sure you want to continue?</sys:String>
+
 
 
 
