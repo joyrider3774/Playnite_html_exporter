@@ -1,5 +1,13 @@
 AddonId: 'HtmlExporterPlugin_14bd031a-a1ff-4754-a586-0b9c23a6f557'
 Packages:
+  - Version: 3.11
+    RequiredApiVersion: 6.2.2
+    ReleaseDate: 2022-11-20
+    PackageUrl: https://github.com/joyrider3774/Playnite_html_exporter/releases/download/v3.11/Html-Exporter-v3.11.pext
+    Changelog:
+      - Add Confirmation dialog before erasing output folder
+      - Add detection for users providing (wrong) settings that would erase their entire drive
+      - Updated Translations
   - Version: 3.10
     RequiredApiVersion: 6.2.2
     ReleaseDate: 2022-07-05
